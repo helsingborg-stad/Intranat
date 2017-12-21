@@ -80,7 +80,7 @@ class News
      */
     public function sortStickyPost($orderby, $query)
     {
-        if (is_admin() || !isset($query->query_vars['post_type']) || $query->query_vars['post_type'] != self::$postTypeSlug || !$query->is_main_query()) {
+        if (is_admin() || is_preview() || !isset($query->query_vars['post_type']) || $query->query_vars['post_type'] != self::$postTypeSlug || !$query->is_main_query()) {
             return $orderby;
         }
 
