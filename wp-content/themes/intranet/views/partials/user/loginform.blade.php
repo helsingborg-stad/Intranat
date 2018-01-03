@@ -21,4 +21,8 @@
         <input type="hidden" name="use_sso" value="false">
         <input type="submit" class="btn btn-primary" value="<?php _e('Login', 'municipio-intranet'); ?>">
     </div>
+
+    @php
+        wp_nonce_field(md5("adnoncekey" . date("Y-m-d")), '_ad_nonce', true, true);
+    @endphp
 </form>
