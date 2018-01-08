@@ -133,6 +133,14 @@ class Elasticsearch
             )
         );
 
+        //Only phrase search
+
+        if(substr($q, -1) == '"' && substr($q, 0, 1) == '"')
+        {
+
+            unset($args['query']['must']);
+        }
+
         // Use simple_query_string query
         if (isset($_GET['type']) && $_GET['type'] === 'simple') {
             $args['query'] = array(
