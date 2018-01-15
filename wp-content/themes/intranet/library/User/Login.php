@@ -94,13 +94,16 @@ class Login
      */
     public function frontendLoginFailed($username)
     {
-        // Where did the submit come from
-        $referrer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+        global $wp;
 
-        // If there's a valid referrer, and it's not the default log-in screen
-        if (!empty($referrer) && !strstr($referrer, 'wp-login') && !strstr($referrer, 'wp-admin')) {
-            // let's append some information (login=failed) to the URL for the theme to use
-            wp_redirect(strstr($referrer, '?login=failed') ? $referrer : $referrer . '?login=failed');
+        if (isset($wp->request) && !empty($wp->request)) {
+            if (!empty($wp->request) && !strstr($wp->request, 'wp-login') && !strstr($wp->request, 'wp-admin')) {
+                wp_redirect(strstr(home_url($wp->request), '?login=failed') ? home_url($wp->request) : home_url($wp->request) . '?login=failed');
+            }
+        } else {
+            wp_redirect(home_url());
         }
+
+        exit;
     }
 }
