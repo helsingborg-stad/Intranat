@@ -20,8 +20,6 @@
 
         <input type="hidden" name="use_sso" value="false">
 
-        <input type="hidden" name="origin_login_url" value="{{ get_permalink() }}">
-
         <input type="submit" class="btn btn-primary" value="<?php _e('Login', 'municipio-intranet'); ?>">
     </div>
 
