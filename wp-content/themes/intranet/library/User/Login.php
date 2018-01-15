@@ -13,19 +13,8 @@ class Login
         // Redirect to homepage
         add_action('wp_login', function ($url) {
             global $wp;
-
-            var_dump($wp);
-
-            die;
-
-            if (isset($wp->request) && !empty($wp->request)) {
-                wp_redirect(home_url($wp->request));
-            } else {
-                wp_redirect(home_url());
-            }
-
+            wp_redirect(home_url( $wp->request ));
             exit;
-
         }, 50);
     }
 
@@ -98,16 +87,13 @@ class Login
      */
     public function frontendLoginFailed($username)
     {
-        global $wp;
+        // Where did the submit come from
+        $referrer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
 
-        if (isset($wp->request) && !empty($wp->request)) {
-            if (!empty($wp->request) && !strstr($wp->request, 'wp-login') && !strstr($wp->request, 'wp-admin')) {
-                wp_redirect(strstr(home_url($wp->request), '?login=failed') ? home_url($wp->request) : home_url($wp->request) . '?login=failed');
-            }
-        } else {
-            wp_redirect(home_url());
+        // If there's a valid referrer, and it's not the default log-in screen
+        if (!empty($referrer) && !strstr($referrer, 'wp-login') && !strstr($referrer, 'wp-admin')) {
+            // let's append some information (login=failed) to the URL for the theme to use
+            wp_redirect(strstr($referrer, '?login=failed') ? $referrer : $referrer . '?login=failed');
         }
-
-        exit;
     }
 }
