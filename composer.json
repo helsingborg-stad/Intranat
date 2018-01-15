@@ -10,113 +10,8 @@
     "minimum-stability" : "stable",
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/active-directory-api-wp-integration.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/Modularity.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/Municipio.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/lix-calculator.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/custom-short-links.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/Customer-feedback.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/content-scheduler.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/modularity-dictionary.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/broken-link-detector.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/modularity-guides.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/attachment-revisions.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/modularity-googleapps.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/Search-notices.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/ACF-UX-collapse.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/better-post-UI.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/force-ssl.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/elasticpress-synonyms.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/search-statistics.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/readspeaker-helper.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/ElasticPress.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/wp-listings.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/acf-export-manager.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/modularity-form-builder.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/google-analythics.git"
-
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/todo.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/multisite-role-propagation.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/wp-page-for-posttype.git"
+            "type":"composer",
+            "url":"https://packagist.org"
         },
         {
             "type":"composer",
@@ -138,7 +33,6 @@
 
     "require": {
         "composer/installers": "~1.0",
-        "wp-api/wp-api": "2.0-beta15",
         "giggsey/libphonenumber-for-php": "7.6.0",
         "helsingborg-stad/active-directory-api-wp-integration": ">=2.0.0",
         "helsingborg-stad/Modularity": ">=2.0.0",
@@ -167,14 +61,13 @@
         "helsingborg-stad/google-analythics": ">=1.0.0",
         "helsingborg-stad/wp-page-for-post-type": ">=1.0.0",
         "wpackagist-plugin/elasticpress": "2.3.2",
-        "wpackagist-plugin/wp-editor-widget": "^0.5.5",
         "wpackagist-plugin/stream": "^3.0.4",
         "wpackagist-plugin/wp-nested-pages": "1.6.5.2",
         "wpackagist-plugin/user-switching" : ">=1.0.0",
         "wpackagist-plugin/wordpress-importer": "0.6.3",
         "wpackagist-plugin/mce-table-buttons": "^3.0.0",
         "humanmade/page-for-post-type": "^1.0.0",
-        "johnpbloch/wordpress": "^4.8"
+        "johnpbloch/wordpress": "4.9.1"
     },
 
     "extra": {
