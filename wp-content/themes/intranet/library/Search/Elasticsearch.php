@@ -133,12 +133,11 @@ class Elasticsearch
             )
         );
 
-        //Only phrase search
-
-        if(substr($q, -1) == '"' && substr($q, 0, 1) == '"')
-        {
-
-            unset($args['query']['must']);
+        //Enable quotes to search for absolute string
+        if (!empty($q)) {
+            if (substr($q, -1) == '"' && substr($q, 0, 1) == '"' && isset($args['query']['must'])) {
+                unset($args['query']['must']);
+            }
         }
 
         // Use simple_query_string query
