@@ -13,8 +13,15 @@ class Login
         // Redirect to homepage
         add_action('wp_login', function ($url) {
             global $wp;
-            wp_redirect(home_url( $wp->request ));
+
+            if (isset($wp->request) && !empty($wp->request)) {
+                wp_redirect(home_url($wp->request));
+            } else {
+                wp_redirect(home_url());
+            }
+
             exit;
+
         }, 50);
     }
 
