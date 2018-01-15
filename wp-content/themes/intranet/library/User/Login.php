@@ -14,6 +14,10 @@ class Login
         add_action('wp_login', function ($url) {
             global $wp;
 
+            var_dump($wp);
+
+            die;
+
             if (isset($wp->request) && !empty($wp->request)) {
                 wp_redirect(home_url($wp->request));
             } else {
