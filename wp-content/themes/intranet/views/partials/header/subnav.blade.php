@@ -26,10 +26,29 @@
                     <span class="hidden-sm hidden-xs">{{ municipio_intranet_get_first_name($currentUser->ID) }}</span> <i class="pricon pricon-caret-down pricon-xs"></i></span>
                 </a>
 
+
+               
+
                 <ul class="dropdown-menu login-dropdown dropdown-menu-arrow dropdown-menu-arrow-right">
                     <li><a href="{{ municipio_intranet_get_user_profile_url() }}" class="pricon pricon-space-right pricon-user-o"><?php _e('Your profile', 'municipio-intranet'); ?></a></li>
                     <li><a href="{{ municipio_intranet_get_user_profile_edit_url() }}" class="pricon pricon-space-right pricon-settings"><?php _e('Settings'); ?></a></li>
                     <li><a href="{{ municipio_intranet_get_user_manage_subscriptions_url() }}" class="pricon pricon-space-right pricon-heart"><?php _e('Subscriptions', 'municipio-intranet'); ?></a></li>
+
+                    <?php $unit = \Intranet\User\AdministrationUnits::getUsersAdministrationUnitIntranet(); ?>
+                    
+                    @if ($unit)
+
+                        <li><a href="{{ $unit->path }}" class="pricon pricon-space-right pricon-home"><?php _e('intranet', 'municipio-intranet'); ?>
+                            
+                            @if (isset($unit->short_name))
+                                &#40;{{$unit->short_name}}&#41;
+                            @endif
+
+                        </a></li>
+
+                    @endif
+
+                    <li><a href="{{ $unit->path }}" class="pricon pricon-space-right pricon-home">Gå till stadsledningsförvaltningens intranät</a></li>
                     <li class="divider"></li>
                     <li><a href="{{ wp_logout_url() }}" class="pricon pricon-space-right pricon-standby"><?php _e('Log out'); ?></a></li>
                 </ul>
