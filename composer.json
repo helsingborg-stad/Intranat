@@ -60,6 +60,7 @@
         "helsingborg-stad/readspeaker-helper": ">=1.0.0",
         "helsingborg-stad/google-analythics": ">=1.0.0",
         "helsingborg-stad/wp-page-for-post-type": ">=1.0.0",
+        "helsingborg-stad/api-event-manager-integration": ">=0.1.0",
         "wpackagist-plugin/elasticpress": "2.3.2",
         "wpackagist-plugin/stream": "^3.0.4",
         "wpackagist-plugin/wp-nested-pages": "1.6.5.2",
