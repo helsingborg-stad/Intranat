@@ -1,5 +1,6 @@
-<div id="modal-login-reminder" class="modal modal-backdrop-white modal-xs" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="modal-login-reminder" class="modal modal-backdrop-2 modal-xs" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
+        <!--
         <div class="box box-filled box-filled-red-4 box-filled-card pos-relative has-stripe hidden-xs">
             <div class="stripe stripe-red stripe-percentage">
                 <div></div>
@@ -23,6 +24,7 @@
                 </figure>
             </div>
         </div>
+        -->
 
         <div class="gutter gutter-xl">
             @include('partials.user.loginform')
