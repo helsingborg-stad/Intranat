@@ -583,6 +583,10 @@
                                             <label><?php _e('Welcome phrase', 'municipio-intranet'); ?></label>
                                             <label class="checkbox"><input type="checkbox" name="disable_welcome_phrase" value="1" {{ checked(get_the_author_meta('disable_welcome_phrase'), '1') }}> <?php _e('Disable welcome phrase', 'municipio-intranet'); ?></label>
                                         </div>
+                                        <div class="form-group">
+                                            <label><?php _e('Notifications email', 'municipio-intranet'); ?></label>
+                                            <label class="checkbox"><input type="checkbox" name="disable_notification_email" value="1" {{ checked(get_the_author_meta('disable_notification_email'), '1') }}> <?php _e('Disable daily notifications summary', 'municipio-intranet'); ?></label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
