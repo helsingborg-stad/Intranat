@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2017-09-20 17:57+0200\n"
+"POT-Creation-Date: 2018-02-15 11:13+0100\n"
 "PO-Revision-Date: 2016-05-31 16:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -46,7 +46,7 @@ msgid "All"
 msgstr ""
 
 #: acf-fields/php/incidents-module.php:12
-#: views/partials/header/subnav.blade.php:30 views/search.blade.php:40
+#: views/partials/header/subnav.blade.php:36 views/search.blade.php:40
 msgid "Subscriptions"
 msgstr ""
 
@@ -369,7 +369,7 @@ msgstr ""
 msgid "Unfollow"
 msgstr ""
 
-#: library/Search/Elasticsearch.php:80
+#: library/Search/Elasticsearch.php:49
 msgid "Exclude from search"
 msgstr ""
 
@@ -438,52 +438,52 @@ msgstr ""
 msgid "All fields must be filled in to add a new administration unit"
 msgstr ""
 
-#: library/User/General.php:182
+#: library/User/General.php:188
 #, php-format
 msgid "Hi %s"
 msgstr ""
 
-#: library/User/General.php:183
+#: library/User/General.php:189
 #, php-format
 msgid "Good to see you, %s"
 msgstr ""
 
-#: library/User/General.php:188
+#: library/User/General.php:194
 #, php-format
 msgid "Good morning %s"
 msgstr ""
 
-#: library/User/General.php:189
+#: library/User/General.php:195
 #, php-format
 msgid "Have a great day %s"
 msgstr ""
 
-#: library/User/General.php:194
+#: library/User/General.php:200
 #, php-format
 msgid "Good afternoon %s"
 msgstr ""
 
-#: library/User/General.php:199
+#: library/User/General.php:205
 #, php-format
 msgid "It's getting late, %s"
 msgstr ""
 
-#: library/User/General.php:200
+#: library/User/General.php:206
 #, php-format
 msgid "Good eavning %s"
 msgstr ""
 
-#: library/User/General.php:205
+#: library/User/General.php:211
 #, php-format
 msgid "Good night %s"
 msgstr ""
 
-#: library/User/General.php:232
+#: library/User/General.php:238
 #, php-format
 msgid "Happy new year %s"
 msgstr ""
 
-#: library/User/General.php:237
+#: library/User/General.php:243
 #, php-format
 msgid "Merry christmas %s"
 msgstr ""
@@ -496,11 +496,11 @@ msgstr ""
 msgid "All fields must be filled in to add a new system"
 msgstr ""
 
-#: library/User/TargetGroups.php:208
+#: library/User/TargetGroups.php:206
 msgid "Restrict to target groups"
 msgstr ""
 
-#: library/User/TargetGroups.php:240 library/User/TargetGroups.php:241
+#: library/User/TargetGroups.php:238 library/User/TargetGroups.php:239
 #: views/author-edit.blade.php:268
 msgid "Target groups"
 msgstr ""
@@ -751,7 +751,7 @@ msgid "Published"
 msgstr ""
 
 #: views/author-edit.blade.php:10 views/author-edit.blade.php:11
-#: views/partials/header/subnav.blade.php:28
+#: views/partials/header/subnav.blade.php:34
 msgid "Your profile"
 msgstr ""
 
@@ -819,7 +819,7 @@ msgstr ""
 #: views/author-edit.blade.php:347 views/author-edit.blade.php:365
 #: views/author-edit.blade.php:419 views/author-edit.blade.php:471
 #: views/author-edit.blade.php:524 views/author-edit.blade.php:577
-#: views/author-edit.blade.php:596
+#: views/author-edit.blade.php:600
 msgid "Incomplete"
 msgstr ""
 
@@ -1134,31 +1134,39 @@ msgstr ""
 msgid "Welcome phrase"
 msgstr ""
 
-#: views/author-edit.blade.php:596
+#: views/author-edit.blade.php:587
+msgid "Notifications email"
+msgstr ""
+
+#: views/author-edit.blade.php:588
+msgid "Disable daily notifications summary"
+msgstr ""
+
+#: views/author-edit.blade.php:600
 msgid "Theme"
 msgstr ""
 
-#: views/author-edit.blade.php:602
+#: views/author-edit.blade.php:606
 msgid "Color scheme"
 msgstr ""
 
-#: views/author-edit.blade.php:603
+#: views/author-edit.blade.php:607
 msgid "Red"
 msgstr ""
 
-#: views/author-edit.blade.php:604
+#: views/author-edit.blade.php:608
 msgid "Blue"
 msgstr ""
 
-#: views/author-edit.blade.php:605
+#: views/author-edit.blade.php:609
 msgid "Green"
 msgstr ""
 
-#: views/author-edit.blade.php:606
+#: views/author-edit.blade.php:610
 msgid "Purple"
 msgstr ""
 
-#: views/author-edit.blade.php:621
+#: views/author-edit.blade.php:625
 msgid "Save settings"
 msgstr ""
 
@@ -1288,23 +1296,27 @@ msgid ""
 "from specifically selected intranets."
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:29
+#: views/partials/header/subnav.blade.php:35
 msgid "Settings"
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:32
+#: views/partials/header/subnav.blade.php:41
+msgid "Go to my intranet"
+msgstr ""
+
+#: views/partials/header/subnav.blade.php:49
 msgid "Log out"
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:38
+#: views/partials/header/subnav.blade.php:56
 msgid "Log in"
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:43
+#: views/partials/header/subnav.blade.php:61
 msgid "Login failed. Please try again."
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:53
+#: views/partials/header/subnav.blade.php:71
 msgid "Menu"
 msgstr ""
 
@@ -1429,7 +1441,7 @@ msgstr ""
 msgid "Forgot your password?"
 msgstr ""
 
-#: views/partials/user/loginform.blade.php:22
+#: views/partials/user/loginform.blade.php:23
 msgid "Login"
 msgstr ""
 
