@@ -449,6 +449,7 @@ class Data
         update_user_meta($user->ID, 'user_target_groups', isset($_POST['user_target_groups']) ? array_map('sanitize_text_field', $_POST['user_target_groups']) : array());
         update_user_meta($user->ID, 'user_color_scheme', isset($_POST['color_scheme']) ? $_POST['color_scheme'] : 'purple');
         update_user_meta($user->ID, 'disable_welcome_phrase', isset($_POST['disable_welcome_phrase']) ? $_POST['disable_welcome_phrase'] : '0');
+        update_user_meta($user->ID, 'disable_notification_email', isset($_POST['disable_notification_email']) ? $_POST['disable_notification_email'] : '0');
 
         if (!empty($_POST['user_birthday']['year']) && !empty($_POST['user_birthday']['month']) && !empty($_POST['user_birthday']['day'])) {
             update_user_meta($user->ID, 'user_birthday', $_POST['user_birthday']);

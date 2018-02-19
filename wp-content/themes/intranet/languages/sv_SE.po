@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-01-16 10:48+0100\n"
-"PO-Revision-Date: 2018-01-16 10:49+0100\n"
+"POT-Creation-Date: 2018-02-15 11:13+0100\n"
+"PO-Revision-Date: 2018-02-15 11:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -46,7 +46,7 @@ msgid "All"
 msgstr "Alla"
 
 #: acf-fields/php/incidents-module.php:12
-#: views/partials/header/subnav.blade.php:35 views/search.blade.php:40
+#: views/partials/header/subnav.blade.php:36 views/search.blade.php:40
 msgid "Subscriptions"
 msgstr "Intranät du följer"
 
@@ -772,7 +772,7 @@ msgid "Published"
 msgstr "Publicerad"
 
 #: views/author-edit.blade.php:10 views/author-edit.blade.php:11
-#: views/partials/header/subnav.blade.php:33
+#: views/partials/header/subnav.blade.php:34
 msgid "Your profile"
 msgstr "Din profil"
 
@@ -850,7 +850,7 @@ msgstr "Personlig information"
 #: views/author-edit.blade.php:347 views/author-edit.blade.php:365
 #: views/author-edit.blade.php:419 views/author-edit.blade.php:471
 #: views/author-edit.blade.php:524 views/author-edit.blade.php:577
-#: views/author-edit.blade.php:596
+#: views/author-edit.blade.php:600
 msgid "Incomplete"
 msgstr "Ofullständig"
 
@@ -1175,31 +1175,39 @@ msgstr "Övriga inställningar"
 msgid "Welcome phrase"
 msgstr "Hälsningsfras"
 
-#: views/author-edit.blade.php:596
+#: views/author-edit.blade.php:587
+msgid "Notifications email"
+msgstr "Aviseringar som e-post"
+
+#: views/author-edit.blade.php:588
+msgid "Disable daily notifications summary"
+msgstr "Inaktivera dagligt utskick av aviseringar"
+
+#: views/author-edit.blade.php:600
 msgid "Theme"
 msgstr "Tema"
 
-#: views/author-edit.blade.php:602
+#: views/author-edit.blade.php:606
 msgid "Color scheme"
 msgstr "Färgschema"
 
-#: views/author-edit.blade.php:603
+#: views/author-edit.blade.php:607
 msgid "Red"
 msgstr "Röd"
 
-#: views/author-edit.blade.php:604
+#: views/author-edit.blade.php:608
 msgid "Blue"
 msgstr "Blå"
 
-#: views/author-edit.blade.php:605
+#: views/author-edit.blade.php:609
 msgid "Green"
 msgstr "Grön"
 
-#: views/author-edit.blade.php:606
+#: views/author-edit.blade.php:610
 msgid "Purple"
 msgstr "Lila"
 
-#: views/author-edit.blade.php:621
+#: views/author-edit.blade.php:625
 msgid "Save settings"
 msgstr "Spara inställningar"
 
@@ -1337,27 +1345,27 @@ msgstr ""
 "L. Du kan välja om du vill se resultat från alla intranät eller från "
 "enskilda intranät."
 
-#: views/partials/header/subnav.blade.php:34
+#: views/partials/header/subnav.blade.php:35
 msgid "Settings"
 msgstr "Inställningar"
 
-#: views/partials/header/subnav.blade.php:40
+#: views/partials/header/subnav.blade.php:41
 msgid "Go to my intranet"
 msgstr "Gå till mitt intranät"
 
-#: views/partials/header/subnav.blade.php:48
+#: views/partials/header/subnav.blade.php:49
 msgid "Log out"
 msgstr "Logga ut"
 
-#: views/partials/header/subnav.blade.php:54
+#: views/partials/header/subnav.blade.php:56
 msgid "Log in"
 msgstr "Logga in"
 
-#: views/partials/header/subnav.blade.php:59
+#: views/partials/header/subnav.blade.php:61
 msgid "Login failed. Please try again."
 msgstr "Inloggningen misslyckades. Försök igen."
 
-#: views/partials/header/subnav.blade.php:69
+#: views/partials/header/subnav.blade.php:71
 msgid "Menu"
 msgstr "Meny"
 
