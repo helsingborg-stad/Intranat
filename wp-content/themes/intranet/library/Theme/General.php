@@ -62,6 +62,10 @@ class General
             return false;
         });
 
+        // Activate notification for given post types
+        add_filter('notification_center/activated_posttypes', function ($postTypes) {
+            return array('ticket');
+        });
     }
 
     public function googleAnalyticsUA($ua)
