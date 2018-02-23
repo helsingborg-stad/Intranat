@@ -7,7 +7,7 @@ class Breadcrumb
     public function __construct()
     {
         add_filter('Municipio/Breadcrumbs/Items', array($this, 'prependMainSite'), 10, 2);
-        add_filter('Municipio/Breadcrumbs', '__return_true');
+        add_filter('Municipio/Breadcrumbs', '__return_true'); // Enables bredcrumb
     }
 
     /**

@@ -27,9 +27,6 @@ class General
 
         add_filter('Municipio/theme/key', array($this, 'colorScheme'));
 
-        // Count pageviews
-        //add_action('wp', array($this, 'pageViewCounter'));
-
         // Get additional site options
         add_filter('the_sites', array($this, 'getSiteOptions'));
 
@@ -164,46 +161,5 @@ class General
             return $key;
         }
         return 'purple';
-    }
-
-    /**
-     * Adds a pageview to the pageview counter
-     * @return boolean
-     */
-    public function pageViewCounter()
-    {
-        if (!is_single() && !is_page()) {
-            return false;
-        }
-
-        global $post;
-
-        // Count pageviews
-        $pageViews = get_post_meta($post->ID, '_page_views', true);
-
-        if (empty($pageViews)) {
-            $pageViews = 0;
-        }
-
-        $pageViews++;
-        update_post_meta($post->ID, '_page_views', $pageViews);
-
-        if (!is_user_logged_in()) {
-            return true;
-        }
-
-        // Add user view
-        $userViewed = get_post_meta($post->ID, '_user_page_viewed', true);
-
-        if (empty($userViewed) || !is_array($userViewed)) {
-            $userViewed = array(
-                get_current_user_id() => date('Y-m-d H:i:s')
-            );
-        }
-
-        $userViewed[get_current_user_id()] = date('Y-m-d H:i:s');
-        update_post_meta($post->ID, '_user_page_viewed', $userViewed);
-
-        return true;
     }
 }
