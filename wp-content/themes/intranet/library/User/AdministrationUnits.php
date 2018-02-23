@@ -20,6 +20,10 @@ class AdministrationUnits
         add_action('admin_init', array($this, 'removeAdministrationUnit'));
     }
 
+    /**
+     * Add menu page for administration units
+     * @return void
+     */
     public function createAdministrationUnitsAdminPage()
     {
         add_menu_page(
@@ -35,19 +39,27 @@ class AdministrationUnits
         );
     }
 
+    /**
+     * Removes a administration unit
+     * @return void
+     */
     public function removeAdministrationUnit()
     {
         if (!isset($_POST['administration-unit-delete']) || !is_numeric($_POST['administration-unit-delete'])) {
             return;
         }
-
         global $wpdb;
-        $id = sanitize_text_field($_POST['administration-unit-delete']);
 
-        $wpdb->delete($wpdb->base_prefix . self::$tableSuffix, array('id' => $id), array('%d'));
+        $wpdb->delete($wpdb->base_prefix . self::$tableSuffix, array('id' => sanitize_text_field($_POST['administration-unit-delete'])), array('%d'));
+
         return;
     }
 
+    /**
+     * Get users administraion unit
+     * @param  int $userId  The users id
+     * @return bool/int     Site id
+     */
     public static function getUsersAdministrationUnitIntranet($userId = null)
     {
         if (!is_null(self::$userFirstUnit)) {
@@ -106,6 +118,10 @@ class AdministrationUnits
         return $wpdb->get_var($query);
     }
 
+    /**
+     * Parse a addministraiton unit string and get the id
+     * @return int
+     */
     public static function getAdministrationUnitIdFromString($string)
     {
         global $wpdb;
@@ -140,6 +156,11 @@ class AdministrationUnits
         self::insertAdministrationUnit($name);
     }
 
+    /**
+     * Add a new administration unit
+     * @param string $name The name of the new administration unit
+     * @return int
+     */
     public static function insertAdministrationUnit($name)
     {
         global $wpdb;
