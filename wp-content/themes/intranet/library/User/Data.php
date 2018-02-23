@@ -31,7 +31,6 @@ class Data
     public function __construct()
     {
         add_action('wp', array($this, 'saveMissingDataForm'));
-        add_action('wp_ajax_sync_facebook_profile', array($this, 'syncFacebookDetails'));
         add_action('wp_ajax_toggle_welcome_phrase', array($this, 'toggleWelcomePhrase'));
         add_action('MunicipioIntranet/save_profile_settings', array($this, 'saveProfileSettings'));
         add_action('MunicipioIntranet/save_profile_settings', array($this, 'saveProfileUploads'));
@@ -485,36 +484,5 @@ class Data
         }
 
         return true;
-    }
-
-    /**
-     * Ajax callback for syncing Facebook information to profile
-     * @return void
-     */
-    public function syncFacebookDetails()
-    {
-        // Get the details from post
-        $details = json_decode(json_encode($_POST['details']));
-        $picture = json_decode(json_encode($_POST['picture']));
-
-        // Update birthday
-        if (isset($details->birthday) && !empty($details->birthday)) {
-            $details->birthday = array(
-                'year' => date('Y', strtotime($details->birthday)),
-                'month' => ltrim(date('m', strtotime($details->birthday)), 0),
-                'day' => ltrim(date('d', strtotime($details->birthday)), 0)
-            );
-
-            update_user_meta(get_current_user_id(), 'user_birthday', $details->birthday);
-        }
-
-        // Update location
-        if (isset($details->location) && !empty($details->location)) {
-            $details->location = explode(',', $details->location->name)[0];
-            update_user_meta(get_current_user_id(), 'user_hometown', $details->location);
-        }
-
-        echo "1";
-        wp_die();
     }
 }
