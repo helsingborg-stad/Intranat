@@ -53,6 +53,11 @@ class News extends \Modularity\Module
         return $data;
     }
 
+    /**
+     * Check if flow should use placeholders or not.
+     * @param array The news posts object array.
+     * @return void
+     */
     public function preparePosts($news = null)
     {
         if (get_field('placeholders', $this->ID)) {
@@ -60,12 +65,17 @@ class News extends \Modularity\Module
                 foreach ($news as $item) {
                     if (get_thumbnail_source($item->ID) !== false) {
                         $this->hasImages = true;
+                        break;
                     }
                 }
             }
         }
     }
 
+    /**
+     * Get all ites in network, or current site.
+     * @return array The site array
+     */
     public function getSites()
     {
         $display = get_field('display', $this->ID);
