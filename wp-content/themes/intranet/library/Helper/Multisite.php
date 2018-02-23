@@ -129,6 +129,11 @@ class Multisite
         return null;
     }
 
+    /**
+     * Get sites matching query
+     * @param  array $where Array with arguments that should match (not fuzzy)
+     * @return array        The site info
+     */
     public static function getSitesWhere($where = array())
     {
         $sites = self::getSitesList();
