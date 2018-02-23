@@ -12,6 +12,10 @@ class RemoveSite
         add_action('make_spam_blog', array($this, 'removeFollowers'));
     }
 
+    /**
+     * Remove all followsers of blog wgen it's deleted
+     * @return void
+     */
     public function removeFollowers($blogId)
     {
         global $wpdb;

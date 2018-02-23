@@ -9,6 +9,10 @@ class News
         add_action('rest_api_init', array($this, 'routes'));
     }
 
+    /**
+     * Registers new route for fething news archive.
+     * @return void
+     */
     public function routes()
     {
         register_rest_route('intranet/1.0', '/news/(?P<count>(\d)+)/(?P<offset>(\d)+)/(?P<sites>(.*)+)/(?P<category>(\d)+)', array(
@@ -40,7 +44,12 @@ class News
         ));
     }
 
-    public function getNews($data)
+    /**
+     * Return news array
+     * @param array $data Contains the query data
+     * @return array
+     */
+    public function getNews($data) : array
     {
         $sites = $data['sites'];
         $category = !empty($data['category']) ? $data['category'] : null;
@@ -54,7 +63,6 @@ class News
             $sites = explode(',', $sites);
         }
 
-        $news = \Intranet\CustomPostType\News::getNews($data['count'], $sites, $data['offset'], true, $category);
-        return $news;
+        return \Intranet\CustomPostType\News::getNews($data['count'], $sites, $data['offset'], true, $category);
     }
 }
