@@ -9,29 +9,35 @@ class General
 
     public function __construct()
     {
+
+        //Adds the post tags to pages
         add_action('init', function () {
             register_taxonomy_for_object_type('post_tag', 'page');
         });
 
+        //Show authors as page manager
         add_filter('Municipio/author_display/title', function ($title) {
             return __('Page manager', 'municipio-intranet');
         });
 
+        //Link authors if logged in
         add_filter('Municipio/author_display/name', function ($name, $userId) {
             if (!is_user_logged_in()) {
                 return $name;
             }
-
             return '<a href="' . municipio_intranet_get_user_profile_url($userId) . '">' . $name . '</a>';
         }, 10, 2);
 
+        //Ignore settings for color scheme
         add_filter('Municipio/theme/key', array($this, 'colorScheme'));
 
         // Get additional site options
         add_filter('the_sites', array($this, 'getSiteOptions'));
 
+        //Get favicons from main site
         add_filter('Municipio/favicons', array($this, 'favicons'));
 
+        //Fake intranat templates to be core templates.
         add_filter('Modularity/CoreTemplatesSearchTemplates', function ($templates) {
             return array_merge($templates, array(
                 'author-edit',
@@ -39,17 +45,23 @@ class General
             ));
         });
 
+        //Removes slider area, this is not avabile in theme views
         add_action('widgets_init', function () {
             unregister_sidebar('slider-area');
         }, 15);
 
+        //Load readspeaker settings from main
         add_filter('ReadSpeakerHelper\multisite_load', '__return_true');
+
+        //Load google UA from main site
         add_filter('GoogleAnalytics/TrackingId/ua', array($this, 'googleAnalyticsUA'));
 
+        //Reser main grid
         add_filter('Municipio/Page/MainGrid/Classes', function ($classes) {
             return array();
         });
 
+        //Elasticpress analyzer
         add_filter('ep_analyzer_language', function () {
             return 'Swedish';
         });
@@ -76,13 +88,13 @@ class General
 
     public function favicons($icons)
     {
-        if (function_exists('switch_to_blog')) {
+        if (function_exists('switch_to_blog') && function_exists('restore_current_blog')) {
             switch_to_blog(BLOG_ID_CURRENT_SITE);
         }
 
         $icons = get_field('favicons', 'option');
 
-        if (function_exists('switch_to_blog')) {
+        if (function_exists('switch_to_blog') && function_exists('restore_current_blog')) {
             restore_current_blog();
         }
 
