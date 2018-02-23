@@ -10,6 +10,10 @@ class General
     public function __construct()
     {
 
+        //Search sites
+        add_action('wp_ajax_nopriv_search_sites', '\Intranet\Helper\Multisite::searchSites');
+        add_action('wp_ajax_search_sites', '\Intranet\Helper\Multisite::searchSites');
+
         //Adds the post tags to pages
         add_action('init', function () {
             register_taxonomy_for_object_type('post_tag', 'page');

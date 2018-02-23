@@ -9,20 +9,31 @@ class TableOfContents
     public function __construct()
     {
         //Template & url
-        add_action('init', array($this, 'urlRewrite'));
+        add_action('admin_init', array($this, 'urlRewrite'));
         add_filter('template_include', array($this, 'template'), 10);
 
         //Cache
         add_action('update_post_meta', array($this, 'purgeTableOfContent'), 50, 4);
     }
 
+    /**
+     * Create new rewrite rule, only for super admins
+     * @return void
+     */
     public function urlRewrite()
     {
-        add_rewrite_rule('^table-of-contents', 'index.php?table-of-contents&modularity_template=table-of-contents', 'top');
-        add_rewrite_tag('%table-of-contents%', '([^&]+)');
-        flush_rewrite_rules();
+        if (is_super_admin()) {
+            add_rewrite_rule('^table-of-contents', 'index.php?table-of-contents&modularity_template=table-of-contents', 'top');
+            add_rewrite_tag('%table-of-contents%', '([^&]+)');
+            flush_rewrite_rules();
+        }
     }
 
+    /**
+     * Tell to use view of table of contents when above url is visited.
+     * @param  string $template The default templade used by wp.
+     * @return string           The new template (or default)
+     */
     public function template($template)
     {
         global $wp_query;
@@ -104,6 +115,7 @@ class TableOfContents
             foreach (get_sites() as $site) {
                 switch_to_blog($site->blog_id);
                 wp_cache_delete(self::$commonCacheKey);
+                restore_current_blog();
             }
             switch_to_blog($current_blog_id);
         } else {
@@ -119,6 +131,12 @@ class TableOfContents
      */
     public static function prepareOutput($pages, $search)
     {
+
+        //Bail early if pages is empty
+        if (is_array($pages) && !empty($pages)) {
+            return array();
+        }
+
         $toc = array();
 
         foreach ($pages as $page) {
