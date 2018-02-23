@@ -11,6 +11,12 @@ class Login
         add_action('wp_logout', array($this, 'frontendLogout'), 9);
     }
 
+    /**
+     * Maps ad fields to intranet fields.
+     * @param  string $username
+     * @param  object $user The user object
+     * @return void
+     */
     public function adMapping($username, $user)
     {
         if (isset($_COOKIE['sso_manual_logout'])) {

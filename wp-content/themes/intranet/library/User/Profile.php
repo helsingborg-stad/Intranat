@@ -35,12 +35,14 @@ class Profile
 
         //Contact module
         add_filter('Modularity/mod-contacts/contact-info', array($this, 'getProfileUserData'), 10, 2);
-
     }
 
+    /**
+     * Show default data if the user hasen't defint ther own data
+     * @return string, bool, array The meta value
+     */
     public function defaultUserVisitingAdressADProfile($type, int $object_id, string $meta_key, bool $single)
     {
-
         $meta_value = null;
 
         //Remove this filter, to be able to use get_user_meta without infinite loop
@@ -63,19 +65,20 @@ class Profile
 
         //Return new value or null to proceed with normal process
         return $meta_value;
-
     }
 
+    /**
+     * Show default data if the user hasen't defint ther own data
+     * @return string, bool, array The meta value
+     */
     public function defaultToADProfile($type, int $object_id, string $meta_key, bool $single)
     {
-
         $meta_value = null;
 
         //Remove this filter, to be able to use get_user_meta without infinite loop
         remove_filter('get_user_metadata', array($this, 'defaultToADProfile'), 1);
 
         if (array_key_exists($meta_key, $this->fieldMap)) {
-
             $default_meta_value = get_user_meta($object_id, $meta_key, $single);
 
             if (empty($default_meta_value)) {
@@ -88,9 +91,12 @@ class Profile
 
         //Return new value or null to proceed with normal process
         return $meta_value;
-
     }
 
+    /**
+     * Get profile user data
+     * @return array data
+     */
     public function getProfileUserData($data, $type)
     {
 
@@ -104,7 +110,6 @@ class Profile
         $user_meta = get_user_meta($data['id']);
 
         if (is_numeric($data['id'])) {
-
             $administration_unit = get_user_meta($data['id'], 'user_administration_unit', true);
             $administration_unit = is_array($administration_unit) ? array_pop($administration_unit) : '';
 
@@ -123,16 +128,23 @@ class Profile
         return $data;
     }
 
-
+    /**
+     * Fixes modularity edit links on profile pages
+     * @return string The new editor link
+     */
     public function profileEditModularityEditorLink($editorLink, $post, $archiveSlug, $currentUrl)
     {
         if ($archiveSlug == 'author' && empty($editorLink) && strpos($currentUrl, '/edit')) {
             $editorLink = admin_url('options.php?page=modularity-editor&id=author-edit');
         }
-
         return $editorLink;
     }
 
+    /**
+     * Get current user
+     * @param  array $data d0ata array to fill
+     * @return array The complete user data object
+     */
     public function currentUserData($data)
     {
         $data['currentUser'] = wp_get_current_user();
@@ -204,7 +216,6 @@ class Profile
             if (0 === strpos($user->data->user_email, $wp_query->query['author_name'])) {
                 $wp_query->set_404();
             }
-
         }
     }
 
