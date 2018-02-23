@@ -10,7 +10,13 @@ class Breadcrumb
         add_filter('Municipio/Breadcrumbs', '__return_true');
     }
 
-    public function prependMainSite($items, $object)
+    /**
+     * Fixes the breadcrumb url to make main site appear as root.
+     * @param array $items  Previous items in the breadcrumb.
+     * @params depricated $object
+     * @return array $items Array contining markup for all items.
+     */
+    public function prependMainSite($items, $object = null)
     {
 
         //Removes "home" page fron breadcrumb
