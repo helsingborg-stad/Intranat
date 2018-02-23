@@ -10,6 +10,10 @@ class PasswordResetInstructions
         add_action('admin_init', array($this, 'savePasswordInstructions'));
     }
 
+    /**
+     * Register options page
+     * @return void
+     */
     public function addOptionsPage()
     {
         add_menu_page(
@@ -25,6 +29,10 @@ class PasswordResetInstructions
         );
     }
 
+    /**
+     * Save password reset instructions to site_option
+     * @return void
+     */
     public function savePasswordInstructions()
     {
         if (!isset($_POST['password-reset-action']) || (!isset($_POST['password-instructions']) || empty($_POST['password-instructions']))) {

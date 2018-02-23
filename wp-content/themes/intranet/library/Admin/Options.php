@@ -38,6 +38,10 @@ class Options
         add_action('update_option_intranet_ad_autosubscribe', '\Intranet\Theme\General::emptySiteOptionsCache');
     }
 
+    /**
+     * Registers settings sections
+     * @return void
+     */
     public function setupOptions()
     {
         add_settings_section(
@@ -145,6 +149,5 @@ class Options
             'general',
             'intranet_ad_autosubscribe'
         );
-
     }
 }
