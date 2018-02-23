@@ -15,6 +15,10 @@ class General
         add_action('init', array($this, 'makePrivateReadable'), 1200);
     }
 
+    /**
+     * Removes the admin bar for visitors
+     * @return void
+     */
     public function removeAdminBar()
     {
         if (!current_user_can('edit_posts') && !current_user_can_for_blog(get_current_blog_id(), 'edit_posts')) {
@@ -22,6 +26,10 @@ class General
         }
     }
 
+    /**
+     * Allow subscribers to read private posts
+     * @return void
+     */
     public function makePrivateReadable()
     {
         $role = get_role('subscriber');
@@ -31,6 +39,10 @@ class General
         }
     }
 
+    /**
+     * Last updated indicator for profiles
+     * @return void
+     */
     public function updateUserMeta($metaId, $userId, $metaKey, $_meta_value)
     {
         remove_action('update_user_meta', array($this, 'updateUserMeta'), 10);
@@ -38,6 +50,10 @@ class General
         add_action('update_user_meta', array($this, 'updateUserMeta'), 10, 4);
     }
 
+    /**
+     * Last updated indicator for profiles
+     * @return void
+     */
     public function profileUpdate($userId)
     {
         remove_action('profile_update', array($this, 'profileUpdate'), 10);
@@ -45,6 +61,10 @@ class General
         add_action('profile_update', array($this, 'profileUpdate'));
     }
 
+    /**
+     * Block subscribers from accessing wp-admin
+     * @return void
+     */
     public function protectWpAdmin()
     {
         if (defined('DOING_AJAX') && DOING_AJAX) {
@@ -178,6 +198,10 @@ class General
         return $users;
     }
 
+    /**
+     * Deliver a fantastic greeting!
+     * @return string A greeting string with html markup
+     */
     public static function greet()
     {
         // General greetings

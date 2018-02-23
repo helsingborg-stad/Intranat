@@ -4,6 +4,8 @@ namespace Intranet\User;
 
 class Data
 {
+
+    //Mute the filler notice forms completly
     public static $muteFillerForm = false;
 
     // key => template
@@ -11,6 +13,7 @@ class Data
         'user_email' => 'user_email'
     );
 
+    //Fields that isen't optinal
     public static $requiredMetaFields = array(
         'user_administration_unit' => 'user_department',
         'user_department'          => 'user_department',
@@ -18,6 +21,7 @@ class Data
         'last_name'                => 'name'
     );
 
+    //Fields that should trigger the "please update" notice
     public static $suggestedMetaFields = array(
         'user_phone'                        => 'user_phone',
         'user_skills'                       => 'user_skills',
@@ -27,6 +31,7 @@ class Data
         'user_visiting_address[street]'     => 'user_visiting_address',
         'user_visiting_address[city]'       => 'user_visiting_address'
     );
+
 
     public function __construct()
     {
@@ -314,7 +319,10 @@ class Data
         return $fields;
     }
 
-
+    /**
+     * Saves the profile upload files
+     * @return bool Indicates if the upload was successfull
+     */
     public function saveProfileUploads()
     {
         global $wp_query;
@@ -331,12 +339,12 @@ class Data
         }
 
         //MAP UPLOAD KEY & VALUES
-        if(isset($_POST) && is_array($_POST)) {
-            foreach($_POST as $key => $value) {
+        if (isset($_POST) && is_array($_POST)) {
+            foreach ($_POST as $key => $value) {
 
                 //Remove image
-                if (strpos( $key, "remove_profile_" ) !== false && $value == true) {
-                    $key = str_replace('remove','user', $key);
+                if (strpos($key, "remove_profile_") !== false && $value == true) {
+                    $key = str_replace('remove', 'user', $key);
                     $profileImage = new \Intranet\User\ProfileUploadImage();
                     $profileImage->removeProfileImage($user->ID, $key);
 
@@ -344,21 +352,20 @@ class Data
                 }
 
                 //Map image keys to upload
-                if (strpos( $key, "user_profile_" ) !== false && $value !== "") {
+                if (strpos($key, "user_profile_") !== false && $value !== "") {
                     $image_keys[] = $key;
                 }
             }
 
             //Map image URI to upload
-            if(! empty($image_keys) && isset($_POST['image_uploader_file'])) {
-                $items_to_upload = array_combine($image_keys,$_POST['image_uploader_file']);
+            if (! empty($image_keys) && isset($_POST['image_uploader_file'])) {
+                $items_to_upload = array_combine($image_keys, $_POST['image_uploader_file']);
             }
         }
 
         //Upload images
-        if(isset($items_to_upload) && ! empty($items_to_upload)) {
-            foreach($items_to_upload as $key => $value) {
-
+        if (isset($items_to_upload) && ! empty($items_to_upload)) {
+            foreach ($items_to_upload as $key => $value) {
                 $profileImage = new \Intranet\User\ProfileUploadImage();
 
                 switch ($key) {
@@ -400,7 +407,6 @@ class Data
 
                 $profileImage->uploadProfileImage($value, $user, $key);
             }
-
         }
 
         return true;
