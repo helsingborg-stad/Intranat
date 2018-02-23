@@ -28,9 +28,14 @@ class Filters
      * @param  array $query Query args
      * @return array
      */
-    public function privatePostsInMceLink($args)
+    public function privatePostsInMceLink($args) : array
     {
+        if (!is_admin()) {
+            return $args;
+        }
+
         $args['post_status'] = array('publish', 'private');
+
         return $args;
     }
 }
