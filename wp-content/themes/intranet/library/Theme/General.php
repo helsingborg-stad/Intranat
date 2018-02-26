@@ -64,7 +64,7 @@ class General
 
         // Activate notification for given post types
         add_filter('notification_center/activated_posttypes', function ($postTypes) {
-            return array('ticket');
+            return array('ticket', 'intranet-news');
         });
     }
 
