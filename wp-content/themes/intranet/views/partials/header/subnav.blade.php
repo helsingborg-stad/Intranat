@@ -11,6 +11,9 @@
                 );
             ?>
         </li>
+        <li>
+            {{ do_shortcode('[notification-center]') }}
+        </li>
 
         @if ($currentUser->ID > 0)
             <li>
@@ -25,10 +28,6 @@
                     @endif
                     <span class="hidden-sm hidden-xs">{{ municipio_intranet_get_first_name($currentUser->ID) }}</span> <i class="pricon pricon-caret-down pricon-xs"></i></span>
                 </a>
-
-
-
-
                 <ul class="dropdown-menu login-dropdown dropdown-menu-arrow dropdown-menu-arrow-right">
                     <li><a href="{{ municipio_intranet_get_user_profile_url() }}" class="pricon pricon-space-right pricon-user-o"><?php _e('Your profile', 'municipio-intranet'); ?></a></li>
                     <li><a href="{{ municipio_intranet_get_user_profile_edit_url() }}" class="pricon pricon-space-right pricon-settings"><?php _e('Settings'); ?></a></li>
