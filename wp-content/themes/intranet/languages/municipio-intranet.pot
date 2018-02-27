@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-02-15 11:13+0100\n"
+"POT-Creation-Date: 2018-02-27 17:06+0100\n"
 "PO-Revision-Date: 2016-05-31 16:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -46,7 +46,7 @@ msgid "All"
 msgstr ""
 
 #: acf-fields/php/incidents-module.php:12
-#: views/partials/header/subnav.blade.php:36 views/search.blade.php:40
+#: views/partials/header/subnav.blade.php:34 views/search.blade.php:40
 msgid "Subscriptions"
 msgstr ""
 
@@ -150,50 +150,50 @@ msgid ""
 "to use page title."
 msgstr ""
 
-#: library/Admin/Options.php:45
+#: library/Admin/Options.php:49
 msgid "Intranet options"
 msgstr ""
 
-#: library/Admin/Options.php:47
+#: library/Admin/Options.php:51
 msgid "Intranet specific options."
 msgstr ""
 
-#: library/Admin/Options.php:55
+#: library/Admin/Options.php:59
 msgid "Hidden"
 msgstr ""
 
-#: library/Admin/Options.php:64
+#: library/Admin/Options.php:68
 msgid "Activate to hide this intranet for non administrators and editors"
 msgstr ""
 
-#: library/Admin/Options.php:76
+#: library/Admin/Options.php:80
 msgid "Is administration unit"
 msgstr ""
 
-#: library/Admin/Options.php:85
+#: library/Admin/Options.php:89
 msgid ""
 "Activate to set this site as administration unit (will be displayed in the "
 "intranet selector)"
 msgstr ""
 
-#: library/Admin/Options.php:97
+#: library/Admin/Options.php:101
 msgid "Force subscription"
 msgstr ""
 
-#: library/Admin/Options.php:106
+#: library/Admin/Options.php:110
 msgid "Activate to force all users to subscribe to this intranet"
 msgstr ""
 
-#: library/Admin/Options.php:118
+#: library/Admin/Options.php:122
 msgid "Intranet short name"
 msgstr ""
 
-#: library/Admin/Options.php:135
+#: library/Admin/Options.php:139
 msgid "Intranet autosubscribe keys (comma separated)"
 msgstr ""
 
-#: library/Admin/PasswordResetInstructions.php:16
-#: library/Admin/PasswordResetInstructions.php:17
+#: library/Admin/PasswordResetInstructions.php:20
+#: library/Admin/PasswordResetInstructions.php:21
 #: views/partials/user/loginform.blade.php:7
 msgid "Password"
 msgstr ""
@@ -289,6 +289,7 @@ msgstr ""
 
 #: library/CustomPostType/News.php:204 library/CustomPostType/News.php:205
 #: library/Module/News/News.php:16 library/Module/News/News.php:17
+#: library/Theme/General.php:80
 msgid "News"
 msgstr ""
 
@@ -412,8 +413,12 @@ msgstr ""
 msgid "Enable welcome phrase"
 msgstr ""
 
-#: library/Theme/General.php:17
+#: library/Theme/General.php:24
 msgid "Page manager"
+msgstr ""
+
+#: library/Theme/General.php:81
+msgid "Ticket"
 msgstr ""
 
 #: library/Theme/Walkthrough.php:23
@@ -426,64 +431,64 @@ msgstr ""
 msgid "Exit"
 msgstr ""
 
-#: library/User/AdministrationUnits.php:26
-#: library/User/AdministrationUnits.php:27
+#: library/User/AdministrationUnits.php:30
+#: library/User/AdministrationUnits.php:31
 #: templates/admin/administration-units/form.php:3
 #: templates/admin/administration-units/form.php:34
 #: views/partials/header/network-selector.blade.php:47
 msgid "Administration units"
 msgstr ""
 
-#: library/User/AdministrationUnits.php:133
+#: library/User/AdministrationUnits.php:149
 msgid "All fields must be filled in to add a new administration unit"
 msgstr ""
 
-#: library/User/General.php:188
+#: library/User/General.php:313
 #, php-format
 msgid "Hi %s"
 msgstr ""
 
-#: library/User/General.php:189
+#: library/User/General.php:314
 #, php-format
 msgid "Good to see you, %s"
 msgstr ""
 
-#: library/User/General.php:194
+#: library/User/General.php:319
 #, php-format
 msgid "Good morning %s"
 msgstr ""
 
-#: library/User/General.php:195
+#: library/User/General.php:320
 #, php-format
 msgid "Have a great day %s"
 msgstr ""
 
-#: library/User/General.php:200
+#: library/User/General.php:325
 #, php-format
 msgid "Good afternoon %s"
 msgstr ""
 
-#: library/User/General.php:205
+#: library/User/General.php:330
 #, php-format
 msgid "It's getting late, %s"
 msgstr ""
 
-#: library/User/General.php:206
+#: library/User/General.php:331
 #, php-format
 msgid "Good eavning %s"
 msgstr ""
 
-#: library/User/General.php:211
+#: library/User/General.php:336
 #, php-format
 msgid "Good night %s"
 msgstr ""
 
-#: library/User/General.php:238
+#: library/User/General.php:363
 #, php-format
 msgid "Happy new year %s"
 msgstr ""
 
-#: library/User/General.php:243
+#: library/User/General.php:368
 #, php-format
 msgid "Merry christmas %s"
 msgstr ""
@@ -751,7 +756,7 @@ msgid "Published"
 msgstr ""
 
 #: views/author-edit.blade.php:10 views/author-edit.blade.php:11
-#: views/partials/header/subnav.blade.php:34
+#: views/partials/header/subnav.blade.php:32
 msgid "Your profile"
 msgstr ""
 
@@ -1296,27 +1301,27 @@ msgid ""
 "from specifically selected intranets."
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:35
+#: views/partials/header/subnav.blade.php:33
 msgid "Settings"
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:41
+#: views/partials/header/subnav.blade.php:39
 msgid "Go to my intranet"
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:49
+#: views/partials/header/subnav.blade.php:47
 msgid "Log out"
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:56
+#: views/partials/header/subnav.blade.php:53
 msgid "Log in"
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:61
+#: views/partials/header/subnav.blade.php:58
 msgid "Login failed. Please try again."
 msgstr ""
 
-#: views/partials/header/subnav.blade.php:71
+#: views/partials/header/subnav.blade.php:68
 msgid "Menu"
 msgstr ""
 
@@ -1417,17 +1422,6 @@ msgid ""
 "update your information."
 msgstr ""
 
-#: views/partials/user/facebook-sync.blade.php:3
-msgid "Sync from Facebook"
-msgstr ""
-
-#: views/partials/user/facebook-sync.blade.php:6
-msgid ""
-"We can sync some of your profile settings from Facebook. If you would like "
-"to do this click the login button below to login to Facebook and allow us "
-"to get needed information."
-msgstr ""
-
 #: views/partials/user/loginform.blade.php:3
 msgid "Username"
 msgstr ""
@@ -1445,18 +1439,18 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: views/partials/user/modal-login.blade.php:13
+#: views/partials/user/modal-login.blade.php:14
 msgid "Employed in the city?"
 msgstr ""
 
-#: views/partials/user/modal-login.blade.php:15
+#: views/partials/user/modal-login.blade.php:16
 msgid ""
 "If you are employed in the city of Helsingborg you can enahcne your "
 "intranet experience by logging in. Fill in your computer login information "
 "in the below form to login."
 msgstr ""
 
-#: views/partials/user/modal-login.blade.php:32
+#: views/partials/user/modal-login.blade.php:34
 msgid "Continue without logging in"
 msgstr ""
 
