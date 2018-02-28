@@ -16,6 +16,7 @@ class App
         new \Intranet\Theme\TableOfContents();
         new \Intranet\Theme\Walkthrough();
         new \Intranet\Theme\Breadcrumb();
+        new \Intranet\Theme\Editor();
 
         // Admin functionality
         new \Intranet\Admin\PasswordResetInstructions();
