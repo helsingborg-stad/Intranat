@@ -40,11 +40,11 @@ class Hashtags
         $args = array(
             'labels'                => $labels,
             'public'                => true,
-            'show_in_nav_menus'     => true,
-            'show_admin_column'     => true,
+            'show_in_nav_menus'     => false,
+            'show_admin_column'     => false,
             'hierarchical'          => false,
-            'show_tagcloud'         => true,
-            'show_ui'               => true,
+            'show_tagcloud'         => false,
+            'show_ui'               => false,
             'query_var'             => true,
             'rewrite'               => array('slug' => self::$taxonomySlug),
         );
