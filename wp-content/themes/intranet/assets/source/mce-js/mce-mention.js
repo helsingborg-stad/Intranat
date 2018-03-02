@@ -36,7 +36,8 @@
         var baseUrl = window.location.origin;
 
         this.options = $.extend({}, {
-            source: [],
+            mentionSource: [],
+            hashtagSource: [],
             delay: 500,
             queryBy: 'display_name',
             profileUrlBase: baseUrl + '/user/',
@@ -196,7 +197,12 @@
             clearTimeout(this.searchTimeout);
             this.searchTimeout = setTimeout($.proxy(function () {
                 // Added delimiter parameter as last argument for backwards compatibility.
-                var items = $.isFunction(this.options.source) ? this.options.source(this.query, $.proxy(this.process, this), this.options.delimiter) : this.options.source;
+                if (this.options.delimiter === '@') {
+                    var items = $.isFunction(this.options.mentionSource) ? this.options.mentionSource(this.query, $.proxy(this.process, this), this.options.delimiter) : this.options.mentionSource;
+                } else {
+                    var items = $.isFunction(this.options.hashtagSource) ? this.options.hashtagSource(this.query, $.proxy(this.process, this), this.options.delimiter) : this.options.hashtagSource;
+                }
+
                 if (items) {
                     this.process(items);
                 }
@@ -281,8 +287,9 @@
         },
 
         render: function (item) {
+            var displayDelimiter = (this.options.delimiter === '#') ? this.options.delimiter : '';
             return '<li>' +
-                        '<a href="javascript:;"><span>' + item[this.options.queryBy] + '</span></a>' +
+                        '<a href="javascript:;"><span>' + displayDelimiter + item[this.options.queryBy] + '</span></a>' +
                     '</li>';
         },
 
@@ -318,11 +325,15 @@
         },
 
         insert: function (item) {
-            var mentionTag = item[this.options.queryBy].toLowerCase();
-            mentionTag = mentionTag.replace(/\s/g, '');
-            var profileUrl = this.options.profileUrlBase + item.user_login;
+            if (this.options.delimiter === '@') {
+                var mentionTag = item[this.options.queryBy].toLowerCase();
+                mentionTag = mentionTag.replace(/\s/g, '');
+                var profileUrl = this.options.profileUrlBase + item.user_login;
 
-            return '<a href="' + profileUrl + '" data-mention-id="' + item.id + '">@' + mentionTag + '</a>&nbsp;';
+                return '<a href="' + profileUrl + '" data-mention-id="' + item.id + '">@' + mentionTag + '</a>&nbsp;';
+            } else {
+                return this.options.delimiter + item[this.options.queryBy] + '&nbsp;';
+            }
         },
 
         cleanUp: function (rollback) {
@@ -371,11 +382,10 @@
     };
 
     tinymce.create('tinymce.plugins.Mention', {
-
         init: function (ed) {
 
             var autoComplete,
-                autoCompleteData = { delimiter : ['@'] };
+                autoCompleteData = { delimiter : ['@', '#'] };
 
                 $.ajax({
                     url: ajaxurl,
@@ -384,7 +394,21 @@
                         action : 'get_users'
                     },
                     success: function(response) {
-                        autoCompleteData.source = response;
+                        autoCompleteData.mentionSource = response;
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+
+                $.ajax({
+                    url: ajaxurl,
+                    type: 'post',
+                    data: {
+                        action : 'get_hashtags'
+                    },
+                    success: function(response) {
+                        autoCompleteData.hashtagSource = response;
                     },
                     error: function(error) {
                         console.log(error);
