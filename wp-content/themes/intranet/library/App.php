@@ -44,6 +44,9 @@ class App
         new \Intranet\CustomPostType\News();
         new \Intranet\CustomPostType\Incidents();
 
+        // Custom taxonomies
+        new \Intranet\CustomTaxonomy\Hashtags();
+
         // Modularity modules
         if (class_exists('\Modularity\Module')) {
             modularity_register_module(
