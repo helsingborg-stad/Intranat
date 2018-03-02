@@ -383,9 +383,15 @@
 
     tinymce.create('tinymce.plugins.Mention', {
         init: function (ed) {
-
             var autoComplete,
-                autoCompleteData = { delimiter : ['@', '#'] };
+                autoCompleteData;
+
+                // Disable Hashtags for comments
+                if (ed.id == 'comment') {
+                    autoCompleteData = { delimiter : ['@'] };
+                } else {
+                    autoCompleteData = { delimiter : ['@', '#'] };
+                }
 
                 $.ajax({
                     url: ajaxurl,
