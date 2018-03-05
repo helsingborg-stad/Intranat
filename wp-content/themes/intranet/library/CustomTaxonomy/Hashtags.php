@@ -145,7 +145,7 @@ class Hashtags
     {
         global $post;
         $url = get_post_type_archive_link($post->post_type);
-        $content = preg_replace('/(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/iu', '<a href="'. $url . '?s=%23$1">$0</a>', $content);
+        $content = preg_replace('/<textarea[^>]*>.*?<\/textarea>(*SKIP)(*FAIL)|(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/ius', '<a href="'. $url . '?s=%23$1">$0</a>', $content);
 
         return $content;
     }
