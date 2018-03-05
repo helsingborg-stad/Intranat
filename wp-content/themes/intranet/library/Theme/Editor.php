@@ -50,7 +50,7 @@ class Editor
 
         // Replace comment-reply script to support tinyMCE editor
         wp_deregister_script('comment-reply');
-        wp_enqueue_script('comment-reply', get_stylesheet_directory_uri() . '/assets/dist/mce-comment-reply.js', array( 'jquery'));
+        wp_enqueue_script('comment-reply', get_stylesheet_directory_uri() . '/assets/dist/js/mce-comment-reply.js', array( 'jquery'));
     }
 
     /**
