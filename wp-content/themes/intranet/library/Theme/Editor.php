@@ -80,8 +80,8 @@ class Editor
                     'dfw'                     => false,
                     'tinymce'                 => array(
                         'statusbar'           => false,
-                        'resize'              => false,
-                        'wp_autoresize_on'    => false,
+                        'resize'              => true,
+                        'wp_autoresize_on'    => true,
                         'plugins'             => 'wordpress',
                     ),
                     'quicktags' => false,
@@ -98,7 +98,12 @@ class Editor
      */
     public function tinyMcePlugins($plugins)
     {
-        $plugins['mention'] = get_stylesheet_directory_uri() . '/assets/dist/js/mce-mention.js';
+        global $post;
+
+        if (!empty($post->ID)) {
+            $plugins['mention'] = get_stylesheet_directory_uri() . '/assets/dist/js/mce-mention.js';
+        }
+
         return $plugins;
     }
 
