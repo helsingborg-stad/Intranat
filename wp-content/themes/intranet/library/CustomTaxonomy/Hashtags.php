@@ -46,7 +46,7 @@ class Hashtags
             'show_tagcloud'         => false,
             'show_ui'               => false,
             'query_var'             => true,
-            'rewrite'               => array('slug' => self::$taxonomySlug),
+            'rewrite'               => array('with_front' => false),
         );
 
         $postTypes = get_post_types(array('public' => true));
@@ -144,8 +144,20 @@ class Hashtags
     public function hashtagReplace($content)
     {
         global $post;
-        $url = get_post_type_archive_link($post->post_type);
-        $content = preg_replace('/<textarea[^>]*>.*?<\/textarea>(*SKIP)(*FAIL)|(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/ius', '<a href="'. $url . '?s=%23$1">$0</a>', $content);
+        // Match #hashtags and replace with url, skip if hashtag is inside textarea
+        $content = preg_replace_callback('/<textarea[^>]*>.*?<\/textarea>(*SKIP)(*FAIL)|(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/ius',
+            function ($match) {
+                $hashtag = $match[0];
+
+                // Get taxonomy object
+                $term = get_term_by('name', $match[1], 'hashtag');
+                if ($term) {
+                    $url = get_term_link($term);
+                    $hashtag = '<a href="' . $url . '">' . $match[0] . '</a>';
+                }
+
+                return $hashtag;
+        }, $content);
 
         return $content;
     }
