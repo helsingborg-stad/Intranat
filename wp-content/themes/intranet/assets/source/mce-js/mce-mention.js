@@ -1,4 +1,4 @@
-/* https://github.com/StevenDevooght/tinyMCE-mention */
+/* Source: https://github.com/StevenDevooght/tinyMCE-mention */
 
 ;(function (f) {
   'use strict';
@@ -133,6 +133,13 @@
             //ESC
             case 27:
                 this.cleanUp(true);
+                break;
+
+            // SPACE
+            case 32:
+                if (this.options.delimiter === '#') {
+                    this.cleanUp(true);
+                }
                 break;
 
             default:
@@ -403,7 +410,9 @@
                         autoCompleteData.mentionSource = response;
                     },
                     error: function(error) {
-                        console.log(error);
+                        if (!error.abort) {
+                            console.log(error);
+                        }
                     }
                 });
 
@@ -417,7 +426,9 @@
                         autoCompleteData.hashtagSource = response;
                     },
                     error: function(error) {
-                        console.log(error);
+                        if (!error.abort) {
+                            console.log(error);
+                        }
                     }
                 });
 
