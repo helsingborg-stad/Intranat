@@ -9,7 +9,7 @@ class TableOfContents
     public function __construct()
     {
         //Template & url
-        add_action('admin_init', array($this, 'urlRewrite'));
+        add_action('init', array($this, 'urlRewrite'));
         add_filter('template_include', array($this, 'template'), 10);
 
         //Cache
@@ -17,16 +17,14 @@ class TableOfContents
     }
 
     /**
-     * Create new rewrite rule, only for super admins
+     * Create new rewrite rule
      * @return void
      */
     public function urlRewrite()
     {
-        if (is_super_admin()) {
-            add_rewrite_rule('^table-of-contents', 'index.php?table-of-contents&modularity_template=table-of-contents', 'top');
-            add_rewrite_tag('%table-of-contents%', '([^&]+)');
-            flush_rewrite_rules();
-        }
+        add_rewrite_rule('^table-of-contents', 'index.php?table-of-contents&modularity_template=table-of-contents', 'top');
+        add_rewrite_tag('%table-of-contents%', '([^&]+)');
+        flush_rewrite_rules();
     }
 
     /**
@@ -131,9 +129,8 @@ class TableOfContents
      */
     public static function prepareOutput($pages, $search)
     {
-
         //Bail early if pages is empty
-        if (is_array($pages) && !empty($pages)) {
+        if (empty($pages)) {
             return array();
         }
 

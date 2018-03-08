@@ -16,6 +16,7 @@ class App
         new \Intranet\Theme\TableOfContents();
         new \Intranet\Theme\Walkthrough();
         new \Intranet\Theme\Breadcrumb();
+        new \Intranet\Theme\Editor();
 
         // Admin functionality
         new \Intranet\Admin\PasswordResetInstructions();
@@ -42,6 +43,9 @@ class App
         // Custom post types
         new \Intranet\CustomPostType\News();
         new \Intranet\CustomPostType\Incidents();
+
+        // Custom taxonomies
+        new \Intranet\CustomTaxonomy\Hashtags();
 
         // Modularity modules
         if (class_exists('\Modularity\Module')) {
