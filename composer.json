@@ -69,7 +69,8 @@
         "wpackagist-plugin/user-switching" : ">=1.0.0",
         "wpackagist-plugin/wordpress-importer": "0.6.3",
         "wpackagist-plugin/mce-table-buttons": "^3.0.0",
-        "johnpbloch/wordpress": "4.9.4"
+        "johnpbloch/wordpress": "4.9.4",
+        "kint-php/kint": "^2.2"
     },
 
     "extra": {
