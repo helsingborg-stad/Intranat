@@ -71,6 +71,7 @@
         "wpackagist-plugin/wordpress-importer": "0.6.3",
         "wpackagist-plugin/mce-table-buttons": "^3.0.0",
         "johnpbloch/wordpress-core": "4.9.4",
+        "wpackagist-plugin/kint-php-debugger": "^1.1",
         "kint-php/kint": "^2.2"
     },
 
