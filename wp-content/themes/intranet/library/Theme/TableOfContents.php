@@ -129,9 +129,8 @@ class TableOfContents
      */
     public static function prepareOutput($pages, $search)
     {
-
         //Bail early if pages is empty
-        if (is_array($pages) && !empty($pages)) {
+        if (empty($pages)) {
             return array();
         }
 
