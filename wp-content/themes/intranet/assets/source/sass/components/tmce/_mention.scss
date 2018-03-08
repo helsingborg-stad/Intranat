@@ -1,0 +1,67 @@
+.mention-dropdown {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    z-index: 99999;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    font-size: 14px;
+}
+
+.mention-dropdown:before {
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    position: absolute;
+    top: -7px;
+    left: 9px;
+}
+
+.mention-dropdown:after {
+    content: '';
+    display: inline-block;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid white;
+    position: absolute;
+    top: -6px;
+    left: 10px;
+}
+
+.mention-dropdown > li.load {
+    height: 16px;
+}
+
+.mention-dropdown > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.mention-dropdown >li > a:hover, .mention-dropdown > li > a:focus, .mention-dropdown:hover > a, .mention-dropdown:focus > a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #b3b3b3;
+}
+
+.mention-dropdown >.active > a, .mention-dropdown > .active > a:hover, .mention-dropdown > .active > a:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #a6a6a6;
+}

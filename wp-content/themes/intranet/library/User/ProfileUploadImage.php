@@ -45,7 +45,7 @@ class ProfileUploadImage
         $imagePaths = array();
         $imagePaths[] = $this->uploadDir . '/' . $user->data->user_login . '-' . $imageId . '.' . $fileType;
         file_put_contents($imagePaths[0], $decodedImage);
-
+        chmod($imagePaths[0], 0775);
         //Crop & save images sizes
         $imagePaths = array_merge($imagePaths, $this->cropImages($imagePaths[0], $fileType, $imageId));
 
@@ -270,6 +270,7 @@ class ProfileUploadImage
             $path = $this->getProfileImagePathFromUrl($url);
 
             if (file_exists($path)) {
+                chmod($path, 0775);
                 unlink($path);
             }
         }
