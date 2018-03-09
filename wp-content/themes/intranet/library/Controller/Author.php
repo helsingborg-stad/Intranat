@@ -19,6 +19,7 @@ class Author extends \Intranet\Controller\BaseController
 
         $this->data['userResponsibilities'] = is_array(get_the_author_meta('user_responsibilities', $user->ID)) ? get_the_author_meta('user_responsibilities', $user->ID) : array();
         $this->data['userSkills'] = is_array(get_the_author_meta('user_skills', $user->ID)) ? get_the_author_meta('user_skills', $user->ID) : array();
+        $this->data['submittedIdeas'] = get_posts(array('post_type' => 'idea', 'author' => $user->ID));
 
         $this->data['cover_img'] =  $this->getCoverUrl($user->ID);
         $this->data['profile_img'] = $this->getProfileImg($user->ID);

@@ -195,6 +195,21 @@
                     </div>
                 </div>
                 @endif
+
+                @if (is_array($submittedIdeas) && !empty($submittedIdeas))
+                <div class="grid-md-6">
+                    <div class="box box-panel box-panel-secondary">
+                        <h4 class="box-title"><?php _e('Submitted ideas', 'municipio-intranet'); ?></h4>
+                        <ul>
+                            @foreach ($submittedIdeas as $idea)
+                            <li>
+                                <a href="{{ get_permalink($idea->ID) }}" class="link-item">{{ $idea->post_title }}</a></li>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+                @endif
             </div>
             @endif
         </div>
