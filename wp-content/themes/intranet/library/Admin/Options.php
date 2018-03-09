@@ -26,6 +26,16 @@ class Options
             return $args;
         }, 10, 2);
 
+        if (function_exists('acf_add_options_sub_page')) {
+            acf_add_options_sub_page(array(
+                'page_title'    => _x('Report settings', 'Report inappropriate content settings', 'municipio-intranet'),
+                'menu_title'    => _x('Report', 'Report inappropriate content settings', 'municipio-intranet'),
+                'menu_slug'     => 'report-post-options',
+                'parent_slug'   => 'options-general.php',
+                'capability'    => 'manage_options'
+            ));
+        }
+
         add_action('update_option_intranet_force_subscription', function ($option) {
             $cacheKey = md5(serialize(array('getForcedList')));
             wp_cache_delete($cacheKey, self::$cacheGroup);

@@ -22,7 +22,8 @@ add_action('after_setup_theme', function () {
         'incidents-module' => 'group_57bb00ff522ad',
         'news-module' => 'group_57469ceda9387',
         'table-of-contents' => 'group_5774dcb335058',
-        'default-author-cover' => 'group_598abcaa4957a'
+        'default-author-cover' => 'group_598abcaa4957a',
+        'report-post' => 'group_5aa1543e70216'
     ));
     $acfExportManager->import();
 });
