@@ -193,7 +193,7 @@
         lookup: function () {
             this.query = $.trim($(this.editor.getBody()).find('#autocomplete-searchtext').text()).replace('\ufeff', '');
 
-            if (this.query.length < 3) {
+            if (this.query.length < 2) {
                 return;
             }
 
@@ -273,7 +273,7 @@
             $.each(items, function (i, item) {
                 var $element = $(_this.render(item));
 
-                $element.html($element.html().replace($element.text(), _this.highlighter($element.text())));
+                $element.html($element.html().replace($('span', $element).text(), _this.highlighter($('span', $element).text())));
 
                 $.each(items[i], function (key, val) {
                     $element.attr('data-' + key, val);
@@ -294,9 +294,16 @@
         },
 
         render: function (item) {
-            var displayDelimiter = (this.options.delimiter === '#') ? this.options.delimiter : '';
+            var resultString;
+
+            if (this.options.delimiter === '@') {
+                resultString = '<span>' + item[this.options.queryBy] + '</span> <small>' + item.user_email + '</small>';
+            } else {
+                resultString = '<span>' + this.options.delimiter + item[this.options.queryBy] + '</span>';
+            }
+
             return '<li>' +
-                        '<a href="javascript:;"><span>' + displayDelimiter + item[this.options.queryBy] + '</span></a>' +
+                        '<a href="javascript:;">' + resultString + '</a>' +
                     '</li>';
         },
 

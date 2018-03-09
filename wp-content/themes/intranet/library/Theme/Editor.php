@@ -113,7 +113,7 @@ class Editor
     public function getUsersList()
     {
         if (!$users = wp_cache_get('tinymce_users')) {
-            $userFields = array('ID', 'user_login', 'display_name');
+            $userFields = array('ID', 'user_login', 'display_name', 'user_email');
             $usersFound = new \WP_User_Query(array(
                 'fields' => $userFields,
 
