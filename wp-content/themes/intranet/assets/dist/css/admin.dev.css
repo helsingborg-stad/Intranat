@@ -47,17 +47,23 @@
   color: #333;
   white-space: nowrap;
   text-decoration: none; }
+  .mention-dropdown > li > a small {
+    color: #888; }
 
 .mention-dropdown > li > a:hover, .mention-dropdown > li > a:focus, .mention-dropdown:hover > a, .mention-dropdown:focus > a {
   color: #fff;
   text-decoration: none;
   background-color: #b3b3b3; }
+  .mention-dropdown > li > a:hover small, .mention-dropdown > li > a:focus small, .mention-dropdown:hover > a small, .mention-dropdown:focus > a small {
+    color: #fff; }
 
 .mention-dropdown > .active > a, .mention-dropdown > .active > a:hover, .mention-dropdown > .active > a:focus {
   color: #fff;
   text-decoration: none;
   outline: 0;
   background-color: #a6a6a6; }
+  .mention-dropdown > .active > a small, .mention-dropdown > .active > a:hover small, .mention-dropdown > .active > a:focus small {
+    color: #fff; }
 
 /**
  * Intranet site settings style
