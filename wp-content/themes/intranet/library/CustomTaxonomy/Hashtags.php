@@ -5,6 +5,8 @@ namespace Intranet\CustomTaxonomy;
 class Hashtags
 {
     public static $taxonomySlug = 'hashtag';
+    public static $nameSingular = 'Hashtag';
+    public static $namePlural = 'Hashtags';
 
     public function __construct()
     {
@@ -24,17 +26,17 @@ class Hashtags
     public function registerHashtags()
     {
         $labels = array(
-            'name'              => _x('Hashtags', 'taxonomy general name', 'municipio-intranet'),
-            'singular_name'     => _x('Hashtag', 'taxonomy singular name', 'municipio-intranet'),
-            'search_items'      => __('Search Hashtags', 'municipio-intranet'),
-            'all_items'         => __('All Hashtags', 'municipio-intranet'),
-            'parent_item'       => __('Parent Hashtag', 'municipio-intranet'),
-            'parent_item_colon' => __('Parent Hashtag:', 'municipio-intranet'),
-            'edit_item'         => __('Edit Hashtag', 'municipio-intranet'),
-            'update_item'       => __('Update Hashtag', 'municipio-intranet'),
-            'add_new_item'      => __('Add New Hashtag', 'municipio-intranet'),
-            'new_item_name'     => __('New Hashtag Name', 'municipio-intranet'),
-            'menu_name'         => __('Hashtags', 'municipio-intranet'),
+            'name'              => self::$namePlural,
+            'singular_name'     => self::$nameSingular,
+            'search_items'      => sprintf(__('Search %s', 'municipio-intranet'), self::$namePlural),
+            'all_items'         => sprintf(__('All %s', 'municipio-intranet'), self::$namePlural),
+            'parent_item'       => sprintf(__('Parent %s:', 'municipio-intranet'), self::$nameSingular),
+            'parent_item_colon' => sprintf(__('Parent %s:', 'municipio-intranet'), self::$nameSingular) . ':',
+            'edit_item'         => sprintf(__('Edit %s', 'municipio-intranet'), self::$nameSingular),
+            'update_item'       => sprintf(__('Update %s', 'municipio-intranet'), self::$nameSingular),
+            'add_new_item'      => sprintf(__('Add New %s', 'municipio-intranet'), self::$nameSingular),
+            'new_item_name'     => sprintf(__('New %s Name', 'municipio-intranet'), self::$nameSingular),
+            'menu_name'         => self::$namePlural,
         );
 
         $args = array(
