@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-02-27 17:06+0100\n"
+"POT-Creation-Date: 2018-03-09 10:24+0100\n"
 "PO-Revision-Date: 2016-05-31 16:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -130,6 +130,22 @@ msgstr ""
 msgid "Number of news to display"
 msgstr ""
 
+#: acf-fields/php/report-post.php:6
+msgid "Report settings"
+msgstr ""
+
+#: acf-fields/php/report-post.php:10 acf-fields/php/report-post.php:29
+msgid "Post type"
+msgstr ""
+
+#: acf-fields/php/report-post.php:49
+msgid "Notifiers"
+msgstr ""
+
+#: acf-fields/php/report-post.php:68
+msgid "E-mail"
+msgstr ""
+
 #: acf-fields/php/table-of-contents.php:6
 msgid "Table of contents"
 msgstr ""
@@ -150,45 +166,55 @@ msgid ""
 "to use page title."
 msgstr ""
 
-#: library/Admin/Options.php:49
-msgid "Intranet options"
+#: library/Admin/Options.php:31
+msgctxt "Report inappropriate content settings"
+msgid "Report settings"
 msgstr ""
 
-#: library/Admin/Options.php:51
-msgid "Intranet specific options."
+#: library/Admin/Options.php:32
+msgctxt "Report inappropriate content settings"
+msgid "Report"
 msgstr ""
 
 #: library/Admin/Options.php:59
+msgid "Intranet options"
+msgstr ""
+
+#: library/Admin/Options.php:61
+msgid "Intranet specific options."
+msgstr ""
+
+#: library/Admin/Options.php:69
 msgid "Hidden"
 msgstr ""
 
-#: library/Admin/Options.php:68
+#: library/Admin/Options.php:78
 msgid "Activate to hide this intranet for non administrators and editors"
 msgstr ""
 
-#: library/Admin/Options.php:80
+#: library/Admin/Options.php:90
 msgid "Is administration unit"
 msgstr ""
 
-#: library/Admin/Options.php:89
+#: library/Admin/Options.php:99
 msgid ""
 "Activate to set this site as administration unit (will be displayed in the "
 "intranet selector)"
 msgstr ""
 
-#: library/Admin/Options.php:101
+#: library/Admin/Options.php:111
 msgid "Force subscription"
 msgstr ""
 
-#: library/Admin/Options.php:110
+#: library/Admin/Options.php:120
 msgid "Activate to force all users to subscribe to this intranet"
 msgstr ""
 
-#: library/Admin/Options.php:122
+#: library/Admin/Options.php:132
 msgid "Intranet short name"
 msgstr ""
 
-#: library/Admin/Options.php:139
+#: library/Admin/Options.php:149
 msgid "Intranet autosubscribe keys (comma separated)"
 msgstr ""
 
@@ -196,6 +222,35 @@ msgstr ""
 #: library/Admin/PasswordResetInstructions.php:21
 #: views/partials/user/loginform.blade.php:7
 msgid "Password"
+msgstr ""
+
+#: library/Content/PostFilters.php:88
+msgid "Report page"
+msgstr ""
+
+#: library/Content/PostFilters.php:105
+msgid "Something went wrong, please try again"
+msgstr ""
+
+#: library/Content/PostFilters.php:118
+msgid "has been reported for inappropriate content"
+msgstr ""
+
+#: library/Content/PostFilters.php:121 templates/report-post.blade.php:28
+#: views/partials/report-post.blade.php:25
+msgid "Comment"
+msgstr ""
+
+#: library/Content/PostFilters.php:123
+msgid "This message was sent by"
+msgstr ""
+
+#: library/Content/PostFilters.php:145
+msgid "Report about inappropriate content"
+msgstr ""
+
+#: library/Content/PostFilters.php:155
+msgid "The message was sent successfully"
 msgstr ""
 
 #: library/CustomPostType/Incidents.php:20
@@ -228,6 +283,7 @@ msgid "New %s"
 msgstr ""
 
 #: library/CustomPostType/Incidents.php:51 library/CustomPostType/News.php:217
+#: library/CustomTaxonomy/Hashtags.php:35
 #, php-format
 msgid "Edit %s"
 msgstr ""
@@ -238,11 +294,13 @@ msgid "View %s"
 msgstr ""
 
 #: library/CustomPostType/Incidents.php:53 library/CustomPostType/News.php:219
+#: library/CustomTaxonomy/Hashtags.php:32
 #, php-format
 msgid "All %s"
 msgstr ""
 
 #: library/CustomPostType/Incidents.php:54 library/CustomPostType/News.php:220
+#: library/CustomTaxonomy/Hashtags.php:31
 #, php-format
 msgid "Search %s"
 msgstr ""
@@ -299,6 +357,27 @@ msgstr ""
 
 #: library/CustomPostType/News.php:237
 msgid "news"
+msgstr ""
+
+#: library/CustomTaxonomy/Hashtags.php:33
+#: library/CustomTaxonomy/Hashtags.php:34
+#, php-format
+msgid "Parent %s:"
+msgstr ""
+
+#: library/CustomTaxonomy/Hashtags.php:36
+#, php-format
+msgid "Update %s"
+msgstr ""
+
+#: library/CustomTaxonomy/Hashtags.php:37
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#: library/CustomTaxonomy/Hashtags.php:38
+#, php-format
+msgid "New %s Name"
 msgstr ""
 
 #: library/Module/IncidentList/IncidentList.php:16
@@ -443,52 +522,52 @@ msgstr ""
 msgid "All fields must be filled in to add a new administration unit"
 msgstr ""
 
-#: library/User/General.php:313
+#: library/User/General.php:212
 #, php-format
 msgid "Hi %s"
 msgstr ""
 
-#: library/User/General.php:314
+#: library/User/General.php:213
 #, php-format
 msgid "Good to see you, %s"
 msgstr ""
 
-#: library/User/General.php:319
+#: library/User/General.php:218
 #, php-format
 msgid "Good morning %s"
 msgstr ""
 
-#: library/User/General.php:320
+#: library/User/General.php:219
 #, php-format
 msgid "Have a great day %s"
 msgstr ""
 
-#: library/User/General.php:325
+#: library/User/General.php:224
 #, php-format
 msgid "Good afternoon %s"
 msgstr ""
 
-#: library/User/General.php:330
+#: library/User/General.php:229
 #, php-format
 msgid "It's getting late, %s"
 msgstr ""
 
-#: library/User/General.php:331
+#: library/User/General.php:230
 #, php-format
 msgid "Good eavning %s"
 msgstr ""
 
-#: library/User/General.php:336
+#: library/User/General.php:235
 #, php-format
 msgid "Good night %s"
 msgstr ""
 
-#: library/User/General.php:363
+#: library/User/General.php:262
 #, php-format
 msgid "Happy new year %s"
 msgstr ""
 
-#: library/User/General.php:368
+#: library/User/General.php:267
 #, php-format
 msgid "Merry christmas %s"
 msgstr ""
@@ -749,6 +828,30 @@ msgstr ""
 
 #: templates/module/news-item.blade.php:41
 msgid "Read more"
+msgstr ""
+
+#: templates/report-post.blade.php:6 views/partials/report-post.blade.php:6
+msgid "Report inappropriate content"
+msgstr ""
+
+#: templates/report-post.blade.php:11
+msgid "Fill out this form to report inappropriate content."
+msgstr ""
+
+#: templates/report-post.blade.php:19 templates/report-post.blade.php:20
+#: views/partials/report-post.blade.php:16
+#: views/partials/report-post.blade.php:17
+msgid "Your name"
+msgstr ""
+
+#: templates/report-post.blade.php:23 templates/report-post.blade.php:24
+#: views/partials/report-post.blade.php:20
+#: views/partials/report-post.blade.php:21
+msgid "Your email"
+msgstr ""
+
+#: templates/report-post.blade.php:40 views/partials/report-post.blade.php:37
+msgid "Send"
 msgstr ""
 
 #: views/archive-incidents.blade.php:27
@@ -1522,6 +1625,10 @@ msgstr ""
 
 #: views/table-of-contents.blade.php:27
 msgid "Text search"
+msgstr ""
+
+#: views/taxonomy.blade.php:42
+msgid "No posts to show"
 msgstr ""
 
 #. Description of the plugin/theme
