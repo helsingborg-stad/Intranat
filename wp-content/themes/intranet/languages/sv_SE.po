@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-03-09 10:18+0100\n"
-"PO-Revision-Date: 2018-03-09 10:20+0100\n"
+"POT-Creation-Date: 2018-03-09 15:33+0100\n"
+"PO-Revision-Date: 2018-03-09 15:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -241,7 +241,6 @@ msgid "has been reported for inappropriate content"
 msgstr "har anmälts för olämpligt innehåll"
 
 #: library/Content/PostFilters.php:121 templates/report-post.blade.php:28
-#: views/partials/report-post.blade.php:25
 msgid "Comment"
 msgstr "Kommentar"
 
@@ -854,7 +853,7 @@ msgstr "Du måste vara inloggad på stadens nätverk för att använda detta sys
 msgid "Read more"
 msgstr "Läs mer"
 
-#: templates/report-post.blade.php:6 views/partials/report-post.blade.php:6
+#: templates/report-post.blade.php:6
 msgid "Report inappropriate content"
 msgstr "Anmäl olämpligt innehåll"
 
@@ -863,18 +862,14 @@ msgid "Fill out this form to report inappropriate content."
 msgstr "Fyll i formuläret för att anmäla om olämpligt innehåll."
 
 #: templates/report-post.blade.php:19 templates/report-post.blade.php:20
-#: views/partials/report-post.blade.php:16
-#: views/partials/report-post.blade.php:17
 msgid "Your name"
 msgstr "Ditt namn"
 
 #: templates/report-post.blade.php:23 templates/report-post.blade.php:24
-#: views/partials/report-post.blade.php:20
-#: views/partials/report-post.blade.php:21
 msgid "Your email"
 msgstr "Din e-postadress"
 
-#: templates/report-post.blade.php:40 views/partials/report-post.blade.php:37
+#: templates/report-post.blade.php:40
 msgid "Send"
 msgstr "Skicka"
 
@@ -1345,6 +1340,10 @@ msgstr "Min profil på Snapchat"
 #: views/author.blade.php:91 views/front-page.blade.php:34
 msgid "Edit settings"
 msgstr "Redigera inställningar"
+
+#: views/author.blade.php:202
+msgid "Submitted ideas"
+msgstr "Inskickade idéer"
 
 #: views/front-page.blade.php:18
 msgid "Your profile is not complete!"

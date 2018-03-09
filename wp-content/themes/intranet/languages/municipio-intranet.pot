@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-03-09 10:24+0100\n"
+"POT-Creation-Date: 2018-03-09 15:33+0100\n"
 "PO-Revision-Date: 2016-05-31 16:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -237,7 +237,6 @@ msgid "has been reported for inappropriate content"
 msgstr ""
 
 #: library/Content/PostFilters.php:121 templates/report-post.blade.php:28
-#: views/partials/report-post.blade.php:25
 msgid "Comment"
 msgstr ""
 
@@ -830,7 +829,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: templates/report-post.blade.php:6 views/partials/report-post.blade.php:6
+#: templates/report-post.blade.php:6
 msgid "Report inappropriate content"
 msgstr ""
 
@@ -839,18 +838,14 @@ msgid "Fill out this form to report inappropriate content."
 msgstr ""
 
 #: templates/report-post.blade.php:19 templates/report-post.blade.php:20
-#: views/partials/report-post.blade.php:16
-#: views/partials/report-post.blade.php:17
 msgid "Your name"
 msgstr ""
 
 #: templates/report-post.blade.php:23 templates/report-post.blade.php:24
-#: views/partials/report-post.blade.php:20
-#: views/partials/report-post.blade.php:21
 msgid "Your email"
 msgstr ""
 
-#: templates/report-post.blade.php:40 views/partials/report-post.blade.php:37
+#: templates/report-post.blade.php:40
 msgid "Send"
 msgstr ""
 
@@ -1300,6 +1295,10 @@ msgstr ""
 
 #: views/author.blade.php:91 views/front-page.blade.php:34
 msgid "Edit settings"
+msgstr ""
+
+#: views/author.blade.php:202
+msgid "Submitted ideas"
 msgstr ""
 
 #: views/front-page.blade.php:18
