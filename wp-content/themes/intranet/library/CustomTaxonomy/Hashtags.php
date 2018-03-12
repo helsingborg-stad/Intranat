@@ -17,6 +17,23 @@ class Hashtags
         add_filter('Municipio/archive/tax_query', array($this, 'taxQuery'), 10, 2);
         add_action('pre_get_posts', array($this, 'doPostTaxonomyFiltering'));
         add_action('wp_ajax_get_hashtags', array($this, 'getHashtags'));
+        add_action('pre_get_posts', array($this, 'taxonomyArchiveQuery'), 99);
+    }
+
+    /**
+     * Include post children in tax archive query
+     * @param  object $query Query object
+     * @return object        Modified query
+     */
+    public function taxonomyArchiveQuery($query)
+    {
+        // Only execute in taxonomy archive pages
+        if (is_admin() || !(is_tax() || is_tag()) ||!$query->is_main_query()) {
+            return $query;
+        }
+
+        $query->set('post_parent', '');
+        return $query;
     }
 
     /**
@@ -48,7 +65,7 @@ class Hashtags
             'show_tagcloud'         => false,
             'show_ui'               => false,
             'query_var'             => true,
-            'rewrite'               => array('with_front' => false),
+            'rewrite'               => array('with_front' => false, 'slug' => self::$taxonomySlug),
         );
 
         $postTypes = get_post_types(array('public' => true));
