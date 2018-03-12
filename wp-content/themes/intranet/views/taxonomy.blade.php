@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="container main-container">
-    @include('partials.breadcrumbs')
 
     <div class="grid">
         <div class="grid-md-12">
@@ -15,13 +14,7 @@
                 </div>
             </div>
 
-            @if (is_active_sidebar('content-area-top'))
-                <div class="grid sidebar-content-area sidebar-content-area-top">
-                    <?php dynamic_sidebar('content-area-top'); ?>
-                </div>
-            @endif
-
-            <div class="grid" @if (in_array($template, array('cards'))) data-equal-container @endif>
+            <div class="grid">
                 @if (have_posts())
                     <?php $postNum = 0; ?>
                     @while(have_posts())
@@ -43,12 +36,6 @@
                     </div>
                 @endif
             </div>
-
-            @if (is_active_sidebar('content-area'))
-                <div class="grid sidebar-content-area sidebar-content-area-bottom">
-                    <?php dynamic_sidebar('content-area'); ?>
-                </div>
-            @endif
 
             <div class="grid">
                 <div class="grid-sm-12 text-center">
