@@ -62,6 +62,10 @@ class Hashtags
 
     public function saveCommentHashtags($commentId, $commentObj)
     {
+        if (!is_user_logged_in()) {
+            return;
+        }
+
         $hashtags = $this->extractHashtags($commentObj->comment_content);
         if ($hashtags) {
             wp_set_object_terms($commentObj->comment_post_ID, $hashtags, self::$taxonomySlug, true);
