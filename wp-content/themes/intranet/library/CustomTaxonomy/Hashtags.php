@@ -11,29 +11,16 @@ class Hashtags
     public function __construct()
     {
         add_action('init', array($this, 'registerHashtags'));
-        add_action('save_post', array($this, 'saveHashtags'), 10, 3);
+        add_action('save_post', array($this, 'savePostHashtags'), 10, 3);
+        add_action('wp_insert_comment', array($this, 'saveCommentHashtags'), 99, 2);
+
         add_filter('the_content', array($this, 'hashtagReplace'), 200, 1);
+        add_filter('comment_text', array($this, 'hashtagReplace'), 20, 1);
         add_filter('Municipio/archive/filter_taxonomies', array($this, 'filterTaxonomies'), 10, 2);
         add_filter('Municipio/archive/tax_query', array($this, 'taxQuery'), 10, 2);
         add_action('pre_get_posts', array($this, 'doPostTaxonomyFiltering'));
         add_action('wp_ajax_get_hashtags', array($this, 'getHashtags'));
         add_action('pre_get_posts', array($this, 'taxonomyArchiveQuery'), 99);
-    }
-
-    /**
-     * Include post children in tax archive query
-     * @param  object $query Query object
-     * @return object        Modified query
-     */
-    public function taxonomyArchiveQuery($query)
-    {
-        // Only execute in taxonomy archive pages
-        if (is_admin() || !(is_tax() || is_tag()) ||!$query->is_main_query()) {
-            return $query;
-        }
-
-        $query->set('post_parent', '');
-        return $query;
     }
 
     /**
@@ -59,11 +46,11 @@ class Hashtags
         $args = array(
             'labels'                => $labels,
             'public'                => true,
-            'show_in_nav_menus'     => false,
+            'show_in_nav_menus'     => true,
             'show_admin_column'     => false,
             'hierarchical'          => false,
             'show_tagcloud'         => false,
-            'show_ui'               => false,
+            'show_ui'               => true,
             'query_var'             => true,
             'rewrite'               => array('with_front' => false, 'slug' => self::$taxonomySlug),
         );
@@ -71,6 +58,46 @@ class Hashtags
         $postTypes = get_post_types(array('public' => true));
 
         register_taxonomy(self::$taxonomySlug, $postTypes, $args);
+    }
+
+    public function saveCommentHashtags($commentId, $commentObj)
+    {
+        $hashtags = $this->extractHashtags($commentObj->comment_content);
+        if ($hashtags) {
+            wp_set_object_terms($commentObj->comment_post_ID, $hashtags, self::$taxonomySlug, true);
+        }
+    }
+
+    /**
+     * Save hashtags as taxonomies from the content
+     * @param  int  $postId The post ID
+     * @param  obj  $post   The post object
+     * @param bool  $update Whether this is an existing post being updated or not
+     * @return void
+     */
+    public function savePostHashtags($postId, $post, $update)
+    {
+        // Save hashtags from the content
+        $hashtags = $this->extractHashtags($post->post_content);
+        if ($hashtags) {
+            wp_set_object_terms($postId, $hashtags, self::$taxonomySlug, true);
+        }
+    }
+
+    /**
+     * Include post children in tax archive query
+     * @param  object $query Query object
+     * @return object        Modified query
+     */
+    public function taxonomyArchiveQuery($query)
+    {
+        // Only execute in taxonomy archive pages
+        if (is_admin() || !(is_tax() || is_tag()) ||!$query->is_main_query()) {
+            return $query;
+        }
+
+        $query->set('post_parent', '');
+        return $query;
     }
 
     /**
@@ -162,7 +189,6 @@ class Hashtags
      */
     public function hashtagReplace($content)
     {
-        global $post;
         // Match #hashtags and replace with url, skip if hashtag is inside textarea
         $content = preg_replace_callback('/<textarea[^>]*>.*?<\/textarea>(*SKIP)(*FAIL)|(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/ius',
             function ($match) {
@@ -170,7 +196,7 @@ class Hashtags
 
                 // Get taxonomy object
                 $term = get_term_by('name', $match[1], 'hashtag');
-                if ($term) {
+                if (!empty($term->count)) {
                     $url = get_term_link($term);
                     $hashtag = '<a href="' . $url . '">' . $match[0] . '</a>';
                 }
@@ -179,28 +205,6 @@ class Hashtags
         }, $content);
 
         return $content;
-    }
-
-    /**
-     * Save hashtags as taxonomies from the content
-     * @param  int  $postId The post ID
-     * @param  obj  $post   The post object
-     * @param bool  $update Whether this is an existing post being updated or not
-     * @return void
-     */
-    public function saveHashtags($postId, $post, $update)
-    {
-        // Remove current hashtags
-        $currentTags = wp_get_post_terms($postId, self::$taxonomySlug);
-        if (!empty($currentTags)) {
-            wp_set_object_terms($postId, null, self::$taxonomySlug);
-        }
-
-        // Save hashtags from the content
-        $hashtags = $this->extractHashtags($post->post_content);
-        if ($hashtags) {
-            wp_set_object_terms($postId, $hashtags, self::$taxonomySlug, false);
-        }
     }
 
     /**
