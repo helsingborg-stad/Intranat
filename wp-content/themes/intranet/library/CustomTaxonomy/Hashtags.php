@@ -60,6 +60,12 @@ class Hashtags
         register_taxonomy(self::$taxonomySlug, $postTypes, $args);
     }
 
+    /**
+     * Save hashtags as taxonomies from comment
+     * @param  int $commentId  Comment ID
+     * @param  obj $commentObj Comment object
+     * @return void
+     */
     public function saveCommentHashtags($commentId, $commentObj)
     {
         if (!is_user_logged_in()) {

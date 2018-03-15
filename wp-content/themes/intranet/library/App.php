@@ -43,6 +43,7 @@ class App
         // Custom post types
         new \Intranet\CustomPostType\News();
         new \Intranet\CustomPostType\Incidents();
+        new \Intranet\CustomPostType\Groups();
 
         // Custom taxonomies
         new \Intranet\CustomTaxonomy\Hashtags();
