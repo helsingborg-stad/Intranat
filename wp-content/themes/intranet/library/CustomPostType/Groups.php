@@ -17,6 +17,9 @@ class Groups
         add_filter('dynamic_sidebar_after', array($this, 'contentAfterSidebar'));
         add_filter('is_active_sidebar', array($this, 'isActiveSidebar'), 11, 2);
         add_filter('Municipio/blog/post_settings', array($this, 'editGroupButton'), 11, 2);
+        add_action('Municipio/blog/post_info', array($this, 'joinButton'), 9, 1);
+        add_action('wp_ajax_join_group', array($this, 'joinGroup'));
+        add_action('save_post', array($this, 'createMembersMeta'), 10, 3);
     }
 
     /**
@@ -25,6 +28,10 @@ class Groups
      */
     public function registerCustomPostType()
     {
+        if (get_current_blog_id() !== 1) {
+            return;
+        }
+
         $nameSingular = __('Group', 'municipio-intranet');
         $namePlural = __('Groups', 'municipio-intranet');
         $icon = 'dashicons-groups';
@@ -147,7 +154,6 @@ class Groups
             || $this->canEditGroup($post))
             && is_user_logged_in()
             && $sidebar === 'bottom-sidebar') {
-
             $data = array();
             $data['postId'] = is_single() && !empty($post->ID) ? $post->ID : '';
             $data['postTitle'] = is_single() ? $post->post_title : '';
@@ -252,5 +258,74 @@ class Groups
             $role->add_cap('edit_private_' . self::$postTypeSlug . 's');
             $role->add_cap('edit_published_' . self::$postTypeSlug . 's');
         }
+    }
+
+    /**
+     * Adds/removes member from a group
+     * @return void
+     */
+    public function joinGroup()
+    {
+        ignore_user_abort(true);
+        $user = wp_get_current_user();
+
+        if (empty($_POST['postId']) || !$user) {
+            wp_die();
+        }
+
+        $postId = (int)$_POST['postId'];
+        $members = get_post_meta($postId, 'group_members', true);
+
+        if (is_array($members)) {
+            if (array_key_exists($user->ID, $members)) {
+                // Proceed if users status is not 2 (= banned)
+                if ($members[$user->ID] != 2) {
+                    $members[$user->ID] = $members[$user->ID] == 1 ? 0 : 1;
+                }
+            } else {
+                $members[$user->ID] = 1;
+            }
+        } else {
+            $members = array($user->ID => 1);
+        }
+
+        update_post_meta($postId, 'group_members', $members);
+        echo('Done');
+        wp_die();
+    }
+
+    /**
+     * Filter for adding post info items
+     * @param  array $items Default item array
+     * @return array        Modified item array
+     */
+    public function joinButton($post)
+    {
+        // Bail if user is not logged in or wrong post type
+        if (!is_user_logged_in() || $post->post_type !== self::$postTypeSlug) {
+            return;
+        }
+
+        $user = wp_get_current_user();
+        $members = get_post_meta($post->ID, 'group_members', true);
+        $isMember = isset($members[$user->ID]) && $members[$user->ID] == 1 ? 1 : 0;
+
+        echo '<li><a href="#" class="member-button ' . ($isMember ? 'member-button--is-member' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isMember ? 'pricon-minus-o' : 'pricon-plus-o') . '"></i> <span class="member-button__text">' . ($isMember ? __('Leave group', 'notification-center') : __('Join group', 'notification-center')) . '</span></a></li>';
+    }
+
+    /**
+     * Add member metadata when a post is created
+     * @param int $postId The post ID.
+     * @param post $post The post object.
+     * @param bool $update Whether this is an existing post being updated or not.
+     */
+    public function createMembersMeta($postId, $post, $update)
+    {
+        // Bail if notifications is not activated or is update
+        if ($update || $post->post_type !== self::$postTypeSlug) {
+            return;
+        }
+
+        add_post_meta($postId, 'group_members', array($post->post_author => 1), true);
     }
 }
