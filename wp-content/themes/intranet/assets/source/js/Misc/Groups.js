@@ -26,6 +26,34 @@ Intranet.Misc.Groups = (function ($) {
             }
         }.bind(this));
 
+        $(document).on('click', '.member-button', function (e) {
+            e.preventDefault();
+            this.joinGroup(e);
+        }.bind(this));
+    };
+
+    Groups.prototype.joinGroup = function(event) {
+        $target = $(event.currentTarget);
+        $target.toggleClass('member-button--is-member');
+
+        if ($target.hasClass('member-button--is-member')) {
+            $('.pricon', $target).removeClass('pricon-plus-o').addClass('pricon-minus-o');
+            $('.member-button__text', $target).text('Leave group');
+        } else {
+            $('.pricon', $target).removeClass('pricon-minus-o').addClass('pricon-plus-o');
+            $('.member-button__text', $target).text('Join group');
+        }
+        $target.blur();
+
+        $.ajax({
+            url: ajaxurl,
+            type: 'post',
+            data: {
+                action : 'join_group',
+                postId : $target.data('postId')
+            }
+        });
+
     };
 
     Groups.prototype.deleteGroup = function(event) {
