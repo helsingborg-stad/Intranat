@@ -339,151 +339,6 @@ Intranet.Helper.Walkthrough = (function ($) {
 })(jQuery);
 
 Intranet = Intranet || {};
-Intranet.Misc = Intranet.Misc || {};
-
-Intranet.Misc.News = (function ($) {
-    function News() {
-
-        //Init
-        this.container  = $('.modularity-mod-intranet-news .intranet-news');
-        this.button     = $('.modularity-mod-intranet-news [data-action="intranet-news-load-more"]');
-        this.category   = $('.modularity-mod-intranet-news select[name="cat"]');
-
-        //Enable disabled button
-        this.button.prop('disabled', false);
-
-        //Load more click
-        this.button.on('click', function (e) {
-            this.loadMore(this.container, this.button);
-        }.bind(this));
-
-        //Category switcher
-        this.category.on('change', function (e) {
-            this.container.empty();
-            this.loadMore(this.container, this.button);
-        }.bind(this));
-    }
-
-    News.prototype.showLoader = function(button) {
-        button.hide();
-        button.after('<div class="loading"><div></div><div></div><div></div><div></div></div>');
-    };
-
-    News.prototype.hideLoader = function(button) {
-        button.parent().find('.loading').remove();
-        button.show();
-    };
-
-    News.prototype.loadMore = function(container, button) {
-        var callbackUrl     = container.attr('data-infinite-scroll-callback');
-        var pagesize        = container.attr('data-infinite-scroll-pagesize');
-        var sites           = container.attr('data-infinite-scroll-sites');
-        var offset          = container.find('a.box-news').length ? container.find('a.box-news').length : 0;
-        var module          = container.attr('data-module');
-        var category        = this.category.val();
-        var args            = container.attr('data-args');
-
-        this.showLoader(button);
-
-        if(!isNaN(parseFloat(category)) && isFinite(category)) {
-            var url = callbackUrl + pagesize + '/' + offset + '/' + sites + '/' + category;
-        } else {
-            var url = callbackUrl + pagesize + '/' + offset + '/' + sites + '/0';
-        }
-
-        $.ajax({
-            url: url,
-            method: 'POST',
-            data: {
-                module: module,
-                args: args
-            },
-            dataType: 'JSON',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('X-WP-Nonce', municipioIntranet.wpapi.nonce);
-            }
-        }).done(function (res) {
-            if (res.length === 0) {
-                this.noMore(container, button);
-                return;
-            }
-
-            this.output(container, res);
-            this.hideLoader(button);
-
-            if (res.length < pagesize) {
-                this.noMore(container, button);
-            }
-        }.bind(this));
-    };
-
-    News.prototype.noMore = function(container, button) {
-        this.hideLoader(button);
-        button.text(municipioIntranet.no_more_news).prop('disabled', true);
-    };
-
-    News.prototype.output = function(container, news) {
-        $.each(news, function (index, item) {
-            container.append(item.markup);
-        });
-    };
-
-    return new News();
-
-})(jQuery);
-
-
-Intranet = Intranet || {};
-Intranet.Misc = Intranet.Misc || {};
-
-Intranet.Misc.ReportPost = (function ($) {
-
-    function ReportPost() {
-        $('.report-post').on('submit', function (e) {
-            e.preventDefault();
-
-            var $target = $(this),
-                data = new FormData(this);
-                data.append('action', 'report_post');
-
-            if (data.get('g-recaptcha-response') === '') {
-                return false;
-            }
-
-            $target.find('input[type="submit"]').hide();
-            $target.find('.modal-footer').append('<div class="loading"><div></div><div></div><div></div><div></div></div>');
-
-            $.ajax({
-                url: ajaxurl,
-                type: 'POST',
-                data: data,
-                dataType: 'json',
-                processData: false,
-                contentType: false,
-                success: function(response, textStatus, jqXHR) {
-                    if (response.success) {
-                        $('.modal-footer', $target).html('<span class="notice success"><i class="pricon pricon-check"></i> ' + response.data + '</span>');
-
-                    } else {
-                        $('.modal-footer', $target).html('<span class="notice warning"><i class="pricon pricon-notice-warning"></i> ' + response.data + '</span>');
-                    }
-                },
-                complete: function () {
-                    setTimeout(function() {
-                        location.hash = '';
-                    }, 3000);
-                }
-            });
-
-            return false;
-        });
-    }
-
-    return new ReportPost();
-
-})(jQuery);
-
-Intranet = Intranet || {};
 Intranet.Search = Intranet.Search || {};
 
 Intranet.Search.General = (function ($) {
@@ -843,6 +698,238 @@ Intranet.Search.Sites = (function ($) {
     };
 
     return new Sites();
+
+})(jQuery);
+
+Intranet = Intranet || {};
+Intranet.Misc = Intranet.Misc || {};
+
+Intranet.Misc.Groups = (function ($) {
+
+    function Groups() {
+        $(function(){
+            this.handleEvents();
+        }.bind(this));
+    }
+
+    /**
+     * Handle events
+     * @return {void}
+     */
+    Groups.prototype.handleEvents = function () {
+        $(document).on('submit', '#edit-group', function (e) {
+            e.preventDefault();
+            this.editGroup(e);
+        }.bind(this));
+
+        $(document).on('click', '#delete-group', function (e) {
+            e.preventDefault();
+            if (window.confirm(municipioIntranet.delete_confirm)) {
+                this.deleteGroup(e);
+            }
+        }.bind(this));
+
+    };
+
+    Groups.prototype.deleteGroup = function(event) {
+        var postId = ($(event.currentTarget).data('post-id'));
+        var archiveUrl = ($(event.currentTarget).data('archive'));
+
+        $.ajax({
+            method: "DELETE",
+            url: municipioIntranet.wpapi.url + 'wp/v2/groups/' + postId,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-WP-Nonce', municipioIntranet.wpapi.nonce);
+            },
+            success : function(response ) {
+                window.location.replace(archiveUrl);
+            }
+        });
+    };
+
+    Groups.prototype.editGroup = function (event) {
+        var $target = $(event.target),
+            data = new FormData(event.target),
+            postId = data.get('post_id');
+            data.append('status', 'private');
+
+        function displayError() {
+            $('.spinner,.warning', $target).remove();
+            $('.modal-footer', $target).prepend('<span class="notice warning gutter gutter-margin gutter-vertical"><i class="pricon pricon-notice-warning"></i> ' + municipioIntranet.something_went_wrong + '</span>');
+        }
+
+        $.ajax({
+            method: "POST",
+            url: municipioIntranet.wpapi.url + 'wp/v2/groups/' + postId,
+            data: data,
+            processData: false,
+            contentType: false,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-WP-Nonce', municipioIntranet.wpapi.nonce);
+                $('button[type="submit"]', $target).append(' <i class="spinner"></i>');
+            },
+            success : function(response ) {
+                if (typeof response.link !== "undefined") {
+                    window.location.replace(response.link);
+                } else {
+                    displayError();
+                }
+            },
+            error : function(response) {
+                console.log(response);
+                displayError();
+            }
+        });
+
+        return false;
+    };
+
+    return new Groups();
+
+})(jQuery);
+
+Intranet = Intranet || {};
+Intranet.Misc = Intranet.Misc || {};
+
+Intranet.Misc.News = (function ($) {
+    function News() {
+
+        //Init
+        this.container  = $('.modularity-mod-intranet-news .intranet-news');
+        this.button     = $('.modularity-mod-intranet-news [data-action="intranet-news-load-more"]');
+        this.category   = $('.modularity-mod-intranet-news select[name="cat"]');
+
+        //Enable disabled button
+        this.button.prop('disabled', false);
+
+        //Load more click
+        this.button.on('click', function (e) {
+            this.loadMore(this.container, this.button);
+        }.bind(this));
+
+        //Category switcher
+        this.category.on('change', function (e) {
+            this.container.empty();
+            this.loadMore(this.container, this.button);
+        }.bind(this));
+    }
+
+    News.prototype.showLoader = function(button) {
+        button.hide();
+        button.after('<div class="loading"><div></div><div></div><div></div><div></div></div>');
+    };
+
+    News.prototype.hideLoader = function(button) {
+        button.parent().find('.loading').remove();
+        button.show();
+    };
+
+    News.prototype.loadMore = function(container, button) {
+        var callbackUrl     = container.attr('data-infinite-scroll-callback');
+        var pagesize        = container.attr('data-infinite-scroll-pagesize');
+        var sites           = container.attr('data-infinite-scroll-sites');
+        var offset          = container.find('a.box-news').length ? container.find('a.box-news').length : 0;
+        var module          = container.attr('data-module');
+        var category        = this.category.val();
+        var args            = container.attr('data-args');
+
+        this.showLoader(button);
+
+        if(!isNaN(parseFloat(category)) && isFinite(category)) {
+            var url = callbackUrl + pagesize + '/' + offset + '/' + sites + '/' + category;
+        } else {
+            var url = callbackUrl + pagesize + '/' + offset + '/' + sites + '/0';
+        }
+
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: {
+                module: module,
+                args: args
+            },
+            dataType: 'JSON',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-WP-Nonce', municipioIntranet.wpapi.nonce);
+            }
+        }).done(function (res) {
+            if (res.length === 0) {
+                this.noMore(container, button);
+                return;
+            }
+
+            this.output(container, res);
+            this.hideLoader(button);
+
+            if (res.length < pagesize) {
+                this.noMore(container, button);
+            }
+        }.bind(this));
+    };
+
+    News.prototype.noMore = function(container, button) {
+        this.hideLoader(button);
+        button.text(municipioIntranet.no_more_news).prop('disabled', true);
+    };
+
+    News.prototype.output = function(container, news) {
+        $.each(news, function (index, item) {
+            container.append(item.markup);
+        });
+    };
+
+    return new News();
+
+})(jQuery);
+
+
+Intranet = Intranet || {};
+Intranet.Misc = Intranet.Misc || {};
+
+Intranet.Misc.ReportPost = (function ($) {
+
+    function ReportPost() {
+        $('.report-post').on('submit', function (e) {
+            e.preventDefault();
+
+            var $target = $(this),
+                data = new FormData(this);
+                data.append('action', 'report_post');
+
+            if (data.get('g-recaptcha-response') === '') {
+                return false;
+            }
+
+            $target.find('input[type="submit"]').hide();
+            $target.find('.modal-footer').append('<div class="loading"><div></div><div></div><div></div><div></div></div>');
+
+            $.ajax({
+                url: ajaxurl,
+                type: 'POST',
+                data: data,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function(response, textStatus, jqXHR) {
+                    if (response.success) {
+                        $('.modal-footer', $target).html('<span class="notice success"><i class="pricon pricon-check"></i> ' + response.data + '</span>');
+
+                    } else {
+                        $('.modal-footer', $target).html('<span class="notice warning"><i class="pricon pricon-notice-warning"></i> ' + response.data + '</span>');
+                    }
+                },
+                complete: function () {
+                    setTimeout(function() {
+                        location.hash = '';
+                    }, 3000);
+                }
+            });
+
+            return false;
+        });
+    }
+
+    return new ReportPost();
 
 })(jQuery);
 
