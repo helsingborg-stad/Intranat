@@ -73,7 +73,7 @@ class PostFilters
     public function contentBeforeSidebar($sidebar)
     {
         if ($sidebar === 'bottom-sidebar') {
-            $blade = new Blade(INTRANET_TEMPLATE_PATH, WP_CONTENT_DIR . '/uploads/cache/blade-cache');
+            $blade = new Blade(INTRANET_PATH . 'views/partials/modal/', WP_CONTENT_DIR . '/uploads/cache/blade-cache');
             echo $blade->view()->make('report-post')->render();
         }
     }
