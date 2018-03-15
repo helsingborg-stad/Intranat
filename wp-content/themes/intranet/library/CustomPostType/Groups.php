@@ -65,7 +65,7 @@ class Groups
             'taxonomies'           => array(self::$taxonomySlug),
             'supports'             => array('title', 'revisions', 'editor', 'thumbnail', 'author', 'comments'),
             'show_in_rest'         => true,
-            'rest_base'            => strtolower($namePlural),
+            'rest_base'            => 'groups',
             'map_meta_cap'         => true,
             'capability_type'      => self::$postTypeSlug
         );
