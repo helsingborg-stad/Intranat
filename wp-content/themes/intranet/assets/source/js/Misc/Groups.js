@@ -51,9 +51,11 @@ Intranet.Misc.Groups = (function ($) {
             data: {
                 action : 'join_group',
                 postId : $target.data('postId')
+            },
+            success: function() {
+                window.location.reload();
             }
         });
-
     };
 
     Groups.prototype.deleteGroup = function(event) {
