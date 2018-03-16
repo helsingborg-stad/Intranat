@@ -14,12 +14,13 @@ class Groups
         add_action('init', array($this, 'registerCustomPostType'));
         add_action('init', array($this, 'registerCategories'));
         add_action('init', array($this, 'addCapabilities'));
-        add_filter('dynamic_sidebar_after', array($this, 'contentAfterSidebar'));
-        add_filter('is_active_sidebar', array($this, 'isActiveSidebar'), 11, 2);
-        add_filter('Municipio/blog/post_settings', array($this, 'editGroupButton'), 11, 2);
         add_action('Municipio/blog/post_info', array($this, 'joinButton'), 9, 1);
         add_action('wp_ajax_join_group', array($this, 'joinGroup'));
         add_action('save_post', array($this, 'createMembersMeta'), 10, 3);
+
+        add_filter('dynamic_sidebar_after', array($this, 'contentAfterSidebar'));
+        add_filter('is_active_sidebar', array($this, 'isActiveSidebar'), 11, 2);
+        add_filter('Municipio/blog/post_settings', array($this, 'editGroupButton'), 11, 2);
     }
 
     /**
