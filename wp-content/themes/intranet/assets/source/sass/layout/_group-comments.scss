@@ -1,0 +1,14 @@
+.group-comments {
+	li.comment.comment-new {
+		padding: 15px;
+		border-radius: 2px;
+		border: 1px solid #EEEEEE;
+		background: #F8F8F8;
+
+		ul.answers {
+	    	border-top: 1px solid #EEEEEE;
+	        margin-top: 25px;
+	        padding-top: 25px;
+    	}
+	}
+}
