@@ -339,7 +339,9 @@
         },
 
         insert: function (item) {
-            if (this.options.delimiter === '@') {
+            if (this.options.delimiter === '@' && this.editor.id == 'emailfield') {
+                return item.user_email + ',&nbsp;';
+            } else if (this.options.delimiter === '@') {
                 var mentionTag = item[this.options.queryBy].toLowerCase();
                 mentionTag = mentionTag.replace(/\s/g, '');
                 var profileUrl = this.options.profileUrlBase + item.user_login;
@@ -399,6 +401,11 @@
         init: function (ed) {
             var autoComplete,
                 autoCompleteData = { delimiter : ['@', '#'] };
+
+                // Disable Hashtags for email field
+                if (ed.id == 'emailfield') {
+                    autoCompleteData = { delimiter : ['@'] };
+                }
 
                 $.ajax({
                     url: ajaxurl,
