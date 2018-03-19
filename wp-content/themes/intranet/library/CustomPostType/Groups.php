@@ -163,17 +163,6 @@ class Groups
                 is_single() ? __('Update', 'municipio-intranet') : __('Create', 'municipio-intranet'),
                 strtolower(__('Group', 'municipio-intranet'))
             );
-            $data['editorSettings'] = array(
-                'wpautop' => true,
-                'media_buttons' => false,
-                'quicktags' => false,
-                'textarea_name' => 'content',
-                'textarea_rows' => 10,
-                    'tinymce' => array(
-                        'plugins' => 'wordpress',
-                    ),
-                );
-
             $terms = is_single() && !empty($post->ID) ? wp_get_post_terms($post->ID, self::$taxonomySlug, array('fields' => 'ids')) : '';
             $term = is_array($terms) && !empty($terms[0]) ? $terms[0] : 0;
             $taxArgs = array(
@@ -185,8 +174,24 @@ class Groups
                         'selected'   => $term
                     );
             $data['categories'] = wp_dropdown_categories($taxArgs);
+            $data['editorSettings'] = array(
+                'wpautop' => true,
+                'media_buttons' => false,
+                'quicktags' => false,
+                'textarea_name' => 'content',
+                'textarea_rows' => 10,
+                    'tinymce' => array(
+                        'plugins' => 'wordpress',
+                        'statusbar' => false,
+                    ),
+                );
             $blade = new Blade(INTRANET_PATH . 'views/partials/modal/', WP_CONTENT_DIR . '/uploads/cache/blade-cache');
             echo $blade->view()->make('group-modal', $data)->render();
+
+            $data['editorSettings']['textarea_name'] = 'recipient_email';
+            $data['editorSettings']['textarea_rows'] = 1;
+            $blade = new Blade(INTRANET_PATH . 'views/partials/modal/', WP_CONTENT_DIR . '/uploads/cache/blade-cache');
+            echo $blade->view()->make('invite-modal', $data)->render();
         }
     }
 
@@ -201,7 +206,8 @@ class Groups
             return $settingItems;
         }
 
-        $settingItems[] = '<a href="#modal-edit-group" class="settings-item"><i class="pricon pricon-pen pricon-space-right"></i> ' . __('Edit', 'municipio-intranet') . '</a>';
+        $settingItems[] = '<a href="#modal-target-' . $post->ID . '" class="settings-item" data-action="share-email"><i class="pricon pricon-user pricon-space-right"></i> ' . __('Invite members', 'municipio-intranet') . '</a>';
+        $settingItems[] = '<a href="#modal-edit-group" class="settings-item"><i class="pricon pricon-edit pricon-space-right"></i> ' . __('Edit', 'municipio-intranet') . '</a>';
         $settingItems[] = '<a href="#" id="delete-group" data-archive="' . get_post_type_archive_link(self::$postTypeSlug) . '" data-post-id="' . $post->ID . '" class="settings-item"><i class="pricon pricon-minus-o pricon-space-right"></i> ' . __('Remove', 'municipio-intranet') . '</a>';
 
         return $settingItems;

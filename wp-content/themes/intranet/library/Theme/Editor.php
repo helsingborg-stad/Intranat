@@ -29,7 +29,7 @@ class Editor
      */
     public function disableTmceToolbar($in, $id)
     {
-        if ($id === 'comment') {
+        if ($id === 'comment' ||$id === 'emailfield') {
             $in['toolbar1'] = '';
             $in['toolbar2'] = '';
             $in['toolbar'] = false;

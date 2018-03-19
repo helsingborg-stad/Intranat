@@ -15,13 +15,11 @@
                     <?php dynamic_sidebar('content-area-top'); ?>
                 </div>
             @endif
-
             <div class="grid">
                 <div class="grid-sm-12">
-                        @include('partials.blog.type.post-single')
+                    @include('partials.blog.type.post-single')
                 </div>
             </div>
-
             @if ($isMember)
                 <div class="grid">
                     <div class="grid-sm-12">
@@ -30,7 +28,7 @@
                 </div>
                 @if(isset($comments) && ! empty($comments))
                     <div class="grid">
-                        <div class="grid-sm-12">
+                        <div class="grid-sm-12 group-comments">
                             @include('partials.blog.comments')
                         </div>
                     </div>
