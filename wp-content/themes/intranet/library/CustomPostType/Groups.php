@@ -206,7 +206,7 @@ class Groups
             return $settingItems;
         }
 
-        $settingItems[] = '<a href="#modal-target-' . $post->ID . '" class="settings-item" data-action="share-email"><i class="pricon pricon-user pricon-space-right"></i> ' . __('Invite members', 'municipio-intranet') . '</a>';
+        $settingItems[] = '<a href="#modal-target-' . $post->ID . '" class="settings-item" data-action="share-email"><i class="pricon pricon-group pricon-space-right"></i> ' . __('Invite members', 'municipio-intranet') . '</a>';
         $settingItems[] = '<a href="#modal-edit-group" class="settings-item"><i class="pricon pricon-edit pricon-space-right"></i> ' . __('Edit', 'municipio-intranet') . '</a>';
         $settingItems[] = '<a href="#" id="delete-group" data-archive="' . get_post_type_archive_link(self::$postTypeSlug) . '" data-post-id="' . $post->ID . '" class="settings-item"><i class="pricon pricon-minus-o pricon-space-right"></i> ' . __('Remove', 'municipio-intranet') . '</a>';
 
