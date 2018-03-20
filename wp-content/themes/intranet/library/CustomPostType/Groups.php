@@ -317,7 +317,7 @@ class Groups
         $members = get_post_meta($post->ID, 'group_members', true);
         $isMember = isset($members[$user->ID]) && $members[$user->ID] == 1 ? 1 : 0;
 
-        echo '<li><a href="#" class="member-button ' . ($isMember ? 'member-button--is-member' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isMember ? 'pricon-minus-o' : 'pricon-plus-o') . '"></i> <span class="member-button__text">' . ($isMember ? __('Leave group', 'notification-center') : __('Join group', 'notification-center')) . '</span></a></li>';
+        echo '<li><a href="#" class="member-button ' . ($isMember ? 'member-button--is-member' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isMember ? 'pricon-minus-o' : 'pricon-plus-o') . '"></i> <span class="member-button__text">' . ($isMember ? __('Leave group', 'municipio-intranet') : __('Join group', 'municipio-intranet')) . '</span></a></li>';
     }
 
     /**

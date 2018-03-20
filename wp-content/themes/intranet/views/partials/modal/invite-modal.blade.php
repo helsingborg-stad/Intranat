@@ -8,12 +8,12 @@
             <div class="modal-body">
                 <article>
                     <div class="form-group">
-                        <label>Group</label>
+                        <label><?php _e('Group', 'municipio-intranet'); ?></label>
                         {{ get_the_title() }}
                     </div>
                     <div class="form-group">
                         <label for="recipient-email"><?php _e('E-mail addresses', 'municipio-intranet'); ?> <span class="text-danger">*</span></label>
-                        <small><?php _e('Enter one or many e-mail addresses, separate wih comma. Get suggestions by typing \'@\' before the person\'s name, e.g. \'@firstname lastname\'.', 'municipio-intranet'); ?></small>
+                        <small><?php _e('Enter one or many e-mail addresses, separate with comma. Get suggestions by typing \'@\' before the person\'s name, e.g. \'@firstname lastname\'.', 'municipio-intranet'); ?></small>
                         {!! wp_editor('', 'emailfield', $editorSettings) !!}
                     </div>
                 </article>

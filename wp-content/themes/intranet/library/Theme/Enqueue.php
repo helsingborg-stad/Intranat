@@ -55,7 +55,9 @@ class Enqueue
             'disable_welcome_phrase' => __('Disable welcome phrase', 'municipio-intranet'),
             'enable_welcome_phrase' => __('Enable welcome phrase', 'municipio-intranet'),
             'something_went_wrong' => __('Something went wrong, please try again later', 'municipio-intranet'),
-            'delete_confirm' => __('Are you sure you want to delete this post?', 'municipio-intranet')
+            'delete_confirm' => __('Are you sure you want to delete this post?', 'municipio-intranet'),
+            'join_group' => __('Join group', 'municipio-intranet'),
+            'leave_group' => __('Leave group', 'municipio-intranet')
         ));
 
         wp_enqueue_script('intranet');
