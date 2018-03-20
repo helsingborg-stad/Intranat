@@ -38,10 +38,10 @@ Intranet.Misc.Groups = (function ($) {
 
         if ($target.hasClass('member-button--is-member')) {
             $('.pricon', $target).removeClass('pricon-plus-o').addClass('pricon-minus-o');
-            $('.member-button__text', $target).text('Leave group');
+            $('.member-button__text', $target).text(municipioIntranet.leave_group);
         } else {
             $('.pricon', $target).removeClass('pricon-minus-o').addClass('pricon-plus-o');
-            $('.member-button__text', $target).text('Join group');
+            $('.member-button__text', $target).text(municipioIntranet.join_group);
         }
         $target.blur();
 
