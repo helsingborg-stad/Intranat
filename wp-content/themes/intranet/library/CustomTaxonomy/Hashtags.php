@@ -18,6 +18,7 @@ class Hashtags
         add_filter('comment_text', array($this, 'hashtagReplace'), 20, 1);
         add_filter('Municipio/archive/filter_taxonomies', array($this, 'filterTaxonomies'), 10, 2);
         add_filter('Municipio/archive/tax_query', array($this, 'taxQuery'), 10, 2);
+        add_filter('pre_insert_term', array($this, 'stripTermHashtags'), 10, 2);
         add_action('pre_get_posts', array($this, 'doPostTaxonomyFiltering'));
         add_action('wp_ajax_get_hashtags', array($this, 'getHashtags'));
         add_action('pre_get_posts', array($this, 'taxonomyArchiveQuery'), 99);
@@ -222,5 +223,20 @@ class Hashtags
         }
 
         return $hashtags;
+    }
+
+    /**
+     * Removes '#' from hashtag term
+     * @param  string $term Term to be saved
+     * @param  string $tax  Taxonomy
+     * @return string       Modified term
+     */
+    public function stripTermHashtags($term, $tax)
+    {
+        if ($tax == self::$taxonomySlug) {
+            $term = str_replace('#', '', $term);
+        }
+
+        return $term;
     }
 }
