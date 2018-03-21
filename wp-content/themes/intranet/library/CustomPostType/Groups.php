@@ -17,7 +17,10 @@ class Groups
         add_action('Municipio/blog/post_info', array($this, 'joinButton'), 9, 1);
         add_action('wp_ajax_join_group', array($this, 'joinGroup'));
         add_action('save_post', array($this, 'createMembersMeta'), 10, 3);
+        add_action('comment_post', array($this, 'uploadCommentFiles'));
 
+        add_filter('comment_text', array($this, 'displayAttachments'), 10, 2);
+        add_filter('comment_form_field_comment', array( $this, 'displayFileInput'));
         add_filter('dynamic_sidebar_after', array($this, 'contentAfterSidebar'));
         add_filter('is_active_sidebar', array($this, 'isActiveSidebar'), 11, 2);
         add_filter('Municipio/blog/post_settings', array($this, 'editGroupButton'), 11, 2);
@@ -334,5 +337,124 @@ class Groups
         }
 
         add_post_meta($postId, 'group_members', array($post->post_author => 1), true);
+    }
+
+    /**
+     * Display attachments with comment
+     * @param  string $commentText Comment content
+     * @param  obj $commentObj     Comment object
+     * @return string              Modified comment
+     */
+    public function displayAttachments($commentText, $commentObj)
+    {
+        if (get_post_type($commentObj->comment_post_ID) != self::$postTypeSlug) {
+            return $commentText;
+        }
+
+        $attachments = get_comment_meta($commentObj->comment_ID, 'attachments', true);
+        if (is_array($attachments) && !empty($attachments)) {
+            $uploadFolder = wp_upload_dir();
+            $uploadFolder = $uploadFolder['baseurl'] . '/intranet-groups/';
+
+            foreach ($attachments as $attachment) {
+                $filePath = $uploadFolder . basename($attachment);
+                $fileName = basename($attachment) ;
+                $commentText .= '<p><a href="' . $filePath . '" class="link-item link" target="_blank">' . $fileName . '</a></p>';
+            }
+        }
+
+        return $commentText;
+    }
+
+    /**
+     * Saves attachments as comment meta
+     * @param  int $commentId COmment ID
+     * @return void
+     */
+    public function uploadCommentFiles($commentId)
+    {
+        if (!empty($_FILES)) {
+            $files = $this->uploadFiles($_FILES, $commentId);
+
+            if (!empty($files)) {
+                add_comment_meta($commentId, 'attachments', $files);
+            }
+        }
+    }
+
+    /**
+     * Uploads comment attachments
+     * @param  array $fileslist
+     * @param  int   $formId
+     * @return array
+     */
+    public function uploadFiles($filesList, $commentId)
+    {
+        $uploadsFolder = wp_upload_dir();
+        $uploadsFolder = $uploadsFolder['basedir'] . '/intranet-groups';
+        $this->createFolder($uploadsFolder);
+        $allowedTypes = array('.jpeg', '.jpg', '.png', '.gif', '.mov', '.webm', '.mp4', '.avi', '.mpeg4', '.mp3', '.ogg', '.aac', '.doc', '.docx', '.xls', '.xlsx', '.pdf');
+        $uploaded = array();
+
+        foreach ($filesList as $files) {
+            for ($i = 0; $i < count($files['name']); $i++) {
+                if (empty($files['name'][$i])) {
+                    continue;
+                }
+
+                $targetFile = $uploadsFolder . '/' . uniqid() . '-' . basename($files['name'][$i]);
+                $fileext = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+                if (!in_array('.' . $fileext, $allowedTypes)) {
+                    continue;
+                }
+
+                // Upload file to server
+                if (move_uploaded_file($files['tmp_name'][$i], $targetFile)) {
+                    $uploaded[] = $targetFile;
+                }
+            }
+        }
+
+        return $uploaded;
+    }
+
+   /**
+     * Create upload folder if needed
+     * @param  string $path
+     * @return string
+     */
+    public function createFolder(string $path) : string
+    {
+        if (file_exists($path)) {
+            return $path;
+        }
+
+        mkdir($path, 0777, true);
+        return $path;
+    }
+
+    /**
+     * Adds file input to comment form
+     * @param  string $commentField Comment input field
+     * @return string Modified markup
+     */
+    public function displayFileInput($commentField)
+    {
+        global $post;
+
+        if (isset($post->post_type) && $post->post_type == self::$postTypeSlug) {
+            $commentField .= '<div class="form-group gutter gutter-top">
+                <label for="files">' . __('Attach files', 'municipio-intranet') . '</label>
+                <ul class="input-files" data-max="1">
+                    <li><label class="input-file">
+                        <input type="file" name="files[]" accept=".jpg,.png,.gif,.mov,.webm,.mp4,.mp3,.ogg,.aac,.doc,.docx,.xls,.xlsx,.pdf" multiple>
+                        <span class="btn">' . __('Select file', 'municipio-intranet') . '</span>
+                        <span class="input-file-selected">' . __('No file chosen', 'municipio-intranet') . '</span>
+                    </label></li>
+                </ul>
+                </div>';
+        }
+
+        return $commentField;
     }
 }
