@@ -191,7 +191,7 @@ class Hashtags
     public function hashtagReplace($content)
     {
         // Match #hashtags and replace with url, skip if hashtag is inside textarea
-        $content = preg_replace_callback('/<textarea[^>]*>.*?<\/textarea>(*SKIP)(*FAIL)|(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/ius',
+        $content = preg_replace_callback('/<[textarea|a][^>]*>.*?<\/[textarea|a]>(*SKIP)(*FAIL)|(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/ius',
             function ($match) {
                 $hashtag = $match[0];
 
@@ -216,7 +216,7 @@ class Hashtags
     public function extractHashtags($string)
     {
         $hashtags = false;
-        preg_match_all('/(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/iu', $string, $matches);
+        preg_match_all('/<[^>]*>.*?<\/[^>]*>(*SKIP)(*FAIL)|(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/ius', $string, $matches);
         if ($matches) {
             $hashtagsArray = array_count_values($matches[1]);
             $hashtags = array_keys($hashtagsArray);
