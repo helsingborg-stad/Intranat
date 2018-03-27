@@ -1,9 +1,9 @@
 Intranet = Intranet || {};
 Intranet.Misc = Intranet.Misc || {};
 
-Intranet.Misc.Groups = (function ($) {
+Intranet.Misc.Forums = (function ($) {
 
-    function Groups() {
+    function Forums() {
         $(function(){
             this.handleEvents();
         }.bind(this));
@@ -13,35 +13,35 @@ Intranet.Misc.Groups = (function ($) {
      * Handle events
      * @return {void}
      */
-    Groups.prototype.handleEvents = function () {
-        $(document).on('submit', '#edit-group', function (e) {
+    Forums.prototype.handleEvents = function () {
+        $(document).on('submit', '#edit-forum', function (e) {
             e.preventDefault();
-            this.editGroup(e);
+            this.editForum(e);
         }.bind(this));
 
-        $(document).on('click', '#delete-group', function (e) {
+        $(document).on('click', '#delete-forum', function (e) {
             e.preventDefault();
             if (window.confirm(municipioIntranet.delete_confirm)) {
-                this.deleteGroup(e);
+                this.deleteForum(e);
             }
         }.bind(this));
 
         $(document).on('click', '.member-button', function (e) {
             e.preventDefault();
-            this.joinGroup(e);
+            this.joinForum(e);
         }.bind(this));
     };
 
-    Groups.prototype.joinGroup = function(event) {
+    Forums.prototype.joinForum = function(event) {
         $target = $(event.currentTarget);
         $target.toggleClass('member-button--is-member');
 
         if ($target.hasClass('member-button--is-member')) {
             $('.pricon', $target).removeClass('pricon-plus-o').addClass('pricon-minus-o');
-            $('.member-button__text', $target).text(municipioIntranet.leave_group);
+            $('.member-button__text', $target).text(municipioIntranet.leave_forum);
         } else {
             $('.pricon', $target).removeClass('pricon-minus-o').addClass('pricon-plus-o');
-            $('.member-button__text', $target).text(municipioIntranet.join_group);
+            $('.member-button__text', $target).text(municipioIntranet.join_forum);
         }
         $target.blur();
 
@@ -49,7 +49,7 @@ Intranet.Misc.Groups = (function ($) {
             url: ajaxurl,
             type: 'post',
             data: {
-                action : 'join_group',
+                action : 'join_forum',
                 postId : $target.data('postId')
             },
             success: function() {
@@ -58,13 +58,13 @@ Intranet.Misc.Groups = (function ($) {
         });
     };
 
-    Groups.prototype.deleteGroup = function(event) {
+    Forums.prototype.deleteForum = function(event) {
         var postId = ($(event.currentTarget).data('post-id'));
         var archiveUrl = ($(event.currentTarget).data('archive'));
 
         $.ajax({
             method: "DELETE",
-            url: municipioIntranet.wpapi.url + 'wp/v2/groups/' + postId,
+            url: municipioIntranet.wpapi.url + 'wp/v2/forums/' + postId,
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('X-WP-Nonce', municipioIntranet.wpapi.nonce);
             },
@@ -74,7 +74,7 @@ Intranet.Misc.Groups = (function ($) {
         });
     };
 
-    Groups.prototype.editGroup = function (event) {
+    Forums.prototype.editForum = function (event) {
         var $target = $(event.target),
             data = new FormData(event.target),
             postId = data.get('post_id');
@@ -87,7 +87,7 @@ Intranet.Misc.Groups = (function ($) {
 
         $.ajax({
             method: "POST",
-            url: municipioIntranet.wpapi.url + 'wp/v2/groups/' + postId,
+            url: municipioIntranet.wpapi.url + 'wp/v2/forums/' + postId,
             data: data,
             processData: false,
             contentType: false,
@@ -111,6 +111,6 @@ Intranet.Misc.Groups = (function ($) {
         return false;
     };
 
-    return new Groups();
+    return new Forums();
 
 })(jQuery);

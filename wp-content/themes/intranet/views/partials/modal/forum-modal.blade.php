@@ -1,13 +1,13 @@
-<div id="modal-edit-group" class="modal modal-backdrop-2 modal-small" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="modal-edit-forum" class="modal modal-backdrop-2 modal-small" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content material-shadow-lg">
-        <form id="edit-group">
+        <form id="edit-forum">
             <div class="modal-header">
                 <a class="btn btn-close" href="#close"></a>
                 <h2 class="modal-title">{{ $formTitle }}</h2>
             </div>
             <div class="modal-body gutter">
                 <div class="form-group">
-                    <label for="title"><?php _e('Name your group', 'municipio-intranet'); ?><span class="text-danger">*</span></label>
+                    <label for="title"><?php _e('Name your discussion forum', 'municipio-intranet'); ?><span class="text-danger">*</span></label>
                     <input type="text" name="title" class="large-text" value="{{ $postTitle }}" required="">
                 </div>
                 <div class="form-group">
@@ -15,7 +15,7 @@
                     {!! wp_editor($postContent, 'editgroup', $editorSettings) !!}
                 </div>
                 <div class="form-group">
-                    <label for="category"><?php _e('Category', 'municipio-intranet'); ?></label>
+                    <label for="category"><?php _e('Subject', 'municipio-intranet'); ?></label>
                     {!! $categories !!}
                 </div>
             </div>

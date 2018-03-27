@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <article>
                     <div class="form-group">
-                        <label><?php _e('Group', 'municipio-intranet'); ?></label>
+                        <label><?php _e('Discussion forum', 'municipio-intranet'); ?></label>
                         {{ get_the_title() }}
                     </div>
                     <div class="form-group">

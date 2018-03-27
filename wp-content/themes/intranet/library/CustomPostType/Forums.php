@@ -4,10 +4,10 @@ namespace Intranet\CustomPostType;
 
 use Philo\Blade\Blade as Blade;
 
-class Groups
+class Forums
 {
-    public static $postTypeSlug = 'intranet-group';
-    public static $taxonomySlug = 'group_categories';
+    public static $postTypeSlug = 'forum';
+    public static $taxonomySlug = 'forum_subjects';
 
     public function __construct()
     {
@@ -15,7 +15,7 @@ class Groups
         add_action('init', array($this, 'registerCategories'));
         add_action('init', array($this, 'addCapabilities'));
         add_action('Municipio/blog/post_info', array($this, 'joinButton'), 9, 1);
-        add_action('wp_ajax_join_group', array($this, 'joinGroup'));
+        add_action('wp_ajax_join_forum', array($this, 'joinForum'));
         add_action('save_post', array($this, 'createMembersMeta'), 10, 3);
         add_action('comment_post', array($this, 'uploadCommentFiles'));
 
@@ -23,7 +23,7 @@ class Groups
         add_filter('comment_form_field_comment', array( $this, 'displayFileInput'));
         add_filter('dynamic_sidebar_after', array($this, 'contentAfterSidebar'));
         add_filter('is_active_sidebar', array($this, 'isActiveSidebar'), 11, 2);
-        add_filter('Municipio/blog/post_settings', array($this, 'editGroupButton'), 11, 2);
+        add_filter('Municipio/blog/post_settings', array($this, 'editForumButton'), 11, 2);
     }
 
     /**
@@ -36,8 +36,8 @@ class Groups
             return;
         }
 
-        $nameSingular = __('Group', 'municipio-intranet');
-        $namePlural = __('Groups', 'municipio-intranet');
+        $nameSingular = __('Discussion forum', 'municipio-intranet');
+        $namePlural = __('Discussion forums', 'municipio-intranet');
         $icon = 'dashicons-groups';
 
         $labels = array(
@@ -59,7 +59,7 @@ class Groups
 
         $args = array(
             'labels'               => $labels,
-            'description'          => __('Social networking groups.', 'municipio-intranet'),
+            'description'          => __('Discussion forums.', 'municipio-intranet'),
             'menu_icon'            => $icon,
             'public'               => true,
             'publicly_queryable'   => true,
@@ -76,7 +76,7 @@ class Groups
             'taxonomies'           => array(self::$taxonomySlug),
             'supports'             => array('title', 'revisions', 'editor', 'thumbnail', 'author', 'comments'),
             'show_in_rest'         => true,
-            'rest_base'            => 'groups',
+            'rest_base'            => 'forums',
             'map_meta_cap'         => true,
             'capability_type'      => self::$postTypeSlug
         );
@@ -90,8 +90,8 @@ class Groups
      */
     public function registerCategories()
     {
-        $nameSingular = 'Category';
-        $namePlural = 'Categories';
+        $nameSingular = __('Subject', 'municipio-intranet');
+        $namePlural = __('Subjects', 'municipio-intranet');
 
         $labels = array(
             'name'              => $namePlural,
@@ -155,7 +155,7 @@ class Groups
         global $post;
 
         if ((is_post_type_archive(self::$postTypeSlug)
-            || $this->canEditGroup($post))
+            || $this->canEditForum($post))
             && is_user_logged_in()
             && $sidebar === 'bottom-sidebar') {
             $data = array();
@@ -164,7 +164,7 @@ class Groups
             $data['postContent'] = is_single() ? $post->post_content : '';
             $data['formTitle'] = sprintf('%s %s',
                 is_single() ? __('Update', 'municipio-intranet') : __('Create', 'municipio-intranet'),
-                strtolower(__('Group', 'municipio-intranet'))
+                strtolower(__('Forum', 'municipio-intranet'))
             );
             $terms = is_single() && !empty($post->ID) ? wp_get_post_terms($post->ID, self::$taxonomySlug, array('fields' => 'ids')) : '';
             $term = is_array($terms) && !empty($terms[0]) ? $terms[0] : 0;
@@ -189,7 +189,7 @@ class Groups
                     ),
                 );
             $blade = new Blade(INTRANET_PATH . 'views/partials/modal/', WP_CONTENT_DIR . '/uploads/cache/blade-cache');
-            echo $blade->view()->make('group-modal', $data)->render();
+            echo $blade->view()->make('forum-modal', $data)->render();
 
             $data['editorSettings']['textarea_name'] = 'recipient_email';
             $data['editorSettings']['textarea_rows'] = 1;
@@ -203,25 +203,25 @@ class Groups
      * @param array  $settingItems Setting items
      * @param object $post         Post object
      */
-    public function editGroupButton($settingItems, $post)
+    public function editForumButton($settingItems, $post)
     {
-        if (!$this->canEditGroup($post)) {
+        if (!$this->canEditForum($post)) {
             return $settingItems;
         }
 
         $settingItems[] = '<a href="#modal-target-' . $post->ID . '" class="settings-item" data-action="share-email"><i class="pricon pricon-group pricon-space-right"></i> ' . __('Invite members', 'municipio-intranet') . '</a>';
-        $settingItems[] = '<a href="#modal-edit-group" class="settings-item"><i class="pricon pricon-edit pricon-space-right"></i> ' . __('Edit', 'municipio-intranet') . '</a>';
-        $settingItems[] = '<a href="#" id="delete-group" data-archive="' . get_post_type_archive_link(self::$postTypeSlug) . '" data-post-id="' . $post->ID . '" class="settings-item"><i class="pricon pricon-minus-o pricon-space-right"></i> ' . __('Remove', 'municipio-intranet') . '</a>';
+        $settingItems[] = '<a href="#modal-edit-forum" class="settings-item"><i class="pricon pricon-edit pricon-space-right"></i> ' . __('Edit', 'municipio-intranet') . '</a>';
+        $settingItems[] = '<a href="#" id="delete-forum" data-archive="' . get_post_type_archive_link(self::$postTypeSlug) . '" data-post-id="' . $post->ID . '" class="settings-item"><i class="pricon pricon-minus-o pricon-space-right"></i> ' . __('Remove', 'municipio-intranet') . '</a>';
 
         return $settingItems;
     }
 
     /**
-     * Check if post is a group and if user has edit capabilities
+     * Check if post is a forum and if user has edit capabilities
      * @param  obj $post Post obj
      * @return bool
      */
-    public function canEditGroup($post)
+    public function canEditForum($post)
     {
         $edit = false;
 
@@ -271,10 +271,10 @@ class Groups
     }
 
     /**
-     * Adds/removes member from a group
+     * Adds/removes member from a forum
      * @return void
      */
-    public function joinGroup()
+    public function joinForum()
     {
         ignore_user_abort(true);
         $user = wp_get_current_user();
@@ -284,7 +284,7 @@ class Groups
         }
 
         $postId = (int)$_POST['postId'];
-        $members = get_post_meta($postId, 'group_members', true);
+        $members = get_post_meta($postId, 'forum_members', true);
 
         if (is_array($members)) {
             if (array_key_exists($user->ID, $members)) {
@@ -299,7 +299,7 @@ class Groups
             $members = array($user->ID => 1);
         }
 
-        update_post_meta($postId, 'group_members', $members);
+        update_post_meta($postId, 'forum_members', $members);
         echo('Done');
         wp_die();
     }
@@ -317,10 +317,10 @@ class Groups
         }
 
         $user = wp_get_current_user();
-        $members = get_post_meta($post->ID, 'group_members', true);
+        $members = get_post_meta($post->ID, 'forum_members', true);
         $isMember = isset($members[$user->ID]) && $members[$user->ID] == 1 ? 1 : 0;
 
-        echo '<li><a href="#" class="member-button ' . ($isMember ? 'member-button--is-member' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isMember ? 'pricon-minus-o' : 'pricon-plus-o') . '"></i> <span class="member-button__text">' . ($isMember ? __('Leave group', 'municipio-intranet') : __('Join group', 'municipio-intranet')) . '</span></a></li>';
+        echo '<li><a href="#" class="member-button ' . ($isMember ? 'member-button--is-member' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isMember ? 'pricon-minus-o' : 'pricon-plus-o') . '"></i> <span class="member-button__text">' . ($isMember ? __('Leave discussion forum', 'municipio-intranet') : __('Join discussion forum', 'municipio-intranet')) . '</span></a></li>';
     }
 
     /**
@@ -336,7 +336,7 @@ class Groups
             return;
         }
 
-        add_post_meta($postId, 'group_members', array($post->post_author => 1), true);
+        add_post_meta($postId, 'forum_members', array($post->post_author => 1), true);
     }
 
     /**
@@ -354,7 +354,7 @@ class Groups
         $attachments = get_comment_meta($commentObj->comment_ID, 'attachments', true);
         if (is_array($attachments) && !empty($attachments)) {
             $uploadFolder = wp_upload_dir();
-            $uploadFolder = $uploadFolder['baseurl'] . '/intranet-groups/';
+            $uploadFolder = $uploadFolder['baseurl'] . '/forums/';
 
             foreach ($attachments as $attachment) {
                 $filePath = $uploadFolder . basename($attachment);
@@ -391,7 +391,7 @@ class Groups
     public function uploadFiles($filesList, $commentId)
     {
         $uploadsFolder = wp_upload_dir();
-        $uploadsFolder = $uploadsFolder['basedir'] . '/intranet-groups';
+        $uploadsFolder = $uploadsFolder['basedir'] . '/forums';
         $this->createFolder($uploadsFolder);
         $allowedTypes = array('.jpeg', '.jpg', '.png', '.gif', '.mov', '.webm', '.mp4', '.avi', '.mpeg4', '.mp3', '.ogg', '.aac', '.doc', '.docx', '.xls', '.xlsx', '.pdf');
         $uploaded = array();

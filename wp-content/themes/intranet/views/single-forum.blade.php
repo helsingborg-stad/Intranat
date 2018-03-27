@@ -23,12 +23,12 @@
             @if ($isMember)
                 <div class="grid">
                     <div class="grid-sm-12">
-                        @include('partials.blog.group-comments-form')
+                        @include('partials.blog.forum-comments-form')
                     </div>
                 </div>
                 @if(isset($comments) && ! empty($comments))
                     <div class="grid">
-                        <div class="grid-sm-12 group-comments">
+                        <div class="grid-sm-12 forum-comments">
                             @include('partials.blog.comments')
                         </div>
                     </div>

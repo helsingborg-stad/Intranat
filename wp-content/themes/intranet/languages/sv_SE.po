@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-03-26 16:11+0200\n"
-"PO-Revision-Date: 2018-03-26 16:12+0200\n"
+"POT-Creation-Date: 2018-03-27 14:49+0200\n"
+"PO-Revision-Date: 2018-03-27 14:49+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -257,95 +257,102 @@ msgstr "Anmälan om olämpligt innehåll"
 msgid "The message was sent successfully"
 msgstr "Meddelandet har skickats"
 
-#: library/Controller/SingleIntranetGroup.php:29
+#: library/Controller/SingleForum.php:29
 msgid "Write post"
 msgstr "Skriv inlägg"
 
-#: library/Controller/SingleIntranetGroup.php:30
+#: library/Controller/SingleForum.php:30
 #: views/partials/modal/invite-modal.blade.php:24
 #: views/partials/modal/report-post.blade.php:40
 msgid "Send"
 msgstr "Skicka"
 
-#: library/CustomPostType/Groups.php:39 library/CustomPostType/Groups.php:167
-#: library/Theme/General.php:83 views/partials/modal/invite-modal.blade.php:11
-msgid "Group"
-msgstr "Grupp"
+#: library/CustomPostType/Forums.php:39
+#: views/partials/modal/invite-modal.blade.php:11
+msgid "Discussion forum"
+msgstr "Diskussionsforum"
 
-#: library/CustomPostType/Groups.php:40
-msgid "Groups"
-msgstr "Grupper"
+#: library/CustomPostType/Forums.php:40
+msgid "Discussion forums"
+msgstr "Diskussionsforum"
 
-#: library/CustomPostType/Groups.php:48 library/CustomPostType/Incidents.php:48
+#: library/CustomPostType/Forums.php:48 library/CustomPostType/Incidents.php:48
 #: library/CustomPostType/News.php:214
 msgctxt "add new button"
 msgid "Add New"
 msgstr "Skapa ny"
 
-#: library/CustomPostType/Groups.php:49 library/CustomPostType/Incidents.php:49
+#: library/CustomPostType/Forums.php:49 library/CustomPostType/Incidents.php:49
 #: library/CustomPostType/News.php:215
 #, php-format
 msgid "Add new %s"
 msgstr "Skapa ny %s"
 
-#: library/CustomPostType/Groups.php:50 library/CustomPostType/Incidents.php:50
+#: library/CustomPostType/Forums.php:50 library/CustomPostType/Incidents.php:50
 #: library/CustomPostType/News.php:216
 #, php-format
 msgid "New %s"
 msgstr "Ny %s"
 
-#: library/CustomPostType/Groups.php:51 library/CustomPostType/Groups.php:103
+#: library/CustomPostType/Forums.php:51 library/CustomPostType/Forums.php:103
 #: library/CustomPostType/Incidents.php:51 library/CustomPostType/News.php:217
 #: library/CustomTaxonomy/Hashtags.php:39
 #, php-format
 msgid "Edit %s"
 msgstr "Redigera %s"
 
-#: library/CustomPostType/Groups.php:52 library/CustomPostType/Incidents.php:52
+#: library/CustomPostType/Forums.php:52 library/CustomPostType/Incidents.php:52
 #: library/CustomPostType/News.php:218
 #, php-format
 msgid "View %s"
 msgstr "Visa %s"
 
-#: library/CustomPostType/Groups.php:53 library/CustomPostType/Groups.php:100
+#: library/CustomPostType/Forums.php:53 library/CustomPostType/Forums.php:100
 #: library/CustomPostType/Incidents.php:53 library/CustomPostType/News.php:219
 #: library/CustomTaxonomy/Hashtags.php:36
 #, php-format
 msgid "All %s"
 msgstr "Alla %s"
 
-#: library/CustomPostType/Groups.php:54 library/CustomPostType/Groups.php:99
+#: library/CustomPostType/Forums.php:54 library/CustomPostType/Forums.php:99
 #: library/CustomPostType/Incidents.php:54 library/CustomPostType/News.php:220
 #: library/CustomTaxonomy/Hashtags.php:35
 #, php-format
 msgid "Search %s"
 msgstr "Sök %s"
 
-#: library/CustomPostType/Groups.php:55 library/CustomPostType/Incidents.php:55
+#: library/CustomPostType/Forums.php:55 library/CustomPostType/Incidents.php:55
 #: library/CustomPostType/News.php:221
 #, php-format
 msgid "Parent %s"
 msgstr "Förälder %s"
 
-#: library/CustomPostType/Groups.php:56 library/CustomPostType/Incidents.php:56
+#: library/CustomPostType/Forums.php:56 library/CustomPostType/Incidents.php:56
 #: library/CustomPostType/News.php:222
 #, php-format
 msgid "No %s"
 msgstr "Inga %s"
 
-#: library/CustomPostType/Groups.php:57 library/CustomPostType/Incidents.php:57
+#: library/CustomPostType/Forums.php:57 library/CustomPostType/Incidents.php:57
 #: library/CustomPostType/News.php:223
 #, php-format
 msgid "No %s in trash"
 msgstr "Inga %s i papperskorgen"
 
-#: library/CustomPostType/Groups.php:62
-#, fuzzy
-#| msgid "Show all networks"
-msgid "Social networking groups."
-msgstr "Visa alla intranät"
+#: library/CustomPostType/Forums.php:62
+msgid "Discussion forums."
+msgstr "Diskussionsforum."
 
-#: library/CustomPostType/Groups.php:101 library/CustomPostType/Groups.php:102
+#: library/CustomPostType/Forums.php:93
+#: views/partials/modal/forum-modal.blade.php:18
+msgid "Subject"
+msgstr "Ämne"
+
+#: library/CustomPostType/Forums.php:94
+msgid "Subjects"
+msgstr "Ämnen"
+
+#: library/CustomPostType/Forums.php:101 library/CustomPostType/Forums.php:102
 #: library/CustomTaxonomy/Hashtags.php:37
 #: library/CustomTaxonomy/Hashtags.php:38
 #, fuzzy, php-format
@@ -353,69 +360,69 @@ msgstr "Visa alla intranät"
 msgid "Parent %s:"
 msgstr "Förälder %s"
 
-#: library/CustomPostType/Groups.php:104 library/CustomTaxonomy/Hashtags.php:40
+#: library/CustomPostType/Forums.php:104 library/CustomTaxonomy/Hashtags.php:40
 #, php-format
 msgid "Update %s"
 msgstr "Uppdatera %s"
 
-#: library/CustomPostType/Groups.php:105 library/CustomTaxonomy/Hashtags.php:41
+#: library/CustomPostType/Forums.php:105 library/CustomTaxonomy/Hashtags.php:41
 #, php-format
 msgid "Add New %s"
 msgstr "Skapa ny %s"
 
-#: library/CustomPostType/Groups.php:106 library/CustomTaxonomy/Hashtags.php:42
+#: library/CustomPostType/Forums.php:106 library/CustomTaxonomy/Hashtags.php:42
 #, fuzzy, php-format
 #| msgid "New %s"
 msgid "New %s Name"
 msgstr "Ny %s"
 
-#: library/CustomPostType/Groups.php:166
+#: library/CustomPostType/Forums.php:166
 msgid "Update"
 msgstr "Uppdatera"
 
-#: library/CustomPostType/Groups.php:166
+#: library/CustomPostType/Forums.php:166
 msgid "Create"
 msgstr "Skapa"
 
-#: library/CustomPostType/Groups.php:212
+#: library/CustomPostType/Forums.php:167
+msgid "Forum"
+msgstr "Forum"
+
+#: library/CustomPostType/Forums.php:212
 #: views/partials/modal/invite-modal.blade.php:6
 msgid "Invite members"
 msgstr "Bjud in medlemmar"
 
-#: library/CustomPostType/Groups.php:213 library/Theme/Enqueue.php:52
+#: library/CustomPostType/Forums.php:213 library/Theme/Enqueue.php:52
 #: templates/admin/systems/form.php:56
 #: templates/module/intranet-u-links.blade.php:17
 msgid "Edit"
 msgstr "Redigera"
 
-#: library/CustomPostType/Groups.php:214 templates/admin/systems/form.php:57
+#: library/CustomPostType/Forums.php:214 templates/admin/systems/form.php:57
 #: templates/module/intranet-u-links.blade.php:28
 msgid "Remove"
 msgstr "Ta bort"
 
-#: library/CustomPostType/Groups.php:323 library/Theme/Enqueue.php:60
-msgid "Leave group"
-msgstr "Gå ur gruppen"
+#: library/CustomPostType/Forums.php:323
+msgid "Leave discussion forum"
+msgstr "Gå ur forumet"
 
-#: library/CustomPostType/Groups.php:323 library/Theme/Enqueue.php:59
-msgid "Join group"
-msgstr "Gå med i grupp"
+#: library/CustomPostType/Forums.php:323
+msgid "Join discussion forum"
+msgstr "Gå med i forumet"
 
-#: library/CustomPostType/Groups.php:447
+#: library/CustomPostType/Forums.php:447
 msgid "Attach files"
-msgstr ""
+msgstr "Bifoga filer"
 
-#: library/CustomPostType/Groups.php:451
-#, fuzzy
-#| msgid "Selectable"
+#: library/CustomPostType/Forums.php:451
 msgid "Select file"
-msgstr "Valbar"
+msgstr "Välj en fil"
 
-#: library/CustomPostType/Groups.php:452
-#, fuzzy
-#| msgid "Profile cover"
+#: library/CustomPostType/Forums.php:452
 msgid "No file chosen"
-msgstr "Omslagsbild"
+msgstr "Ingen fil har valts"
 
 #: library/CustomPostType/Incidents.php:20 views/archive-incidents.blade.php:25
 msgid "to"
@@ -585,6 +592,18 @@ msgstr "Något gick fel, vänligen försök igen senare"
 msgid "Are you sure you want to delete this post?"
 msgstr "Är du säker på att du vill radera sidan?"
 
+#: library/Theme/Enqueue.php:59
+#, fuzzy
+#| msgid "Join group"
+msgid "Join forum"
+msgstr "Gå med i grupp"
+
+#: library/Theme/Enqueue.php:60
+#, fuzzy
+#| msgid "Leave group"
+msgid "Leave forum"
+msgstr "Gå ur gruppen"
+
 #: library/Theme/General.php:24
 msgid "Page manager"
 msgstr "Sidansvarig"
@@ -596,6 +615,10 @@ msgstr "Ärende"
 #: library/Theme/General.php:82
 msgid "Idea"
 msgstr "Idé"
+
+#: library/Theme/General.php:83
+msgid "Group"
+msgstr "Grupp"
 
 #: library/Theme/Walkthrough.php:23
 msgid ""
@@ -756,7 +779,7 @@ msgstr "Namn"
 
 #: templates/admin/systems/form.php:44 templates/admin/systems/form.php:87
 #: templates/module/intranet-i-systems-modal.blade.php:22
-#: views/partials/modal/group-modal.blade.php:14
+#: views/partials/modal/forum-modal.blade.php:14
 msgid "Description"
 msgstr "Beskrivning"
 
@@ -1556,15 +1579,11 @@ msgstr "Meny"
 msgid "What are you looking for?"
 msgstr "Vad letar du efter?"
 
-#: views/partials/modal/group-modal.blade.php:10
-msgid "Name your group"
-msgstr "Namnge gruppen"
+#: views/partials/modal/forum-modal.blade.php:10
+msgid "Name your discussion forum"
+msgstr "Namnge diskussionsforumet"
 
-#: views/partials/modal/group-modal.blade.php:18
-msgid "Category"
-msgstr "Kategori"
-
-#: views/partials/modal/group-modal.blade.php:24
+#: views/partials/modal/forum-modal.blade.php:24
 #: views/partials/modal/missing-data.blade.php:5
 #: views/partials/user/modal-password.blade.php:13
 msgid "Close"
@@ -1821,6 +1840,20 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://github.com/helsingborg-stad"
 msgstr ""
+
+#~ msgid "Name your forum"
+#~ msgstr "Namnge diskussionsforumet"
+
+#~ msgid "Category"
+#~ msgstr "Kategori"
+
+#~ msgid "Groups"
+#~ msgstr "Grupper"
+
+#, fuzzy
+#~| msgid "Show all networks"
+#~ msgid "Social networking groups."
+#~ msgstr "Visa alla intranät"
 
 #, fuzzy
 #~| msgid "Search %s"
