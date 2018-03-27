@@ -320,7 +320,7 @@ class Forums
         $members = get_post_meta($post->ID, 'forum_members', true);
         $isMember = isset($members[$user->ID]) && $members[$user->ID] == 1 ? 1 : 0;
 
-        echo '<li><a href="#" class="member-button ' . ($isMember ? 'member-button--is-member' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isMember ? 'pricon-minus-o' : 'pricon-plus-o') . '"></i> <span class="member-button__text">' . ($isMember ? __('Leave discussion forum', 'municipio-intranet') : __('Join discussion forum', 'municipio-intranet')) . '</span></a></li>';
+        echo '<li><a href="#" class="member-button ' . ($isMember ? 'member-button--is-member' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isMember ? 'pricon-minus-o' : 'pricon-plus-o') . '"></i> <span class="member-button__text">' . ($isMember ? __('Leave forum', 'municipio-intranet') : __('Join forum', 'municipio-intranet')) . '</span></a></li>';
     }
 
     /**

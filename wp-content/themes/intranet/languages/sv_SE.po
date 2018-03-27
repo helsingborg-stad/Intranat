@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-03-27 14:49+0200\n"
-"PO-Revision-Date: 2018-03-27 14:49+0200\n"
+"POT-Creation-Date: 2018-03-27 15:59+0200\n"
+"PO-Revision-Date: 2018-03-27 16:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -404,12 +404,12 @@ msgstr "Redigera"
 msgid "Remove"
 msgstr "Ta bort"
 
-#: library/CustomPostType/Forums.php:323
-msgid "Leave discussion forum"
+#: library/CustomPostType/Forums.php:323 library/Theme/Enqueue.php:60
+msgid "Leave forum"
 msgstr "Gå ur forumet"
 
-#: library/CustomPostType/Forums.php:323
-msgid "Join discussion forum"
+#: library/CustomPostType/Forums.php:323 library/Theme/Enqueue.php:59
+msgid "Join forum"
 msgstr "Gå med i forumet"
 
 #: library/CustomPostType/Forums.php:447
@@ -591,18 +591,6 @@ msgstr "Något gick fel, vänligen försök igen senare"
 #: library/Theme/Enqueue.php:58
 msgid "Are you sure you want to delete this post?"
 msgstr "Är du säker på att du vill radera sidan?"
-
-#: library/Theme/Enqueue.php:59
-#, fuzzy
-#| msgid "Join group"
-msgid "Join forum"
-msgstr "Gå med i grupp"
-
-#: library/Theme/Enqueue.php:60
-#, fuzzy
-#| msgid "Leave group"
-msgid "Leave forum"
-msgstr "Gå ur gruppen"
 
 #: library/Theme/General.php:24
 msgid "Page manager"
@@ -1840,6 +1828,12 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://github.com/helsingborg-stad"
 msgstr ""
+
+#~ msgid "Leave discussion forum"
+#~ msgstr "Gå ur forumet"
+
+#~ msgid "Join discussion forum"
+#~ msgstr "Gå med i forumet"
 
 #~ msgid "Name your forum"
 #~ msgstr "Namnge diskussionsforumet"
