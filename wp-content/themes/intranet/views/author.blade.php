@@ -199,7 +199,7 @@
                 @if (is_array($groups) && !empty($groups))
                 <div class="grid-md-6">
                     <div class="box box-panel box-panel-secondary">
-                        <h4 class="box-title"><?php _e('Groups', 'municipio-intranet'); ?></h4>
+                        <h4 class="box-title"><?php _ex('Participating in discussions', 'User profile', 'municipio-intranet'); ?></h4>
                         <ul>
                             @foreach ($groups as $group)
                             <li>
@@ -214,7 +214,7 @@
                 @if (is_array($submittedIdeas) && !empty($submittedIdeas))
                 <div class="grid-md-6">
                     <div class="box box-panel box-panel-secondary">
-                        <h4 class="box-title"><?php _e('Submitted ideas', 'municipio-intranet'); ?></h4>
+                        <h4 class="box-title"><?php _ex('Submitted ideas', 'User profile', 'municipio-intranet'); ?></h4>
                         <ul>
                             @foreach ($submittedIdeas as $idea)
                             <li>
