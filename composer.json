@@ -76,6 +76,7 @@
         "wpackagist-plugin/mce-table-buttons": "^3.0.0",
         "johnpbloch/wordpress-core": "4.9.4",
         "wpackagist-plugin/kint-php-debugger": "^1.1",
+        "wpackagist-plugin/search-by-algolia-instant-relevant-results": "2.9.3",
         "kint-php/kint": "^2.2"
     },
 
