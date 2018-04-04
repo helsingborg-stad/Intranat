@@ -80,7 +80,7 @@ class General
             return array('intranet-news' => __('News', 'municipio-intranet'),
                         'ticket' => __('Ticket', 'municipio-intranet'),
                         'idea' => __('Idea', 'municipio-intranet'),
-                        'intranet-group' => __('Group', 'municipio-intranet'));
+                        'forum' => __('Discussion forum', 'municipio-intranet'));
         });
     }
 
