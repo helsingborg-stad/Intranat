@@ -38,7 +38,7 @@ class App
         new \Intranet\User\Skills();
         new \Intranet\User\Data();
 
-        //new \Intranet\Search\Elasticsearch();
+        new \Intranet\Search\Elasticsearch();
 
         // Custom post types
         new \Intranet\CustomPostType\News();
@@ -76,6 +76,6 @@ class App
 
         new \Intranet\Api\Wp();
         new \Intranet\Api\News();
-        //new \Intranet\Api\Search();
+        new \Intranet\Api\Search();
     }
 }
