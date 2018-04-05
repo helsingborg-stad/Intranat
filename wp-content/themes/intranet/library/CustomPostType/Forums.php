@@ -14,7 +14,7 @@ class Forums
         add_action('init', array($this, 'registerCustomPostType'));
         add_action('init', array($this, 'registerCategories'));
         add_action('init', array($this, 'addCapabilities'));
-        add_action('Municipio/blog/post_info', array($this, 'joinButton'), 9, 1);
+        add_action('Municipio/blog/post_info', array($this, 'joinButton'), 8, 1);
         add_action('wp_ajax_join_forum', array($this, 'joinForum'));
         add_action('save_post', array($this, 'createMembersMeta'), 10, 3);
         add_action('comment_post', array($this, 'uploadCommentFiles'));
