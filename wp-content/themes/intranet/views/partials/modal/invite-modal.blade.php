@@ -1,4 +1,4 @@
-<div id="modal-target-{{ get_the_ID() }}" class="modal modal-backdrop-2 modal-xs text-left" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="modal-invite-members" class="modal modal-backdrop-2 modal-xs text-left" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content material-shadow-lg">
         <form class="social-share-email">
             <div class="modal-header">
