@@ -34,7 +34,7 @@ class Author extends \Intranet\Controller\BaseController
         global $wpdb;
 
         // Collect all group members from db
-        $groupMembers = $wpdb->get_results("SELECT post_id, meta_value as members FROM {$wpdb->prefix}postmeta WHERE meta_key = 'group_members'", ARRAY_A);
+        $groupMembers = $wpdb->get_results("SELECT post_id, meta_value as members FROM {$wpdb->prefix}postmeta WHERE meta_key = 'forum_members'", ARRAY_A);
 
         // Return all groups where user is a member
         $groups = array_map(function($array) use($userId) {
