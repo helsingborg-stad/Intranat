@@ -2,6 +2,8 @@
 
 namespace Intranet\User;
 
+require_once(ABSPATH . 'wp-admin/includes/screen.php');
+
 class SsoRedirect
 {
     private $prohibitedUrls;
