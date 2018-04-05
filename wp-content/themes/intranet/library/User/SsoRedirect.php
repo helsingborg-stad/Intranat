@@ -13,6 +13,7 @@ class SsoRedirect
 
         //Set vars
         $this->prohibitedUrls = array('plugins');
+        $currentScreen = get_current_screen();
 
         //Disable SSO on subsites completly
         if (!is_main_site()) {
@@ -21,13 +22,12 @@ class SsoRedirect
         } elseif (defined('DOING_CRON') && DOING_CRON === true) {
             add_filter('option_active_plugins', array($this, 'disableSsoPlugin'));
             add_filter('site_option_active_plugins', array($this, 'disableSsoPlugin'));
-        } elseif (!$this->disabledUrl()) {
-            add_action('init', array($this, 'init'), 9999);
-        } elseif (is_user_logged_in()) {
+        } elseif (is_user_logged_in() && $currentScreen->id !== 'plugins') {
             add_filter('option_active_plugins', array($this, 'disableSsoPlugin'));
             add_filter('site_option_active_plugins', array($this, 'disableSsoPlugin'));
+        } elseif (!$this->disabledUrl()) {
+            add_action('init', array($this, 'init'), 9999);
         }
-
     }
 
     /**
@@ -50,7 +50,8 @@ class SsoRedirect
 
     public function init()
     {
-        if (method_exists('\SsoAvailability\SsoAvailability', 'isSsoAvailable') && !\SsoAvailability\SsoAvailability::isSsoAvailable()) {
+        if (method_exists('\SsoAvailability\SsoAvailability',
+                'isSsoAvailable') && !\SsoAvailability\SsoAvailability::isSsoAvailable()) {
             return;
         }
 
@@ -95,7 +96,8 @@ class SsoRedirect
     {
         if (class_exists('\SAML_Client')) {
             if (!isset($_COOKIE['sso_after_login_redirect']) || empty($_COOKIE['sso_after_login_redirect'])) {
-                setcookie('sso_after_login_redirect', municipio_intranet_current_url(), time() + 300, '/', COOKIE_DOMAIN);
+                setcookie('sso_after_login_redirect', municipio_intranet_current_url(), time() + 300, '/',
+                    COOKIE_DOMAIN);
             }
 
             try {
@@ -131,6 +133,6 @@ class SsoRedirect
 
     public function addBodyClass($classes)
     {
-        return array_merge($classes, array( 'sso-enabled' ));
+        return array_merge($classes, array('sso-enabled'));
     }
 }
