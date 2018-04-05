@@ -23,7 +23,11 @@ class SsoRedirect
             add_filter('site_option_active_plugins', array($this, 'disableSsoPlugin'));
         } elseif (!$this->disabledUrl()) {
             add_action('init', array($this, 'init'), 9999);
+        } elseif (is_user_logged_in()) {
+            add_filter('option_active_plugins', array($this, 'disableSsoPlugin'));
+            add_filter('site_option_active_plugins', array($this, 'disableSsoPlugin'));
         }
+
     }
 
     /**
