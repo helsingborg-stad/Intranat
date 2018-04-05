@@ -19,6 +19,10 @@
 	        }
     	}
 	}
+
+	.author-image .pricon::before {
+		vertical-align: top;
+	}
 }
 
 .forum-members-link {

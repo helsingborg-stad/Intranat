@@ -850,6 +850,9 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
     .forum-comments li.comment.comment-new ul.answers .answer {
       margin-bottom: 15px; }
 
+.forum-comments .author-image .pricon::before {
+  vertical-align: top; }
+
 .forum-members-link {
   float: right;
   margin-bottom: 10px; }
