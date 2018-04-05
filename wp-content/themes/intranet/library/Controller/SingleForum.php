@@ -13,6 +13,11 @@ class SingleForum extends \Municipio\Controller\Single
         $members = get_post_meta($post->ID, 'forum_members', true);
         $isMember = comments_open() && !empty($members) && isset($members[$user->ID]) && $members[$user->ID] == 1 ? true : false;
 
+        $this->data['comments'] = get_comments(array(
+            'post_id'   => $post->ID,
+            'order'     => 'desc'
+        ));
+        $this->data['post'] = $post;
         $this->data['isMember'] = $isMember;
         $this->data['commentForm'] = $this->commentForm();
     }
