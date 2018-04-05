@@ -139,7 +139,7 @@ class Forums
     {
         global $post;
 
-        if ((is_post_type_archive(self::$postTypeSlug) ||(is_single() && isset($post->post_type) && $post->post_type == self::$postTypeSlug)) && is_user_logged_in() && $sidebar === 'bottom-sidebar') {
+        if ((is_post_type_archive(self::$postTypeSlug) ||(is_single() && isset($post->post_type) && $post->post_type == self::$postTypeSlug)) && is_user_logged_in() && ($sidebar === 'bottom-sidebar' ||$sidebar === 'right-sidebar')) {
             $isActiveSidebar = true;
         }
 
@@ -155,20 +155,33 @@ class Forums
         global $post;
 
         if ((is_post_type_archive(self::$postTypeSlug)
-            || $this->canEditForum($post))
+            || (is_single() && $post->post_type == self::$postTypeSlug))
             && is_user_logged_in()
             && $sidebar === 'bottom-sidebar') {
-            $data = array();
-            $data['postId'] = is_single() && !empty($post->ID) ? $post->ID : '';
-            $data['postTitle'] = is_single() ? $post->post_title : '';
-            $data['postContent'] = is_single() ? $post->post_content : '';
-            $data['formTitle'] = sprintf('%s %s',
+            $this->bottomSidebarContent($post);
+        }
+
+        if (is_single()
+            && $post->post_type == self::$postTypeSlug
+            && is_user_logged_in()
+            && $sidebar === 'right-sidebar') {
+            $this->rightSidebarContent($post);
+        }
+    }
+
+    public function bottomSidebarContent($post)
+    {
+        $data = array();
+        $data['postId'] = is_single() && !empty($post->ID) ? $post->ID : '';
+        $data['postTitle'] = is_single() ? $post->post_title : '';
+        $data['postContent'] = is_single() ? $post->post_content : '';
+        $data['formTitle'] = sprintf('%s %s',
                 is_single() ? __('Update', 'municipio-intranet') : __('Create', 'municipio-intranet'),
                 strtolower(__('Forum', 'municipio-intranet'))
             );
-            $terms = is_single() && !empty($post->ID) ? wp_get_post_terms($post->ID, self::$taxonomySlug, array('fields' => 'ids')) : '';
-            $term = is_array($terms) && !empty($terms[0]) ? $terms[0] : 0;
-            $taxArgs = array(
+        $terms = is_single() && !empty($post->ID) ? wp_get_post_terms($post->ID, self::$taxonomySlug, array('fields' => 'ids')) : '';
+        $term = is_array($terms) && !empty($terms[0]) ? $terms[0] : 0;
+        $taxArgs = array(
                         'echo'       => 0,
                         'name'       => self::$taxonomySlug,
                         'taxonomy'   => self::$taxonomySlug,
@@ -176,8 +189,8 @@ class Forums
                         'orderby'    => 'slug',
                         'selected'   => $term
                     );
-            $data['categories'] = wp_dropdown_categories($taxArgs);
-            $data['editorSettings'] = array(
+        $data['categories'] = wp_dropdown_categories($taxArgs);
+        $data['editorSettings'] = array(
                 'wpautop' => true,
                 'media_buttons' => false,
                 'quicktags' => false,
@@ -188,14 +201,66 @@ class Forums
                         'statusbar' => false,
                     ),
                 );
-            $blade = new Blade(INTRANET_PATH . 'views/partials/modal/', WP_CONTENT_DIR . '/uploads/cache/blade-cache');
-            echo $blade->view()->make('forum-modal', $data)->render();
+        $data['members'] = $this->getMembers($post->ID);
+        $blade = new Blade(INTRANET_PATH . 'views/partials/modal/', WP_CONTENT_DIR . '/uploads/cache/blade-cache');
+        // Add create/edit forum modal
+        if (is_post_type_archive(self::$postTypeSlug) ||(is_single() && $this->canEditForum($post))) {
+             echo $blade->view()->make('forum-modal', $data)->render();
+        }
 
-            $data['editorSettings']['textarea_name'] = 'recipient_email';
-            $data['editorSettings']['textarea_rows'] = 1;
-            $blade = new Blade(INTRANET_PATH . 'views/partials/modal/', WP_CONTENT_DIR . '/uploads/cache/blade-cache');
+        $data['editorSettings']['textarea_name'] = 'recipient_email';
+        $data['editorSettings']['textarea_rows'] = 1;
+        // Add invite modal for members
+        if (is_single() && $this->isForumMember($post->ID)) {
             echo $blade->view()->make('invite-modal', $data)->render();
         }
+        // Add members modal for all logged in users
+        if (is_single()) {
+            echo $blade->view()->make('forum-members-modal', $data)->render();
+        }
+    }
+
+    public function rightSidebarContent($post)
+    {
+        $members = $this->getMembers($post->ID);
+
+        $data = array();
+        $data['post'] = $post;
+        $data['isMember'] = $this->isForumMember($post->ID);
+        $data['members'] = $members;
+        shuffle($members);
+        $data['randomMembers'] = array_slice($members, 0, 5);
+
+        $blade = new Blade(INTRANET_PATH . 'views/partials/forum/', WP_CONTENT_DIR . '/uploads/cache/blade-cache');
+        echo $blade->view()->make('forum-sidebar', $data)->render();
+    }
+
+    public function getMembers($postId)
+    {
+        $members = get_post_meta($postId, 'forum_members', true);
+        if (is_array($members) && !empty($members)) {
+            $members = array_map(function($a) {
+                if (get_the_author_meta('user_profile_picture', $a)) {
+                    $image = '<img src="' . get_the_author_meta('user_profile_picture', $a) . '">';
+                } else {
+                    $image = '<i class="pricon pricon-3x pricon-user-o"></i>';
+                }
+
+                $a = array(
+                    'id' => $a,
+                    'name' => municipio_intranet_get_user_full_name($a),
+                    'url' => municipio_intranet_get_user_profile_url($a),
+                    'administrationUnit' => \Intranet\User\AdministrationUnits::getUsersAdministrationUnitIntranet($a),
+                    'image' => $image,
+                );
+
+                return $a;
+            }, array_keys(array_filter($members, function($a) {
+                return $a == 1;
+            })));
+        }
+
+        return $members;
     }
 
     /**
@@ -209,7 +274,6 @@ class Forums
             return $settingItems;
         }
 
-        $settingItems[] = '<a href="#modal-target-' . $post->ID . '" class="settings-item" data-action="share-email"><i class="pricon pricon-group pricon-space-right"></i> ' . __('Invite members', 'municipio-intranet') . '</a>';
         $settingItems[] = '<a href="#modal-edit-forum" class="settings-item"><i class="pricon pricon-edit pricon-space-right"></i> ' . __('Edit', 'municipio-intranet') . '</a>';
         $settingItems[] = '<a href="#" id="delete-forum" data-archive="' . get_post_type_archive_link(self::$postTypeSlug) . '" data-post-id="' . $post->ID . '" class="settings-item"><i class="pricon pricon-minus-o pricon-space-right"></i> ' . __('Remove', 'municipio-intranet') . '</a>';
 
@@ -243,9 +307,17 @@ class Forums
     {
         // Subscriber caps
         $role = get_role('subscriber');
-        $role->add_cap('read_' . self::$postTypeSlug);
-        $role->add_cap('publish_' . self::$postTypeSlug . 's');
         $role->add_cap('edit_' . self::$postTypeSlug);
+        $role->add_cap('read_' . self::$postTypeSlug);
+        $role->add_cap('delete_' . self::$postTypeSlug);
+        $role->add_cap('edit_' . self::$postTypeSlug . 's');
+        $role->add_cap('publish_' . self::$postTypeSlug . 's');
+        $role->add_cap('read_private_' . self::$postTypeSlug . 's');
+        $role->add_cap('delete_' . self::$postTypeSlug . 's');
+        $role->add_cap('delete_private_' . self::$postTypeSlug . 's');
+        $role->add_cap('delete_published_' . self::$postTypeSlug . 's');
+        $role->add_cap('edit_private_' . self::$postTypeSlug . 's');
+        $role->add_cap('edit_published_' . self::$postTypeSlug . 's');
 
         $role->remove_cap('edit_others_' . self::$postTypeSlug . 's');
         $role->remove_cap('delete_others_' . self::$postTypeSlug . 's');
@@ -283,7 +355,7 @@ class Forums
             wp_die();
         }
 
-        $postId = (int)$_POST['postId'];
+        $postId = (int) $_POST['postId'];
         $members = get_post_meta($postId, 'forum_members', true);
 
         if (is_array($members)) {
@@ -316,11 +388,19 @@ class Forums
             return;
         }
 
-        $user = wp_get_current_user();
-        $members = get_post_meta($post->ID, 'forum_members', true);
-        $isMember = isset($members[$user->ID]) && $members[$user->ID] == 1 ? 1 : 0;
-
+        $isMember = $this->isForumMember($post->ID);
         echo '<li><a href="#" class="member-button ' . ($isMember ? 'member-button--is-member' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isMember ? 'pricon-minus-o' : 'pricon-plus-o') . '"></i> <span class="member-button__text">' . ($isMember ? __('Leave forum', 'municipio-intranet') : __('Join forum', 'municipio-intranet')) . '</span></a></li>';
+    }
+
+    public function isForumMember($postId)
+    {
+        if (!is_user_logged_in()) {
+            return false;
+        }
+
+        $user = wp_get_current_user();
+        $members = get_post_meta($postId, 'forum_members', true);
+        return isset($members[$user->ID]) && $members[$user->ID] == 1 ? true : false;
     }
 
     /**
