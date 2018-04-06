@@ -169,6 +169,11 @@ class Forums
         }
     }
 
+    /**
+     * Callback to display bottom sidebar content
+     * @param  obj $post The Post object
+     * @return void
+     */
     public function bottomSidebarContent($post)
     {
         $data = array();
@@ -220,6 +225,11 @@ class Forums
         }
     }
 
+    /**
+     * Callback to display right sidebar content
+     * @param  obj $post The Post object
+     * @return void
+     */
     public function rightSidebarContent($post)
     {
         $members = $this->getMembers($post->ID);
@@ -235,6 +245,11 @@ class Forums
         echo $blade->view()->make('forum-sidebar', $data)->render();
     }
 
+    /**
+     * Get forum members, plus info
+     * @param  int $postId The post ID
+     * @return mixed       Array with forum members. Or empty value.
+     */
     public function getMembers($postId)
     {
         $members = get_post_meta($postId, 'forum_members', true);
@@ -392,7 +407,12 @@ class Forums
         echo '<li><a href="#" class="member-button ' . ($isMember ? 'member-button--is-member' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isMember ? 'pricon-minus-o' : 'pricon-plus-o') . '"></i> <span class="member-button__text">' . ($isMember ? __('Leave forum', 'municipio-intranet') : __('Join forum', 'municipio-intranet')) . '</span></a></li>';
     }
 
-    public function isForumMember($postId)
+    /**
+     * Check if user is forum member
+     * @param  int  $postId The post id
+     * @return boolean      If member or not
+     */
+    public function isForumMember($postId) : bool
     {
         if (!is_user_logged_in()) {
             return false;
