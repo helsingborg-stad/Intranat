@@ -17,21 +17,8 @@
         {
             "type":"composer",
             "url":"https://wpackagist.org"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "humanmade/page-for-post-type",
-                "version": "1.0.1",
-                "dist": {
-                    "url": "https://github.com/humanmade/page-for-post-type/archive/4104277b2140a5b5badb6796979c6e2373c25048.zip",
-                    "type": "zip"
-                },
-                "type": "wordpress-plugin"
-            }
         }
     ],
-
     "require": {
         "composer/installers": "~1.0",
         "giggsey/libphonenumber-for-php": "7.6.0",
@@ -73,12 +60,12 @@
         "wpackagist-plugin/user-switching" : ">=1.0.0",
         "wpackagist-plugin/wordpress-importer": "0.6.3",
         "wpackagist-plugin/mce-table-buttons": "^3.0.0",
-        "johnpbloch/wordpress-core": "4.9.4",
+        "johnpbloch/wordpress": "^4.9",
         "wpackagist-plugin/kint-php-debugger": "^1.1",
         "kint-php/kint": "^2.2"
     },
-
     "extra": {
+        "path": "/",
         "wordpress-install-dir": "wp",
         "installer-paths": {
             "wp-content/plugins/{$name}": ["type:wordpress-plugin"],
