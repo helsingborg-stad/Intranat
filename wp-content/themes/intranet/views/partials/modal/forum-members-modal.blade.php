@@ -9,7 +9,7 @@
                 @foreach ($members as $member)
                 <div class="grid-lg-6 grid-md-12">
                     <a href="{{ $member['url'] }}" alt="{{ $member['name'] }}">
-                        <div class="member-wrapper">
+                        <div class="member-wrapper gutter gutter-bottom">
                             <div class="member-image">
                                 {!! $member['image'] !!}
                             </div>

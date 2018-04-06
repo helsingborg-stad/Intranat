@@ -59,7 +59,7 @@
 #modal-forum-members {
 	.modal-body {
 		max-height: 500px;
-		overflow: auto;
+		overflow-y: auto;
 
 		a {
 			text-decoration: none;
@@ -68,12 +68,13 @@
 
 	.member-wrapper {
  		display: flex;
-		margin-bottom: 20px;
+ 		flex-wrap: wrap;
  		align-items: center;
  	}
 
 	.member-image {
-		margin-right: 13px;
+		flex-grow: 0;
+		margin-right: 15px;
 
 		img {
 			border-radius: 50%;
@@ -91,10 +92,11 @@
 	}
 
 	.member-info {
+		flex-grow: 1;
 		color: #000;
 
 		small {
-			color: #666;
+			color: #777;
 		}
 	}
 }

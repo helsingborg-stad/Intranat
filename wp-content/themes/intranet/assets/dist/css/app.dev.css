@@ -876,19 +876,22 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
 
 #modal-forum-members .modal-body {
   max-height: 500px;
-  overflow: auto; }
+  overflow-y: auto; }
   #modal-forum-members .modal-body a {
     text-decoration: none; }
 
 #modal-forum-members .member-wrapper {
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-align: center;
       align-items: center; }
 
 #modal-forum-members .member-image {
-  margin-right: 13px; }
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+  margin-right: 15px; }
   #modal-forum-members .member-image img {
     border-radius: 50%;
     width: 57px;
@@ -899,9 +902,11 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
     vertical-align: top; }
 
 #modal-forum-members .member-info {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
   color: #000; }
   #modal-forum-members .member-info small {
-    color: #666; }
+    color: #777; }
 
 .network-search-dropdown {
   display: none;
