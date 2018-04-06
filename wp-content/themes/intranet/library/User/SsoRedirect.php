@@ -2,7 +2,7 @@
 
 namespace Intranet\User;
 
-require_once(ABSPATH . 'wp-admin/includes/screen.php');
+//require_once(ABSPATH . 'wp-admin/includes/screen.php');
 
 class SsoRedirect
 {
@@ -15,7 +15,7 @@ class SsoRedirect
 
         //Set vars
         $this->prohibitedUrls = array('plugins');
-        $currentScreen = get_current_screen();
+        $screen = $this->getCurrentScreen();
 
         //Disable SSO on subsites completly
         if (!is_main_site()) {
@@ -24,12 +24,29 @@ class SsoRedirect
         } elseif (defined('DOING_CRON') && DOING_CRON === true) {
             add_filter('option_active_plugins', array($this, 'disableSsoPlugin'));
             add_filter('site_option_active_plugins', array($this, 'disableSsoPlugin'));
-        } elseif (is_user_logged_in() && $currentScreen->id !== 'plugins') {
+        } elseif (is_user_logged_in() && $screen->id !== 'plugins') {
             add_filter('option_active_plugins', array($this, 'disableSsoPlugin'));
             add_filter('site_option_active_plugins', array($this, 'disableSsoPlugin'));
         } elseif (!$this->disabledUrl()) {
             add_action('init', array($this, 'init'), 9999);
         }
+    }
+
+    /**
+     * Get the current screen object
+     * @since 3.1.0
+     * @global WP_Screen $current_screen
+     * @return WP_Screen|null Current screen object or null when screen not defined.
+     */
+    public function getCurrentScreen()
+    {
+        global $current_screen;
+
+        if (!isset($current_screen)) {
+            return null;
+        }
+
+        return $current_screen;
     }
 
     /**
