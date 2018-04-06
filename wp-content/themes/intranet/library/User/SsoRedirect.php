@@ -15,6 +15,7 @@ class SsoRedirect
 
         //Set vars
         $this->prohibitedUrls = array('plugins');
+        $pageParam = isset($_GET['page']) ? $_GET['page'] : null;
 
         //Disable SSO on subsites completly
         if (!is_main_site()) {
@@ -23,7 +24,7 @@ class SsoRedirect
         } elseif (defined('DOING_CRON') && DOING_CRON === true) {
             add_filter('option_active_plugins', array($this, 'disableSsoPlugin'));
             add_filter('site_option_active_plugins', array($this, 'disableSsoPlugin'));
-        } elseif (is_user_logged_in() && isset($_GET['page']) !== 'plugins') {
+        } elseif (is_user_logged_in() && $pageParam !== 'plugins') {
             add_filter('option_active_plugins', array($this, 'disableSsoPlugin'));
             add_filter('site_option_active_plugins', array($this, 'disableSsoPlugin'));
         } elseif (!$this->disabledUrl()) {
