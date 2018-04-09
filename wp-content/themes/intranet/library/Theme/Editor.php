@@ -14,7 +14,7 @@ class Editor
         add_filter('comment_form_field_comment', array( $this, 'tinyMceComments'));
         add_filter('comment_reply_link', array( $this, 'commentReplyLink'));
         add_action('wp_enqueue_scripts', array( $this, 'enqueueScripts'));
-        add_filter('tiny_mce_before_init', array($this, 'disableTmceToolbar'), 10, 2);
+        add_filter('tiny_mce_before_init', array($this, 'customizeEditor'), 10, 2);
 
         // @mention functionality
         add_filter('mce_external_plugins', array($this, 'tinyMcePlugins'));
@@ -22,20 +22,35 @@ class Editor
     }
 
     /**
-     * Disable TinyMce toolbar for comments
-     * @param  array $in Defualt list with buttons
+     * Customize TinyMce editor settings
+     * @param  array $in Defualt editor settings
      * @param  int $id   Editor ID
-     * @return array     Modified list with buttons
+     * @return array     Modified settings
      */
-    public function disableTmceToolbar($in, $id)
+    public function customizeEditor($mceInit, $id)
     {
-        if ($id === 'comment' ||$id === 'emailfield') {
-            $in['toolbar1'] = '';
-            $in['toolbar2'] = '';
-            $in['toolbar'] = false;
+        $editors = array('comment', 'emailfield', 'editgroup');
+        if (in_array($id, $editors)) {
+            // Disable toolbars
+            $mceInit['toolbar1'] = '';
+            $mceInit['toolbar2'] = '';
+            $mceInit['toolbar'] = false;
+
+            if (!defined('WEB_FONT')) {
+                return $mceInit;
+            }
+
+            // Add styles
+            $bgColor = ($id == 'comment') ? '#f4f4f4' : '#fff';
+            $style = "body#tinymce.wp-editor { font-family: " . WEB_FONT . ",system,Segoe UI,Tahoma,-apple-system; background-color: " . $bgColor . ";} body#tinymce.wp-editor a { color:#7b075e;}";
+            if (isset($mceInit['content_style'])) {
+                $mceInit['content_style'] .= ' ' . $style . ' ';
+            } else {
+                $mceInit['content_style'] = $style . ' ';
+            }
         }
 
-        return $in;
+        return $mceInit;
     }
 
     /**
