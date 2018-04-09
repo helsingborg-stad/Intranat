@@ -21,7 +21,7 @@
                 @if ($isMember)
                     <div class="grid">
                         <div class="grid-sm-12">
-                            @include('partials.blog.forum-comments-form')
+                            {!! $commentForm !!}
                         </div>
                     </div>
                     @if (isset($comments) && ! empty($comments))

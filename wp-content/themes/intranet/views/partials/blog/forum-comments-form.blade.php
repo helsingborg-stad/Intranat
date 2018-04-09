@@ -1,1 +1,0 @@
-{!! $commentForm !!}
