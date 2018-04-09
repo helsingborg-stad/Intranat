@@ -110,6 +110,13 @@ jQuery(function($){
 		var args = $(this).data('onclick');
 		args = args.replace(/.*\(|\)/gi, '').replace(/\"|\s+/g, '');
 		args = args.split(',');
+
+        // Force focus Comment editor. Fix when using multiple tmce editors
+        var editor = tinyMCE.get('comment');
+        if (editor) {
+            editor.execCommand('mceStartTyping');
+        }
+
 		tinymce.EditorManager.execCommand('mceRemoveControl', true, 'comment');
 		addComment.moveForm.apply( addComment, args );
 		tinymce.EditorManager.execCommand('mceAddControl', true, 'comment');
