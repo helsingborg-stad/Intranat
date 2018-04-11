@@ -41,7 +41,7 @@
         "helsingborg-stad/elasticpress-synonyms": ">=0.1.0",
         "helsingborg-stad/wp-listings": ">=1.0.0",
         "helsingborg-stad/acf-export-manager": ">=1.0.0",
-        "helsingborg-stad/modularity-form-builder": ">=1.0.0",
+        "helsingborg-stad/modularity-form-builder": ">=1.2.47",
         "helsingborg-stad/todo": ">=1.0.0",
         "helsingborg-stad/multisite-role-propagation": ">=1.0.0",
         "helsingborg-stad/wp-search-statistics": ">=0.1.0",

@@ -2,13 +2,10 @@
 /* Icon variables */
 .easter-egg div {
   position: relative;
-  transition: 100ms -webkit-transform ease-in-out;
   transition: 100ms transform ease-in-out;
-  -webkit-transform-origin: 0 50%;
-          transform-origin: 0 50%; }
+  transform-origin: 0 50%; }
   .easter-egg div:hover {
-    -webkit-transform: scale(1.5, 1);
-            transform: scale(1.5, 1); }
+    transform: scale(1.5, 1); }
 
 .easter-egg .stripe-instruments {
   position: absolute;
@@ -19,14 +16,11 @@
   background-color: #000;
   padding: 5px;
   border-radius: 0 50px 50px 0;
-  -webkit-transform: translateY(-50%) translateX(-150%);
-          transform: translateY(-50%) translateX(-150%);
-  transition: 1s -webkit-transform;
+  transform: translateY(-50%) translateX(-150%);
   transition: 1s transform;
   z-index: -1; }
   .easter-egg .stripe-instruments.show {
-    -webkit-transform: translateY(-50%) translateX(0%);
-            transform: translateY(-50%) translateX(0%); }
+    transform: translateY(-50%) translateX(0%); }
   .easter-egg .stripe-instruments li {
     display: inline-block; }
     .easter-egg .stripe-instruments li + li {
@@ -44,8 +38,7 @@
       background-color: #ddd; }
     .easter-egg .stripe-instruments button.active {
       background-color: #ff0000;
-      -webkit-animation: 2000ms disco infinite;
-              animation: 2000ms disco infinite; }
+      animation: 2000ms disco infinite; }
       .easter-egg .stripe-instruments button.active img {
         -webkit-filter: invert(100%);
                 filter: invert(100%); }
@@ -53,24 +46,11 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       width: 60%;
       height: auto; }
     .easter-egg .stripe-instruments button span {
       display: none; }
-
-@-webkit-keyframes disco {
-  10% {
-    background-color: #ff0000; }
-  30% {
-    background-color: #00fff0; }
-  50% {
-    background-color: #2aff00; }
-  70% {
-    background-color: #ff00d2; }
-  90% {
-    background-color: #ff0000; } }
 
 @keyframes disco {
   10% {
@@ -488,22 +468,18 @@ html[data-useragent*="Chrome"] #site-header .search.search-main button[type="sub
       position: absolute;
       position: absolute;
       left: 50%;
-      -webkit-transform: translate(-50%, 0);
-              transform: translate(-50%, 0); }
+      transform: translate(-50%, 0); }
     .notice-birthday figure .pricon-balloon:nth-of-type(1) {
       color: #0069b4;
-      -webkit-transform: translateX(-50px) translateY(10px);
-              transform: translateX(-50px) translateY(10px); }
+      transform: translateX(-50px) translateY(10px); }
     .notice-birthday figure .pricon-balloon:nth-of-type(2) {
       color: #cb0050;
       z-index: 3;
-      -webkit-transform: translateX(-50%) translateY(-10px);
-              transform: translateX(-50%) translateY(-10px); }
+      transform: translateX(-50%) translateY(-10px); }
     .notice-birthday figure .pricon-balloon:nth-of-type(3) {
       color: #11a636;
       z-index: 1;
-      -webkit-transform: translateX(0px) translateY(10px);
-              transform: translateX(0px) translateY(10px); }
+      transform: translateX(0px) translateY(10px); }
 
 a.profile-card {
   display: block;
@@ -544,8 +520,7 @@ a.profile-card {
       position: absolute;
       top: 50%;
       left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       vertical-align: 0%;
       line-height: .5;
       font-size: 4em;
@@ -668,12 +643,10 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
   margin-bottom: 10px; }
 
 .search-result-item-user {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -683,16 +656,14 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
   .search-result-item-user .profile-header-background {
     opacity: .15; }
   .search-result-item-user .profile-image {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
     margin-right: 25px;
     width: 80px;
     height: 80px; }
   .search-result-item-user .profile-basics {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto; }
+    -ms-flex: 1 0 auto;
+        flex: 1 0 auto; }
   .search-result-item-user .profile-title,
   .search-result-item-user .profile-department {
     font-size: .8em; }
@@ -864,6 +835,79 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
       .search-level .nav li a {
         display: inline-block; } }
 
+.forum-box {
+  padding: 30px; }
+
+.forum-comments li.comment.comment-new {
+  padding: 15px;
+  border-radius: 2px;
+  border: 1px solid #EEEEEE;
+  background: #F8F8F8; }
+  .forum-comments li.comment.comment-new ul.answers {
+    border-top: 1px solid #EEEEEE;
+    margin-top: 15px;
+    padding-top: 15px; }
+    .forum-comments li.comment.comment-new ul.answers .answer {
+      margin-bottom: 15px; }
+
+.forum-comments .author-image .pricon::before {
+  vertical-align: top; }
+
+.forum-members-link {
+  float: right;
+  margin-bottom: 10px; }
+
+.forum-members {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%; }
+  .forum-members .member-image:not(:last-child) {
+    margin-right: 13px; }
+  .forum-members .member-image img {
+    border-radius: 50%;
+    width: 47px;
+    height: 47px; }
+  .forum-members .member-image i {
+    font-size: 2.8em; }
+  .forum-members .member-image .pricon::before {
+    vertical-align: top; }
+
+#modal-forum-members .modal-body {
+  max-height: 500px;
+  overflow-y: auto; }
+  #modal-forum-members .modal-body a {
+    text-decoration: none; }
+
+#modal-forum-members .member-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-align: center;
+      align-items: center; }
+
+#modal-forum-members .member-image {
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+  margin-right: 15px; }
+  #modal-forum-members .member-image img {
+    border-radius: 50%;
+    width: 57px;
+    height: 57px; }
+  #modal-forum-members .member-image i {
+    font-size: 3.4em; }
+  #modal-forum-members .member-image .pricon::before {
+    vertical-align: top; }
+
+#modal-forum-members .member-info {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  color: #000; }
+  #modal-forum-members .member-info small {
+    color: #777; }
+
 .network-search-dropdown {
   display: none;
   position: absolute;
@@ -969,8 +1013,7 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     font-family: hbg-pricons;
     line-height: 1;
     text-rendering: auto;
@@ -1144,8 +1187,7 @@ a.dropdown-open:focus {
 
 .walkthrough-center {
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%); }
+  transform: translateX(-50%); }
   .walkthrough-center .blipper {
     left: 50%;
     margin-left: -7px; }
@@ -1153,8 +1195,7 @@ a.dropdown-open:focus {
 .walkthrough-top-center {
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%); }
+  transform: translateX(-50%); }
   .walkthrough-top-center .blipper {
     left: 50%;
     margin-left: -7px; }
@@ -1179,12 +1220,10 @@ a.dropdown-open:focus {
 
 .walkthrough-dropdown-center .dropdown-menu {
   left: calc(50% + 14px);
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%); }
+  transform: translateX(-50%); }
   .walkthrough-dropdown-center .dropdown-menu::before, .walkthrough-dropdown-center .dropdown-menu::after {
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%); }
+    transform: translateX(-50%); }
 
 .modularity-mod-intranet-u-links,
 .modularity-mod-intranet-u-syste {
@@ -1205,8 +1244,7 @@ a.dropdown-open:focus {
     position: absolute;
     position: absolute;
     top: 50%;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
     right: 15px;
     padding: 0px;
     border-radius: 0 0 0 2px !important;

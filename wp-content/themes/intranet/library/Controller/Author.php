@@ -20,9 +20,34 @@ class Author extends \Intranet\Controller\BaseController
         $this->data['userResponsibilities'] = is_array(get_the_author_meta('user_responsibilities', $user->ID)) ? get_the_author_meta('user_responsibilities', $user->ID) : array();
         $this->data['userSkills'] = is_array(get_the_author_meta('user_skills', $user->ID)) ? get_the_author_meta('user_skills', $user->ID) : array();
         $this->data['submittedIdeas'] = get_posts(array('post_type' => 'idea', 'author' => $user->ID));
-
+        $this->data['groups'] = $this->memberInGroups($user->ID);
         $this->data['cover_img'] =  $this->getCoverUrl($user->ID);
         $this->data['profile_img'] = $this->getProfileImg($user->ID);
+    }
+
+    /**
+     * Get users group memberships
+     * @param  int $userId User ID
+     * @return array List of post ids
+     */
+    public function memberInGroups($userId) {
+        global $wpdb;
+
+        // Collect all group members from db
+        $groupMembers = $wpdb->get_results("SELECT post_id, meta_value as members FROM {$wpdb->prefix}postmeta WHERE meta_key = 'forum_members'", ARRAY_A);
+
+        // Return all groups where user is a member
+        $groups = array_map(function($array) use($userId) {
+            if (empty($array['members'])) {
+                return 0;
+            }
+            $member = array_filter(unserialize($array['members']), function($val, $key) use($userId) {
+                return ($val == 1 && $key == $userId);
+            }, ARRAY_FILTER_USE_BOTH);
+            return (!empty($member)) ? (int) $array['post_id'] : 0;
+        }, $groupMembers);
+
+        return array_filter($groups);
     }
 
     /**

@@ -78,7 +78,9 @@ class General
         // Activate notification for given post types
         add_filter('notification_center/activated_posttypes', function ($postTypes) {
             return array('intranet-news' => __('News', 'municipio-intranet'),
-                        'ticket' => __('Ticket', 'municipio-intranet'));
+                        'ticket' => __('Ticket', 'municipio-intranet'),
+                        'idea' => __('Idea', 'municipio-intranet'),
+                        'forum' => __('Discussion forum', 'municipio-intranet'));
         });
     }
 

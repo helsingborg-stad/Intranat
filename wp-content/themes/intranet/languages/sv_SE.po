@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-03-09 15:33+0100\n"
-"PO-Revision-Date: 2018-03-09 15:33+0100\n"
+"POT-Creation-Date: 2018-03-27 15:59+0200\n"
+"PO-Revision-Date: 2018-03-27 16:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -240,7 +240,8 @@ msgstr "Något gick fel, vänligen försök igen"
 msgid "has been reported for inappropriate content"
 msgstr "har anmälts för olämpligt innehåll"
 
-#: library/Content/PostFilters.php:121 templates/report-post.blade.php:28
+#: library/Content/PostFilters.php:121
+#: views/partials/modal/report-post.blade.php:28
 msgid "Comment"
 msgstr "Kommentar"
 
@@ -256,6 +257,173 @@ msgstr "Anmälan om olämpligt innehåll"
 msgid "The message was sent successfully"
 msgstr "Meddelandet har skickats"
 
+#: library/Controller/SingleForum.php:29
+msgid "Write post"
+msgstr "Skriv inlägg"
+
+#: library/Controller/SingleForum.php:30
+#: views/partials/modal/invite-modal.blade.php:24
+#: views/partials/modal/report-post.blade.php:40
+msgid "Send"
+msgstr "Skicka"
+
+#: library/CustomPostType/Forums.php:39
+#: views/partials/modal/invite-modal.blade.php:11
+msgid "Discussion forum"
+msgstr "Diskussionsforum"
+
+#: library/CustomPostType/Forums.php:40
+msgid "Discussion forums"
+msgstr "Diskussionsforum"
+
+#: library/CustomPostType/Forums.php:48 library/CustomPostType/Incidents.php:48
+#: library/CustomPostType/News.php:214
+msgctxt "add new button"
+msgid "Add New"
+msgstr "Skapa ny"
+
+#: library/CustomPostType/Forums.php:49 library/CustomPostType/Incidents.php:49
+#: library/CustomPostType/News.php:215
+#, php-format
+msgid "Add new %s"
+msgstr "Skapa ny %s"
+
+#: library/CustomPostType/Forums.php:50 library/CustomPostType/Incidents.php:50
+#: library/CustomPostType/News.php:216
+#, php-format
+msgid "New %s"
+msgstr "Ny %s"
+
+#: library/CustomPostType/Forums.php:51 library/CustomPostType/Forums.php:103
+#: library/CustomPostType/Incidents.php:51 library/CustomPostType/News.php:217
+#: library/CustomTaxonomy/Hashtags.php:39
+#, php-format
+msgid "Edit %s"
+msgstr "Redigera %s"
+
+#: library/CustomPostType/Forums.php:52 library/CustomPostType/Incidents.php:52
+#: library/CustomPostType/News.php:218
+#, php-format
+msgid "View %s"
+msgstr "Visa %s"
+
+#: library/CustomPostType/Forums.php:53 library/CustomPostType/Forums.php:100
+#: library/CustomPostType/Incidents.php:53 library/CustomPostType/News.php:219
+#: library/CustomTaxonomy/Hashtags.php:36
+#, php-format
+msgid "All %s"
+msgstr "Alla %s"
+
+#: library/CustomPostType/Forums.php:54 library/CustomPostType/Forums.php:99
+#: library/CustomPostType/Incidents.php:54 library/CustomPostType/News.php:220
+#: library/CustomTaxonomy/Hashtags.php:35
+#, php-format
+msgid "Search %s"
+msgstr "Sök %s"
+
+#: library/CustomPostType/Forums.php:55 library/CustomPostType/Incidents.php:55
+#: library/CustomPostType/News.php:221
+#, php-format
+msgid "Parent %s"
+msgstr "Förälder %s"
+
+#: library/CustomPostType/Forums.php:56 library/CustomPostType/Incidents.php:56
+#: library/CustomPostType/News.php:222
+#, php-format
+msgid "No %s"
+msgstr "Inga %s"
+
+#: library/CustomPostType/Forums.php:57 library/CustomPostType/Incidents.php:57
+#: library/CustomPostType/News.php:223
+#, php-format
+msgid "No %s in trash"
+msgstr "Inga %s i papperskorgen"
+
+#: library/CustomPostType/Forums.php:62
+msgid "Discussion forums."
+msgstr "Diskussionsforum."
+
+#: library/CustomPostType/Forums.php:93
+#: views/partials/modal/forum-modal.blade.php:18
+msgid "Subject"
+msgstr "Ämne"
+
+#: library/CustomPostType/Forums.php:94
+msgid "Subjects"
+msgstr "Ämnen"
+
+#: library/CustomPostType/Forums.php:101 library/CustomPostType/Forums.php:102
+#: library/CustomTaxonomy/Hashtags.php:37
+#: library/CustomTaxonomy/Hashtags.php:38
+#, fuzzy, php-format
+#| msgid "Parent %s"
+msgid "Parent %s:"
+msgstr "Förälder %s"
+
+#: library/CustomPostType/Forums.php:104 library/CustomTaxonomy/Hashtags.php:40
+#, php-format
+msgid "Update %s"
+msgstr "Uppdatera %s"
+
+#: library/CustomPostType/Forums.php:105 library/CustomTaxonomy/Hashtags.php:41
+#, php-format
+msgid "Add New %s"
+msgstr "Skapa ny %s"
+
+#: library/CustomPostType/Forums.php:106 library/CustomTaxonomy/Hashtags.php:42
+#, fuzzy, php-format
+#| msgid "New %s"
+msgid "New %s Name"
+msgstr "Ny %s"
+
+#: library/CustomPostType/Forums.php:166
+msgid "Update"
+msgstr "Uppdatera"
+
+#: library/CustomPostType/Forums.php:166
+msgid "Create"
+msgstr "Skapa"
+
+#: library/CustomPostType/Forums.php:167
+msgid "Forum"
+msgstr "Forum"
+
+#: library/CustomPostType/Forums.php:212
+#: views/partials/modal/invite-modal.blade.php:6
+msgid "Invite members"
+msgstr "Bjud in medlemmar"
+
+#: library/CustomPostType/Forums.php:213 library/Theme/Enqueue.php:52
+#: templates/admin/systems/form.php:56
+#: templates/module/intranet-u-links.blade.php:17
+msgid "Edit"
+msgstr "Redigera"
+
+#: library/CustomPostType/Forums.php:214 templates/admin/systems/form.php:57
+#: templates/module/intranet-u-links.blade.php:28
+msgid "Remove"
+msgstr "Ta bort"
+
+#: library/CustomPostType/Forums.php:323 library/Theme/Enqueue.php:60
+msgid "Leave forum"
+msgstr "Gå ur forumet"
+
+#: library/CustomPostType/Forums.php:323 library/Theme/Enqueue.php:59
+msgid "Join forum"
+msgstr "Gå med i forumet"
+
+#: library/CustomPostType/Forums.php:447
+msgid "Attach files"
+msgstr "Bifoga filer"
+
+#: library/CustomPostType/Forums.php:451
+msgid "Select file"
+msgstr "Välj en fil"
+
+#: library/CustomPostType/Forums.php:452
+msgid "No file chosen"
+msgstr "Ingen fil har valts"
+
 #: library/CustomPostType/Incidents.php:20 views/archive-incidents.blade.php:25
 msgid "to"
 msgstr "till"
@@ -267,59 +435,6 @@ msgstr "Varaktighet"
 #: library/CustomPostType/Incidents.php:39
 msgid "Incidents"
 msgstr "Driftstörningar"
-
-#: library/CustomPostType/Incidents.php:48 library/CustomPostType/News.php:214
-msgctxt "add new button"
-msgid "Add New"
-msgstr "Skapa ny"
-
-#: library/CustomPostType/Incidents.php:49 library/CustomPostType/News.php:215
-#, php-format
-msgid "Add new %s"
-msgstr "Skapa ny %s"
-
-#: library/CustomPostType/Incidents.php:50 library/CustomPostType/News.php:216
-#, php-format
-msgid "New %s"
-msgstr "Ny %s"
-
-#: library/CustomPostType/Incidents.php:51 library/CustomPostType/News.php:217
-#: library/CustomTaxonomy/Hashtags.php:35
-#, php-format
-msgid "Edit %s"
-msgstr "Redigera %s"
-
-#: library/CustomPostType/Incidents.php:52 library/CustomPostType/News.php:218
-#, php-format
-msgid "View %s"
-msgstr "Visa %s"
-
-#: library/CustomPostType/Incidents.php:53 library/CustomPostType/News.php:219
-#: library/CustomTaxonomy/Hashtags.php:32
-#, php-format
-msgid "All %s"
-msgstr "Alla %s"
-
-#: library/CustomPostType/Incidents.php:54 library/CustomPostType/News.php:220
-#: library/CustomTaxonomy/Hashtags.php:31
-#, php-format
-msgid "Search %s"
-msgstr "Sök %s"
-
-#: library/CustomPostType/Incidents.php:55 library/CustomPostType/News.php:221
-#, php-format
-msgid "Parent %s"
-msgstr "Förälder %s"
-
-#: library/CustomPostType/Incidents.php:56 library/CustomPostType/News.php:222
-#, php-format
-msgid "No %s"
-msgstr "Inga %s"
-
-#: library/CustomPostType/Incidents.php:57 library/CustomPostType/News.php:223
-#, php-format
-msgid "No %s in trash"
-msgstr "Inga %s i papperskorgen"
 
 #: library/CustomPostType/Incidents.php:62
 msgid "Incident reporting"
@@ -359,30 +474,6 @@ msgstr "Nyheter"
 #: library/CustomPostType/News.php:237
 msgid "news"
 msgstr "nyheter"
-
-#: library/CustomTaxonomy/Hashtags.php:33
-#: library/CustomTaxonomy/Hashtags.php:34
-#, fuzzy, php-format
-#| msgid "Parent %s"
-msgid "Parent %s:"
-msgstr "Förälder %s"
-
-#: library/CustomTaxonomy/Hashtags.php:36
-#, php-format
-msgid "Update %s"
-msgstr ""
-
-#: library/CustomTaxonomy/Hashtags.php:37
-#, fuzzy, php-format
-#| msgid "Add new %s"
-msgid "Add New %s"
-msgstr "Skapa ny %s"
-
-#: library/CustomTaxonomy/Hashtags.php:38
-#, fuzzy, php-format
-#| msgid "New %s"
-msgid "New %s Name"
-msgstr "Ny %s"
 
 #: library/Module/IncidentList/IncidentList.php:16
 msgid "Incident lists"
@@ -476,11 +567,6 @@ msgstr "Innehåll"
 msgid "View all results"
 msgstr "Visa alla resultat"
 
-#: library/Theme/Enqueue.php:52 templates/admin/systems/form.php:56
-#: templates/module/intranet-u-links.blade.php:17
-msgid "Edit"
-msgstr "Redigera"
-
 #: library/Theme/Enqueue.php:53
 msgid "Done"
 msgstr "Klar"
@@ -498,6 +584,14 @@ msgstr "Dölj hälsningsfras"
 msgid "Enable welcome phrase"
 msgstr "Visa hälsningsfras"
 
+#: library/Theme/Enqueue.php:57
+msgid "Something went wrong, please try again later"
+msgstr "Något gick fel, vänligen försök igen senare"
+
+#: library/Theme/Enqueue.php:58
+msgid "Are you sure you want to delete this post?"
+msgstr "Är du säker på att du vill radera sidan?"
+
 #: library/Theme/General.php:24
 msgid "Page manager"
 msgstr "Sidansvarig"
@@ -505,6 +599,14 @@ msgstr "Sidansvarig"
 #: library/Theme/General.php:81
 msgid "Ticket"
 msgstr "Ärende"
+
+#: library/Theme/General.php:82
+msgid "Idea"
+msgstr "Idé"
+
+#: library/Theme/General.php:83
+msgid "Group"
+msgstr "Grupp"
 
 #: library/Theme/Walkthrough.php:23
 msgid ""
@@ -665,6 +767,7 @@ msgstr "Namn"
 
 #: templates/admin/systems/form.php:44 templates/admin/systems/form.php:87
 #: templates/module/intranet-i-systems-modal.blade.php:22
+#: views/partials/modal/forum-modal.blade.php:14
 msgid "Description"
 msgstr "Beskrivning"
 
@@ -673,11 +776,6 @@ msgstr "Beskrivning"
 #: templates/module/intranet-u-links.blade.php:45
 msgid "Url"
 msgstr "Url"
-
-#: templates/admin/systems/form.php:57
-#: templates/module/intranet-u-links.blade.php:28
-msgid "Remove"
-msgstr "Ta bort"
 
 #: templates/admin/systems/form.php:57
 msgid "Are you sure you want to remove the system?"
@@ -852,26 +950,6 @@ msgstr "Du måste vara inloggad på stadens nätverk för att använda detta sys
 #: templates/module/news-item.blade.php:41
 msgid "Read more"
 msgstr "Läs mer"
-
-#: templates/report-post.blade.php:6
-msgid "Report inappropriate content"
-msgstr "Anmäl olämpligt innehåll"
-
-#: templates/report-post.blade.php:11
-msgid "Fill out this form to report inappropriate content."
-msgstr "Fyll i formuläret för att anmäla om olämpligt innehåll."
-
-#: templates/report-post.blade.php:19 templates/report-post.blade.php:20
-msgid "Your name"
-msgstr "Ditt namn"
-
-#: templates/report-post.blade.php:23 templates/report-post.blade.php:24
-msgid "Your email"
-msgstr "Din e-postadress"
-
-#: templates/report-post.blade.php:40
-msgid "Send"
-msgstr "Skicka"
 
 #: views/archive-incidents.blade.php:27
 msgid "Published"
@@ -1342,8 +1420,14 @@ msgid "Edit settings"
 msgstr "Redigera inställningar"
 
 #: views/author.blade.php:202
+msgctxt "User profile"
+msgid "Participating in discussions"
+msgstr "Deltar i diskussionsforum"
+
+#: views/author.blade.php:217
+msgctxt "User profile"
 msgid "Submitted ideas"
-msgstr "Inskickade idéer"
+msgstr "Inskickade idéer till Idéslussen"
 
 #: views/front-page.blade.php:18
 msgid "Your profile is not complete!"
@@ -1483,6 +1567,28 @@ msgstr "Meny"
 msgid "What are you looking for?"
 msgstr "Vad letar du efter?"
 
+#: views/partials/modal/forum-modal.blade.php:10
+msgid "Name your discussion forum"
+msgstr "Namnge diskussionsforumet"
+
+#: views/partials/modal/forum-modal.blade.php:24
+#: views/partials/modal/missing-data.blade.php:5
+#: views/partials/user/modal-password.blade.php:13
+msgid "Close"
+msgstr "Stäng"
+
+#: views/partials/modal/invite-modal.blade.php:15
+msgid "E-mail addresses"
+msgstr "E-postadresser"
+
+#: views/partials/modal/invite-modal.blade.php:16
+msgid ""
+"Enter one or many e-mail addresses, separate with comma. Get suggestions by "
+"typing '@' before the person's name, e.g. '@firstname lastname'."
+msgstr ""
+"Ange en eller flera e-postadresser, separera med kommatecken. Få förslag "
+"genom att skriva '@' innan användarens namn, t.ex. ‘@förnamn efternamn’."
+
 #: views/partials/modal/missing-data-fields/nav.blade.php:15
 msgid "Save and continue"
 msgstr "Spara och fortsätt"
@@ -1551,11 +1657,6 @@ msgstr "Fyll i din titel."
 msgid "We're missing some information about you"
 msgstr "Vi saknar information om dig."
 
-#: views/partials/modal/missing-data.blade.php:5
-#: views/partials/user/modal-password.blade.php:13
-msgid "Close"
-msgstr "Stäng"
-
 #: views/partials/modal/missing-data.blade.php:18
 msgid "Instructions"
 msgstr "Instruktioner"
@@ -1580,6 +1681,24 @@ msgid ""
 "update your information."
 msgstr ""
 "Din profil är inte komplett. Följ guiden för att uppdatera din information."
+
+#: views/partials/modal/report-post.blade.php:6
+msgid "Report inappropriate content"
+msgstr "Anmäl olämpligt innehåll"
+
+#: views/partials/modal/report-post.blade.php:11
+msgid "Fill out this form to report inappropriate content."
+msgstr "Fyll i formuläret för att anmäla om olämpligt innehåll."
+
+#: views/partials/modal/report-post.blade.php:19
+#: views/partials/modal/report-post.blade.php:20
+msgid "Your name"
+msgstr "Ditt namn"
+
+#: views/partials/modal/report-post.blade.php:23
+#: views/partials/modal/report-post.blade.php:24
+msgid "Your email"
+msgstr "Din e-postadress"
 
 #: views/partials/user/loginform.blade.php:3
 msgid "Username"
@@ -1694,7 +1813,7 @@ msgstr "Intranät"
 msgid "Text search"
 msgstr "Textsök"
 
-#: views/taxonomy.blade.php:42
+#: views/taxonomy.blade.php:35
 msgid "No posts to show"
 msgstr ""
 
@@ -1710,8 +1829,25 @@ msgstr ""
 msgid "http://github.com/helsingborg-stad"
 msgstr ""
 
-#~ msgid "Report post"
-#~ msgstr "Anmäl inlägg"
+#~ msgid "Leave discussion forum"
+#~ msgstr "Gå ur forumet"
+
+#~ msgid "Join discussion forum"
+#~ msgstr "Gå med i forumet"
+
+#~ msgid "Name your forum"
+#~ msgstr "Namnge diskussionsforumet"
+
+#~ msgid "Category"
+#~ msgstr "Kategori"
+
+#~ msgid "Groups"
+#~ msgstr "Grupper"
+
+#, fuzzy
+#~| msgid "Show all networks"
+#~ msgid "Social networking groups."
+#~ msgstr "Visa alla intranät"
 
 #, fuzzy
 #~| msgid "Search %s"
