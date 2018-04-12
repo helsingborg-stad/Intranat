@@ -7,6 +7,9 @@ ad-api/
 /config/developer.php
 /config/multisite.php
 
+#Mu plugins
+wp-content/mu-plugins/attachmentDownloader.php
+
 # Plugins
 /wp-content/plugins/*
 !/wp-content/plugins/saml-20-single-sign-on
