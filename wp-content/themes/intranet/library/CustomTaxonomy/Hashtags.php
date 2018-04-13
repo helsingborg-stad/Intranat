@@ -12,8 +12,9 @@ class Hashtags
     {
         add_action('init', array($this, 'registerHashtags'));
         add_action('save_post', array($this, 'savePostHashtags'), 10, 3);
-        add_action('wp_insert_comment', array($this, 'saveCommentHashtags'), 99, 2);
+        add_action('wp_insert_comment', array($this, 'saveCreatedCommentHashtags'), 99, 2);
 
+        add_filter('wp_update_comment_data', array($this, 'saveUpdatedCommentHashtags'), 10, 3);
         add_filter('the_content', array($this, 'hashtagReplace'), 200, 1);
         add_filter('comment_text', array($this, 'hashtagReplace'), 20, 1);
         add_filter('Municipio/archive/filter_taxonomies', array($this, 'filterTaxonomies'), 10, 2);
@@ -62,12 +63,12 @@ class Hashtags
     }
 
     /**
-     * Save hashtags as taxonomies from comment
+     * Save hashtags as taxonomies when a comment is created
      * @param  int $commentId  Comment ID
      * @param  obj $commentObj Comment object
      * @return void
      */
-    public function saveCommentHashtags($commentId, $commentObj)
+    public function saveCreatedCommentHashtags($commentId, $commentObj)
     {
         if (!is_user_logged_in()) {
             return;
@@ -77,6 +78,26 @@ class Hashtags
         if ($hashtags) {
             wp_set_object_terms($commentObj->comment_post_ID, $hashtags, self::$taxonomySlug, true);
         }
+    }
+
+    /**
+     * Save hashtags as taxonomies when a comment is updated
+     * @param array $data       The new, processed comment data.
+     * @param array $comment    The old, unslashed comment data.
+     * @param array $commentArr The new, raw comment data.
+     */
+    public function saveUpdatedCommentHashtags($data, $comment, $commentArr)
+    {
+        if (!is_user_logged_in()) {
+            return $data;
+        }
+
+        $hashtags = $this->extractHashtags($data['comment_content']);
+        if ($hashtags) {
+            wp_set_object_terms($data['comment_ID'], $hashtags, self::$taxonomySlug, true);
+        }
+
+        return $data;
     }
 
     /**
