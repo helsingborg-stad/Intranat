@@ -9,7 +9,7 @@ class General
 
         //Check if elasticpress is installed
         if(!defined('EP_URL')) {
-            return;
+            return array('content' => [], 'users' => []);
         }
 
         $q = sanitize_text_field(urldecode($data['s']));
