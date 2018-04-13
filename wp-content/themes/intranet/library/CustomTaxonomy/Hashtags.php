@@ -94,7 +94,7 @@ class Hashtags
 
         $hashtags = $this->extractHashtags($data['comment_content']);
         if ($hashtags) {
-            wp_set_object_terms($data['comment_ID'], $hashtags, self::$taxonomySlug, true);
+            wp_set_object_terms($data['comment_post_ID'], $hashtags, self::$taxonomySlug, true);
         }
 
         return $data;
