@@ -222,12 +222,12 @@ class Hashtags
     public function hashtagReplace($content)
     {
         // Match #hashtags and replace with url, skip if hashtag is inside textarea
-        $content = preg_replace_callback('/<[textarea|a][^>]*>.*?<\/[textarea|a]>(*SKIP)(*FAIL)|(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/ius',
+        $content = preg_replace_callback('/(<[textarea|a][^>]*>.*?<\/[textarea|a]>|<[input][^>]*\/>)(*SKIP)(*FAIL)|(?<!=|[\w\/\"\'\\\]|&)#([\w]+)/ius',
             function ($match) {
                 $hashtag = $match[0];
 
                 // Get taxonomy object
-                $term = get_term_by('name', $match[1], 'hashtag');
+                $term = get_term_by('name', $match[2], 'hashtag');
                 if (!empty($term->count)) {
                     $url = get_term_link($term);
                     $hashtag = '<a href="' . $url . '">' . $match[0] . '</a>';
