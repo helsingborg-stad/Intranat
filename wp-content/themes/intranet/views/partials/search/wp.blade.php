@@ -1,7 +1,3 @@
-@extends('templates.master')
-
-@section('content')
-
 <?php global $wp_query; ?>
 
 <section class="creamy creamy-border-bottom gutter-vertical gutter-lg clearfix">
@@ -189,5 +185,3 @@
         </div>
     </div>
 </section>
-
-@stop
