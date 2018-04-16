@@ -87,83 +87,43 @@ class General
             return array();
         }
 
-        $keywordsRegex = explode(' ', trim($keyword));
-        $stopwords = municipio_intranet_get_user_search_stopwords();
-        $keywordsRegex = array_filter($keywordsRegex, function ($keyword) use ($stopwords) {
-            return !in_array($keyword, $stopwords);
-        });
+        global $wpdb;
 
-        $keywordsRegex = '(' . implode('|', $keywordsRegex) . ')';
+        //Sanitize limit
+        if (!$limit || !is_numeric($limit)) {
+            $limit = 20;
+        }
 
-        $args = array(
-            's' => $keyword,
-            'meta_query' => array(
-                'relation' => 'AND',
-                array(
-                    'relation' => 'AND',
-                ),
-                array(
-                    'relation' => 'OR',
-                    array(
-                        'key' => 'first_name',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'last_name',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'user_responsibilities',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'user_skills',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'user_work_title',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'user_phone',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'user_department',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'ad_company',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    )
-                )
-            )
+        //Create user search fulltext index (if not exists)
+        if (!$wpdb->get_results("SHOW index FROM " .$wpdb->usermeta. " where column_name = 'meta_value'")) {
+            $wpdb->query("ALTER TABLE " .$wpdb->usermeta. " ADD FULLTEXT(meta_value)");
+        }
+
+        //Query users
+        $userIdArray = $wpdb->get_results(
+            $wpdb->prepare("
+                SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
+                FROM " .$wpdb->usermeta. "
+                HAVING score > 1
+                ORDER BY score DESC
+                LIMIT %d"
+            , $keyword, $limit)
         );
 
-        if ($limit && is_numeric($limit)) {
-            $args['number'] = $limit;
+        //No users found
+        if(empty($userIdArray)) {
+            return array();
         }
 
-        $userMetaSearch = new \WP_User_Query($args);
+        //Get full user profiles
+        $userArray = get_users(array_unique(array('include' => array_column($userIdArray, 'user_id'))));
 
         $users = array();
-        foreach ($userMetaSearch->results as $user) {
-            $users[$user->ID] = $user->data;
-        }
-
-        foreach ($userMetaSearch->get_results() as $user) {
+        foreach ($userArray as $user) {
             if (array_key_exists($user->ID, $users)) {
                 continue;
             }
-            $users[$user->ID] = $user->data;
+            $users[$user->ID] = $user;
         }
 
         foreach ($users as $user) {
