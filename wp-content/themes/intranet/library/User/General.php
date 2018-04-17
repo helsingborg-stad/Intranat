@@ -95,13 +95,13 @@ class General
         }
 
         //Create user search fulltext index (if not exists)
-        if (!$wpdb->get_results("SHOW index FROM " .$wpdb->usermeta. " where column_name = 'meta_value'")) {
-            $wpdb->query("ALTER TABLE " .$wpdb->usermeta. " ADD FULLTEXT(meta_value)");
+        if (!$wpdb->get_results("SHOW index FROM " .$wpdb->usermeta. " where column_name = 'user_search_index'")) {
+            $wpdb->query("ALTER TABLE " .$wpdb->usermeta. " ADD FULLTEXT(user_search_index)");
         }
 
         //Create query for users
         $query = $wpdb->prepare("
-            SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
+            SELECT DISTINCT user_id, MATCH(user_search_index) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
             FROM " .$wpdb->usermeta. "
             WHERE meta_key IN ('first_name','last_name','description', 'ad_department')
             HAVING score > 1
