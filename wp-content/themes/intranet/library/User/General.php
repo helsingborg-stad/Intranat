@@ -101,7 +101,7 @@ class General
 
         //Create query for users
         $query = $wpdb->prepare("
-            SELECT DISTINCT user_id, MATCH(user_search_index) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
+            SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
             FROM " .$wpdb->usermeta. "
             WHERE meta_key IN ('first_name','last_name','description', 'ad_department')
             HAVING score > 1
