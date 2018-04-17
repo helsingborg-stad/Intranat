@@ -14,17 +14,15 @@ class Search extends \Municipio\Controller\Search
     public function init()
     {
 
+        //Run parent init
+        parent::init();
+
         // Not elastic? Run core.
-        if(!defined('EP_URL')) {
-            parent::init();
-            $this->data['level'] = isset($_GET['level']) ? $_GET['level'] : "";
-        } else {
+        if($this->activeSearchEngine == "wp") {
             $this->elasticSearch();
             $this->levelRedirect();
-
-            if(isset($_GET['testcounter'])) {
-                var_dump($this->data['counts']);
-            }
+        } else {
+            $this->data['level'] = isset($_GET['level']) ? $_GET['level'] : "";
         }
 
         //System & user search
