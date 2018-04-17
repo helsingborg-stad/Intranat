@@ -96,7 +96,7 @@ class General
 
         //Create user search fulltext index (if not exists)
         if (!$wpdb->get_results("SHOW index FROM " .$wpdb->usermeta. " where column_name = 'user_search_index'")) {
-            $wpdb->query("ALTER TABLE " .$wpdb->usermeta. " ADD FULLTEXT(user_search_index)");
+            $wpdb->query("ALTER TABLE " .$wpdb->usermeta. " ADD FULLTEXT user_search_index(meta_value)");
         }
 
         //Create query for users
