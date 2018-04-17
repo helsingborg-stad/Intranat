@@ -94,20 +94,36 @@ class General
             $limit = 20;
         }
 
-        //Create user search fulltext index (if not exists)
+        //Create meta search index
         if (!$wpdb->get_results("SHOW index FROM " .$wpdb->usermeta. " where Key_name = 'user_search_index'")) {
             $wpdb->query("ALTER TABLE " .$wpdb->usermeta. " ADD FULLTEXT user_search_index(meta_value)");
         }
 
-        //Create query for users
-        $query = $wpdb->prepare("
-            SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
-            FROM " .$wpdb->usermeta. "
-            WHERE meta_key IN ('first_name','last_name','description', 'ad_department')
-            HAVING score > 1
-            ORDER BY score DESC
-            LIMIT %d"
-        , $keyword, $limit);
+        //Create user main search index
+        if (!$wpdb->get_results("SHOW index FROM " .$wpdb->users. " where Key_name = 'user_search_index'")) {
+            $wpdb->query("ALTER TABLE " .$wpdb->users. " ADD FULLTEXT user_search_index(display_name)");
+        }
+
+        //Create query for users (depending on table size, run different processes)
+        if(defined('INTRANET_ADVANCED_USER_SEARCH') && INTRANET_ADVANCED_USER_SEARCH) {
+            $query = $wpdb->prepare("
+                SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
+                FROM " .$wpdb->usermeta. "
+                WHERE meta_key IN ('first_name','last_name','description', 'ad_department')
+                HAVING score > 1
+                ORDER BY score DESC
+                LIMIT %d"
+            , $keyword, $limit);
+        } else {
+            $query = $wpdb->prepare("
+                SELECT DISTINCT ID as user_id, MATCH(display_name) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
+                FROM " .$wpdb->users. "
+                HAVING score > 1
+                ORDER BY score DESC
+                LIMIT %d"
+            , $keyword, $limit);
+        }
+
 
         //Get response from db or cache
         if(!$userIdArray = wp_cache_get(md5($query), 'intanet-user-search-cache')) {
