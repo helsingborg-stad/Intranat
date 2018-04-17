@@ -99,16 +99,20 @@ class General
             $wpdb->query("ALTER TABLE " .$wpdb->usermeta. " ADD FULLTEXT(meta_value)");
         }
 
-        //Query users
-        $userIdArray = $wpdb->get_results(
-            $wpdb->prepare("
-                SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
-                FROM " .$wpdb->usermeta. "
-                HAVING score > 1
-                ORDER BY score DESC
-                LIMIT %d"
-            , $keyword, $limit)
-        );
+        //Create query for users
+        $query = $wpdb->prepare("
+            SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
+            FROM " .$wpdb->usermeta. "
+            HAVING score > 1
+            ORDER BY score DESC
+            LIMIT %d"
+        , $keyword, $limit);
+
+        //Get response from db or cache
+        if(!$userIdArray = wp_cache_get(md5($query), 'intanet-user-search-cache')) {
+            $userIdArray = $wpdb->get_results($query);
+            wp_cache_add(md5($query), $userIdArray, 'intanet-user-search-cache', 60*60*24);
+        }
 
         //No users found
         if(empty($userIdArray)) {
