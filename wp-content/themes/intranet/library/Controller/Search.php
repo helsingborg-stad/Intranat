@@ -21,6 +21,10 @@ class Search extends \Municipio\Controller\Search
         } else {
             $this->elasticSearch();
             $this->levelRedirect();
+
+            if(isset($_GET['testcounter'])) {
+                var_dump($this->data['count']);
+            }
         }
 
         //System & user search
