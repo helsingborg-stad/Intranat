@@ -18,7 +18,7 @@ class Search extends \Municipio\Controller\Search
         parent::init();
 
         // Not elastic? Run core.
-        if($this->activeSearchEngine == "wp") {
+        if($this->data['activeSearchEngine'] == "wp") {
             $this->elasticSearch();
             $this->levelRedirect();
         } else {
