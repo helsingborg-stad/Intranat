@@ -23,7 +23,7 @@ class Search extends \Municipio\Controller\Search
             $this->levelRedirect();
 
             if(isset($_GET['testcounter'])) {
-                var_dump($this->data['count']);
+                var_dump($this->data['counts']);
             }
         }
 
