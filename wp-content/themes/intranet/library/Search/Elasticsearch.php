@@ -9,6 +9,12 @@ class Elasticsearch
 
     public function __construct()
     {
+
+        //Check if elasticpress is installed
+        if(!defined('EP_URL')) {
+            return;
+        }
+
         if (isset($_GET['level']) && !empty($_GET['level'])) {
             self::$level = sanitize_text_field($_GET['level']);
         }

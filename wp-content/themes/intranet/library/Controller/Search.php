@@ -2,34 +2,52 @@
 
 namespace Intranet\Controller;
 
-class Search extends \Intranet\Controller\BaseController
+class Search extends \Municipio\Controller\Search
 {
+
+    /* We want to refactor this class to use more of the base-theme functionalty */
+
     /**
      * Performs the search
      * @return void
      */
     public function init()
     {
-        global $wp_query;
 
-        $this->data['resultCount'] = $wp_query->found_posts;
-        $this->data['keyword'] = get_search_query();
-        $this->data['level'] = \Intranet\Search\ElasticSearch::$level;
+        //Run parent init
+        parent::init();
 
+        // Not elastic? Run core.
+        if($this->data['activeSearchEngine'] == "wp") {
+            $this->elasticSearch();
+            $this->levelRedirect();
+        } else {
+            $this->data['level'] = isset($_GET['level']) ? $_GET['level'] : "";
+        }
+
+        //System & user search
         if (is_user_logged_in()) {
-            $this->data['users'] = \Intranet\User\General::searchUsers(get_search_query());
+            $this->data['users'] = \Intranet\User\General::searchUsers(get_search_query(), 200);
             $this->data['systems'] = \Intranet\User\Systems::search(get_search_query());
         } else {
             $this->data['users'] = array();
             $this->data['systems'] = array();
         }
+    }
 
+    public function elasticSearch() {
+        global $wp_query;
+        $this->data['resultCount'] = $wp_query->found_posts;
+        $this->data['keyword'] = get_search_query();
+        $this->countResult($this->data['level']);
+
+        $this->data['level'] = \Intranet\Search\ElasticSearch::$level;
         if ($this->data['level'] === 'users') {
             $this->data['resultCount'] = count($this->data['users']);
         }
+    }
 
-        $this->countResult($this->data['level']);
-
+    public function levelRedirect() {
         // No subscription or all results, but users have results, redirect to user level
         if (is_user_logged_in() && !in_array($this->data['level'], array('users', 'files')) && $this->data['level'] === 'subscriptions' && $this->data['counts']['subscriptions'] === 0 && $this->data['counts']['all'] === 0 && $this->data['counts']['users'] > 0) {
             wp_redirect(municipio_intranet_current_url() . '&level=users');

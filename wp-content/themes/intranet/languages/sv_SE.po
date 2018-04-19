@@ -1,8 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intranet\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2018-03-27 15:59+0200\n"
 "PO-Revision-Date: 2018-04-19 13:08+0200\n"
+=======
+"POT-Creation-Date: 2018-04-13 09:54+0200\n"
+"PO-Revision-Date: 2018-04-13 09:57+0200\n"
+>>>>>>> 346653fe96802f30e87ba84e9f5ecf7e4ebaf2d6
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -255,17 +260,17 @@ msgstr "Anmälan om olämpligt innehåll"
 msgid "The message was sent successfully"
 msgstr "Meddelandet har skickats"
 
-#: library/Controller/SingleForum.php:29
+#: library/Controller/SingleForum.php:34
 msgid "Write post"
 msgstr "Skriv inlägg"
 
-#: library/Controller/SingleForum.php:30
+#: library/Controller/SingleForum.php:35
 #: views/partials/modal/invite-modal.blade.php:24
 #: views/partials/modal/report-post.blade.php:40
 msgid "Send"
 msgstr "Skicka"
 
-#: library/CustomPostType/Forums.php:39
+#: library/CustomPostType/Forums.php:39 library/Theme/General.php:83
 #: views/partials/modal/invite-modal.blade.php:11
 msgid "Discussion forum"
 msgstr "Diskussionsforum"
@@ -294,7 +299,7 @@ msgstr "Ny %s"
 
 #: library/CustomPostType/Forums.php:51 library/CustomPostType/Forums.php:103
 #: library/CustomPostType/Incidents.php:51 library/CustomPostType/News.php:217
-#: library/CustomTaxonomy/Hashtags.php:39
+#: library/CustomTaxonomy/Hashtags.php:40
 #, php-format
 msgid "Edit %s"
 msgstr "Redigera %s"
@@ -307,14 +312,14 @@ msgstr "Visa %s"
 
 #: library/CustomPostType/Forums.php:53 library/CustomPostType/Forums.php:100
 #: library/CustomPostType/Incidents.php:53 library/CustomPostType/News.php:219
-#: library/CustomTaxonomy/Hashtags.php:36
+#: library/CustomTaxonomy/Hashtags.php:37
 #, php-format
 msgid "All %s"
 msgstr "Alla %s"
 
 #: library/CustomPostType/Forums.php:54 library/CustomPostType/Forums.php:99
 #: library/CustomPostType/Incidents.php:54 library/CustomPostType/News.php:220
-#: library/CustomTaxonomy/Hashtags.php:35
+#: library/CustomTaxonomy/Hashtags.php:36
 #, php-format
 msgid "Search %s"
 msgstr "Sök %s"
@@ -351,74 +356,70 @@ msgid "Subjects"
 msgstr "Ämnen"
 
 #: library/CustomPostType/Forums.php:101 library/CustomPostType/Forums.php:102
-#: library/CustomTaxonomy/Hashtags.php:37
 #: library/CustomTaxonomy/Hashtags.php:38
+#: library/CustomTaxonomy/Hashtags.php:39
 #, fuzzy, php-format
 #| msgid "Parent %s"
 msgid "Parent %s:"
 msgstr "Förälder %s"
 
-#: library/CustomPostType/Forums.php:104 library/CustomTaxonomy/Hashtags.php:40
+#: library/CustomPostType/Forums.php:104 library/CustomTaxonomy/Hashtags.php:41
 #, php-format
 msgid "Update %s"
 msgstr "Uppdatera %s"
 
-#: library/CustomPostType/Forums.php:105 library/CustomTaxonomy/Hashtags.php:41
+#: library/CustomPostType/Forums.php:105 library/CustomTaxonomy/Hashtags.php:42
 #, php-format
 msgid "Add New %s"
 msgstr "Skapa ny %s"
 
-#: library/CustomPostType/Forums.php:106 library/CustomTaxonomy/Hashtags.php:42
+#: library/CustomPostType/Forums.php:106 library/CustomTaxonomy/Hashtags.php:43
 #, fuzzy, php-format
 #| msgid "New %s"
 msgid "New %s Name"
 msgstr "Ny %s"
 
-#: library/CustomPostType/Forums.php:166
+#: library/CustomPostType/Forums.php:184
 msgid "Update"
 msgstr "Uppdatera"
 
-#: library/CustomPostType/Forums.php:166
+#: library/CustomPostType/Forums.php:184
 msgid "Create"
 msgstr "Skapa"
 
-#: library/CustomPostType/Forums.php:167
+#: library/CustomPostType/Forums.php:185
 msgid "Forum"
 msgstr "Forum"
 
-#: library/CustomPostType/Forums.php:212
-#: views/partials/modal/invite-modal.blade.php:6
-msgid "Invite members"
-msgstr "Bjud in medlemmar"
-
-#: library/CustomPostType/Forums.php:213 library/Theme/Enqueue.php:52
+#: library/CustomPostType/Forums.php:292 library/Theme/Enqueue.php:52
 #: templates/admin/systems/form.php:56
 #: templates/module/intranet-u-links.blade.php:17
 msgid "Edit"
 msgstr "Redigera"
 
-#: library/CustomPostType/Forums.php:214 templates/admin/systems/form.php:57
+#: library/CustomPostType/Forums.php:293 templates/admin/systems/form.php:57
 #: templates/module/intranet-u-links.blade.php:28
 msgid "Remove"
 msgstr "Ta bort"
 
-#: library/CustomPostType/Forums.php:323 library/Theme/Enqueue.php:60
+#: library/CustomPostType/Forums.php:407 library/Theme/Enqueue.php:60
 msgid "Leave forum"
 msgstr "Gå ur forumet"
 
-#: library/CustomPostType/Forums.php:323 library/Theme/Enqueue.php:59
+#: library/CustomPostType/Forums.php:407 library/Theme/Enqueue.php:59
+#: views/single-forum.blade.php:35
 msgid "Join forum"
 msgstr "Gå med i forumet"
 
-#: library/CustomPostType/Forums.php:447
+#: library/CustomPostType/Forums.php:547
 msgid "Attach files"
 msgstr "Bifoga filer"
 
-#: library/CustomPostType/Forums.php:451
+#: library/CustomPostType/Forums.php:551
 msgid "Select file"
 msgstr "Välj en fil"
 
-#: library/CustomPostType/Forums.php:452
+#: library/CustomPostType/Forums.php:552
 msgid "No file chosen"
 msgstr "Ingen fil har valts"
 
@@ -601,10 +602,6 @@ msgstr "Ärende"
 #: library/Theme/General.php:82
 msgid "Idea"
 msgstr "Idé"
-
-#: library/Theme/General.php:83
-msgid "Group"
-msgstr "Grupp"
 
 #: library/Theme/Walkthrough.php:23
 msgid ""
@@ -1461,6 +1458,15 @@ msgstr "Gå till"
 msgid "intranet"
 msgstr "intranät"
 
+#: views/partials/forum/members.blade.php:2
+msgid "members"
+msgstr "medlemmar"
+
+#: views/partials/forum/members.blade.php:15
+#: views/partials/modal/invite-modal.blade.php:6
+msgid "Invite members"
+msgstr "Bjud in medlemmar"
+
 #: views/partials/header/network-selector.blade.php:4
 #: views/partials/header/network-selector.blade.php:12
 msgid "Select intranet"
@@ -1565,15 +1571,20 @@ msgstr "Meny"
 msgid "What are you looking for?"
 msgstr "Vad letar du efter?"
 
-#: views/partials/modal/forum-modal.blade.php:10
-msgid "Name your discussion forum"
-msgstr "Namnge diskussionsforumet"
+#: views/partials/modal/forum-members-modal.blade.php:5
+msgid "Members"
+msgstr "Medlemmar"
 
+#: views/partials/modal/forum-members-modal.blade.php:27
 #: views/partials/modal/forum-modal.blade.php:24
 #: views/partials/modal/missing-data.blade.php:5
 #: views/partials/user/modal-password.blade.php:13
 msgid "Close"
 msgstr "Stäng"
+
+#: views/partials/modal/forum-modal.blade.php:10
+msgid "Name your discussion forum"
+msgstr "Namnge diskussionsforumet"
 
 #: views/partials/modal/invite-modal.blade.php:15
 msgid "E-mail addresses"
@@ -1826,6 +1837,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://github.com/helsingborg-stad"
 msgstr ""
+
+#~ msgid "Group"
+#~ msgstr "Grupp"
 
 #~ msgid "Leave discussion forum"
 #~ msgstr "Gå ur forumet"

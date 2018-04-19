@@ -87,83 +87,64 @@ class General
             return array();
         }
 
-        $keywordsRegex = explode(' ', trim($keyword));
-        $stopwords = municipio_intranet_get_user_search_stopwords();
-        $keywordsRegex = array_filter($keywordsRegex, function ($keyword) use ($stopwords) {
-            return !in_array($keyword, $stopwords);
-        });
+        global $wpdb;
 
-        $keywordsRegex = '(' . implode('|', $keywordsRegex) . ')';
-
-        $args = array(
-            's' => $keyword,
-            'meta_query' => array(
-                'relation' => 'AND',
-                array(
-                    'relation' => 'AND',
-                ),
-                array(
-                    'relation' => 'OR',
-                    array(
-                        'key' => 'first_name',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'last_name',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'user_responsibilities',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'user_skills',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'user_work_title',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'user_phone',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'user_department',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    ),
-                    array(
-                        'key' => 'ad_company',
-                        'value' => '[[:<:]]' . $keywordsRegex . '[[:>:]]',
-                        'compare' => 'REGEXP'
-                    )
-                )
-            )
-        );
-
-        if ($limit && is_numeric($limit)) {
-            $args['number'] = $limit;
+        //Sanitize limit
+        if (!$limit || !is_numeric($limit)) {
+            $limit = 20;
         }
 
-        $userMetaSearch = new \WP_User_Query($args);
+        //Create meta search index
+        if (!$wpdb->get_results("SHOW index FROM " .$wpdb->usermeta. " where Key_name = 'user_search_index'")) {
+            $wpdb->query("ALTER TABLE " .$wpdb->usermeta. " ADD FULLTEXT user_search_index(meta_value)");
+        }
+
+        //Create user main search index
+        if (!$wpdb->get_results("SHOW index FROM " .$wpdb->users. " where Key_name = 'user_search_index'")) {
+            $wpdb->query("ALTER TABLE " .$wpdb->users. " ADD FULLTEXT user_search_index(display_name)");
+        }
+
+        //Create query for users (depending on table size, run different processes)
+        if(defined('INTRANET_ADVANCED_USER_SEARCH') && INTRANET_ADVANCED_USER_SEARCH) {
+            $query = $wpdb->prepare("
+                SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
+                FROM " .$wpdb->usermeta. "
+                WHERE meta_key IN ('first_name','last_name', 'description', 'ad_department', 'ad_title', 'user_skills', 'user_responsibilities')
+                HAVING score > 1
+                ORDER BY score DESC
+                LIMIT %d"
+            , $keyword, $limit);
+        } else {
+            $query = $wpdb->prepare("
+                SELECT DISTINCT ID as user_id, MATCH(display_name) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
+                FROM " .$wpdb->users. "
+                HAVING score > 1
+                ORDER BY score DESC
+                LIMIT %d"
+            , $keyword, $limit);
+        }
+
+
+        //Get response from db or cache
+        if(!$userIdArray = wp_cache_get(md5($query), 'intanet-user-search-cache')) {
+            $userIdArray = $wpdb->get_results($query);
+            wp_cache_add(md5($query), $userIdArray, 'intanet-user-search-cache', 60*60*24);
+        }
+
+        //No users found
+        if(empty($userIdArray)) {
+            return array();
+        }
+
+        //Get full user profiles
+        $userArray = get_users(array_unique(array('include' => array_column($userIdArray, 'user_id'))));
 
         $users = array();
-        foreach ($userMetaSearch->results as $user) {
-            $users[$user->ID] = $user->data;
-        }
-
-        foreach ($userMetaSearch->get_results() as $user) {
+        foreach ($userArray as $user) {
             if (array_key_exists($user->ID, $users)) {
                 continue;
             }
-            $users[$user->ID] = $user->data;
+            $users[$user->ID] = $user;
         }
 
         foreach ($users as $user) {

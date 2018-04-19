@@ -1,7 +1,3 @@
-@extends('templates.master')
-
-@section('content')
-
 <?php global $wp_query; ?>
 
 <section class="creamy creamy-border-bottom gutter-vertical gutter-lg clearfix">
@@ -143,7 +139,7 @@
                             <div class="box-content">
                                 <p><?php echo sprintf(__('%d persons matching the search query', 'municipio-intranet'), count($users)); ?></p>
                                 <ul class="search-user-matches gutter gutter-vertical">
-                                    @foreach (array_slice($users, 0, 3) as $user)
+                                    @foreach (array_slice($users, 0, 20) as $user)
                                     <li>
                                         <a href="{{ $user->profile_url }}" style="text-decoration:none;">
                                             <span class="profile-image" style="background-image:url('{{ $user->profile_image }}');"></span>
@@ -189,5 +185,3 @@
         </div>
     </div>
 </section>
-
-@stop

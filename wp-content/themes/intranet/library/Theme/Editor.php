@@ -11,7 +11,7 @@ class Editor
         }
 
         // Add TinyMCE to comments
-        add_filter('comment_form_field_comment', array( $this, 'tinyMceComments'));
+        add_filter('comment_form_field_comment', array($this, 'tinyMceComments'));
         add_filter('comment_reply_link', array( $this, 'commentReplyLink'));
         add_action('wp_enqueue_scripts', array( $this, 'enqueueScripts'));
         add_filter('tiny_mce_before_init', array($this, 'customizeEditor'), 10, 2);
@@ -85,14 +85,28 @@ class Editor
      */
     public function tinyMceComments($commentField)
     {
+        $editorId = 'comment';
+        $content = '';
+
+        // Apply comment content to edit form
+        if (defined('DOING_AJAX') && DOING_AJAX && (isset($_POST['action']) && $_POST['action'] == 'get_comment_form')) {
+            $commentId = isset($_POST['commentId']) ? (int) $_POST['commentId'] : 0;
+            if ($comment = get_comment($commentId)) {
+                $editorId = 'comment-edit';
+                $content = $comment->comment_content;
+            }
+        }
+
         ob_start();
         wp_editor(
-                '',
-                'comment',
+                $content,
+                $editorId,
                 array(
                     'media_buttons'           => false,
                     'textarea_rows'           => '10',
                     'dfw'                     => false,
+                    'textarea_name'           => 'comment',
+                    'editor_class'            => 'tinymce-editor',
                     'tinymce'                 => array(
                         'statusbar'           => false,
                         'resize'              => true,
@@ -102,8 +116,8 @@ class Editor
                     'quicktags' => false,
                 )
             );
-        $commentField = ob_get_clean();
-        return $commentField;
+
+        return ob_get_clean();
     }
 
     /**

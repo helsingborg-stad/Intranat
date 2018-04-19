@@ -235,6 +235,6 @@ Intranet.Search.General = (function ($) {
         $autocomplete.appendTo($element).show();
     };
 
-    return new General();
+    //return new General();
 
 })(jQuery);
