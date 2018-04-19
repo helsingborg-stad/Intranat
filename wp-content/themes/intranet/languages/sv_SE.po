@@ -1,13 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intranet\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2018-03-27 15:59+0200\n"
-"PO-Revision-Date: 2018-04-19 13:08+0200\n"
-=======
 "POT-Creation-Date: 2018-04-13 09:54+0200\n"
 "PO-Revision-Date: 2018-04-13 09:57+0200\n"
->>>>>>> 346653fe96802f30e87ba84e9f5ecf7e4ebaf2d6
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
