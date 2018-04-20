@@ -21,7 +21,7 @@ class Forums
 
         add_filter('comment_text', array($this, 'displayAttachments'), 10, 2);
         add_filter('comment_form_field_comment', array( $this, 'displayFileInput'));
-        add_filter('dynamic_sidebar_after', array($this, 'contentAfterSidebar'));
+        add_filter('dynamic_sidebar_before', array($this, 'contentBeforeSidebar'));
         add_filter('is_active_sidebar', array($this, 'isActiveSidebar'), 11, 2);
         add_filter('Municipio/blog/post_settings', array($this, 'editForumButton'), 11, 2);
     }
@@ -147,10 +147,10 @@ class Forums
     }
 
     /**
-     * Render custom content after sidebar
+     * Render custom content before sidebar
      * @param string $sidebar
      */
-    public function contentAfterSidebar($sidebar)
+    public function contentBeforeSidebar($sidebar)
     {
         global $post;
 
@@ -210,7 +210,7 @@ class Forums
         $blade = new Blade(INTRANET_PATH . 'views/partials/modal/', WP_CONTENT_DIR . '/uploads/cache/blade-cache');
         // Add create/edit forum modal
         if (is_post_type_archive(self::$postTypeSlug) ||(is_single() && $this->canEditForum($post))) {
-             echo $blade->view()->make('forum-modal', $data)->render();
+            echo $blade->view()->make('forum-modal', $data)->render();
         }
 
         $data['editorSettings']['textarea_name'] = 'recipient_email';
@@ -254,7 +254,7 @@ class Forums
     {
         $members = get_post_meta($postId, 'forum_members', true);
         if (is_array($members) && !empty($members)) {
-            $members = array_map(function($a) {
+            $members = array_map(function ($a) {
                 if (get_the_author_meta('user_profile_picture', $a)) {
                     $image = '<img src="' . get_the_author_meta('user_profile_picture', $a) . '">';
                 } else {
@@ -270,7 +270,7 @@ class Forums
                 );
 
                 return $a;
-            }, array_keys(array_filter($members, function($a) {
+            }, array_keys(array_filter($members, function ($a) {
                 return $a == 1;
             })));
         }
