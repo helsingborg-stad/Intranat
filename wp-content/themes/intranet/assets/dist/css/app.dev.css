@@ -940,7 +940,8 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
       padding: 22.5px 0; } }
 
 .network-title {
-  font-weight: bold; }
+  font-weight: bold;
+  width: 100%; }
   .network-title em {
     font-weight: normal;
     color: #979797;
