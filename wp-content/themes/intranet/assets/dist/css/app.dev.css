@@ -946,11 +946,12 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
     font-weight: normal;
     color: #979797;
     letter-spacing: .5px;
-    margin-right: auto;
     margin-left: 8px; }
     @media (max-width: 769px) {
       .network-title em {
         letter-spacing: 0; } }
+  .network-title button {
+    margin-left: auto; }
 
 .my-networks .network-title a::before {
   font-family: hbg-pricons;
