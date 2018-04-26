@@ -78,13 +78,13 @@ body.admin-bar {
   display: block;
   position: relative; }
   #site-header .navbar {
-    padding: 20px 0; }
+    padding: 24px 0; }
     #site-header .navbar .grid + .grid {
       margin-top: 15px; }
     #site-header .navbar .or {
       color: #fff;
       font-weight: bold;
-      padding: 0 .5em; }
+      padding: 0 8px; }
   #site-header .site-title {
     color: #fff;
     margin: 0;
@@ -988,7 +988,7 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
   cursor: pointer;
   text-align: left;
   overflow: hidden;
-  padding-right: 1.5em;
+  padding-right: 48px;
   width: 100%;
   color: #252525; }
   .current-network strong {
@@ -1274,7 +1274,7 @@ a.dropdown-open:focus {
     padding: 1px 5px 5px; }
   .modularity-mod-intranet-u-links .links li,
   .modularity-mod-intranet-u-syste .links li {
-    padding: 6px 10px !important; }
+    padding: 8px 16px !important; }
   .modularity-mod-intranet-u-links .is-editing .only-if-editing,
   .modularity-mod-intranet-u-syste .is-editing .only-if-editing {
     display: block; }
@@ -1384,14 +1384,9 @@ a.dropdown-open:focus {
   margin-top: 10px; }
 
 .modularity-mod-intranet-news .box-news-horizontal .box-title {
-  margin-top: 10px;
-  font-size: 1.8rem; }
-  @media screen and (min-width: 0) and (max-width: 468px) {
-    .modularity-mod-intranet-news .box-news-horizontal .box-title {
-      font-size: 1.6rem; } }
-  @media screen and (min-width: 469px) and (max-width: 768px) {
-    .modularity-mod-intranet-news .box-news-horizontal .box-title {
-      font-size: 1.5rem; } }
+  margin-top: 24px;
+  font-size: 24px;
+  line-height: 1.333333333333333; }
 
 .modularity-mod-intranet-news .box-news article {
   margin: 0; }
