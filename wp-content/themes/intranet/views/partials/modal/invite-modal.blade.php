@@ -21,6 +21,7 @@
             <div class="modal-footer">
                 <input type="hidden" name="post_id" value="{{ the_ID() }}">
                 <input type="hidden" name="share_type" value="invite">
+                {!! wp_nonce_field('share-page' . get_the_ID(), '_wpnonce', true, false) !!}
                 <input type="submit" class="btn btn-primary" value="<?php _e('Send', 'municipio-intranet'); ?>">
             </div>
         </form>
