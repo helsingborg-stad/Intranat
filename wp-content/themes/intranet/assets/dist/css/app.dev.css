@@ -940,14 +940,18 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
       padding: 22.5px 0; } }
 
 .network-title {
-  font-weight: bold; }
+  font-weight: bold;
+  width: 100%; }
   .network-title em {
     font-weight: normal;
     color: #979797;
-    letter-spacing: .5px; }
+    letter-spacing: .5px;
+    margin-left: 8px; }
     @media (max-width: 769px) {
       .network-title em {
         letter-spacing: 0; } }
+  .network-title button {
+    margin-left: auto; }
 
 .my-networks .network-title a::before {
   font-family: hbg-pricons;
@@ -1109,7 +1113,10 @@ li:nth-child(5n + 5) a.profile-card .profile-image {
     border-bottom: 1px solid #e7e5e1;
     margin-bottom: 10px; }
   .network-search-results li a {
-    display: block;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
     color: #000;
     padding: 5px 20px; }
     .network-search-results li a:hover {

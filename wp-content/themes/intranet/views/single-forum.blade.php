@@ -31,7 +31,7 @@
                             </div>
                         </div>
                     @endif
-                @else
+                @elseif(is_user_logged_in())
                     <a href="#" class="btn btn-primary member-button" data-post-id="{{ $post->ID }}"><i class="pricon pricon-plus-o"></i> <span class="member-button__text"> <?php _e('Join forum', 'municipio-intranet'); ?></span></a>
                 @endif
             </div>
