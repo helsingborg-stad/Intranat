@@ -21,6 +21,10 @@ class Enqueue
     public function style()
     {
         wp_enqueue_style('intranet', get_stylesheet_directory_uri(). '/assets/dist/css/app.min.css', '', filemtime(get_stylesheet_directory() . '/assets/dist/css/app.min.css'));
+
+        if (is_search()) {
+            wp_enqueue_script('algolia-instantsearch');
+        }
     }
 
     /**
