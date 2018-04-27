@@ -145,7 +145,6 @@ class General
             $query = $wpdb->prepare("
                 SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
                 FROM " . $wpdb->base_prefix . "usermeta_search
-                WHERE meta_key IN ('first_name','last_name', 'description', 'ad_department', 'ad_title', 'user_skills', 'user_responsibilities')
                 HAVING score > 1
                 ORDER BY score DESC
                 LIMIT %d", $keyword, $limit);
