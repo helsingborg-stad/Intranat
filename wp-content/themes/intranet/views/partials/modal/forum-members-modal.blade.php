@@ -15,7 +15,7 @@
                             </div>
                             <div class="member-info">
                                 <p>{{ $member['name'] }}</p>
-                                <small>{{ $member['administrationUnit']->name ?? '' }}</small>
+                                <small>{{ $member['administrationUnit'] }}</small>
                             </div>
                         </div>
                     </a>
