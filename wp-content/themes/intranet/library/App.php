@@ -39,6 +39,7 @@ class App
         new \Intranet\User\Data();
 
         new \Intranet\Search\Elasticsearch();
+        new \Intranet\Search\Algolia();
 
         // Custom post types
         new \Intranet\CustomPostType\News();
