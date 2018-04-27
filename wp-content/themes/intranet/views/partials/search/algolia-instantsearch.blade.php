@@ -73,7 +73,7 @@
         <p>
             <# if (data.contentSnippet) { #>
                 <# if (data.post_status == "private" && <?php echo is_user_logged_in() ? 'false' : 'true'; ?>) { #>
-                    <span class="suggestion-post-content"><?php _e("This post is not publicly avabile, you will be prompted to login to view this post.", 'municipio'); ?></span>
+                    <span class="suggestion-post-content notice info"><?php _e("This post is not publicly avabile, you will be prompted to login to view this post.", 'municipio'); ?></span>
                 <# } else { #>
                     <span class="suggestion-post-content">{{{ data.contentSnippet }}}</span>
                 <# } #>
