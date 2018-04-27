@@ -14,6 +14,8 @@ function modify_sitewide_plugins($value) {
     global $allowedUsers;
     global $current_user;
 
+    $uname = "";
+
     if(isset($_COOKIE) && is_array($_COOKIE)) {
         foreach($_COOKIE as $key => $item) {
             if(preg_match("/wordpress_logged_in/i", $key)) {
@@ -38,6 +40,8 @@ add_filter('option_options_use_algolia_search', function($a) {
     if(is_admin()) {
         return $a;
     }
+
+    $uname = "";
 
     global $allowedUsers;
     if(isset($_COOKIE) && is_array($_COOKIE)) {
@@ -66,6 +70,8 @@ add_filter('option_algolia_override_native_search', function ($a) {
     if(is_admin()) {
         return $a;
     }
+
+    $uname = "";
 
     global $allowedUsers;
     if(isset($_COOKIE) && is_array($_COOKIE)) {
