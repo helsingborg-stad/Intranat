@@ -8,6 +8,9 @@
         .ais-search-box--reset-wrapper {
             display: none !important;
         }
+        .suggestion-post-content {
+            padding: 10px 0;
+        }
     </style>
 
     <section class="creamy gutter-vertical gutter-lg clearfix">
