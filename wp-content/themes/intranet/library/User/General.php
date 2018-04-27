@@ -136,7 +136,7 @@ class General
         }
 
         //Create meta search index
-        if (!$wpdb->get_results("SHOW TABLES LIKE " . $wpdb->base_prefix . "usermeta_search")) {
+        if (!$wpdb->get_results("SHOW TABLES LIKE '" . $wpdb->base_prefix . "usermeta_search'")) {
             General::redoUserSearchIndex();
         }
 
