@@ -13,6 +13,10 @@ class General
 
         add_action('init', array($this, 'removeAdminBar'), 1200);
         add_action('init', array($this, 'makePrivateReadable'), 1200);
+
+        add_action('admin_init', array($this, 'redoUserSearchIndexCron'));
+
+        add_action('redo_user_search_index', array('\Intranet\User\General', 'redoUserSearchIndex'));
     }
 
     /**
@@ -77,6 +81,43 @@ class General
     }
 
     /**
+     * Adds a daily cron for refreshing index
+     * @return void
+     */
+    public function redoUserSearchIndexCron()
+    {
+        if (!wp_next_scheduled('redo_user_search_index')) {
+            wp_schedule_event(time(), 'daily', 'redo_user_search_index');
+        }
+    }
+
+    /**
+     * Method for creating index of user meta
+     * @return void
+     */
+    public static function redoUserSearchIndex()
+    {
+        global $wpdb;
+
+        //Remove table
+        $wpdb->query("DROP TABLE " . $wpdb->base_prefix . "usermeta_search");
+
+        //Allocate data
+        $wpdb->query("
+            CREATE TABLE " . $wpdb->base_prefix . "usermeta_search
+            (
+                SELECT user_id, meta_value
+                FROM " . $wpdb->usermeta. "
+                WHERE meta_key IN ('first_name','last_name', 'description', 'ad_department', 'user_skills', 'user_responsibilities')
+            )
+        ");
+
+        //Create index
+        $wpdb->query("ALTER TABLE " . $wpdb->base_prefix . "usermeta_search ADD FULLTEXT " . $wpdb->base_prefix . "usermeta_search(meta_value)");
+    }
+
+
+    /**
      * Search users
      * @param  string $keyword Search keyword
      * @return array           Matching users
@@ -95,44 +136,37 @@ class General
         }
 
         //Create meta search index
-        if (!$wpdb->get_results("SHOW index FROM " .$wpdb->usermeta. " where Key_name = 'user_search_index'")) {
-            $wpdb->query("ALTER TABLE " .$wpdb->usermeta. " ADD FULLTEXT user_search_index(meta_value)");
-        }
-
-        //Create user main search index
-        if (!$wpdb->get_results("SHOW index FROM " .$wpdb->users. " where Key_name = 'user_search_index'")) {
-            $wpdb->query("ALTER TABLE " .$wpdb->users. " ADD FULLTEXT user_search_index(display_name)");
+        if (!$wpdb->get_results("SHOW TABLES LIKE " . $wpdb->base_prefix . "usermeta_search")) {
+            General::redoUserSearchIndex();
         }
 
         //Create query for users (depending on table size, run different processes)
-        if(defined('INTRANET_ADVANCED_USER_SEARCH') && INTRANET_ADVANCED_USER_SEARCH) {
+        if (defined('INTRANET_ADVANCED_USER_SEARCH') && INTRANET_ADVANCED_USER_SEARCH) {
             $query = $wpdb->prepare("
                 SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
-                FROM " .$wpdb->usermeta. "
+                FROM " . $wpdb->base_prefix . "usermeta_search
                 WHERE meta_key IN ('first_name','last_name', 'description', 'ad_department', 'ad_title', 'user_skills', 'user_responsibilities')
                 HAVING score > 1
                 ORDER BY score DESC
-                LIMIT %d"
-            , $keyword, $limit);
+                LIMIT %d", $keyword, $limit);
         } else {
             $query = $wpdb->prepare("
                 SELECT DISTINCT ID as user_id, MATCH(display_name) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
                 FROM " .$wpdb->users. "
                 HAVING score > 1
                 ORDER BY score DESC
-                LIMIT %d"
-            , $keyword, $limit);
+                LIMIT %d", $keyword, $limit);
         }
 
 
         //Get response from db or cache
-        if(!$userIdArray = wp_cache_get(md5($query), 'intanet-user-search-cache')) {
+        if (!$userIdArray = wp_cache_get(md5($query), 'intanet-user-search-cache')) {
             $userIdArray = $wpdb->get_results($query);
             wp_cache_add(md5($query), $userIdArray, 'intanet-user-search-cache', 60*60*24);
         }
 
         //No users found
-        if(empty($userIdArray)) {
+        if (empty($userIdArray)) {
             return array();
         }
 
