@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-04-13 09:54+0200\n"
-"PO-Revision-Date: 2018-04-13 09:57+0200\n"
+"POT-Creation-Date: 2018-04-27 13:11+0200\n"
+"PO-Revision-Date: 2018-04-27 13:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -46,7 +46,8 @@ msgid "All"
 msgstr "Alla"
 
 #: acf-fields/php/incidents-module.php:12
-#: views/partials/header/subnav.blade.php:34 views/search.blade.php:40
+#: views/partials/header/subnav.blade.php:34
+#: views/partials/search/wp.blade.php:36
 msgid "Subscriptions"
 msgstr "Intranät du följer"
 
@@ -260,7 +261,7 @@ msgid "Write post"
 msgstr "Skriv inlägg"
 
 #: library/Controller/SingleForum.php:35
-#: views/partials/modal/invite-modal.blade.php:24
+#: views/partials/modal/invite-modal.blade.php:25
 #: views/partials/modal/report-post.blade.php:40
 msgid "Send"
 msgstr "Skicka"
@@ -294,7 +295,7 @@ msgstr "Ny %s"
 
 #: library/CustomPostType/Forums.php:51 library/CustomPostType/Forums.php:103
 #: library/CustomPostType/Incidents.php:51 library/CustomPostType/News.php:217
-#: library/CustomTaxonomy/Hashtags.php:40
+#: library/CustomTaxonomy/Hashtags.php:41
 #, php-format
 msgid "Edit %s"
 msgstr "Redigera %s"
@@ -307,14 +308,14 @@ msgstr "Visa %s"
 
 #: library/CustomPostType/Forums.php:53 library/CustomPostType/Forums.php:100
 #: library/CustomPostType/Incidents.php:53 library/CustomPostType/News.php:219
-#: library/CustomTaxonomy/Hashtags.php:37
+#: library/CustomTaxonomy/Hashtags.php:38
 #, php-format
 msgid "All %s"
 msgstr "Alla %s"
 
 #: library/CustomPostType/Forums.php:54 library/CustomPostType/Forums.php:99
 #: library/CustomPostType/Incidents.php:54 library/CustomPostType/News.php:220
-#: library/CustomTaxonomy/Hashtags.php:36
+#: library/CustomTaxonomy/Hashtags.php:37
 #, php-format
 msgid "Search %s"
 msgstr "Sök %s"
@@ -351,24 +352,24 @@ msgid "Subjects"
 msgstr "Ämnen"
 
 #: library/CustomPostType/Forums.php:101 library/CustomPostType/Forums.php:102
-#: library/CustomTaxonomy/Hashtags.php:38
 #: library/CustomTaxonomy/Hashtags.php:39
+#: library/CustomTaxonomy/Hashtags.php:40
 #, fuzzy, php-format
 #| msgid "Parent %s"
 msgid "Parent %s:"
 msgstr "Förälder %s"
 
-#: library/CustomPostType/Forums.php:104 library/CustomTaxonomy/Hashtags.php:41
+#: library/CustomPostType/Forums.php:104 library/CustomTaxonomy/Hashtags.php:42
 #, php-format
 msgid "Update %s"
 msgstr "Uppdatera %s"
 
-#: library/CustomPostType/Forums.php:105 library/CustomTaxonomy/Hashtags.php:42
+#: library/CustomPostType/Forums.php:105 library/CustomTaxonomy/Hashtags.php:43
 #, php-format
 msgid "Add New %s"
 msgstr "Skapa ny %s"
 
-#: library/CustomPostType/Forums.php:106 library/CustomTaxonomy/Hashtags.php:43
+#: library/CustomPostType/Forums.php:106 library/CustomTaxonomy/Hashtags.php:44
 #, fuzzy, php-format
 #| msgid "New %s"
 msgid "New %s Name"
@@ -386,7 +387,7 @@ msgstr "Skapa"
 msgid "Forum"
 msgstr "Forum"
 
-#: library/CustomPostType/Forums.php:292 library/Theme/Enqueue.php:52
+#: library/CustomPostType/Forums.php:292 library/Theme/Enqueue.php:56
 #: templates/admin/systems/form.php:56
 #: templates/module/intranet-u-links.blade.php:17
 msgid "Edit"
@@ -397,11 +398,11 @@ msgstr "Redigera"
 msgid "Remove"
 msgstr "Ta bort"
 
-#: library/CustomPostType/Forums.php:407 library/Theme/Enqueue.php:60
+#: library/CustomPostType/Forums.php:407 library/Theme/Enqueue.php:64
 msgid "Leave forum"
 msgstr "Gå ur forumet"
 
-#: library/CustomPostType/Forums.php:407 library/Theme/Enqueue.php:59
+#: library/CustomPostType/Forums.php:407 library/Theme/Enqueue.php:63
 #: views/single-forum.blade.php:35
 msgid "Join forum"
 msgstr "Gå med i forumet"
@@ -532,57 +533,57 @@ msgstr "Avbryt"
 msgid "Example"
 msgstr "Exempel"
 
-#: library/Public/Helper.php:110 library/Theme/Enqueue.php:44
+#: library/Public/Helper.php:110 library/Theme/Enqueue.php:48
 msgid "Follow"
 msgstr "Följ"
 
-#: library/Public/Helper.php:112 library/Theme/Enqueue.php:45
+#: library/Public/Helper.php:112 library/Theme/Enqueue.php:49
 msgid "Unfollow"
 msgstr "Sluta följa"
 
-#: library/Search/Elasticsearch.php:49
+#: library/Search/Elasticsearch.php:55
 msgid "Exclude from search"
 msgstr "Exkludera från sök"
 
-#: library/Theme/Enqueue.php:43 templates/module/intranet-u-links.blade.php:34
+#: library/Theme/Enqueue.php:47 templates/module/intranet-u-links.blade.php:34
 msgid "You have not added any links yet…"
 msgstr "Du har inte lagt till några länkar än…"
 
-#: library/Theme/Enqueue.php:48 views/search.blade.php:70
-#: views/search.blade.php:142
+#: library/Theme/Enqueue.php:52 views/partials/search/user-widget.blade.php:4
+#: views/partials/search/wp.blade.php:66
 msgid "Persons"
 msgstr "Personer"
 
-#: library/Theme/Enqueue.php:49
+#: library/Theme/Enqueue.php:53
 msgid "Content"
 msgstr "Innehåll"
 
-#: library/Theme/Enqueue.php:50
+#: library/Theme/Enqueue.php:54
 msgid "View all results"
 msgstr "Visa alla resultat"
 
-#: library/Theme/Enqueue.php:53
+#: library/Theme/Enqueue.php:57
 msgid "Done"
 msgstr "Klar"
 
-#: library/Theme/Enqueue.php:54
+#: library/Theme/Enqueue.php:58
 msgid "No more news to load"
 msgstr "Det finns inga fler nyheter"
 
-#: library/Theme/Enqueue.php:55 views/author-edit.blade.php:584
+#: library/Theme/Enqueue.php:59 views/author-edit.blade.php:584
 #: views/partials/breadcrumbs.blade.php:33
 msgid "Disable welcome phrase"
 msgstr "Dölj hälsningsfras"
 
-#: library/Theme/Enqueue.php:56 views/partials/breadcrumbs.blade.php:33
+#: library/Theme/Enqueue.php:60 views/partials/breadcrumbs.blade.php:33
 msgid "Enable welcome phrase"
 msgstr "Visa hälsningsfras"
 
-#: library/Theme/Enqueue.php:57
+#: library/Theme/Enqueue.php:61
 msgid "Something went wrong, please try again later"
 msgstr "Något gick fel, vänligen försök igen senare"
 
-#: library/Theme/Enqueue.php:58
+#: library/Theme/Enqueue.php:62
 msgid "Are you sure you want to delete this post?"
 msgstr "Är du säker på att du vill radera sidan?"
 
@@ -622,52 +623,52 @@ msgstr "Förvaltningar"
 msgid "All fields must be filled in to add a new administration unit"
 msgstr "Alla fält måste fyllas i för att lägga till en ny förvaltning"
 
-#: library/User/General.php:212
+#: library/User/General.php:193
 #, php-format
 msgid "Hi %s"
 msgstr "Hej %s"
 
-#: library/User/General.php:213
+#: library/User/General.php:194
 #, php-format
 msgid "Good to see you, %s"
 msgstr "Trevligt att se dig %s"
 
-#: library/User/General.php:218
+#: library/User/General.php:199
 #, php-format
 msgid "Good morning %s"
 msgstr "God morgon %s"
 
-#: library/User/General.php:219
+#: library/User/General.php:200
 #, php-format
 msgid "Have a great day %s"
 msgstr "Ha en fin dag %s"
 
-#: library/User/General.php:224
+#: library/User/General.php:205
 #, php-format
 msgid "Good afternoon %s"
 msgstr "God eftermiddag %s"
 
-#: library/User/General.php:229
+#: library/User/General.php:210
 #, php-format
 msgid "It's getting late, %s"
 msgstr "Jobbar du fortfarande %s?"
 
-#: library/User/General.php:230
+#: library/User/General.php:211
 #, php-format
 msgid "Good eavning %s"
 msgstr "God kväll %s"
 
-#: library/User/General.php:235
+#: library/User/General.php:216
 #, php-format
 msgid "Good night %s"
 msgstr "God natt %s"
 
-#: library/User/General.php:262
+#: library/User/General.php:243
 #, php-format
 msgid "Happy new year %s"
 msgstr "Gott nytt år %s!"
 
-#: library/User/General.php:267
+#: library/User/General.php:248
 #, php-format
 msgid "Merry christmas %s"
 msgstr "God jul %s!"
@@ -925,7 +926,8 @@ msgstr ""
 "Du har inte valt några system än. Klicka på knappen ”välj system” för att "
 "välja ut vilka system som ska visas här."
 
-#: templates/module/intranet-u-systems.blade.php:47 views/search.blade.php:170
+#: templates/module/intranet-u-systems.blade.php:47
+#: views/partials/search/system-widget.blade.php:8
 msgid ""
 "Your logged in from a computer outside the city network. This causes some "
 "systems to be unavailable."
@@ -933,7 +935,8 @@ msgstr ""
 "Du är inloggad på en dator som inte är ansluten till stadens nätverk. Vissa "
 "system kan därför vara oåtkomliga."
 
-#: templates/module/intranet-u-systems.blade.php:52 views/search.blade.php:176
+#: templates/module/intranet-u-systems.blade.php:52
+#: views/partials/search/system-widget.blade.php:14
 msgid "You need to be on the city network to use this system"
 msgstr "Du måste vara inloggad på stadens nätverk för att använda detta system"
 
@@ -1453,11 +1456,11 @@ msgstr "Gå till"
 msgid "intranet"
 msgstr "intranät"
 
-#: views/partials/forum/members.blade.php:2
+#: views/partials/forum/members.blade.php:3
 msgid "members"
 msgstr "medlemmar"
 
-#: views/partials/forum/members.blade.php:15
+#: views/partials/forum/members.blade.php:18
 #: views/partials/modal/invite-modal.blade.php:6
 msgid "Invite members"
 msgstr "Bjud in medlemmar"
@@ -1498,7 +1501,7 @@ msgstr "Sök efter innehåll och filer"
 #: views/partials/header/search.blade.php:12
 #: views/partials/header/search.blade.php:18
 #: views/partials/mobile-menu.blade.php:2
-#: views/partials/mobile-menu.blade.php:7 views/search.blade.php:28
+#: views/partials/mobile-menu.blade.php:7 views/partials/search/wp.blade.php:24
 #: views/table-of-contents.blade.php:32
 msgid "Search"
 msgstr "Sök"
@@ -1704,6 +1707,90 @@ msgstr "Ditt namn"
 msgid "Your email"
 msgstr "Din e-postadress"
 
+#: views/partials/search/algolia-customsearch.blade.php:35
+#: views/partials/search/user-list.blade.php:21
+#: views/partials/search/wp.blade.php:90
+msgid "Found no matching results on your search…"
+msgstr "Hittade inga matchande resultat för din sökning…"
+
+#: views/partials/search/algolia-customsearch.blade.php:47
+msgid "Whoops, this search result page dosen't exist anymore…"
+msgstr "Hoppsan, den här sökresultatsidan finns inte längre. "
+
+#: views/partials/search/algolia-instantsearch.blade.php:76
+msgid ""
+"This post is not publicly avabile, you will be prompted to login to view "
+"this post."
+msgstr ""
+"Det här innehållet är inte tillgängligt för alla, du kanske blir ombedd att "
+"logga in för att läsa sidan. "
+
+#: views/partials/search/algolia-instantsearch.blade.php:98
+msgid "Could not find any content matching your query."
+msgstr "Kunde inte hitta något matchande innehåll."
+
+#: views/partials/search/algolia-instantsearch.blade.php:107
+msgid "hits on"
+msgstr "träffar på"
+
+#: views/partials/search/algolia-instantsearch.blade.php:109
+msgid "Query is empty, please type somehing."
+msgstr "Vänligen ange en sökfråga."
+
+#: views/partials/search/system-widget.blade.php:4
+msgid "Systems"
+msgstr "System"
+
+#: views/partials/search/system-widget.blade.php:6
+#, php-format
+msgid "Found %d matching user systems"
+msgstr "Hittade %d matchande verksamhetssystem"
+
+#: views/partials/search/system-widget.blade.php:8
+msgid "Note"
+msgstr "Observera"
+
+#: views/partials/search/user-list.blade.php:32
+msgid "Back to search results"
+msgstr "Tillbaka till sökresultat"
+
+#: views/partials/search/user-widget.blade.php:6
+#, php-format
+msgid "%d persons matching the search query"
+msgstr "%d personer matchar din sökning"
+
+#: views/partials/search/user-widget.blade.php:19
+msgid "Show all matching persons"
+msgstr "Visa alla personträffar"
+
+#: views/partials/search/wp.blade.php:10
+#, php-format
+msgid "<strong>%1$d</strong> results on \"%2$s\""
+msgstr "<strong>%1$d</strong> träffar på \"%2$s\""
+
+#: views/partials/search/wp.blade.php:25
+msgid ""
+"Select if you want to see results from all intranets, the intranets that you "
+"are following, the intranet you're currently browsing or collegues. The "
+"numbers shows how many results earch category have."
+msgstr ""
+"Här kan du välja om du vill se sökträffar från alla intranät, de intranät du "
+"valt att följer, det intranät du just nu befinner dig på eller om du bara "
+"vill se personer (kollegor). Siffrorna visar hur många sökträffar som finns "
+"under varje kategori."
+
+#: views/partials/search/wp.blade.php:31
+msgid "Filter search by"
+msgstr "Filtrera sökresultaten"
+
+#: views/partials/search/wp.blade.php:44
+msgid "All sites"
+msgstr "Alla intranät"
+
+#: views/partials/search/wp.blade.php:58
+msgid "Files"
+msgstr "Filer"
+
 #: views/partials/user/loginform.blade.php:3
 msgid "Username"
 msgstr "Användarnamn"
@@ -1739,60 +1826,6 @@ msgstr ""
 msgid "Continue without logging in"
 msgstr "Fortsätt utan att logga in"
 
-#: views/search.blade.php:14
-#, php-format
-msgid "<strong>%1$d</strong> results on \"%2$s\""
-msgstr "<strong>%1$d</strong> träffar på \"%2$s\""
-
-#: views/search.blade.php:29
-msgid ""
-"Select if you want to see results from all intranets, the intranets that you "
-"are following, the intranet you're currently browsing or collegues. The "
-"numbers shows how many results earch category have."
-msgstr ""
-"Här kan du välja om du vill se sökträffar från alla intranät, de intranät du "
-"valt att följer, det intranät du just nu befinner dig på eller om du bara "
-"vill se personer (kollegor). Siffrorna visar hur många sökträffar som finns "
-"under varje kategori."
-
-#: views/search.blade.php:35
-msgid "Filter search by"
-msgstr "Filtrera sökresultaten"
-
-#: views/search.blade.php:48
-msgid "All sites"
-msgstr "Alla intranät"
-
-#: views/search.blade.php:62
-msgid "Files"
-msgstr "Filer"
-
-#: views/search.blade.php:94
-msgid "Found no matching results on your search…"
-msgstr "Hittade inga matchande resultat för din sökning…"
-
-#: views/search.blade.php:144
-#, php-format
-msgid "%d persons matching the search query"
-msgstr "%d personer matchar din sökning"
-
-#: views/search.blade.php:157
-msgid "Show all matching persons"
-msgstr "Visa alla personträffar"
-
-#: views/search.blade.php:166
-msgid "Systems"
-msgstr "System"
-
-#: views/search.blade.php:168
-#, php-format
-msgid "Found %d matching user systems"
-msgstr "Hittade %d matchande verksamhetssystem"
-
-#: views/search.blade.php:170
-msgid "Note"
-msgstr "Observera"
-
 #: views/sites-list.blade.php:10
 msgid "All intranets"
 msgstr "Alla intranät"
@@ -1819,7 +1852,7 @@ msgstr "Textsök"
 
 #: views/taxonomy.blade.php:35
 msgid "No posts to show"
-msgstr ""
+msgstr "Inga inlägg att visa"
 
 #. Description of the plugin/theme
 msgid "An Intranet theme"
