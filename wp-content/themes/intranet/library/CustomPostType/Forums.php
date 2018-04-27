@@ -261,11 +261,20 @@ class Forums
                     $image = '<i class="pricon pricon-3x pricon-user-o"></i>';
                 }
 
+                $unit = '';
+                if (!empty($userUnits = get_the_author_meta('user_administration_unit', $a))) {
+                    if (is_array($userUnits)) {
+                        $unit = municipio_intranet_get_administration_unit_name($userUnits[0]);
+                    } elseif (is_string($userUnits)) {
+                        $unit = municipio_intranet_get_administration_unit_name($userUnits);
+                    }
+                }
+
                 $a = array(
                     'id' => $a,
                     'name' => municipio_intranet_get_user_full_name($a),
                     'url' => municipio_intranet_get_user_profile_url($a),
-                    'administrationUnit' => \Intranet\User\AdministrationUnits::getUsersAdministrationUnitIntranet($a),
+                    'administrationUnit' => $unit,
                     'image' => $image,
                 );
 
