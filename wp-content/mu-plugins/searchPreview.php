@@ -93,3 +93,31 @@ add_filter('option_algolia_override_native_search', function ($a) {
     return $a;
 
 });
+
+add_filter('algolia_autocomplete_enabled', function($a) {
+
+    if(is_admin()) {
+        return $a;
+    }
+
+    $uname = "";
+
+    global $allowedUsers;
+    if(isset($_COOKIE) && is_array($_COOKIE)) {
+        foreach($_COOKIE as $key => $item) {
+            if(preg_match("/wordpress_logged_in/i", $key)) {
+                $uname = explode("|", $item);
+                if(isset($uname[0])) {
+                    $uname = $uname[0];
+                    break;
+                }
+            }
+        }
+    }
+
+    if (in_array($uname, $allowedUsers)) {
+        return "yes";
+    }
+
+    return $a;
+});
