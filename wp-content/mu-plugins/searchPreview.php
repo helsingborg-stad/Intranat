@@ -94,7 +94,7 @@ add_filter('option_algolia_override_native_search', function ($a) {
 
 });
 
-add_filter('algolia_autocomplete_enabled', function($a) {
+add_filter('option_algolia_autocomplete_enabled', function($a) {
 
     if(is_admin()) {
         return $a;
