@@ -16,7 +16,7 @@
 
                         <li class="{{ $level == 'all' ||empty($level) ? 'active' : '' }}">
                             <a href="{{ home_url() }}?s={{ urlencode(get_search_query()) }}&amp;level=all">
-                                <?php _e('Innehåll', 'municipio-intranet'); ?>
+                                <?php _e('Content', 'municipio-intranet'); ?>
                             </a>
                         </li>
 
