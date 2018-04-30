@@ -18,7 +18,7 @@ class Search extends \Municipio\Controller\Search
         parent::init();
 
         // Not elastic? Run core.
-        if($this->data['activeSearchEngine'] == "wp") {
+        if ($this->data['activeSearchEngine'] == "wp") {
             $this->elasticSearch();
             $this->levelRedirect();
         } else {
@@ -27,7 +27,14 @@ class Search extends \Municipio\Controller\Search
 
         //System & user search
         if (is_user_logged_in()) {
-            $this->data['users'] = \Intranet\User\General::searchUsers(get_search_query(), 200);
+
+            //This exception is due to bad performance on large querys of users
+            if ($this->data['level'] == "users") {
+                $this->data['users'] = \Intranet\User\General::searchUsers(get_search_query(), 200);
+            } else {
+                $this->data['users'] = \Intranet\User\General::searchUsers(get_search_query(), 5);
+            }
+
             $this->data['systems'] = \Intranet\User\Systems::search(get_search_query());
         } else {
             $this->data['users'] = array();
@@ -35,7 +42,8 @@ class Search extends \Municipio\Controller\Search
         }
     }
 
-    public function elasticSearch() {
+    public function elasticSearch()
+    {
         global $wp_query;
         $this->data['resultCount'] = $wp_query->found_posts;
         $this->data['keyword'] = get_search_query();
@@ -47,7 +55,8 @@ class Search extends \Municipio\Controller\Search
         }
     }
 
-    public function levelRedirect() {
+    public function levelRedirect()
+    {
         // No subscription or all results, but users have results, redirect to user level
         if (is_user_logged_in() && !in_array($this->data['level'], array('users', 'files')) && $this->data['level'] === 'subscriptions' && $this->data['counts']['subscriptions'] === 0 && $this->data['counts']['all'] === 0 && $this->data['counts']['users'] > 0) {
             wp_redirect(municipio_intranet_current_url() . '&level=users');
