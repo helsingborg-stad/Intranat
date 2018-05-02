@@ -10,6 +10,10 @@
         .suggestion-post-content {
             padding: 10px 0;
         }
+
+        .search-level .nav a {
+            padding: 5px 15px;
+        }
     </style>
 
     <section class="gutter-vertical gutter-lg clearfix">
