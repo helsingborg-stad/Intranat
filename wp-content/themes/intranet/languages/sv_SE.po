@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-05-02 15:31+0200\n"
-"PO-Revision-Date: 2018-05-02 15:31+0200\n"
+"POT-Creation-Date: 2018-05-02 15:35+0200\n"
+"PO-Revision-Date: 2018-05-02 15:35+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -1785,8 +1785,8 @@ msgstr "Tillbaka till sökresultat"
 
 #: views/partials/search/user-widget.blade.php:6
 #, php-format
-msgid "%d persons or more matching the search query"
-msgstr "%d personer eller fler matchade din sökfråga"
+msgid "%d persons matching the search query"
+msgstr "%d personer matchar din sökning"
 
 #: views/partials/search/user-widget.blade.php:19
 msgid "Show all matching persons"
@@ -1880,8 +1880,8 @@ msgstr ""
 msgid "http://github.com/helsingborg-stad"
 msgstr ""
 
-#~ msgid "%d persons matching the search query"
-#~ msgstr "%d personer matchar din sökning"
+#~ msgid "%d persons or more matching the search query"
+#~ msgstr "%d personer eller fler matchade din sökfråga"
 
 #~ msgid "Group"
 #~ msgstr "Grupp"

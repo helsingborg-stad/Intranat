@@ -3,7 +3,7 @@
     <div class="box box-filled">
         <h3 class="box-title"><?php _e('Persons', 'municipio-intranet'); ?></h3>
         <div class="box-content">
-            <p><?php echo sprintf(__('%d persons or more matching the search query', 'municipio-intranet'), count($users)); ?></p>
+            <p><?php echo sprintf(__('%d persons matching the search query', 'municipio-intranet'), count($users)); ?></p>
             <ul class="search-user-matches gutter gutter-vertical">
                 @foreach (array_slice($users, 0, 10) as $user)
                 <li>

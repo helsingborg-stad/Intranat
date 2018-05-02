@@ -27,14 +27,7 @@ class Search extends \Municipio\Controller\Search
 
         //System & user search
         if (is_user_logged_in()) {
-
-            //This exception is due to bad performance on large querys of users
-            if ($this->data['level'] == "users") {
-                $this->data['users'] = \Intranet\User\General::searchUsers(get_search_query(), 200);
-            } else {
-                $this->data['users'] = \Intranet\User\General::searchUsers(get_search_query(), 5);
-            }
-
+            $this->data['users'] = \Intranet\User\General::searchUsers(get_search_query(), 200);
             $this->data['systems'] = \Intranet\User\Systems::search(get_search_query());
         } else {
             $this->data['users'] = array();
