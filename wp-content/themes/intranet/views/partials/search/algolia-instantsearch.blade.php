@@ -87,7 +87,7 @@
             <div class="grid">
                 <div class="grid-md-8 grid-lg-9">
                     <div id="algolia-hits"></div>
-                    <div id="algolia-pagination"></div>
+                    <div id="algolia-pagination" class="gutter-vertical gutter-lg"></div>
                     <aside id="ais-facets">
                         <section class="ais-facets" id="facet-categories"></section>
                         <section class="ais-facets" id="facet-tags"></section>
