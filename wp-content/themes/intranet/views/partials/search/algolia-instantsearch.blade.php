@@ -18,10 +18,6 @@
         .origin-site {
             float: right;
         }
-
-        .hit-title {
-            max-width: 90%;
-        }
     </style>
 
     <section class="gutter-vertical gutter-lg clearfix">
@@ -119,11 +115,11 @@
     <div class="ais-hits--content is-{{ data.post_status }}">
         <h3 class="hit-title" title="{{ data.post_title }}">
             <a class="link-item " href="{{ data.permalink }}">{{{ data._highlightResult.post_title.value }}}</a>
-        </h3>
 
-        <# if (data.origin_site) { #>
-            <span class="label label-theme label-sm origin-site hidden-xs hidden-sm">{{{ data.origin_site }}}</span>
-        <# } #>
+            <# if (data.origin_site) { #>
+                <span class="label label-theme label-sm origin-site hidden-xs hidden-sm">{{{ data.origin_site }}}</span>
+            <# } #>
+        </h3>
 
         <# if (data.contentSnippet) { #>
             <# if (data.post_status == "private" && <?php echo is_user_logged_in() ? 'false' : 'true'; ?>) { #>
