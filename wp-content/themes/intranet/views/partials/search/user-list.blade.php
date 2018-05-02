@@ -55,7 +55,7 @@
                 ?>
                 @if ($resultCount === 0)
                     <div class="notice info">
-                        <i class="pricon pricon-info-o"></i> <?php _e('Found no matching results on your search…', 'municipio'); ?>
+                        <i class="pricon pricon-info-o"></i> <?php _e('Found no matching results on your search…', 'municipio-intranet'); ?>
                     </div>
                 @else
                     <div class="grid">
@@ -66,7 +66,7 @@
                 @endif
             </div>
             <div class="grid-md-3">
-                <a href="{{ get_search_link() }}" class="btn btn-primary btn-lg btn-block"><i class="pricon pricon-left-skinny-arrow"></i> <?php _e("Back to search results", 'municipio'); ?></a>
+                <a href="{{ get_search_link() }}" class="btn btn-primary btn-lg btn-block"><i class="pricon pricon-left-skinny-arrow"></i> <?php _e("Back to search results", 'municipio-intranet'); ?></a>
             </div>
         </div>
     </div>

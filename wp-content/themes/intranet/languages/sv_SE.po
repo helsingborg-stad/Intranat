@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intranet\n"
-"POT-Creation-Date: 2018-04-30 09:35+0200\n"
-"PO-Revision-Date: 2018-04-30 09:36+0200\n"
+"POT-Creation-Date: 2018-05-02 15:31+0200\n"
+"PO-Revision-Date: 2018-05-02 15:31+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -550,7 +550,7 @@ msgid "You have not added any links yet…"
 msgstr "Du har inte lagt till några länkar än…"
 
 #: library/Theme/Enqueue.php:52
-#: views/partials/search/algolia-instantsearch.blade.php:26
+#: views/partials/search/algolia-instantsearch.blade.php:73
 #: views/partials/search/user-list.blade.php:26
 #: views/partials/search/user-widget.blade.php:4
 #: views/partials/search/wp.blade.php:66
@@ -558,7 +558,7 @@ msgid "Persons"
 msgstr "Personer"
 
 #: library/Theme/Enqueue.php:53
-#: views/partials/search/algolia-instantsearch.blade.php:19
+#: views/partials/search/algolia-instantsearch.blade.php:66
 msgid "Content"
 msgstr "Innehåll"
 
@@ -1506,7 +1506,7 @@ msgstr "Sök efter innehåll och filer"
 #: views/partials/header/search.blade.php:18
 #: views/partials/mobile-menu.blade.php:2
 #: views/partials/mobile-menu.blade.php:7
-#: views/partials/search/algolia-instantsearch.blade.php:8
+#: views/partials/search/algolia-instantsearch.blade.php:55
 #: views/partials/search/user-list.blade.php:8
 #: views/partials/search/wp.blade.php:24 views/table-of-contents.blade.php:32
 msgid "Search"
@@ -1723,7 +1723,7 @@ msgstr "Hittade inga matchande resultat för din sökning…"
 msgid "Whoops, this search result page dosen't exist anymore…"
 msgstr "Hoppsan, den här sökresultatsidan finns inte längre. "
 
-#: views/partials/search/algolia-instantsearch.blade.php:9
+#: views/partials/search/algolia-instantsearch.blade.php:56
 #: views/partials/search/user-list.blade.php:9
 #: views/partials/search/wp.blade.php:25
 msgid ""
@@ -1736,13 +1736,13 @@ msgstr ""
 "vill se personer (kollegor). Siffrorna visar hur många sökträffar som finns "
 "under varje kategori."
 
-#: views/partials/search/algolia-instantsearch.blade.php:15
+#: views/partials/search/algolia-instantsearch.blade.php:62
 #: views/partials/search/user-list.blade.php:15
 #: views/partials/search/wp.blade.php:31
 msgid "Filter search by"
 msgstr "Filtrera sökresultaten"
 
-#: views/partials/search/algolia-instantsearch.blade.php:122
+#: views/partials/search/algolia-instantsearch.blade.php:118
 msgid ""
 "This post is not publicly avabile, you will be prompted to login to view "
 "this post."
@@ -1750,15 +1750,15 @@ msgstr ""
 "Det här innehållet är inte tillgängligt för alla, du kanske blir ombedd att "
 "logga in för att läsa sidan. "
 
-#: views/partials/search/algolia-instantsearch.blade.php:144
+#: views/partials/search/algolia-instantsearch.blade.php:146
 msgid "Could not find any content matching your query."
 msgstr "Kunde inte hitta något matchande innehåll."
 
-#: views/partials/search/algolia-instantsearch.blade.php:153
+#: views/partials/search/algolia-instantsearch.blade.php:155
 msgid "hits on"
 msgstr "träffar på"
 
-#: views/partials/search/algolia-instantsearch.blade.php:155
+#: views/partials/search/algolia-instantsearch.blade.php:157
 msgid "Query is empty, please type somehing."
 msgstr "Vänligen ange en sökfråga."
 
