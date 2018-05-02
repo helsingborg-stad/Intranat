@@ -1,7 +1,7 @@
 <?php
 
 global $allowedUsers;
-$allowedUsers  = array("seno1000", "hewi1000", "nira1000", "logr1002","joha1032", "visa1002", "mape1002", "bjwe1002", "kast1012");
+$allowedUsers  = array("seno1000", "hewi1004", "nira1000", "logr1002","joha1032", "visa1002", "mape1002", "bjwe1002", "kast1012", "toni1001", "veko1001", "josi1004");
 
 add_filter('site_option_active_sitewide_plugins', 'modify_sitewide_plugins');
 
