@@ -14,6 +14,14 @@
         .search-level .nav a {
             padding: 5px 15px;
         }
+
+        .origin-site {
+            float: right;
+        }
+
+        .hit-title {
+            max-width: 90%;
+        }
     </style>
 
     <section class="gutter-vertical gutter-lg clearfix">
@@ -109,15 +117,13 @@
 @verbatim
 <script type="text/html" id="tmpl-instantsearch-hit">
     <div class="ais-hits--content is-{{ data.post_status }}">
-        <h3 style="display: inline;" title="{{ data.post_title }}">
+        <h3 class="hit-title" title="{{ data.post_title }}">
             <a class="link-item " href="{{ data.permalink }}">{{{ data._highlightResult.post_title.value }}}</a>
         </h3>
 
         <# if (data.origin_site) { #>
-            &nbsp; - <span class="label label-theme label-sm">{{{ data.origin_site }}}</span>
+            <span class="label label-theme label-sm origin-site hidden-xs hidden-sm">{{{ data.origin_site }}}</span>
         <# } #>
-
-        <div class="search-result-date">{{ data.post_date_formatted }}</div>
 
         <# if (data.contentSnippet) { #>
             <# if (data.post_status == "private" && <?php echo is_user_logged_in() ? 'false' : 'true'; ?>) { #>
@@ -135,6 +141,7 @@
                 </a>
             </span>
         </div>
+
     </div>
 </script>
 @endverbatim
