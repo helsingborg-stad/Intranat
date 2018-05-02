@@ -1,42 +1,3 @@
-<div class="search-level">
-    <div class="container">
-        <div class="grid">
-            <div class="grid-xs-12">
-                <nav>
-                    <?php
-                        echo municipio_intranet_walkthrough(
-                            __('Search', 'municipio-intranet'),
-                            __('Select if you want to see results from all intranets, the intranets that you are following, the intranet you\'re currently browsing or collegues. The numbers shows how many results earch category have.', 'municipio-intranet'),
-                            '.search-level'
-                        );
-                    ?>
-
-                    <ul class="nav nav-horizontal">
-                        <li class="title"><?php _e('Filter search by', 'municipio-intranet'); ?>:</li>
-
-                        <li class="{{ $level == 'all' ||empty($level) ? 'active' : '' }}">
-                            <a href="{{ home_url() }}?s={{ urlencode(get_search_query()) }}&amp;level=all">
-                                <?php _e('Content', 'municipio-intranet'); ?>
-                            </a>
-                        </li>
-
-                        @if (is_user_logged_in())
-                        <li class="{{ $level == 'users' ? 'active' : '' }}">
-                            <a href="{{ home_url() }}?s={{ urlencode(get_search_query()) }}&amp;level=users">
-                                <?php _e('Persons', 'municipio-intranet'); ?>
-                            </a>
-                        </li>
-                        @endif
-
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.7.2"></script>
 <div id="ais-wrapper">
 
@@ -51,7 +12,7 @@
         }
     </style>
 
-    <section class="creamy gutter-vertical gutter-lg clearfix">
+    <section class="gutter-vertical gutter-lg clearfix">
         <div class="container">
             <div class="grid">
                 <div class="grid-lg-12">
@@ -75,6 +36,43 @@
                             </div>
                         </main>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-level creamy">
+        <div class="container">
+            <div class="grid">
+                <div class="grid-xs-12">
+                    <nav>
+                        <?php
+                            echo municipio_intranet_walkthrough(
+                                __('Search', 'municipio-intranet'),
+                                __('Select if you want to see results from all intranets, the intranets that you are following, the intranet you\'re currently browsing or collegues. The numbers shows how many results earch category have.', 'municipio-intranet'),
+                                '.search-level'
+                            );
+                        ?>
+
+                        <ul class="nav nav-horizontal">
+                            <li class="title"><?php _e('Filter search by', 'municipio-intranet'); ?>:</li>
+
+                            <li class="{{ $level == 'all' ||empty($level) ? 'active' : '' }}">
+                                <a href="{{ home_url() }}?s={{ urlencode(get_search_query()) }}&amp;level=all">
+                                    <?php _e('Content', 'municipio-intranet'); ?>
+                                </a>
+                            </li>
+
+                            @if (is_user_logged_in())
+                            <li class="{{ $level == 'users' ? 'active' : '' }}">
+                                <a href="{{ home_url() }}?s={{ urlencode(get_search_query()) }}&amp;level=users">
+                                    <?php _e('Persons', 'municipio-intranet'); ?>
+                                </a>
+                            </li>
+                            @endif
+
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
