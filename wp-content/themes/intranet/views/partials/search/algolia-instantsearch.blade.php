@@ -119,7 +119,7 @@
             <# } else { #>
                 <div class="suggestion-post-content">
                     <# if (data.origin_site) { #>
-                        <span class="label label-theme label-sm">{{{ data.origin_site }}}</span>
+                        <span class="label label-sm">{{{ data.origin_site }}}</span>
                     <# } #>
                     {{{ data.contentSnippet }}}
                 </div>
