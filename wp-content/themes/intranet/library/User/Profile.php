@@ -16,13 +16,13 @@ class Profile
         $this->urlBase = __('user', 'municipio-intranet');
 
         // View profile
-        add_action('init', array($this, 'profileUrlRewrite'));
+        add_action('admin_init', array($this, 'profileUrlRewrite'));
         add_action('template_redirect', array($this, 'accessControl'), 5);
         add_action('template_redirect', array($this, 'inactiveControl'), 5);
         add_filter('wp_title', array($this, 'setProfileTitle'), 11, 3);
 
         // Edit profile
-        add_action('init', array($this, 'editProfileUrlRewrite'));
+        add_action('admin_init', array($this, 'editProfileUrlRewrite'));
         add_filter('template_include', array($this, 'editProfileTemplate'), 10);
 
         add_filter('Municipio/controller/base/view_data', array($this, 'currentUserData'));

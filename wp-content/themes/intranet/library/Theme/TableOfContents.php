@@ -9,7 +9,7 @@ class TableOfContents
     public function __construct()
     {
         //Template & url
-        add_action('init', array($this, 'urlRewrite'));
+        add_action('admin_init', array($this, 'urlRewrite'));
         add_filter('template_include', array($this, 'template'), 10);
 
         //Cache
