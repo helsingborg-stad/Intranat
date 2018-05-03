@@ -37,7 +37,7 @@ Intranet.Search.User = (function ($) {
                 var keyword = $searchInput.val();
                 typeTimer = setTimeout(function () {
                     this.searchInit(keyword);
-                }.bind(this), 300);
+                }.bind(this), 1000);
             }.bind(this));
         }.bind(this));
     }
