@@ -21,7 +21,9 @@ $allowedUsers  = array(
     "best1004",
     "sosa1009",
     "aldu1000",
-    "rejo1008"
+    "rejo1008",
+    "mihu1006",
+    "peza1000"
 );
 
 add_filter('site_option_active_sitewide_plugins', 'modify_sitewide_plugins');
