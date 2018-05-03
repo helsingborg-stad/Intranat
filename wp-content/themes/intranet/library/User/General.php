@@ -24,9 +24,21 @@ class General
     public function userJsonSearch()
     {
         if (!is_user_logged_in()) {
-            wp_send_json([], 404);
+            wp_send_json([], 200);
         }
-        wp_send_json(\Intranet\User\General::searchUsers(isset($_POST['query']) ? sanitize_text_field($_POST['query']) : '' , 10), 200);
+
+        $users = \Intranet\User\General::searchUsers(isset($_POST['query']) ? sanitize_text_field($_POST['query']) : '' , 200);
+
+        if(is_array($users) && !empty($users)) {
+            wp_send_json(
+                array(
+                    'items' => array_slice($users, 0, 10),
+                    'nbrofitems' => count($users)
+                )
+            , 200);
+        } else {
+            wp_send_json([], 200);
+        }
     }
 
     /**

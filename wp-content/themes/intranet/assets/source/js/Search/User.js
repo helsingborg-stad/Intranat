@@ -76,7 +76,7 @@ Intranet.Search.User = (function ($) {
             this.hideElement(jQuery(loaderElement));
             this.hideElement(jQuery(loaderTextElement));
 
-            if(response.length) {
+            if(response) {
 
                 //Empty result
                 $(resultElement).html("");
@@ -85,7 +85,7 @@ Intranet.Search.User = (function ($) {
                 var userTemplate = wp.template("user-item");
 
                 //Populate
-                response.forEach(function(element) {
+                response.items.forEach(function(element) {
                     $(resultElement).append(userTemplate(element.data));
                 }.bind(this));
 
@@ -96,10 +96,12 @@ Intranet.Search.User = (function ($) {
                 var userMatchesTemplate = wp.template("user-nbr-matches");
 
                 //Populate
-                $(nbrOfMatches).html(userMatchesTemplate({count: response.length}));
+                $(nbrOfMatches).html(userMatchesTemplate({count: response.nbrofitems}));
 
                 //Show more button & number of matches
-                this.showElement(jQuery(allButtonElement));
+                if(response.items.length != response.nbrofitems) {
+                    this.showElement(jQuery(allButtonElement));
+                }
                 this.showElement(jQuery(nbrOfMatches));
 
             } else {
