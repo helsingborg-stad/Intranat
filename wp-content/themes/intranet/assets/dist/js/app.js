@@ -1041,7 +1041,7 @@ Intranet.Search.User = (function ($) {
             this.hideElement(jQuery(loaderElement));
             this.hideElement(jQuery(loaderTextElement));
 
-            if(response) {
+            if(response.length) {
 
                 //Empty result
                 $(resultElement).html("");
