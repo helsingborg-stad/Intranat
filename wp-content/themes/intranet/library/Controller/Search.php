@@ -31,6 +31,13 @@ class Search extends \Municipio\Controller\Search
         } else {
             $this->data['systems'] = array();
         }
+
+        //User search
+        if(is_user_logged_in() && $this->data['level'] == "users") {
+            $this->data['users'] = \Intranet\User\General::searchUsers(get_search_query(), 200);
+        } else {
+            $this->data['users'] = array();
+        }
     }
 
     public function elasticSearch()
