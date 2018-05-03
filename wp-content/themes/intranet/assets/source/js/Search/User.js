@@ -76,7 +76,7 @@ Intranet.Search.User = (function ($) {
             this.hideElement(jQuery(loaderElement));
             this.hideElement(jQuery(loaderTextElement));
 
-            if(response.length) {
+            if(typeof response.items !== 'undefined') {
 
                 //Empty result
                 $(resultElement).html("");
