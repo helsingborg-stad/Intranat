@@ -20,7 +20,7 @@ class Enqueue
      */
     public function style()
     {
-        wp_enqueue_style('intranet', get_stylesheet_directory_uri(). '/assets/dist/css/app.min.css', '', filemtime(get_stylesheet_directory() . '/assets/dist/css/app.min.css'));
+        wp_enqueue_style('intranet', get_stylesheet_directory_uri(). '/assets/dist/' . \Municipio\Helper\CacheBust::name('css/app.css', true, true));
 
         if (is_search()) {
             wp_enqueue_script('algolia-instantsearch');
@@ -33,7 +33,8 @@ class Enqueue
      */
     public function script()
     {
-        wp_register_script('intranet', get_stylesheet_directory_uri(). '/assets/dist/js/app.min.js', '', filemtime(get_stylesheet_directory() . '/assets/dist/js/app.min.js'), true);
+        wp_register_script('intranet', get_stylesheet_directory_uri(). '/assets/dist/' . \Municipio\Helper\CacheBust::name('js/app.js', true, true));
+
         wp_localize_script('intranet', 'municipioIntranet', array(
             'wpapi' => array(
                 'url' => esc_url_raw(rest_url()),
@@ -73,7 +74,7 @@ class Enqueue
      */
     public function adminEnqueue()
     {
-        wp_enqueue_style('intranet-admin', get_stylesheet_directory_uri(). '/assets/dist/css/admin.min.css', '', filemtime(get_stylesheet_directory() . '/assets/dist/css/admin.min.css'));
-        wp_enqueue_script('intranet-admin', get_stylesheet_directory_uri(). '/assets/dist/js/admin.min.js', '', filemtime(get_stylesheet_directory() . '/assets/dist/js/admin.min.js'));
+        wp_enqueue_style('intranet-admin', get_stylesheet_directory_uri(). '/assets/dist/' . \Municipio\Helper\CacheBust::name('css/admin.css', true, true));
+        wp_enqueue_script('intranet-admin', get_stylesheet_directory_uri(). '/assets/dist/' . \Municipio\Helper\CacheBust::name('js/admin.js', true, true));
     }
 }

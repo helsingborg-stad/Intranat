@@ -42,13 +42,14 @@ Intranet.Misc.News = (function ($) {
         var module          = container.attr('data-module');
         var category        = this.category.val();
         var args            = container.attr('data-args');
+        var url             = null;
 
         this.showLoader(button);
 
         if(!isNaN(parseFloat(category)) && isFinite(category)) {
-            var url = callbackUrl + pagesize + '/' + offset + '/' + sites + '/' + category;
+            url = callbackUrl + pagesize + '/' + offset + '/' + sites + '/' + category;
         } else {
-            var url = callbackUrl + pagesize + '/' + offset + '/' + sites + '/0';
+            url = callbackUrl + pagesize + '/' + offset + '/' + sites + '/0';
         }
 
         $.ajax({

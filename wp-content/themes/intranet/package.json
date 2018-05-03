@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "description": "Intranet theme",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "browser-sync": "^2.24.3",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-jshint": "^2.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rev": "^8.1.1",
+    "gulp-rev-css-url": "^0.1.0",
+    "jshint": "^2.9.5",
+    "rev-del": "^1.0.5",
+    "run-sequence": "^2.2.1"
+  },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
