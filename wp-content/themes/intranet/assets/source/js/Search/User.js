@@ -29,14 +29,16 @@ Intranet.Search.User = (function ($) {
             }
         }.bind(this));
 
-        // While typing in input
-        $('input[type="search"], #algolia-search-box input').on('input', function (e) {
-            clearTimeout(typeTimer);
-            $searchInput = $(e.target);
-            var keyword = $searchInput.val();
-            typeTimer = setTimeout(function () {
-                this.searchInit(keyword);
-            }.bind(this), 300);
+        $(window).on('load', function() {
+            // While typing in input
+            $('input[type="search"], #algolia-search-box input').on('input', function (e) {
+                clearTimeout(typeTimer);
+                $searchInput = $(e.target);
+                var keyword = $searchInput.val();
+                typeTimer = setTimeout(function () {
+                    this.searchInit(keyword);
+                }.bind(this), 300);
+            }.bind(this));
         }.bind(this));
     }
 
