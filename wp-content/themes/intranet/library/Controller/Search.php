@@ -25,12 +25,10 @@ class Search extends \Municipio\Controller\Search
             $this->data['level'] = isset($_GET['level']) ? $_GET['level'] : "";
         }
 
-        //System & user search
+        //System search
         if (is_user_logged_in()) {
-            $this->data['users'] = \Intranet\User\General::searchUsers(get_search_query(), 200);
             $this->data['systems'] = \Intranet\User\Systems::search(get_search_query());
         } else {
-            $this->data['users'] = array();
             $this->data['systems'] = array();
         }
     }

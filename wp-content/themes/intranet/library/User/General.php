@@ -17,6 +17,16 @@ class General
         add_action('admin_init', array($this, 'redoUserSearchIndexCron'));
 
         add_action('redo_user_search_index', array('\Intranet\User\General', 'redoUserSearchIndex'));
+
+        add_action('wp_ajax_nopriv_search_users', array($this, 'userJsonSearch'));
+        add_action('wp_ajax_search_users', array($this, 'userJsonSearch'));
+    }
+    public function userJsonSearch()
+    {
+        if (!is_user_logged_in()) {
+            wp_send_json([], 404);
+        }
+        wp_send_json(\Intranet\User\General::searchUsers(isset($_POST['query']) ? sanitize_text_field($_POST['query']) : '' , 10), 200);
     }
 
     /**
