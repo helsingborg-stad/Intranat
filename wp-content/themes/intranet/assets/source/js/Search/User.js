@@ -12,6 +12,8 @@ Intranet.Search.User = (function ($) {
     var nbrOfMatches = ".js-user-number-found";
     var allButtonElement = ".js-user-show-all-results";
 
+    var typeTimer = 0;
+
     function User() {
 
         //Disable on all pages not containging user widget
@@ -20,7 +22,22 @@ Intranet.Search.User = (function ($) {
         }
 
         //Initital
-        this.searchInit($("#searchkeyword-top").val());
+        $('input[type="search"], #algolia-search-box input').each(function(index, item) {
+            if($(item).val()) {
+                this.searchInit($(item).val());
+                return false;
+            }
+        }.bind(this));
+
+        // While typing in input
+        $('input[type="search"], #algolia-search-box input').on('input', function (e) {
+            clearTimeout(typeTimer);
+            $searchInput = $(e.target);
+            var keyword = $searchInput.val();
+            typeTimer = setTimeout(function () {
+                this.searchInit(keyword);
+            }.bind(this), 300);
+        }.bind(this));
     }
 
     User.prototype.searchInit = function(query) {
@@ -29,6 +46,8 @@ Intranet.Search.User = (function ($) {
         this.showElement(jQuery(loaderElement));
         this.hideElement(jQuery(emptyResultElement));
         this.hideElement(jQuery(allButtonElement));
+        this.hideElement(jQuery(resultElement));
+        this.hideElement(jQuery(nbrOfMatches));
 
         this.fetchUsers(query);
     };
