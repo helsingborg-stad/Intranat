@@ -438,7 +438,7 @@ class TargetGroups
 
     public function registerMcePlugin($plugins)
     {
-        $plugins['targeted_content'] = get_stylesheet_directory_uri() . '/assets/dist/js/mce-targeted-content.js';
+        $plugins['targeted_content'] = get_stylesheet_directory_uri() . '/assets/dist/' . \Municipio\Helper\CacheBust::name('js/mce-targeted-content.js', true, true);
         return $plugins;
     }
 

@@ -65,7 +65,7 @@ class Editor
 
         // Replace comment-reply script to support tinyMCE editor
         wp_deregister_script('comment-reply');
-        wp_enqueue_script('comment-reply', get_stylesheet_directory_uri() . '/assets/dist/js/mce-comment-reply.js', array( 'jquery'));
+        wp_enqueue_script('comment-reply', get_stylesheet_directory_uri() . '/assets/dist/' . \Municipio\Helper\CacheBust::name('js/mce-comment-reply.js', true, true), array( 'jquery'));
     }
 
     /**
@@ -130,7 +130,7 @@ class Editor
         global $post;
 
         if (!empty($post->ID)) {
-            $plugins['mention'] = get_stylesheet_directory_uri() . '/assets/dist/js/mce-mention.js';
+            $plugins['mention'] = get_stylesheet_directory_uri() . '/assets/dist/' . \Municipio\Helper\CacheBust::name('js/mce-mention.js', true, true);
         }
 
         return $plugins;
