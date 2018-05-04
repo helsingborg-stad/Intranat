@@ -1,11 +1,11 @@
 .intranet-news.walkthrough-highlight {
     background-color: #fff;
-    padding: 10px 0;
+    padding: 8px 0;
     border-radius: 5px;
 }
 
 .box-news .network-title {
-    margin-right: 5px;
+    margin-right: 4px;
     display: inline-block;
     font-weight: normal;
 }
@@ -30,8 +30,7 @@
 
             .box-news article img,
             .box-news .image-placeholder {
-                margin: 0;
-                margin-bottom: 20px;
+                margin: 16px 0;
             }
         }
 
@@ -41,19 +40,19 @@
         }
 
         .grid-lg-12 + .grid-lg-12 .box-news {
-            margin-top: 30px;
+            margin-top: 32px;
 
             @media #{$screen-sm-up} {
-                padding-top: 30px;
+                padding-top: 32px;
             }
         }
 
         .read-more {
-            margin-top: 15px;
+            margin-top: 16px;
         }
 
         time, .comments {
-            margin-top: 5px;
+            margin-top: 8px;
             float: right;
         }
 
@@ -83,23 +82,34 @@
 .sidebar-left-sidebar {
     .modularity-mod-intranet-news .box-news {
         .sub-heading {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         article {
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         .read-more {
-            margin-top: 10px;
+            margin-top: 8px;
         }
     }
 }
 
 .modularity-mod-intranet-news .box-news-horizontal .box-title {
     margin-top: 24px;
-    font-size: 24px;
-    line-height: 1.333333333333333;
+    line-height: 1.2;
+
+    margin-top: 16px;
+    font-size: 1.8rem;
+
+    @media screen and #{$screen-xs} {
+        font-size: 1.6rem;
+    }
+
+    @media screen and #{$screen-sm} {
+        font-size: 1.5rem;
+    }
+
 }
 
 .modularity-mod-intranet-news .box-news {
@@ -111,11 +121,11 @@
 .modularity-mod-intranet-news .box-news article img,
 .modularity-mod-intranet-news .box-news .image-placeholder {
     margin: 0;
-    margin-top: 3px;
+    margin-top: 4px;
     float: right;
-    width: calc(40% - 15px);
+    width: calc(40% - 16px);
     height: auto;
-    margin-left: 15px;
+    margin-left: 16px;
     border-radius: 3px;
 }
 
