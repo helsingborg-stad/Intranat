@@ -12,7 +12,7 @@ class IntranetDefaultSettings
         add_action('wpmu_new_blog', array($this, 'searchWpSettings'));
 
         // Site list
-        add_action('admin_init', array($this, 'sitesListPageUrlRewrite'));
+        add_action('init', array($this, 'sitesListPageUrlRewrite'));
         add_filter('template_include', array($this, 'sitesListPageTemplate'), 10);
     }
 
