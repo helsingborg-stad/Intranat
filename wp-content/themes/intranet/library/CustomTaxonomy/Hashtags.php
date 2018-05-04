@@ -10,7 +10,7 @@ class Hashtags
 
     public function __construct()
     {
-        add_action('init', array($this, 'registerHashtags'));
+        add_action('init', array($this, 'registerHashtags'), 11);
         add_action('save_post', array($this, 'savePostHashtags'), 10, 3);
         add_action('wp_insert_comment', array($this, 'saveCreatedCommentHashtags'), 99, 2);
 
