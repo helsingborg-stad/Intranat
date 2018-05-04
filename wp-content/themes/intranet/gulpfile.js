@@ -82,7 +82,7 @@
    BrowserSync tasks
    ========================================================================== */
 
-    var browserSyncProxyUrl = config.browserSyncProxyUrl || 'https://test.familjenhelsingborg.dev';
+    var browserSyncProxyUrl = config.browserSyncProxyUrl || 'https://intranat.local';
 
     gulp.task('firefox', ['browser-sync:firefox', 'watch']);
     gulp.task('chrome', ['browser-sync:chrome', 'watch']);
@@ -202,7 +202,15 @@
             .pipe(uglify())
             .pipe(gulp.dest('./assets/tmp/js'));
 
-        return [app, vendor, admin];
+        var mce = gulp.src([
+                'assets/source/mce-js/*.js'
+            ])
+            .pipe(plumber())
+            .pipe(gulp.dest('./assets/dist/js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('./assets/tmp/js'));
+
+        return [app, vendor, admin, mce];
 
     });
 
