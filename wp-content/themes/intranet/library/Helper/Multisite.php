@@ -78,6 +78,10 @@ class Multisite
             $sites['not_main'] = array();
             $site['not_main_ids'] = array();
 
+            usort($sites['all'], function ($a, $b) {
+                return strnatcmp($a->name, $b->name);
+            });
+
             foreach ($sites['all'] as $key => $site) {
                 $sites['all_ids'][] = (int) $site->blog_id;
             }

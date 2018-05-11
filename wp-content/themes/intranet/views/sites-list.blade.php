@@ -16,23 +16,41 @@
     </div>
 
     <div class="grid" data-equal-container>
-        @foreach (\Intranet\Helper\Multisite::getSitesList(true) as $site)
-            <div class="grid-md-4">
-                <div class="box box-index" data-equal-item>
-                    <div class="box-content">
-                        <h5 class="box-index-title link-item"><a href="{{ $site->path }}">{!! municipio_intranet_format_site_name($site) !!}</a></h5>
-                        @if (!empty($site->description))
-                        <p>{{ $site->description }}</p>
-                        @endif
 
-                        @if (is_user_logged_in() && !is_author() && get_blog_option($site->blog_id, 'intranet_force_subscription') != 'true')
-                        <p>
-                            {{ municipio_intranet_follow_button($site->blog_id) }}
-                        </p>
-                        @endif
+        @foreach (\Intranet\Helper\Multisite::getSitesList(true) as $site)
+            @if ($site->is_forced === true)
+                <div class="grid-md-4">
+                    <div class="box box-index creamy" data-equal-item>
+                        <div class="box-content">
+                            <h5 class="box-index-title link-item"><a href="{{ $site->path }}">{!! municipio_intranet_format_site_name($site) !!}</a></h5>
+                            @if (!empty($site->description))
+                            <p>{{ $site->description }}</p>
+                            @endif
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
+        @endforeach
+
+        @foreach (\Intranet\Helper\Multisite::getSitesList(true) as $site)
+            @if ($site->is_forced != true)
+                <div class="grid-md-4">
+                    <div class="box box-index" data-equal-item>
+                        <div class="box-content">
+                            <h5 class="box-index-title link-item"><a href="{{ $site->path }}">{!! municipio_intranet_format_site_name($site) !!}</a></h5>
+                            @if (!empty($site->description))
+                            <p>{{ $site->description }}</p>
+                            @endif
+
+                            @if (is_user_logged_in() && !is_author())
+                            <p>
+                                {{ municipio_intranet_follow_button($site->blog_id) }}
+                            </p>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            @endif
         @endforeach
     </div>
 </div>
