@@ -9,6 +9,22 @@ class Login
         add_action('wp_login', array($this, 'adMapping'), 10, 2);
         add_action('wp_login_failed', array($this, 'frontendLoginFailed'));
         add_action('wp_logout', array($this, 'frontendLogout'), 9);
+
+        add_filter('adApiWpIntegration/login/defaultRedirect', array($this, 'adFixLandingPage'), 10);
+    }
+
+    /**
+     * Modifies the home url.
+     * @param  string $url
+     * @return string
+     */
+    public function adFixLandingPage($url) {
+        if (isset($_POST['_wp_http_referer'])) {
+            $referer = $_POST['_wp_http_referer'];
+        } else {
+            $referer = "/";
+        }
+        return home_url($referer);
     }
 
     /**
