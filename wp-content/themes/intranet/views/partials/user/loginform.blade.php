@@ -24,4 +24,5 @@
     </div>
 
     <input type="hidden" name="_ad_nonce" value="{{ md5(NONCE_KEY."ad".date("Ymd")) }}"/>
+    {!! wp_referer_field(false) !!}
 </form>
