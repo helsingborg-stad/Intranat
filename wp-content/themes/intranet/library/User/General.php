@@ -164,21 +164,28 @@ class General
 
         //Create query for users (depending on table size, run different processes)
         if (defined('INTRANET_ADVANCED_USER_SEARCH') && INTRANET_ADVANCED_USER_SEARCH) {
-            $query = $wpdb->prepare("
+            if(isset($_GET['simpleSearch'])) {
+                $query = $wpdb->prepare("SELECT user_id FROM " . $wpdb->base_prefix . "usermeta_search WHERE meta_value LIKE %s LIMIT %d", "%" . $keyword . "%", $limit);
+            } else {
+                $query = $wpdb->prepare("
                 SELECT DISTINCT user_id, MATCH(meta_value) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
                 FROM " . $wpdb->base_prefix . "usermeta_search
                 HAVING score > 1
                 ORDER BY score DESC
                 LIMIT %d", $keyword, $limit);
+            }
         } else {
-            $query = $wpdb->prepare("
+            if(isset($_GET['simpleSearch'])) {
+                $query = $wpdb->prepare("SELECT ID as user_id FROM " .$wpdb->users. " WHERE display_name LIKE %s LIMIT %d", "%" . $keyword . "%", $limit);
+            } else {
+                $query = $wpdb->prepare("
                 SELECT DISTINCT ID as user_id, MATCH(display_name) AGAINST (%s IN NATURAL LANGUAGE MODE) as score
                 FROM " .$wpdb->users. "
                 HAVING score > 1
                 ORDER BY score DESC
                 LIMIT %d", $keyword, $limit);
+            }
         }
-
 
         //Get response from db or cache
         if (!$userIdArray = wp_cache_get(md5($query), 'intanet-user-search-cache')) {
