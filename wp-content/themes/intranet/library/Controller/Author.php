@@ -38,7 +38,8 @@ class Author extends \Intranet\Controller\BaseController
 
         // Return all groups where user is a member
         $groups = array_map(function($array) use($userId) {
-            if (empty($array['members'])) {
+            $postStatus = get_post_status($array['post_id']);
+            if (empty($array['members']) || ($postStatus !== 'publish' && $postStatus !== 'private')) {
                 return 0;
             }
             $member = array_filter(unserialize($array['members']), function($val, $key) use($userId) {
