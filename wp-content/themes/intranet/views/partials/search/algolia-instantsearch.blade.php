@@ -82,6 +82,8 @@
         </div>
     </section>
 
+    <?php do_action('search_notices'); ?>
+
     <section class=" gutter-vertical gutter-lg clearfix">
         <div class="container">
             <div class="grid">
