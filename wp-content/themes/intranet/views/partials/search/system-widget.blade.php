@@ -1,4 +1,4 @@
-@if (count($systems) > 0)
+@if (count($systems) > 0 && is_user_logged_in())
 <div class="grid-xs-12">
     <div class="box box-filled">
         <h3 class="box-title"><?php _e('Systems', 'municipio-intranet'); ?></h3>

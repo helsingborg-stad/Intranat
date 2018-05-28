@@ -1,4 +1,4 @@
-@if ($level !== 'users')
+@if ($level !== 'users' && is_user_logged_in())
 <div id="user-lazy-load" class="grid-xs-12">
     <div class="box box-filled">
         <h3 class="box-title"><?php _e('Persons', 'municipio-intranet'); ?></h3>
