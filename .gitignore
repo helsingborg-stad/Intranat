@@ -39,3 +39,4 @@ composer.lock
 
 # Operating system files
 .DS_Store
+/.idea
