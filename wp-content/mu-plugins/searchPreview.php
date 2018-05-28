@@ -1,5 +1,25 @@
 <?php
 
+add_filter('site_option_active_sitewide_plugins', function($value) {
+    unset($value['elasticpress/elasticpress.php']);
+    return $value;
+});
+
+add_filter('option_options_use_algolia_search', function($a) {
+    return 1;
+});
+
+add_filter('option_algolia_override_native_search', function ($a) {
+    return "instantsearch";
+});
+
+add_filter('option_algolia_autocomplete_enabled', function($a) {
+    return "yes";
+});
+
+
+/*
+
 global $allowedUsers;
 $allowedUsers  = array(
     "seno1000",
@@ -144,3 +164,4 @@ add_filter('option_algolia_autocomplete_enabled', function($a) {
 
     return $a;
 });
+*/
