@@ -2,7 +2,7 @@
 
 <div class="grid no-margin-top">
     <div class="grid-xs-12">
-        <div class="breadcrumbs-wrapper">
+        <div class="breadcrumbs-wrapper  u-mb-4">
             <div class="grid">
                 @if (apply_filters('Municipio/Breadcrumbs', wp_get_post_parent_id(get_the_id()) != 0, get_queried_object()))
                 <div class="grid-sm-8 hidden-xs">

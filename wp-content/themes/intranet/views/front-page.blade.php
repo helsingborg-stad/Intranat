@@ -6,7 +6,7 @@
 @include('partials.modal.missing-data')
 @endif
 
-<div class="container main-container">
+<div class="container main-container u-pb-5">
 
     @include('partials.breadcrumbs')
 
