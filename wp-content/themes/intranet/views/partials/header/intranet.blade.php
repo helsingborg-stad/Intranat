@@ -1,6 +1,6 @@
 <nav class="navbar navbar-sm hidden-print">
     <div class="container">
-        <div class="grid grid-table">
+        <div class="grid">
             <div class="grid-fit-content hidden-xs hidden-sm">
                 {!! municipio_intranet_get_logotype('negative', true) !!}
             </div>

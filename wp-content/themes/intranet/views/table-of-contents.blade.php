@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container main-container">
+<div class="container main-container u-pb-5">
     <div class="grid">
         <div class="grid-xs-12">
             <h1><?php _e('A-Z', 'municipio-intranet'); ?></h1>

@@ -6,7 +6,7 @@
         </div>
         <div class="modal-body">
             <div class="grid">
-                <div class="grid-xs-12 no-padding">
+                <div class="grid-xs-12">
                     <form action="" method="post">
                         {!! wp_nonce_field('user_missing_data_' . get_current_user_id()) !!}
                         <input type="hidden" name="user_missing_data" value="true">

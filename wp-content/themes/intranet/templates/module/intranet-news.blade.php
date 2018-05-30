@@ -29,7 +29,7 @@
     </div>
 
     @if ($args['id'] !== 'right-sidebar')
-    <div class="grid">
+    <div class="grid u-mt-5">
         <div class="grid-lg-12">
             <button class="btn btn-primary btn-block" data-action="intranet-news-load-more"><?php _e('Load more news', 'municipio-intranet'); ?></button>
         </div>

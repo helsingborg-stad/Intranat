@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container main-container">
+<div class="container main-container u-pb-5">
     <div class="grid breadcrumbs-wrapper">
         <div class="grid-lg-12">
             <ol class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
