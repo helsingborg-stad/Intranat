@@ -151,7 +151,7 @@
     </ul>
 </header>
 
-<div class="container main-container">
+<div class="container main-container u-pb-8">
     <div class="grid">
         <div class="grid-md-12">
             @if (get_the_author_meta('user_about'))
