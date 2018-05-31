@@ -16,7 +16,7 @@
                 </div>
             @endif
 
-            <div class="grid">
+            <div class="grid grid--columns">
                 <div class="grid-sm-12">
                         @include('partials.blog.type.post-single')
                 </div>
