@@ -10,7 +10,7 @@
 
         <div class="{{ $contentGridSize }} print-grow">
             @if (is_single() && is_active_sidebar('content-area-top'))
-                <div class="grid sidebar-content-area sidebar-content-area-top">
+                <div class="grid grid--columns sidebar-content-area sidebar-content-area-top">
                     <?php dynamic_sidebar('content-area-top'); ?>
                 </div>
             @endif
@@ -50,7 +50,7 @@
             </div>
 
             @if (is_single() && is_active_sidebar('content-area'))
-                <div class="grid sidebar-content-area sidebar-content-area-bottom">
+                <div class="grid grid--columns grid sidebar-content-area sidebar-content-area-bottom">
                     <?php dynamic_sidebar('content-area'); ?>
                 </div>
             @endif
