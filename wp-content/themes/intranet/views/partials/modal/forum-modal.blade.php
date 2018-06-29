@@ -1,6 +1,6 @@
 <div id="modal-edit-forum" class="modal modal-backdrop-2 modal-small" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content material-shadow-lg">
-        <form id="edit-forum">
+        <form id="edit-forum" name="editforum">
             <div class="modal-header">
                 <a class="btn btn-close" href="#close"></a>
                 <h2 class="modal-title">{{ $formTitle }}</h2>

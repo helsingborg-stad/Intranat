@@ -4,7 +4,7 @@ Intranet.Misc = Intranet.Misc || {};
 Intranet.Misc.Forums = (function ($) {
 
     function Forums() {
-        $(function(){
+        $(function () {
             this.handleEvents();
         }.bind(this));
     }
@@ -14,7 +14,7 @@ Intranet.Misc.Forums = (function ($) {
      * @return {void}
      */
     Forums.prototype.handleEvents = function () {
-        $(document).on('submit', '#edit-forum', function (e) {
+        $('#edit-forum').submit(function (e) {
             e.preventDefault();
             this.updateForum(e);
         }.bind(this));
@@ -32,7 +32,7 @@ Intranet.Misc.Forums = (function ($) {
         }.bind(this));
     };
 
-    Forums.prototype.joinForum = function(event) {
+    Forums.prototype.joinForum = function (event) {
         $target = $(event.currentTarget);
         $target.toggleClass('member-button--is-member');
 
@@ -49,16 +49,16 @@ Intranet.Misc.Forums = (function ($) {
             url: ajaxurl,
             type: 'post',
             data: {
-                action : 'join_forum',
-                postId : $target.data('postId')
+                action: 'join_forum',
+                postId: $target.data('postId')
             },
-            success: function() {
+            success: function () {
                 window.location.reload();
             }
         });
     };
 
-    Forums.prototype.deleteForum = function(event) {
+    Forums.prototype.deleteForum = function (event) {
         var postId = ($(event.currentTarget).data('post-id'));
         var archiveUrl = ($(event.currentTarget).data('archive'));
 
@@ -68,7 +68,7 @@ Intranet.Misc.Forums = (function ($) {
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('X-WP-Nonce', municipioIntranet.wpapi.nonce);
             },
-            success : function(response ) {
+            success: function (response) {
                 window.location.replace(archiveUrl);
             }
         });
@@ -77,8 +77,8 @@ Intranet.Misc.Forums = (function ($) {
     Forums.prototype.updateForum = function (event) {
         var $target = $(event.target),
             data = new FormData(event.target),
-            postId = data.get('post_id');
-            data.append('status', 'private');
+            postId = document.forms.editforum.post_id.value;
+        data.append('status', 'private');
 
         function displayError() {
             $('.spinner,.warning', $target).remove();
@@ -95,14 +95,14 @@ Intranet.Misc.Forums = (function ($) {
                 xhr.setRequestHeader('X-WP-Nonce', municipioIntranet.wpapi.nonce);
                 $('button[type="submit"]', $target).append(' <i class="spinner"></i>');
             },
-            success : function(response ) {
+            success: function (response) {
                 if (typeof response.link !== "undefined") {
                     window.location.replace(response.link);
                 } else {
                     displayError();
                 }
             },
-            error : function(response) {
+            error: function (response) {
                 console.log(response);
                 displayError();
             }
