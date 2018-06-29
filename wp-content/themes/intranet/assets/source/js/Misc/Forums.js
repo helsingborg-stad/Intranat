@@ -16,7 +16,7 @@ Intranet.Misc.Forums = (function ($) {
     Forums.prototype.handleEvents = function () {
         $(document).on('submit', '#edit-forum', function (e) {
             e.preventDefault();
-            this.editForum(e);
+            this.updateForum(e);
         }.bind(this));
 
         $(document).on('click', '#delete-forum', function (e) {
@@ -74,7 +74,7 @@ Intranet.Misc.Forums = (function ($) {
         });
     };
 
-    Forums.prototype.editForum = function (event) {
+    Forums.prototype.updateForum = function (event) {
         var $target = $(event.target),
             data = new FormData(event.target),
             postId = data.get('post_id');
