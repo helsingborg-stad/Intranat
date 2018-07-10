@@ -25,7 +25,7 @@ class Profile
         add_action('init', array($this, 'editProfileUrlRewrite'));
         add_filter('template_include', array($this, 'editProfileTemplate'), 10);
 
-        add_filter('Municipio/controller/base/view_data', array($this, 'currentUserData'));
+        add_filter('Municipio/viewData', array($this, 'currentUserData'));
 
         add_filter('Modularity/adminbar/editor_link', array($this, 'profileEditModularityEditorLink'), 10, 4);
 
