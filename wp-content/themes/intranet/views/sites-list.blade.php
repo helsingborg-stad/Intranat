@@ -5,7 +5,7 @@
 <div class="container main-container u-pb-5">
 
     <div class="grid">
-        <div class="grid-xs-12">
+        <div class="grid-xs-12 u-mb-4">
             <article>
                 <h1><?php _e('All intranets', 'municipio-intranet'); ?></h1>
                 <p>
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="grid" data-equal-container>
+    <div class="grid grid--columns" data-equal-container>
 
         @foreach (\Intranet\Helper\Multisite::getSitesList(true) as $site)
             @if ($site->is_forced === true)
