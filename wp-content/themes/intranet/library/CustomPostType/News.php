@@ -436,7 +436,7 @@ class News
                 WHERE ";
 
         if (is_main_site()) {
-            $sql .= "posts.exclude_post = '0' AND ";
+            $sql .= "posts.exclude_post = '0' AND (";
         }
 
         $sql .= "posts.target_groups IS NULL ";
@@ -459,8 +459,8 @@ class News
             $sql .= "OR posts.target_groups LIKE '%\"loggedout\"%'";
         }
 
-        $sql .= " ORDER BY is_sticky DESC, post_date DESC LIMIT $offset, $count";
-
+        $sql .= ") ORDER BY is_sticky DESC, post_date DESC LIMIT $offset, $count";
+        
         $newsPosts = $wpdb->get_results($sql);
 
         if (is_array($newsPosts) && !empty($newsPosts)) {
