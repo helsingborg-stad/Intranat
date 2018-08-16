@@ -63,7 +63,6 @@ class SsoAvailability
             }
         </script>
         ";
-        exit();
     }
 
     public static function isSsoAvailable()
