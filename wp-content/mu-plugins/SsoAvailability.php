@@ -6,6 +6,16 @@ class SsoAvailability
 {
     public function __construct()
     {
+        add_action('init', array($this, 'initSsoAvailability'), 9);
+    }
+
+    public function initSsoAvailability()
+    {
+        // Bail if admin page or Ajax
+        if (is_admin() || wp_doing_ajax()) {
+            return;
+        }
+
         if (is_local_ip()) {
             if (!isset($_COOKIE['sso_available'])) {
                 $this->check();
@@ -15,7 +25,7 @@ class SsoAvailability
             if (isset($_COOKIE['sso_available'])) {
                 unset($_COOKIE['sso_available']);
             }
-            setcookie("sso_available", "", time()-3600);
+            setcookie("sso_available", "", time() - 3600);
         }
     }
 
