@@ -11,8 +11,8 @@ class SsoAvailability
 
     public function initSsoAvailability()
     {
-        // Bail if admin page or Ajax
-        if (is_admin() || wp_doing_ajax()) {
+        // Bail if admin page, Ajax or Rest API request
+        if (is_admin() || wp_doing_ajax() || $this->isRestUrl()) {
             return;
         }
 
@@ -86,6 +86,18 @@ class SsoAvailability
         }
 
         return false;
+    }
+
+    public function isRestUrl()
+    {
+        $isRest = false;
+        if (function_exists('rest_url') && !empty($_SERVER['REQUEST_URI'])) {
+            $restUrlBase = get_rest_url(get_current_blog_id(), '/');
+            $restPath = trim(parse_url($restUrlBase, PHP_URL_PATH), '/');
+            $requestPath = trim($_SERVER['REQUEST_URI'], '/');
+            $isRest = (strpos($requestPath, $restPath) === 0);
+        }
+        return $isRest;
     }
 }
 
