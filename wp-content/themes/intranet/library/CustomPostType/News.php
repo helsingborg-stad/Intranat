@@ -275,10 +275,26 @@ class News
             }
 
             $postArgs = array(
-                'post_type'      => 'intranet-news',
-                'post_status'    => $postStatuses,
+                'post_type' => 'intranet-news',
+                'post_status' => $postStatuses,
                 'posts_per_page' => $count,
-                'offset'         => $offset
+                'offset' => $offset,
+                'meta_query' => array(
+                    'relation' => 'OR',
+                    array(
+                        'key' => 'is_sticky',
+                        'compare' => 'NOT EXISTS',
+                    ),
+                    array(
+                        'relation' => 'OR',
+                        array(
+                            'key' => 'is_sticky',
+                            'compare' => '=',
+                            'value' => 1,
+                        ),
+                    ),
+                ),
+                'orderby' => array('meta_value' => 'DESC', 'date' => 'DESC'),
             );
 
             if (!is_null($categoryId)) {
@@ -459,8 +475,13 @@ class News
             $sql .= "OR posts.target_groups LIKE '%\"loggedout\"%'";
         }
 
-        $sql .= ") ORDER BY is_sticky DESC, post_date DESC LIMIT $offset, $count";
-        
+        $sql .= ") ORDER BY 
+        CASE blog_id 
+            WHEN " . get_current_blog_id() . " THEN is_sticky 
+            ELSE 0 END 
+        DESC,
+        post_date DESC LIMIT $offset, $count";
+
         $newsPosts = $wpdb->get_results($sql);
 
         if (is_array($newsPosts) && !empty($newsPosts)) {
