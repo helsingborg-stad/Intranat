@@ -98,7 +98,11 @@ class Systems
         }
 
         $systems = \Intranet\User\Systems::getAvailabelSystems('user', array('user'));
-        $systems = array_filter($systems, function ($item) use ($q) {
+        $isLocal = method_exists('\SsoAvailability\SsoAvailability', 'isSsoAvailable') && \SsoAvailability\SsoAvailability::isSsoAvailable();
+        $systems = array_filter($systems, function ($item) use ($q, $isLocal) {
+            if ($item->is_local && !$isLocal) {
+                return false;
+            }
             return strpos(strtolower($item->name), strtolower($q)) > -1;
         });
 
