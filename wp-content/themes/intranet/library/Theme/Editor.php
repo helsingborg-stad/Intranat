@@ -59,7 +59,7 @@ class Editor
      */
     public static function enqueueScripts()
     {
-        if (is_search() || !comments_open()) {
+        if (is_search() || is_archive() || !comments_open()) {
             return;
         }
 
