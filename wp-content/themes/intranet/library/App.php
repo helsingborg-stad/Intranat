@@ -1,6 +1,5 @@
 <?php
 namespace Intranet;
-
 class App
 {
     public function __construct()
@@ -8,7 +7,6 @@ class App
         // Data
         new \Intranet\Helper\PostType();
         new \Intranet\Helper\FragmentCache();
-
         // Basic theme functionality
         new \Intranet\Theme\General();
         new \Intranet\Theme\Enqueue();
@@ -17,13 +15,11 @@ class App
         new \Intranet\Theme\Walkthrough();
         new \Intranet\Theme\Breadcrumb();
         new \Intranet\Theme\Editor();
-
         // Admin functionality
         new \Intranet\Admin\PasswordResetInstructions();
         new \Intranet\Admin\Options();
         new \Intranet\Admin\Filters();
         new \Intranet\Admin\RemoveSite();
-
         // User services
         new \Intranet\User\General();
         new \Intranet\User\Registration();
@@ -37,44 +33,34 @@ class App
         new \Intranet\User\Responsibilities();
         new \Intranet\User\Skills();
         new \Intranet\User\Data();
-
         new \Intranet\Search\Elasticsearch();
         new \Intranet\Search\Algolia();
-
         // Custom post types
         new \Intranet\CustomPostType\News();
         new \Intranet\CustomPostType\Incidents();
         new \Intranet\CustomPostType\Forums();
-
         // Custom taxonomies
         new \Intranet\CustomTaxonomy\Hashtags();
-
-        // Content filters
-        new \Intranet\Content\PostFilters();
-
+        new \Intranet\Content\Report();
         // Modularity modules
         if (class_exists('\Modularity\Module')) {
             modularity_register_module(
                 INTRANET_PATH . 'library/Module/News',
                 'News'
             );
-
             modularity_register_module(
                 INTRANET_PATH . 'library/Module/UserLinks',
                 'UserLinks'
             );
-
             modularity_register_module(
                 INTRANET_PATH . 'library/Module/UserSystems',
                 'UserSystems'
             );
-
             modularity_register_module(
                 INTRANET_PATH . 'library/Module/IncidentList',
                 'IncidentList'
             );
         }
-
         new \Intranet\Api\Wp();
         new \Intranet\Api\News();
         new \Intranet\Api\Search();
