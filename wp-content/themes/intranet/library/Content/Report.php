@@ -4,7 +4,7 @@ namespace Intranet\Content;
 
 use Philo\Blade\Blade as Blade;
 
-class PostFilters
+class Report
 {
     public function __construct()
     {

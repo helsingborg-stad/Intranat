@@ -49,8 +49,7 @@ class App
         // Custom taxonomies
         new \Intranet\CustomTaxonomy\Hashtags();
 
-        // Content filters
-        new \Intranet\Content\PostFilters();
+        new \Intranet\Content\Report();
 
         // Modularity modules
         if (class_exists('\Modularity\Module')) {
