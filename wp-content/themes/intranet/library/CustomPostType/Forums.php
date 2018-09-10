@@ -456,7 +456,7 @@ class Forums
      */
     public function displayAttachments($commentText, $commentObj)
     {
-        if (get_post_type($commentObj->comment_post_ID) != self::$postTypeSlug) {
+        if (isset($commentObj->comment_post_ID) && get_post_type($commentObj->comment_post_ID) != self::$postTypeSlug) {
             return $commentText;
         }
 

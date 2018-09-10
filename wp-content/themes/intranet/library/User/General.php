@@ -11,6 +11,7 @@ class General
         add_action('update_user_meta', array($this, 'updateUserMeta'), 10, 4);
         add_action('profile_update', array($this, 'profileUpdate'));
 
+        add_action('wp', array($this, 'privatePostStatusCode'));
         add_action('init', array($this, 'removeAdminBar'), 1200);
         add_action('init', array($this, 'makePrivateReadable'), 1200);
 
@@ -311,5 +312,15 @@ class General
         }
 
         return sprintf($greeting, '<strong>' . get_user_meta(get_current_user_id(), 'first_name', true) . '</strong>');
+    }
+
+    /**
+     * Set private post status code to 401 (Unauthorized) when user is not logged in
+     */
+    public function privatePostStatusCode() {
+        global $wp_query;
+        if (!is_user_logged_in() && is_object($wp_query) && $wp_query->is_main_query() && $wp_query->queried_object->post_status == 'private' && $wp_query->is_404) {
+            status_header(401);
+        }
     }
 }
