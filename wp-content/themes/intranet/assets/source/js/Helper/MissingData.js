@@ -8,6 +8,7 @@ Intranet.Helper.MissingData = (function ($) {
      * Should be named as the class itself
      */
     function MissingData() {
+
         $('[data-guide-nav="next"], [data-guide-nav="prev"]').on('click', function (e) {
             $form = $(e.target).parents('form');
             $fields = $(e.target).parents('section').find(':input:not([name="active-section"])');
