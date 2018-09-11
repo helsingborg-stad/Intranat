@@ -7,7 +7,7 @@
             "email": "webbredaktionen@helsingborg.se"
         }
     ],
-    "minimum-stability" : "stable",
+    "minimum-stability" : "dev",
     "prefer-stable": true,
     "repositories": [
         {
