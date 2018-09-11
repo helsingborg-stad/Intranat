@@ -34,9 +34,6 @@ wp-content/mu-plugins/attachmentDownloader.php
 /vendor
 /wp
 
-# Composer generated files
-composer.lock
-
 # Operating system files
 .DS_Store
 /.idea
