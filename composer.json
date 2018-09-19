@@ -63,7 +63,8 @@
         "wpackagist-plugin/kint-php-debugger": "^1.1",
         "kint-php/kint": "^2.2",
         "helsingborg-stad/algolia-multisite-enabler": ">=1.1.0",
-        "wpackagist-plugin/classic-editor": "^0.4.0"
+        "wpackagist-plugin/classic-editor": "^0.4.0",
+        "helsingborg-stad/media-usage": "^1.0"
     },
     "extra": {
         "path": "/",

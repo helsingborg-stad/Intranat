@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bdf4e0e626cfaa8d0d87cb7770104c1b",
+    "content-hash": "6b5b43e9592286d1a960c3968e4c2f4a",
     "packages": [
         {
             "name": "aristath/kirki",
-            "version": "v3.0.33",
+            "version": "v3.0.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aristath/kirki.git",
-                "reference": "d2ddc07158cd2e09bb1e3b057a9a98d52b8ec467"
+                "reference": "8fb938f34e8093cbfa887ca9349898dd5a9084af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aristath/kirki/zipball/d2ddc07158cd2e09bb1e3b057a9a98d52b8ec467",
-                "reference": "d2ddc07158cd2e09bb1e3b057a9a98d52b8ec467",
+                "url": "https://api.github.com/repos/aristath/kirki/zipball/8fb938f34e8093cbfa887ca9349898dd5a9084af",
+                "reference": "8fb938f34e8093cbfa887ca9349898dd5a9084af",
                 "shasum": ""
             },
             "require": {
@@ -28,8 +28,8 @@
                 "composer/installers": "*",
                 "dealerdirect/phpcodesniffer-composer-installer": "*",
                 "php-coveralls/php-coveralls": "^2.0",
+                "phpcompatibility/phpcompatibility-wp": "*",
                 "phpunit/phpunit": "*",
-                "wimg/php-compatibility": "*",
                 "wp-coding-standards/wpcs": "*"
             },
             "type": "library",
@@ -62,20 +62,20 @@
                 "customizer",
                 "wordpress"
             ],
-            "time": "2018-05-17T17:26:03+00:00"
+            "time": "2018-09-14T19:07:16+00:00"
         },
         {
             "name": "composer/installers",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "049797d727261bf27f2690430d935067710049c2"
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
-                "reference": "049797d727261bf27f2690430d935067710049c2",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
                 "shasum": ""
             },
             "require": {
@@ -182,7 +182,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-12-29T09:13:20+00:00"
+            "time": "2018-08-27T06:10:37+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -413,12 +413,12 @@
             "version": "v2.2.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/google/google-api-php-client.git",
+                "url": "https://github.com/googleapis/google-api-php-client.git",
                 "reference": "4e0fd83510e579043e10e565528b323b7c2b3c81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/4e0fd83510e579043e10e565528b323b7c2b3c81",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/4e0fd83510e579043e10e565528b323b7c2b3c81",
                 "reference": "4e0fd83510e579043e10e565528b323b7c2b3c81",
                 "shasum": ""
             },
@@ -469,16 +469,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.69",
+            "version": "v0.70",
             "source": {
                 "type": "git",
-                "url": "https://github.com/google/google-api-php-client-services.git",
-                "reference": "6e2507a5bb39d970ae98cc2f1421012e7b38248f"
+                "url": "https://github.com/googleapis/google-api-php-client-services.git",
+                "reference": "759a1a246409eae1c723abc72d817205a1d5549f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/6e2507a5bb39d970ae98cc2f1421012e7b38248f",
-                "reference": "6e2507a5bb39d970ae98cc2f1421012e7b38248f",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/759a1a246409eae1c723abc72d817205a1d5549f",
+                "reference": "759a1a246409eae1c723abc72d817205a1d5549f",
                 "shasum": ""
             },
             "require": {
@@ -502,20 +502,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-09-08T00:22:43+00:00"
+            "time": "2018-09-16T00:22:55+00:00"
         },
         {
             "name": "google/auth",
-            "version": "v1.3.3",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/google/google-auth-library-php.git",
-                "reference": "af72b3f50420c801dc35cc07b1fa429ae027b847"
+                "url": "https://github.com/googleapis/google-auth-library-php.git",
+                "reference": "196237248e636a3554a7d9e4dfddeb97f450ab5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-auth-library-php/zipball/af72b3f50420c801dc35cc07b1fa429ae027b847",
-                "reference": "af72b3f50420c801dc35cc07b1fa429ae027b847",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/196237248e636a3554a7d9e4dfddeb97f450ab5c",
+                "reference": "196237248e636a3554a7d9e4dfddeb97f450ab5c",
                 "shasum": ""
             },
             "require": {
@@ -549,7 +549,7 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2018-08-27T19:47:35+00:00"
+            "time": "2018-09-17T20:29:21+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -795,16 +795,16 @@
         },
         {
             "name": "helsingborg-stad/active-directory-api-wp-integration",
-            "version": "2.1.17",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/active-directory-api-wp-integration.git",
-                "reference": "fcda7c2f83cfb793a2ffa8c1f9433949d2c15e47"
+                "reference": "708c82a2cec0ba17a5280c53873952e524d7ecab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/fcda7c2f83cfb793a2ffa8c1f9433949d2c15e47",
-                "reference": "fcda7c2f83cfb793a2ffa8c1f9433949d2c15e47",
+                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/708c82a2cec0ba17a5280c53873952e524d7ecab",
+                "reference": "708c82a2cec0ba17a5280c53873952e524d7ecab",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -819,7 +819,7 @@
                 }
             ],
             "description": "Simple plugin for verification of existing WordPress users with api.",
-            "time": "2018-09-11T09:57:05+00:00"
+            "time": "2018-09-13T13:09:36+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-multisite-enabler",
@@ -856,16 +856,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.6.0",
+            "version": "0.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "3c4e5b380395f0be70235c22eff50c1206c9eca5"
+                "reference": "cf730a5a1dad7605806305d9684ea343d394718c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/3c4e5b380395f0be70235c22eff50c1206c9eca5",
-                "reference": "3c4e5b380395f0be70235c22eff50c1206c9eca5",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/cf730a5a1dad7605806305d9684ea343d394718c",
+                "reference": "cf730a5a1dad7605806305d9684ea343d394718c",
                 "shasum": ""
             },
             "require": {
@@ -884,7 +884,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2018-09-05T11:01:41+00:00"
+            "time": "2018-09-19T07:18:39+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -916,16 +916,16 @@
         },
         {
             "name": "helsingborg-stad/better-post-ui",
-            "version": "1.2.10",
+            "version": "1.2.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/better-post-UI.git",
-                "reference": "deb81d629e27e36b5886fb08574a49bb56cb8f13"
+                "reference": "0454e8d6f42787244d02f0e976825ed8dca579f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/better-post-UI/zipball/deb81d629e27e36b5886fb08574a49bb56cb8f13",
-                "reference": "deb81d629e27e36b5886fb08574a49bb56cb8f13",
+                "url": "https://api.github.com/repos/helsingborg-stad/better-post-UI/zipball/0454e8d6f42787244d02f0e976825ed8dca579f0",
+                "reference": "0454e8d6f42787244d02f0e976825ed8dca579f0",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -940,7 +940,7 @@
                 }
             ],
             "description": "Improves the UI and UX of the WordPress admin post form.",
-            "time": "2018-02-22T14:53:34+00:00"
+            "time": "2018-09-13T08:45:52+00:00"
         },
         {
             "name": "helsingborg-stad/broken-link-detector",
@@ -1186,17 +1186,45 @@
             "time": "2018-04-25T07:02:01+00:00"
         },
         {
-            "name": "helsingborg-stad/modularity",
-            "version": "2.8.3",
+            "name": "helsingborg-stad/media-usage",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "0b3a37bcd9c0946df44f2654aac06242a9ca3710"
+                "url": "https://github.com/helsingborg-stad/media-usage.git",
+                "reference": "0b8fc3bc7fa0f68b3a7eecc2db83e93440bb3139"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/0b3a37bcd9c0946df44f2654aac06242a9ca3710",
-                "reference": "0b3a37bcd9c0946df44f2654aac06242a9ca3710",
+                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/0b8fc3bc7fa0f68b3a7eecc2db83e93440bb3139",
+                "reference": "0b8fc3bc7fa0f68b3a7eecc2db83e93440bb3139",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Ramstedt",
+                    "email": "nikolas.ramstedt@helsingborg.se"
+                }
+            ],
+            "description": "Track the use of attachments across posts, meta and options",
+            "time": "2018-09-18T13:31:18+00:00"
+        },
+        {
+            "name": "helsingborg-stad/modularity",
+            "version": "2.8.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/Modularity.git",
+                "reference": "350907fa3ab058f308b871db648e275ac75bfc9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/350907fa3ab058f308b871db648e275ac75bfc9f",
+                "reference": "350907fa3ab058f308b871db648e275ac75bfc9f",
                 "shasum": ""
             },
             "require": {
@@ -1228,7 +1256,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2018-09-11T11:08:45+00:00"
+            "time": "2018-09-12T11:20:52+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-checklist",
@@ -1446,16 +1474,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "1.21.0",
+            "version": "1.22.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "f3bed4779c310e412ec315c7ccad4c64832b1d34"
+                "reference": "32dfb8ddeaefb551f514a8bd6ea6c25e8e54c0bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/f3bed4779c310e412ec315c7ccad4c64832b1d34",
-                "reference": "f3bed4779c310e412ec315c7ccad4c64832b1d34",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/32dfb8ddeaefb551f514a8bd6ea6c25e8e54c0bb",
+                "reference": "32dfb8ddeaefb551f514a8bd6ea6c25e8e54c0bb",
                 "shasum": ""
             },
             "require": {
@@ -1463,6 +1491,7 @@
                 "composer/installers": "^1.0",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
                 "philo/laravel-blade": "^3.1",
+                "shortpixel/shortpixel-php": "^1.4",
                 "symfony/debug": "^3.0",
                 "wpackagist-plugin/advanced-custom-fields": "^4.4.7"
             },
@@ -1489,7 +1518,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2018-09-07T06:33:33+00:00"
+            "time": "2018-09-19T06:05:13+00:00"
         },
         {
             "name": "helsingborg-stad/notification-center",
@@ -2674,6 +2703,61 @@
             "time": "2017-10-23T01:57:42+00:00"
         },
         {
+            "name": "shortpixel/shortpixel-php",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/short-pixel-optimizer/shortpixel-php.git",
+                "reference": "15806c395082fad9f9ccc2a543af713dae0b2c15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/short-pixel-optimizer/shortpixel-php/zipball/15806c395082fad9f9ccc2a543af713dae0b2c15",
+                "reference": "15806c395082fad9f9ccc2a543af713dae0b2c15",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "lib-curl": ">=7.20.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "symfony/yaml": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/ShortPixel.php",
+                    "lib/ShortPixel/Exception.php"
+                ],
+                "psr-4": {
+                    "ShortPixel\\": "lib/ShortPixel/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Duduica",
+                    "email": "simon@shortpixel.com"
+                }
+            ],
+            "description": "ShortPixel PHP SDK. Read more at https://shortpixel.com/api-tools",
+            "homepage": "https://shortpixel.com/api",
+            "keywords": [
+                "api",
+                "compress",
+                "images",
+                "optimize",
+                "shortpixel"
+            ],
+            "time": "2018-07-21T04:59:46+00:00"
+        },
+        {
             "name": "symfony/debug",
             "version": "v3.4.15",
             "source": {
@@ -3094,15 +3178,15 @@
         },
         {
             "name": "wpackagist-plugin/user-switching",
-            "version": "1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.3.1"
+                "reference": "tags/1.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.3.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.4.0.zip",
                 "reference": null,
                 "shasum": null
             },
