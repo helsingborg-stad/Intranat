@@ -12,7 +12,7 @@ class SsoAvailability
     public function initSsoAvailability()
     {
         // Bail if admin page, Ajax or Rest API request
-        if (is_admin() || wp_doing_ajax() || $this->isRestUrl()) {
+        if (is_admin() || wp_doing_ajax() || $this->isRestUrl() || wp_doing_cron() || (defined('WP_CLI') && WP_CLI)) {
             return;
         }
 
