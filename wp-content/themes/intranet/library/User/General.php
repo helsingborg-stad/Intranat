@@ -109,7 +109,7 @@ class General
      */
     public function redoUserSearchIndexCron()
     {
-        if (!wp_next_scheduled('redo_user_search_index')) {
+        if (is_main_site() && !wp_next_scheduled('redo_user_search_index')) {
             wp_schedule_event(time(), 'daily', 'redo_user_search_index');
         }
     }

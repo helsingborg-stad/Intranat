@@ -18,6 +18,12 @@ define('LOCAL_IP_SERIES', array(
 if (!function_exists('is_local_ip')) {
     function is_local_ip($ip = null)
     {
+
+        //Cron's should not run this
+        if(WP_CLI || DOING_CRON) {
+            return false;
+        }
+
         if (!$ip) {
             $ip = $_SERVER['REMOTE_ADDR'];
         }
