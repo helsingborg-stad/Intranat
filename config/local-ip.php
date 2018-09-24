@@ -22,10 +22,17 @@ if (!function_exists('is_local_ip')) {
             $ip = $_SERVER['REMOTE_ADDR'];
         }
 
+        //Behind some sort of proxy, look for a remote host (not set internally in networks)
+        if($ip == "127.0.0.1" && !isset($_SERVER['REMOTE_HOST'])) {
+            return true;
+        }
+
+        //Check if ip-range is undefined. Return state: in network.
         if (!defined('LOCAL_IP_SERIES') || empty(LOCAL_IP_SERIES)) {
             return true;
         }
 
+        //Check if in ip-range
         foreach (LOCAL_IP_SERIES as $range) {
             list($range, $netmask) = explode('/', $range, 2);
 
