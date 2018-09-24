@@ -19,8 +19,8 @@ if (!function_exists('is_local_ip')) {
     function is_local_ip($ip = null)
     {
 
-        //Cron's should not run this
-        if(WP_CLI || DOING_CRON) {
+        //WPCLI's should not run this
+        if(defined('WP_CLI') && WP_CLI) {
             return false;
         }
 
