@@ -1127,16 +1127,16 @@
         },
         {
             "name": "helsingborg-stad/idea-manager",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/idea-manager.git",
-                "reference": "ee483786f69ee88ce2d385ee2e2582b56ad3722b"
+                "reference": "874398648ef2b822cc3306f41855cb2984e70ff1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/idea-manager/zipball/ee483786f69ee88ce2d385ee2e2582b56ad3722b",
-                "reference": "ee483786f69ee88ce2d385ee2e2582b56ad3722b",
+                "url": "https://api.github.com/repos/helsingborg-stad/idea-manager/zipball/874398648ef2b822cc3306f41855cb2984e70ff1",
+                "reference": "874398648ef2b822cc3306f41855cb2984e70ff1",
                 "shasum": ""
             },
             "require": {
@@ -1155,7 +1155,7 @@
                 }
             ],
             "description": "Plugin to gather and manage ideas",
-            "time": "2018-09-18T14:26:21+00:00"
+            "time": "2018-09-25T09:39:57+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1317,16 +1317,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "71498420920ae4b818b885c38ae5c4d1c849d690"
+                "reference": "d2ee7f4b40801401df8ca1df82b6380dfcf322e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/71498420920ae4b818b885c38ae5c4d1c849d690",
-                "reference": "71498420920ae4b818b885c38ae5c4d1c849d690",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/d2ee7f4b40801401df8ca1df82b6380dfcf322e7",
+                "reference": "d2ee7f4b40801401df8ca1df82b6380dfcf322e7",
                 "shasum": ""
             },
             "require": {
@@ -1352,7 +1352,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2018-09-24T13:40:25+00:00"
+            "time": "2018-09-25T09:32:46+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-googleapps",
