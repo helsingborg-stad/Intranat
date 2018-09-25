@@ -131,7 +131,7 @@ class General
             (
                 SELECT user_id, meta_value
                 FROM " . $wpdb->usermeta. "
-                WHERE meta_key IN ('first_name','last_name', 'description', 'ad_department', 'user_skills', 'user_responsibilities')
+                WHERE meta_key IN ('first_name','last_name', 'ad_title', 'ad_department', 'user_skills', 'user_responsibilities')
             )
         ");
 
