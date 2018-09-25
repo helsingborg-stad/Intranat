@@ -1,6 +1,11 @@
 {
     "name": "helsingborg-stad/intranat",
     "license": "GNU",
+    "config": {
+        "platform": {
+            "php": "7.0.31"
+        }
+    },
     "authors": [
         {
             "name": "Helsingborg Stad",
