@@ -1127,16 +1127,16 @@
         },
         {
             "name": "helsingborg-stad/idea-manager",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/idea-manager.git",
-                "reference": "34598e6d30f5701a5b89a5b6b1971ff004aaeda6"
+                "reference": "ee483786f69ee88ce2d385ee2e2582b56ad3722b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/idea-manager/zipball/34598e6d30f5701a5b89a5b6b1971ff004aaeda6",
-                "reference": "34598e6d30f5701a5b89a5b6b1971ff004aaeda6",
+                "url": "https://api.github.com/repos/helsingborg-stad/idea-manager/zipball/ee483786f69ee88ce2d385ee2e2582b56ad3722b",
+                "reference": "ee483786f69ee88ce2d385ee2e2582b56ad3722b",
                 "shasum": ""
             },
             "require": {
@@ -1155,7 +1155,7 @@
                 }
             ],
             "description": "Plugin to gather and manage ideas",
-            "time": "2018-04-18T14:38:16+00:00"
+            "time": "2018-09-18T14:26:21+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
