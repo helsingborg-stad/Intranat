@@ -163,7 +163,7 @@ class Data
         }
 
         $profileImage = new \Intranet\User\ProfileUploadImage();
-        $profileImage->uploadProfileImage($value[0], wp_get_current_user());
+        $profileImage->uploadProfileImage($value[0], wp_get_current_user(), 'user_profile_img');
     }
 
 
