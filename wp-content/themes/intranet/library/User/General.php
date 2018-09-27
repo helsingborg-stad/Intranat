@@ -319,7 +319,11 @@ class General
      */
     public function privatePostStatusCode() {
         global $wp_query;
-        if (!is_user_logged_in() && is_object($wp_query) && $wp_query->is_main_query() && $wp_query->queried_object->post_status == 'private' && $wp_query->is_404) {
+        if (!is_user_logged_in()
+            && is_object($wp_query)
+            && $wp_query->is_main_query()
+            && (isset($wp_query->queried_object->post_status) && $wp_query->queried_object->post_status == 'private')
+            && $wp_query->is_404) {
             status_header(401);
         }
     }
