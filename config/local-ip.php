@@ -57,3 +57,6 @@ if (!function_exists('is_local_ip')) {
         return false;
     }
 }
+
+/* Define what resource that sso should use to check for local network */
+define('SSO_SERVER_IMAGE', 'https://hrsystem.hbgadm.hbgstad.se/Arbetstagare/images/load_circle.gif');
