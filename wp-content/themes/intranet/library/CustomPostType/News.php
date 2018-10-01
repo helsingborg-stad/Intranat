@@ -394,16 +394,15 @@ class News
             return is_a(get_blog_details($site), 'WP_Site');
         });
 
-        $postStatuses = array('publish');
-
+        $postStatusesArr = array('publish');
         if (is_user_logged_in()) {
-            $postStatuses[] = 'private';
+            $postStatusesArr[] = 'private';
         }
 
         // Add quotes to each item
         $postStatuses = array_map(function ($item) {
             return sprintf("'%s'", $item);
-        }, $postStatuses);
+        }, $postStatusesArr);
 
         // Convert to comma separated string
         $postStatuses = implode(',', $postStatuses);
@@ -502,7 +501,11 @@ class News
 
         if (!empty($newsPosts)) {
             foreach ($newsPosts as $item) {
-                $news[] = get_blog_post($item->blog_id, $item->post_id);
+                $post = get_blog_post($item->blog_id, $item->post_id);
+                if (!in_array($post->post_status, $postStatusesArr)) {
+                    continue;
+                }
+                $news[] = $post;
                 end($news);
                 $key = key($news);
 

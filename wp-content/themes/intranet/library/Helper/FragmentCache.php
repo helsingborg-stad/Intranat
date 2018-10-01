@@ -25,11 +25,7 @@ class FragmentCache
         }
 
         if (get_post_type($postId) == 'intranet-news') {
-            foreach (get_sites() as $site) {
-                switch_to_blog($site->blog_id);
-                wp_cache_delete('intranet_news');
-                restore_current_blog();
-            }
+            clean_post_cache($postId);
         }
     }
 }
