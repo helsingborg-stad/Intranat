@@ -1610,16 +1610,16 @@
         },
         {
             "name": "helsingborg-stad/skyfish-integration",
-            "version": "0.4.3",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-skyfish-integration.git",
-                "reference": "46ec4c48a022839c6173174d97eacbaf441ff4d9"
+                "reference": "999babb270a705ff39a155def4a3a8e1789bbe33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/46ec4c48a022839c6173174d97eacbaf441ff4d9",
-                "reference": "46ec4c48a022839c6173174d97eacbaf441ff4d9",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/999babb270a705ff39a155def4a3a8e1789bbe33",
+                "reference": "999babb270a705ff39a155def4a3a8e1789bbe33",
                 "shasum": ""
             },
             "require": {
@@ -1637,7 +1637,7 @@
                 }
             ],
             "description": "Skyfish integration for Wordpress",
-            "time": "2018-10-09T04:25:43+00:00"
+            "time": "2018-10-09T09:49:54+00:00"
         },
         {
             "name": "helsingborg-stad/todo",
