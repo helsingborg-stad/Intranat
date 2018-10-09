@@ -75,7 +75,7 @@ if (!function_exists('municipio_intranet_get_user_full_name')) {
      */
     function municipio_intranet_get_user_full_name($user = null)
     {
-        if (is_null($user)) {
+        if (is_null($user) || empty($user)) {
             $user = wp_get_current_user();
         } elseif (is_numeric($user)) {
             $user = get_user_by('ID', $user);

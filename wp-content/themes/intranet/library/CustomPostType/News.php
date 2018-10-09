@@ -316,19 +316,29 @@ class News
         }
 
         if (is_array($news) && !empty($news)) {
-            foreach ($news as $item) {
+            foreach ($news as $key => $item) {
                 if (isset($item->blog_id)) {
                     switch_to_blog($item->blog_id);
                 }
 
                 // Get thumbnail-image
-                $item->thumbnail_image = wp_get_attachment_image_src(
-                    get_post_thumbnail_id($item->ID),
-                    apply_filters(
-                        'modularity/image/mainnews',
-                        municipio_to_aspect_ratio('16:9', array(610, 343))
-                    )
-                );
+                if($key == 0) {
+                    $item->thumbnail_image = wp_get_attachment_image_src(
+                        get_post_thumbnail_id($item->ID),
+                        apply_filters(
+                            'modularity/image/mainnews',
+                            municipio_to_aspect_ratio('16:9', array(610, 343))
+                        )
+                    );
+                } else {
+                    $item->thumbnail_image = wp_get_attachment_image_src(
+                        get_post_thumbnail_id($item->ID),
+                        apply_filters(
+                            'modularity/image/mainnews',
+                            municipio_to_aspect_ratio('16:9', array(230, 130))
+                        )
+                    );
+                }
 
                 // Get full image
                 $item->image = wp_get_attachment_image_src(
@@ -384,16 +394,15 @@ class News
             return is_a(get_blog_details($site), 'WP_Site');
         });
 
-        $postStatuses = array('publish');
-
+        $postStatusesArr = array('publish');
         if (is_user_logged_in()) {
-            $postStatuses[] = 'private';
+            $postStatusesArr[] = 'private';
         }
 
         // Add quotes to each item
         $postStatuses = array_map(function ($item) {
             return sprintf("'%s'", $item);
-        }, $postStatuses);
+        }, $postStatusesArr);
 
         // Convert to comma separated string
         $postStatuses = implode(',', $postStatuses);
@@ -475,10 +484,10 @@ class News
             $sql .= "OR posts.target_groups LIKE '%\"loggedout\"%'";
         }
 
-        $sql .= ") ORDER BY 
-        CASE blog_id 
-            WHEN " . get_current_blog_id() . " THEN is_sticky 
-            ELSE 0 END 
+        $sql .= ") ORDER BY
+        CASE blog_id
+            WHEN " . get_current_blog_id() . " THEN is_sticky
+            ELSE 0 END
         DESC,
         post_date DESC LIMIT $offset, $count";
 
@@ -492,7 +501,11 @@ class News
 
         if (!empty($newsPosts)) {
             foreach ($newsPosts as $item) {
-                $news[] = get_blog_post($item->blog_id, $item->post_id);
+                $post = get_blog_post($item->blog_id, $item->post_id);
+                if (!in_array($post->post_status, $postStatusesArr)) {
+                    continue;
+                }
+                $news[] = $post;
                 end($news);
                 $key = key($news);
 

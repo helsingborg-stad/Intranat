@@ -109,7 +109,7 @@ class General
      */
     public function redoUserSearchIndexCron()
     {
-        if (!wp_next_scheduled('redo_user_search_index')) {
+        if (is_main_site() && !wp_next_scheduled('redo_user_search_index')) {
             wp_schedule_event(time(), 'daily', 'redo_user_search_index');
         }
     }
@@ -131,7 +131,7 @@ class General
             (
                 SELECT user_id, meta_value
                 FROM " . $wpdb->usermeta. "
-                WHERE meta_key IN ('first_name','last_name', 'description', 'ad_department', 'user_skills', 'user_responsibilities')
+                WHERE meta_key IN ('first_name','last_name', 'ad_title', 'ad_department', 'user_skills', 'user_responsibilities')
             )
         ");
 
@@ -319,7 +319,11 @@ class General
      */
     public function privatePostStatusCode() {
         global $wp_query;
-        if (!is_user_logged_in() && is_object($wp_query) && $wp_query->is_main_query() && $wp_query->queried_object->post_status == 'private' && $wp_query->is_404) {
+        if (!is_user_logged_in()
+            && is_object($wp_query)
+            && $wp_query->is_main_query()
+            && (isset($wp_query->queried_object->post_status) && $wp_query->queried_object->post_status == 'private')
+            && $wp_query->is_404) {
             status_header(401);
         }
     }

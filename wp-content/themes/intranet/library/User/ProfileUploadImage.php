@@ -46,6 +46,7 @@ class ProfileUploadImage
         $imagePaths[] = $this->uploadDir . '/' . $user->data->user_login . '-' . $imageId . '.' . $fileType;
         file_put_contents($imagePaths[0], $decodedImage);
         chmod($imagePaths[0], 0775);
+
         //Crop & save images sizes
         $imagePaths = array_merge($imagePaths, $this->cropImages($imagePaths[0], $fileType, $imageId));
 
@@ -262,6 +263,14 @@ class ProfileUploadImage
 
         $urls = get_user_meta($userId, $userMeta, true);
 
+        //Delete meta
+        delete_user_meta($userId, $userMeta);
+
+        //Remove old meta field
+        if ($userMeta == 'user_profile_img') {
+            delete_user_meta($userId, 'user_profile_picture');
+        }
+
         if (!is_array($urls)) {
             return;
         }
@@ -273,13 +282,6 @@ class ProfileUploadImage
                 chmod($path, 0775);
                 unlink($path);
             }
-        }
-
-        delete_user_meta($userId, $userMeta);
-
-        //Remove old meta field
-        if ($userMeta == 'user_profile_img') {
-            delete_user_meta($userId, 'user_profile_picture');
         }
 
         return true;

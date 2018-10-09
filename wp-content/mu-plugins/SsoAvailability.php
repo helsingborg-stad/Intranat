@@ -12,7 +12,7 @@ class SsoAvailability
     public function initSsoAvailability()
     {
         // Bail if admin page, Ajax or Rest API request
-        if (is_admin() || wp_doing_ajax() || $this->isRestUrl()) {
+        if (is_admin() || wp_doing_ajax() || $this->isRestUrl() || wp_doing_cron() || (defined('WP_CLI') && WP_CLI)) {
             return;
         }
 
@@ -44,9 +44,15 @@ class SsoAvailability
             $url .= '?' . $querystring;
         }
 
+        if(defined('SSO_SERVER_IMAGE') && !empty(SSO_SERVER_IMAGE)) {
+            $ssoServerImage = SSO_SERVER_IMAGE;
+        } else {
+            $ssoServerImage = "https://fs01.hbgadm.hbgstad.se/adfs/portal/illustration/illustration.png?id=183128A3C941EDE3D9199FA37D6AA90E0A7DFE101B37D10B4FEDA0CF35E11AFD";
+        }
+
         echo "
         <script type=\"text/javascript\">
-            var imageUrl = 'https://fs01.hbgadm.hbgstad.se/adfs/portal/illustration/illustration.png?id=183128A3C941EDE3D9199FA37D6AA90E0A7DFE101B37D10B4FEDA0CF35E11AFD';
+            var imageUrl = '".$ssoServerImage."';
             var image = document.createElement('img');
 
             image.addEventListener('load', function () {
