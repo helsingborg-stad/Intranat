@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "320ad29633f2ff69f6cd319de43efe63",
+    "content-hash": "0a7a46f5bb115bc99f718020b463e812",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -795,16 +795,16 @@
         },
         {
             "name": "helsingborg-stad/active-directory-api-wp-integration",
-            "version": "2.2.6",
+            "version": "2.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/active-directory-api-wp-integration.git",
-                "reference": "933bc6f56f3ac78ed1c83a68dc281d4f80bf36e1"
+                "reference": "8399963c9e9e6de6a662ebd3bd6c5d4beb0ad964"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/933bc6f56f3ac78ed1c83a68dc281d4f80bf36e1",
-                "reference": "933bc6f56f3ac78ed1c83a68dc281d4f80bf36e1",
+                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/8399963c9e9e6de6a662ebd3bd6c5d4beb0ad964",
+                "reference": "8399963c9e9e6de6a662ebd3bd6c5d4beb0ad964",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -819,7 +819,7 @@
                 }
             ],
             "description": "Simple plugin for verification of existing WordPress users with api.",
-            "time": "2018-09-24T07:45:41+00:00"
+            "time": "2018-10-04T11:35:11+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-multisite-enabler",
@@ -944,16 +944,16 @@
         },
         {
             "name": "helsingborg-stad/broken-link-detector",
-            "version": "1.3.5",
+            "version": "1.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/broken-link-detector.git",
-                "reference": "a215865fdced7d739c21d39534448e349926bb75"
+                "reference": "e16a880dd9f96d187d3508c24543a09926548ede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/broken-link-detector/zipball/a215865fdced7d739c21d39534448e349926bb75",
-                "reference": "a215865fdced7d739c21d39534448e349926bb75",
+                "url": "https://api.github.com/repos/helsingborg-stad/broken-link-detector/zipball/e16a880dd9f96d187d3508c24543a09926548ede",
+                "reference": "e16a880dd9f96d187d3508c24543a09926548ede",
                 "shasum": ""
             },
             "require": {
@@ -971,7 +971,7 @@
                 }
             ],
             "description": "Detects and fixes (if possible) broken links in post_content",
-            "time": "2018-09-20T09:41:31+00:00"
+            "time": "2018-10-08T08:19:28+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
@@ -1127,16 +1127,16 @@
         },
         {
             "name": "helsingborg-stad/idea-manager",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/idea-manager.git",
-                "reference": "874398648ef2b822cc3306f41855cb2984e70ff1"
+                "reference": "0ebb509a48809344a8ecd3509cd191c0a70d0cd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/idea-manager/zipball/874398648ef2b822cc3306f41855cb2984e70ff1",
-                "reference": "874398648ef2b822cc3306f41855cb2984e70ff1",
+                "url": "https://api.github.com/repos/helsingborg-stad/idea-manager/zipball/0ebb509a48809344a8ecd3509cd191c0a70d0cd5",
+                "reference": "0ebb509a48809344a8ecd3509cd191c0a70d0cd5",
                 "shasum": ""
             },
             "require": {
@@ -1155,7 +1155,7 @@
                 }
             ],
             "description": "Plugin to gather and manage ideas",
-            "time": "2018-09-25T09:39:57+00:00"
+            "time": "2018-09-25T12:37:29+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1215,16 +1215,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "2.8.4",
+            "version": "2.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "350907fa3ab058f308b871db648e275ac75bfc9f"
+                "reference": "96fd113f46197364f8206e01c97ebeaff006a7ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/350907fa3ab058f308b871db648e275ac75bfc9f",
-                "reference": "350907fa3ab058f308b871db648e275ac75bfc9f",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/96fd113f46197364f8206e01c97ebeaff006a7ed",
+                "reference": "96fd113f46197364f8206e01c97ebeaff006a7ed",
                 "shasum": ""
             },
             "require": {
@@ -1256,7 +1256,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2018-09-12T11:20:52+00:00"
+            "time": "2018-10-03T13:09:24+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-checklist",
@@ -1317,16 +1317,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.6.1",
+            "version": "1.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "d2ee7f4b40801401df8ca1df82b6380dfcf322e7"
+                "reference": "8a294b12536653f71fa9e5e4afc09461f66f5057"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/d2ee7f4b40801401df8ca1df82b6380dfcf322e7",
-                "reference": "d2ee7f4b40801401df8ca1df82b6380dfcf322e7",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/8a294b12536653f71fa9e5e4afc09461f66f5057",
+                "reference": "8a294b12536653f71fa9e5e4afc09461f66f5057",
                 "shasum": ""
             },
             "require": {
@@ -1352,7 +1352,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2018-09-25T09:32:46+00:00"
+            "time": "2018-10-09T08:01:11+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-googleapps",
@@ -1474,16 +1474,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "1.22.6",
+            "version": "1.22.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "7aa28bf1b45c77cf01ee7ff84e8311823f8b3137"
+                "reference": "dcb2db98fa0a5c8060d1307be7b39b4312220205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/7aa28bf1b45c77cf01ee7ff84e8311823f8b3137",
-                "reference": "7aa28bf1b45c77cf01ee7ff84e8311823f8b3137",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/dcb2db98fa0a5c8060d1307be7b39b4312220205",
+                "reference": "dcb2db98fa0a5c8060d1307be7b39b4312220205",
                 "shasum": ""
             },
             "require": {
@@ -1518,20 +1518,20 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2018-09-24T07:18:35+00:00"
+            "time": "2018-10-04T08:18:13+00:00"
         },
         {
             "name": "helsingborg-stad/notification-center",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/notification-center.git",
-                "reference": "8281c5302b0c0c9f31af33f72c243aed29324607"
+                "reference": "abc7304debb0d76790b7a92878975803d276b84a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/notification-center/zipball/8281c5302b0c0c9f31af33f72c243aed29324607",
-                "reference": "8281c5302b0c0c9f31af33f72c243aed29324607",
+                "url": "https://api.github.com/repos/helsingborg-stad/notification-center/zipball/abc7304debb0d76790b7a92878975803d276b84a",
+                "reference": "abc7304debb0d76790b7a92878975803d276b84a",
                 "shasum": ""
             },
             "require": {
@@ -1550,7 +1550,7 @@
                 }
             ],
             "description": "Plugin to give logged in users notifications when others react on comments etc.",
-            "time": "2018-09-07T12:01:25+00:00"
+            "time": "2018-09-25T12:41:48+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -1607,6 +1607,37 @@
             ],
             "description": "Enables option to add notices to search result of specific keywords",
             "time": "2017-03-03T08:00:18+00:00"
+        },
+        {
+            "name": "helsingborg-stad/skyfish-integration",
+            "version": "0.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-skyfish-integration.git",
+                "reference": "46ec4c48a022839c6173174d97eacbaf441ff4d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/46ec4c48a022839c6173174d97eacbaf441ff4d9",
+                "reference": "46ec4c48a022839c6173174d97eacbaf441ff4d9",
+                "shasum": ""
+            },
+            "require": {
+                "helsingborg-stad/acf-export-manager": ">=1.0.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Ramstedt",
+                    "email": "nikolas.ramstedt@helsingborg.se"
+                }
+            ],
+            "description": "Skyfish integration for Wordpress",
+            "time": "2018-10-09T04:25:43+00:00"
         },
         {
             "name": "helsingborg-stad/todo",
@@ -1724,16 +1755,16 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.5.43",
+            "version": "v5.5.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "25821159f2bb12dc9e5720a4b13ea3372ffa8216"
+                "reference": "7917f4c86ecf7f4d0efcfd83248ad3e301e08858"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/25821159f2bb12dc9e5720a4b13ea3372ffa8216",
-                "reference": "25821159f2bb12dc9e5720a4b13ea3372ffa8216",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/7917f4c86ecf7f4d0efcfd83248ad3e301e08858",
+                "reference": "7917f4c86ecf7f4d0efcfd83248ad3e301e08858",
                 "shasum": ""
             },
             "require": {
@@ -1768,16 +1799,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.5.43",
+            "version": "v5.5.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "04fbae936ed14e673dddd18a39662f49e7d199f5"
+                "reference": "b2a62b4a85485fca9cf5fa61a933ad64006ff528"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/04fbae936ed14e673dddd18a39662f49e7d199f5",
-                "reference": "04fbae936ed14e673dddd18a39662f49e7d199f5",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/b2a62b4a85485fca9cf5fa61a933ad64006ff528",
+                "reference": "b2a62b4a85485fca9cf5fa61a933ad64006ff528",
                 "shasum": ""
             },
             "require": {
@@ -1812,16 +1843,16 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v5.5.43",
+            "version": "v5.5.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "1b558bfa1013f25b35e593c83fce7990d20c4d97"
+                "reference": "11b4b917c3f02140b528e849f883a4a9e7ff8af7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/1b558bfa1013f25b35e593c83fce7990d20c4d97",
-                "reference": "1b558bfa1013f25b35e593c83fce7990d20c4d97",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/11b4b917c3f02140b528e849f883a4a9e7ff8af7",
+                "reference": "11b4b917c3f02140b528e849f883a4a9e7ff8af7",
                 "shasum": ""
             },
             "require": {
@@ -1857,16 +1888,16 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v5.5.43",
+            "version": "v5.5.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "31921ef731567fc0b80c110437a028ae8a3add13"
+                "reference": "b8c0e36d47cfde3a0727bc6e2057775ff98a1bcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/31921ef731567fc0b80c110437a028ae8a3add13",
-                "reference": "31921ef731567fc0b80c110437a028ae8a3add13",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/b8c0e36d47cfde3a0727bc6e2057775ff98a1bcd",
+                "reference": "b8c0e36d47cfde3a0727bc6e2057775ff98a1bcd",
                 "shasum": ""
             },
             "require": {
@@ -1907,16 +1938,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.5.43",
+            "version": "v5.5.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "ebe5d19b3ef3e73bca839b8614287fbe2b06ab7d"
+                "reference": "5c405512d75dcaf5d37791badce02d86ed8e4bc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/ebe5d19b3ef3e73bca839b8614287fbe2b06ab7d",
-                "reference": "ebe5d19b3ef3e73bca839b8614287fbe2b06ab7d",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/5c405512d75dcaf5d37791badce02d86ed8e4bc4",
+                "reference": "5c405512d75dcaf5d37791badce02d86ed8e4bc4",
                 "shasum": ""
             },
             "require": {
@@ -1964,16 +1995,16 @@
         },
         {
             "name": "illuminate/view",
-            "version": "v5.5.43",
+            "version": "v5.5.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
-                "reference": "6d53e16273cdebd03290307660e0a88fcb987bca"
+                "reference": "892aa32a1b496cbafa5125bcc3f97ff795265f95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/view/zipball/6d53e16273cdebd03290307660e0a88fcb987bca",
-                "reference": "6d53e16273cdebd03290307660e0a88fcb987bca",
+                "url": "https://api.github.com/repos/illuminate/view/zipball/892aa32a1b496cbafa5125bcc3f97ff795265f95",
+                "reference": "892aa32a1b496cbafa5125bcc3f97ff795265f95",
                 "shasum": ""
             },
             "require": {
@@ -2008,7 +2039,7 @@
             ],
             "description": "The Illuminate View package.",
             "homepage": "https://laravel.com",
-            "time": "2018-09-02T11:44:56+00:00"
+            "time": "2018-10-04T14:46:49+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -2704,16 +2735,16 @@
         },
         {
             "name": "shortpixel/shortpixel-php",
-            "version": "1.4.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/short-pixel-optimizer/shortpixel-php.git",
-                "reference": "15806c395082fad9f9ccc2a543af713dae0b2c15"
+                "reference": "852dfa14e3eaabc3fb0dab06655c79ecb684ae82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/short-pixel-optimizer/shortpixel-php/zipball/15806c395082fad9f9ccc2a543af713dae0b2c15",
-                "reference": "15806c395082fad9f9ccc2a543af713dae0b2c15",
+                "url": "https://api.github.com/repos/short-pixel-optimizer/shortpixel-php/zipball/852dfa14e3eaabc3fb0dab06655c79ecb684ae82",
+                "reference": "852dfa14e3eaabc3fb0dab06655c79ecb684ae82",
                 "shasum": ""
             },
             "require": {
@@ -2755,20 +2786,20 @@
                 "optimize",
                 "shortpixel"
             ],
-            "time": "2018-07-21T04:59:46+00:00"
+            "time": "2018-09-12T07:38:26+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.4.15",
+            "version": "v3.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "c4625e75341e4fb309ce0c049cbf7fb84b8897cd"
+                "reference": "0a612e9dfbd2ccce03eb174365f31ecdca930ff6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/c4625e75341e4fb309ce0c049cbf7fb84b8897cd",
-                "reference": "c4625e75341e4fb309ce0c049cbf7fb84b8897cd",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/0a612e9dfbd2ccce03eb174365f31ecdca930ff6",
+                "reference": "0a612e9dfbd2ccce03eb174365f31ecdca930ff6",
                 "shasum": ""
             },
             "require": {
@@ -2811,20 +2842,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2018-08-03T10:42:44+00:00"
+            "time": "2018-10-02T16:33:53+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v3.4.15",
+            "version": "v3.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "8a84fcb207451df0013b2c74cbbf1b62d47b999a"
+                "reference": "54ba444dddc5bd5708a34bd095ea67c6eb54644d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/8a84fcb207451df0013b2c74cbbf1b62d47b999a",
-                "reference": "8a84fcb207451df0013b2c74cbbf1b62d47b999a",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/54ba444dddc5bd5708a34bd095ea67c6eb54644d",
+                "reference": "54ba444dddc5bd5708a34bd095ea67c6eb54644d",
                 "shasum": ""
             },
             "require": {
@@ -2860,7 +2891,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:19:56+00:00"
+            "time": "2018-10-03T08:46:40+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2923,16 +2954,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.4.15",
+            "version": "v3.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "9749930bfc825139aadd2d28461ddbaed6577862"
+                "reference": "94bc3a79008e6640defedf5e14eb3b4f20048352"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/9749930bfc825139aadd2d28461ddbaed6577862",
-                "reference": "9749930bfc825139aadd2d28461ddbaed6577862",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/94bc3a79008e6640defedf5e14eb3b4f20048352",
+                "reference": "94bc3a79008e6640defedf5e14eb3b4f20048352",
                 "shasum": ""
             },
             "require": {
@@ -2987,7 +3018,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:19:56+00:00"
+            "time": "2018-10-02T16:33:53+00:00"
         },
         {
             "name": "true/punycode",
