@@ -40,3 +40,5 @@ composer.lock
 # Operating system files
 .DS_Store
 /.idea
+/post-queries.log
+/post.log
