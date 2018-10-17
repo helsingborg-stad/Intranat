@@ -469,16 +469,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.70",
+            "version": "v0.72",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "759a1a246409eae1c723abc72d817205a1d5549f"
+                "reference": "e8c6b72963b19e707b8a6c46fe3515207bb03bd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/759a1a246409eae1c723abc72d817205a1d5549f",
-                "reference": "759a1a246409eae1c723abc72d817205a1d5549f",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/e8c6b72963b19e707b8a6c46fe3515207bb03bd2",
+                "reference": "e8c6b72963b19e707b8a6c46fe3515207bb03bd2",
                 "shasum": ""
             },
             "require": {
@@ -502,7 +502,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-09-16T00:22:55+00:00"
+            "time": "2018-10-13T00:23:17+00:00"
         },
         {
             "name": "google/auth",
@@ -856,16 +856,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.6.6",
+            "version": "0.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "7b23da70d1622a176f96ae84d7b6ccf8093801a9"
+                "reference": "4b0ff8be0ac96d2e3674c50c13c7c3a0269b9eba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/7b23da70d1622a176f96ae84d7b6ccf8093801a9",
-                "reference": "7b23da70d1622a176f96ae84d7b6ccf8093801a9",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/4b0ff8be0ac96d2e3674c50c13c7c3a0269b9eba",
+                "reference": "4b0ff8be0ac96d2e3674c50c13c7c3a0269b9eba",
                 "shasum": ""
             },
             "require": {
@@ -884,7 +884,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2018-09-24T14:19:06+00:00"
+            "time": "2018-10-16T09:35:02+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -944,16 +944,16 @@
         },
         {
             "name": "helsingborg-stad/broken-link-detector",
-            "version": "1.3.6",
+            "version": "1.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/broken-link-detector.git",
-                "reference": "e16a880dd9f96d187d3508c24543a09926548ede"
+                "reference": "11e3d4dac7dee9298f1cc70277b3e574738b338d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/broken-link-detector/zipball/e16a880dd9f96d187d3508c24543a09926548ede",
-                "reference": "e16a880dd9f96d187d3508c24543a09926548ede",
+                "url": "https://api.github.com/repos/helsingborg-stad/broken-link-detector/zipball/11e3d4dac7dee9298f1cc70277b3e574738b338d",
+                "reference": "11e3d4dac7dee9298f1cc70277b3e574738b338d",
                 "shasum": ""
             },
             "require": {
@@ -971,7 +971,7 @@
                 }
             ],
             "description": "Detects and fixes (if possible) broken links in post_content",
-            "time": "2018-10-08T08:19:28+00:00"
+            "time": "2018-10-12T09:54:32+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
@@ -1317,16 +1317,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.6.5",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "8a294b12536653f71fa9e5e4afc09461f66f5057"
+                "reference": "4f1042ed2af2e728a34f6df0aa644149b018a10f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/8a294b12536653f71fa9e5e4afc09461f66f5057",
-                "reference": "8a294b12536653f71fa9e5e4afc09461f66f5057",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/4f1042ed2af2e728a34f6df0aa644149b018a10f",
+                "reference": "4f1042ed2af2e728a34f6df0aa644149b018a10f",
                 "shasum": ""
             },
             "require": {
@@ -1352,7 +1352,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2018-10-09T08:01:11+00:00"
+            "time": "2018-10-09T13:04:29+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-googleapps",
@@ -1474,16 +1474,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "1.22.9",
+            "version": "1.22.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "dcb2db98fa0a5c8060d1307be7b39b4312220205"
+                "reference": "12ff78d490fb4df45d31999ef3ae4752d90cc11c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/dcb2db98fa0a5c8060d1307be7b39b4312220205",
-                "reference": "dcb2db98fa0a5c8060d1307be7b39b4312220205",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/12ff78d490fb4df45d31999ef3ae4752d90cc11c",
+                "reference": "12ff78d490fb4df45d31999ef3ae4752d90cc11c",
                 "shasum": ""
             },
             "require": {
@@ -1518,7 +1518,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2018-10-04T08:18:13+00:00"
+            "time": "2018-10-17T07:39:19+00:00"
         },
         {
             "name": "helsingborg-stad/notification-center",
@@ -1610,16 +1610,16 @@
         },
         {
             "name": "helsingborg-stad/skyfish-integration",
-            "version": "0.4.4",
+            "version": "0.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-skyfish-integration.git",
-                "reference": "999babb270a705ff39a155def4a3a8e1789bbe33"
+                "reference": "e93dae4a6543bc339f5edf1acb9b7a84612df9e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/999babb270a705ff39a155def4a3a8e1789bbe33",
-                "reference": "999babb270a705ff39a155def4a3a8e1789bbe33",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/e93dae4a6543bc339f5edf1acb9b7a84612df9e0",
+                "reference": "e93dae4a6543bc339f5edf1acb9b7a84612df9e0",
                 "shasum": ""
             },
             "require": {
@@ -1637,7 +1637,7 @@
                 }
             ],
             "description": "Skyfish integration for Wordpress",
-            "time": "2018-10-09T09:49:54+00:00"
+            "time": "2018-10-16T07:47:07+00:00"
         },
         {
             "name": "helsingborg-stad/todo",
