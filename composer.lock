@@ -856,16 +856,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.6.8",
+            "version": "0.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "4b0ff8be0ac96d2e3674c50c13c7c3a0269b9eba"
+                "reference": "b3ade601e69899a602e9dcb2373001e9992c44fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/4b0ff8be0ac96d2e3674c50c13c7c3a0269b9eba",
-                "reference": "4b0ff8be0ac96d2e3674c50c13c7c3a0269b9eba",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/b3ade601e69899a602e9dcb2373001e9992c44fa",
+                "reference": "b3ade601e69899a602e9dcb2373001e9992c44fa",
                 "shasum": ""
             },
             "require": {
@@ -884,7 +884,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2018-10-16T09:35:02+00:00"
+            "time": "2018-10-18T09:59:40+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1187,16 +1187,16 @@
         },
         {
             "name": "helsingborg-stad/media-usage",
-            "version": "1.1.0",
+            "version": "1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/media-usage.git",
-                "reference": "59fdde63c2851e3aedf28ca85cbd3901b3a51d1c"
+                "reference": "db8303195164168142b44f4191e2cea6a596b60b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/59fdde63c2851e3aedf28ca85cbd3901b3a51d1c",
-                "reference": "59fdde63c2851e3aedf28ca85cbd3901b3a51d1c",
+                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/db8303195164168142b44f4191e2cea6a596b60b",
+                "reference": "db8303195164168142b44f4191e2cea6a596b60b",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1206,12 +1206,11 @@
             ],
             "authors": [
                 {
-                    "name": "Nikolas Ramstedt",
-                    "email": "nikolas.ramstedt@helsingborg.se"
+                    "name": "Nikolas Ramstedt, Johan Silvergrund"
                 }
             ],
             "description": "Track the use of attachments across posts, meta and options",
-            "time": "2018-10-17T13:48:01+00:00"
+            "time": "2018-10-18T13:31:34+00:00"
         },
         {
             "name": "helsingborg-stad/modularity",
@@ -1610,16 +1609,16 @@
         },
         {
             "name": "helsingborg-stad/skyfish-integration",
-            "version": "0.5.0",
+            "version": "0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-skyfish-integration.git",
-                "reference": "60317471a40f0cd5796ae0e6c3e1ef0f369827da"
+                "reference": "155c4a483758e6db8ba01515b3d0084bbcbdea8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/60317471a40f0cd5796ae0e6c3e1ef0f369827da",
-                "reference": "60317471a40f0cd5796ae0e6c3e1ef0f369827da",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/155c4a483758e6db8ba01515b3d0084bbcbdea8a",
+                "reference": "155c4a483758e6db8ba01515b3d0084bbcbdea8a",
                 "shasum": ""
             },
             "require": {
@@ -1637,7 +1636,7 @@
                 }
             ],
             "description": "Skyfish integration for Wordpress",
-            "time": "2018-10-17T14:48:01+00:00"
+            "time": "2018-10-18T12:12:31+00:00"
         },
         {
             "name": "helsingborg-stad/todo",
