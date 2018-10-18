@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a7a46f5bb115bc99f718020b463e812",
+    "content-hash": "8a0d5457bc3229662f3abcb3d0a2c338",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -361,16 +361,16 @@
         },
         {
             "name": "giggsey/locale",
-            "version": "1.5",
+            "version": "1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/Locale.git",
-                "reference": "3c9cc23c15851c54cb3ccd41a00fd4b5a89feeff"
+                "reference": "da6845720b5d104d319d7e84576f54e44dd9e4f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/Locale/zipball/3c9cc23c15851c54cb3ccd41a00fd4b5a89feeff",
-                "reference": "3c9cc23c15851c54cb3ccd41a00fd4b5a89feeff",
+                "url": "https://api.github.com/repos/giggsey/Locale/zipball/da6845720b5d104d319d7e84576f54e44dd9e4f5",
+                "reference": "da6845720b5d104d319d7e84576f54e44dd9e4f5",
                 "shasum": ""
             },
             "require": {
@@ -406,7 +406,7 @@
                 }
             ],
             "description": "Locale functions required by libphonenumber-for-php",
-            "time": "2018-04-03T15:53:12+00:00"
+            "time": "2018-10-18T07:17:52+00:00"
         },
         {
             "name": "google/apiclient",
@@ -1187,16 +1187,16 @@
         },
         {
             "name": "helsingborg-stad/media-usage",
-            "version": "1.0.4",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/media-usage.git",
-                "reference": "0b8fc3bc7fa0f68b3a7eecc2db83e93440bb3139"
+                "reference": "59fdde63c2851e3aedf28ca85cbd3901b3a51d1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/0b8fc3bc7fa0f68b3a7eecc2db83e93440bb3139",
-                "reference": "0b8fc3bc7fa0f68b3a7eecc2db83e93440bb3139",
+                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/59fdde63c2851e3aedf28ca85cbd3901b3a51d1c",
+                "reference": "59fdde63c2851e3aedf28ca85cbd3901b3a51d1c",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1211,7 +1211,7 @@
                 }
             ],
             "description": "Track the use of attachments across posts, meta and options",
-            "time": "2018-09-18T13:31:18+00:00"
+            "time": "2018-10-17T13:48:01+00:00"
         },
         {
             "name": "helsingborg-stad/modularity",
@@ -1610,16 +1610,16 @@
         },
         {
             "name": "helsingborg-stad/skyfish-integration",
-            "version": "0.4.5",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-skyfish-integration.git",
-                "reference": "e93dae4a6543bc339f5edf1acb9b7a84612df9e0"
+                "reference": "60317471a40f0cd5796ae0e6c3e1ef0f369827da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/e93dae4a6543bc339f5edf1acb9b7a84612df9e0",
-                "reference": "e93dae4a6543bc339f5edf1acb9b7a84612df9e0",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/60317471a40f0cd5796ae0e6c3e1ef0f369827da",
+                "reference": "60317471a40f0cd5796ae0e6c3e1ef0f369827da",
                 "shasum": ""
             },
             "require": {
@@ -1637,7 +1637,7 @@
                 }
             ],
             "description": "Skyfish integration for Wordpress",
-            "time": "2018-10-16T07:47:07+00:00"
+            "time": "2018-10-17T14:48:01+00:00"
         },
         {
             "name": "helsingborg-stad/todo",

@@ -70,7 +70,7 @@
         "helsingborg-stad/algolia-multisite-enabler": ">=1.1.0",
         "wpackagist-plugin/classic-editor": "^0.4.0",
         "helsingborg-stad/media-usage": "^1.0",
-        "helsingborg-stad/skyfish-integration": "^0.4.3"
+        "helsingborg-stad/skyfish-integration": "^0.5.0"
     },
     "extra": {
         "path": "/",
