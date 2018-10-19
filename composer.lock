@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a0d5457bc3229662f3abcb3d0a2c338",
+    "content-hash": "c5ad4816d9cc55ee8cf0ea17660b1c64",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1609,16 +1609,16 @@
         },
         {
             "name": "helsingborg-stad/skyfish-integration",
-            "version": "0.5.1",
+            "version": "0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-skyfish-integration.git",
-                "reference": "155c4a483758e6db8ba01515b3d0084bbcbdea8a"
+                "reference": "71d500f95441609201d90381c09f08a14dd421f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/155c4a483758e6db8ba01515b3d0084bbcbdea8a",
-                "reference": "155c4a483758e6db8ba01515b3d0084bbcbdea8a",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/71d500f95441609201d90381c09f08a14dd421f5",
+                "reference": "71d500f95441609201d90381c09f08a14dd421f5",
                 "shasum": ""
             },
             "require": {
@@ -1636,7 +1636,7 @@
                 }
             ],
             "description": "Skyfish integration for Wordpress",
-            "time": "2018-10-18T12:12:31+00:00"
+            "time": "2018-10-19T12:08:54+00:00"
         },
         {
             "name": "helsingborg-stad/todo",
