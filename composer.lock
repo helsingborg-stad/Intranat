@@ -1474,16 +1474,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "1.22.15",
+            "version": "1.22.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "6d468d4e4f58b486ab2d2e3b93fcd99ae19e4933"
+                "reference": "cce4102833a022d0887912ed702f23b7ed5ee23b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/6d468d4e4f58b486ab2d2e3b93fcd99ae19e4933",
-                "reference": "6d468d4e4f58b486ab2d2e3b93fcd99ae19e4933",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/cce4102833a022d0887912ed702f23b7ed5ee23b",
+                "reference": "cce4102833a022d0887912ed702f23b7ed5ee23b",
                 "shasum": ""
             },
             "require": {
@@ -1518,7 +1518,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2018-10-26T09:45:49+00:00"
+            "time": "2018-11-12T13:01:13+00:00"
         },
         {
             "name": "helsingborg-stad/notification-center",
