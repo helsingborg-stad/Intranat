@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "03399e0e2c4ab5de2af1471245da6e65",
@@ -795,16 +795,16 @@
         },
         {
             "name": "helsingborg-stad/active-directory-api-wp-integration",
-            "version": "2.2.7",
+            "version": "2.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/active-directory-api-wp-integration.git",
-                "reference": "8399963c9e9e6de6a662ebd3bd6c5d4beb0ad964"
+                "reference": "e33d6a5adab93eb76c7f7f56e1902783203929bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/8399963c9e9e6de6a662ebd3bd6c5d4beb0ad964",
-                "reference": "8399963c9e9e6de6a662ebd3bd6c5d4beb0ad964",
+                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/e33d6a5adab93eb76c7f7f56e1902783203929bb",
+                "reference": "e33d6a5adab93eb76c7f7f56e1902783203929bb",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -819,7 +819,7 @@
                 }
             ],
             "description": "Simple plugin for verification of existing WordPress users with api.",
-            "time": "2018-10-04T11:35:11+00:00"
+            "time": "2018-11-08T14:46:35+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-multisite-enabler",
@@ -1187,16 +1187,16 @@
         },
         {
             "name": "helsingborg-stad/media-usage",
-            "version": "1.3.6",
+            "version": "1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/media-usage.git",
-                "reference": "635dc1a5781b0dba769ce0f9e2fd99767bff3436"
+                "reference": "f44a16a6997f1eb267d2d03d43113417ffbf851e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/635dc1a5781b0dba769ce0f9e2fd99767bff3436",
-                "reference": "635dc1a5781b0dba769ce0f9e2fd99767bff3436",
+                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/f44a16a6997f1eb267d2d03d43113417ffbf851e",
+                "reference": "f44a16a6997f1eb267d2d03d43113417ffbf851e",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1211,20 +1211,20 @@
                 }
             ],
             "description": "Track the use of attachments across posts, meta and options",
-            "time": "2018-11-02T10:48:52+00:00"
+            "time": "2018-11-06T08:31:47+00:00"
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "2.8.7",
+            "version": "2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "96fd113f46197364f8206e01c97ebeaff006a7ed"
+                "reference": "45a0e9d664b8d6beb4890f699ab821c98a144a57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/96fd113f46197364f8206e01c97ebeaff006a7ed",
-                "reference": "96fd113f46197364f8206e01c97ebeaff006a7ed",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/45a0e9d664b8d6beb4890f699ab821c98a144a57",
+                "reference": "45a0e9d664b8d6beb4890f699ab821c98a144a57",
                 "shasum": ""
             },
             "require": {
@@ -1256,7 +1256,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2018-10-03T13:09:24+00:00"
+            "time": "2018-11-12T08:06:15+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-checklist",
@@ -1610,16 +1610,16 @@
         },
         {
             "name": "helsingborg-stad/skyfish-integration",
-            "version": "0.8.3",
+            "version": "0.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-skyfish-integration.git",
-                "reference": "a9e36ee3d748a8026451f498eaa782104692ff1b"
+                "reference": "ff37db73692223729aa3091a29b7ccdbf9fe51ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/a9e36ee3d748a8026451f498eaa782104692ff1b",
-                "reference": "a9e36ee3d748a8026451f498eaa782104692ff1b",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/ff37db73692223729aa3091a29b7ccdbf9fe51ef",
+                "reference": "ff37db73692223729aa3091a29b7ccdbf9fe51ef",
                 "shasum": ""
             },
             "require": {
@@ -1637,7 +1637,7 @@
                 }
             ],
             "description": "Skyfish integration for Wordpress",
-            "time": "2018-11-05T11:16:41+00:00"
+            "time": "2018-11-06T09:40:47+00:00"
         },
         {
             "name": "helsingborg-stad/todo",
@@ -2122,16 +2122,16 @@
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
-            "version": "1.0.0.2",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "7941acd71725710a789daabe0557429da63e7ac6"
+                "reference": "fd12f5cfe27223b92b0f4bbc097059eb23cc56c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/7941acd71725710a789daabe0557429da63e7ac6",
-                "reference": "7941acd71725710a789daabe0557429da63e7ac6",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/fd12f5cfe27223b92b0f4bbc097059eb23cc56c4",
+                "reference": "fd12f5cfe27223b92b0f4bbc097059eb23cc56c4",
                 "shasum": ""
             },
             "require": {
@@ -2155,7 +2155,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -2167,7 +2167,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-01-29T14:49:29+00:00"
+            "time": "2018-11-09T20:10:38+00:00"
         },
         {
             "name": "kint-php/kint",
@@ -2307,16 +2307,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.34.0",
+            "version": "1.34.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33"
+                "reference": "19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
-                "reference": "1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9",
+                "reference": "19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9",
                 "shasum": ""
             },
             "require": {
@@ -2358,7 +2358,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-09-20T19:36:25+00:00"
+            "time": "2018-11-08T13:33:47+00:00"
         },
         {
             "name": "philo/laravel-blade",
