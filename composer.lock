@@ -1215,16 +1215,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "2.9.0",
+            "version": "2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "45a0e9d664b8d6beb4890f699ab821c98a144a57"
+                "reference": "7e686a0dd5324e8f47d052649188b1842ca0f3ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/45a0e9d664b8d6beb4890f699ab821c98a144a57",
-                "reference": "45a0e9d664b8d6beb4890f699ab821c98a144a57",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/7e686a0dd5324e8f47d052649188b1842ca0f3ed",
+                "reference": "7e686a0dd5324e8f47d052649188b1842ca0f3ed",
                 "shasum": ""
             },
             "require": {
@@ -1256,7 +1256,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2018-11-12T08:06:15+00:00"
+            "time": "2018-11-12T14:45:05+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-checklist",
