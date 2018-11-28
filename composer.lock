@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "03399e0e2c4ab5de2af1471245da6e65",
+    "content-hash": "a16f07031867190de8a33ee94c42ed54",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1187,16 +1187,16 @@
         },
         {
             "name": "helsingborg-stad/media-usage",
-            "version": "1.3.6",
+            "version": "1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/media-usage.git",
-                "reference": "635dc1a5781b0dba769ce0f9e2fd99767bff3436"
+                "reference": "f44a16a6997f1eb267d2d03d43113417ffbf851e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/635dc1a5781b0dba769ce0f9e2fd99767bff3436",
-                "reference": "635dc1a5781b0dba769ce0f9e2fd99767bff3436",
+                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/f44a16a6997f1eb267d2d03d43113417ffbf851e",
+                "reference": "f44a16a6997f1eb267d2d03d43113417ffbf851e",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1211,7 +1211,7 @@
                 }
             ],
             "description": "Track the use of attachments across posts, meta and options",
-            "time": "2018-11-02T10:48:52+00:00"
+            "time": "2018-11-06T08:31:47+00:00"
         },
         {
             "name": "helsingborg-stad/modularity",
@@ -1412,6 +1412,40 @@
             ],
             "description": "Addon for Modularity for creating guides",
             "time": "2018-07-12T08:33:00+00:00"
+        },
+        {
+            "name": "helsingborg-stad/modularity-sections",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-sections.git",
+                "reference": "8230049ddd79f68fab56931c6b037bdd7ea5257b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-sections/zipball/8230049ddd79f68fab56931c6b037bdd7ea5257b",
+                "reference": "8230049ddd79f68fab56931c6b037bdd7ea5257b",
+                "shasum": ""
+            },
+            "require": {
+                "helsingborg-stad/acf-export-manager": ">=1.0.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                },
+                {
+                    "name": "Nikolas Ramstedt",
+                    "email": "nikolas.ramstedt@helsingborg.se"
+                }
+            ],
+            "time": "2018-08-15T09:25:13+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-timeline",
