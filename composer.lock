@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a16f07031867190de8a33ee94c42ed54",
+    "content-hash": "d1afb90481cdd763d46d6bcd628648dd",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1257,6 +1257,34 @@
             ],
             "description": "Modular component system for WordPress",
             "time": "2018-11-12T14:45:05+00:00"
+        },
+        {
+            "name": "helsingborg-stad/modularity-agreements-archive",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-agreements-archive.git",
+                "reference": "b607d8c4403c39b1bd69f636b09272a4fffb71b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-agreements-archive/zipball/b607d8c4403c39b1bd69f636b09272a4fffb71b0",
+                "reference": "b607d8c4403c39b1bd69f636b09272a4fffb71b0",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johan Silvergrund",
+                    "email": "johan.silvergrund@helsingborg.se"
+                }
+            ],
+            "description": "Plugin that fetches data from primona kommers and displays it in a react component",
+            "time": "2018-11-29T16:18:40+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-checklist",
@@ -3304,7 +3332,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "helsingborg-stad/modularity-agreements-archive": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
