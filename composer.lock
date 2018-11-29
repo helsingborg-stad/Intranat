@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1afb90481cdd763d46d6bcd628648dd",
+    "content-hash": "7e4b742de96124c4501a7f9b6ab16640",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1260,7 +1260,7 @@
         },
         {
             "name": "helsingborg-stad/modularity-agreements-archive",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-agreements-archive.git",
@@ -3332,9 +3332,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "helsingborg-stad/modularity-agreements-archive": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
