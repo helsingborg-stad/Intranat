@@ -1262,16 +1262,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-agreements-archive",
-            "version": "1.0.8",
+            "version": "1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-agreements-archive.git",
-                "reference": "c9b56953e666655e29170efad308e77fdccf4529"
+                "reference": "e096ca0371c9bd7f8d92557821b743a066e45f7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-agreements-archive/zipball/c9b56953e666655e29170efad308e77fdccf4529",
-                "reference": "c9b56953e666655e29170efad308e77fdccf4529",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-agreements-archive/zipball/e096ca0371c9bd7f8d92557821b743a066e45f7b",
+                "reference": "e096ca0371c9bd7f8d92557821b743a066e45f7b",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1286,7 +1286,7 @@
                 }
             ],
             "description": "Plugin that fetches data from primona kommers and displays it in a react component",
-            "time": "2018-12-03T15:34:11+00:00"
+            "time": "2018-12-04T13:10:45+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-checklist",
