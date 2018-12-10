@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aristath/kirki",
-            "version": "v3.0.34",
+            "version": "v3.0.35.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aristath/kirki.git",
-                "reference": "8fb938f34e8093cbfa887ca9349898dd5a9084af"
+                "reference": "6f664660d136b4491ab77712e7f682b01cddeb2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aristath/kirki/zipball/8fb938f34e8093cbfa887ca9349898dd5a9084af",
-                "reference": "8fb938f34e8093cbfa887ca9349898dd5a9084af",
+                "url": "https://api.github.com/repos/aristath/kirki/zipball/6f664660d136b4491ab77712e7f682b01cddeb2a",
+                "reference": "6f664660d136b4491ab77712e7f682b01cddeb2a",
                 "shasum": ""
             },
             "require": {
@@ -62,7 +62,7 @@
                 "customizer",
                 "wordpress"
             ],
-            "time": "2018-09-14T19:07:16+00:00"
+            "time": "2018-12-07T22:54:35+00:00"
         },
         {
             "name": "composer/installers",
@@ -469,16 +469,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.76",
+            "version": "v0.77",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "50c4a818ad269839ad2c20f03828cd6f346ec887"
+                "reference": "f16907e09b5529cd92b109cfdadcd5260691a477"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/50c4a818ad269839ad2c20f03828cd6f346ec887",
-                "reference": "50c4a818ad269839ad2c20f03828cd6f346ec887",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/f16907e09b5529cd92b109cfdadcd5260691a477",
+                "reference": "f16907e09b5529cd92b109cfdadcd5260691a477",
                 "shasum": ""
             },
             "require": {
@@ -502,7 +502,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-12-01T00:23:06+00:00"
+            "time": "2018-12-08T00:22:54+00:00"
         },
         {
             "name": "google/auth",
@@ -1217,16 +1217,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "2.11.0",
+            "version": "2.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "245df1a26021836de8b433c2024f18c335ed7f39"
+                "reference": "1e112349f1bfabdfa80f81cd20c5023ddf02f628"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/245df1a26021836de8b433c2024f18c335ed7f39",
-                "reference": "245df1a26021836de8b433c2024f18c335ed7f39",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/1e112349f1bfabdfa80f81cd20c5023ddf02f628",
+                "reference": "1e112349f1bfabdfa80f81cd20c5023ddf02f628",
                 "shasum": ""
             },
             "require": {
@@ -1258,20 +1258,20 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2018-12-05T10:59:29+00:00"
+            "time": "2018-12-06T08:29:42+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-agreements-archive",
-            "version": "1.0.18",
+            "version": "1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-agreements-archive.git",
-                "reference": "2d21ec351d24b28b10e949ddb97190eebded71e6"
+                "reference": "e337ac3069e6073c6dbe1babc9ebaf12a8606827"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-agreements-archive/zipball/2d21ec351d24b28b10e949ddb97190eebded71e6",
-                "reference": "2d21ec351d24b28b10e949ddb97190eebded71e6",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-agreements-archive/zipball/e337ac3069e6073c6dbe1babc9ebaf12a8606827",
+                "reference": "e337ac3069e6073c6dbe1babc9ebaf12a8606827",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1286,7 +1286,7 @@
                 }
             ],
             "description": "Plugin that fetches data from primona kommers and displays it in a react component",
-            "time": "2018-12-04T14:51:58+00:00"
+            "time": "2018-12-10T11:45:32+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-checklist",
@@ -2897,16 +2897,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v3.4.19",
+            "version": "v3.4.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "2016b3eec2e49c127dd02d0ef44a35c53181560d"
+                "reference": "a2233f555ddf55e5600f386fba7781cea1cb82d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/2016b3eec2e49c127dd02d0ef44a35c53181560d",
-                "reference": "2016b3eec2e49c127dd02d0ef44a35c53181560d",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/a2233f555ddf55e5600f386fba7781cea1cb82d3",
+                "reference": "a2233f555ddf55e5600f386fba7781cea1cb82d3",
                 "shasum": ""
             },
             "require": {
@@ -2949,11 +2949,11 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-11T19:48:54+00:00"
+            "time": "2018-11-27T12:43:10+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v3.4.19",
+            "version": "v3.4.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -3061,7 +3061,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.4.19",
+            "version": "v3.4.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
