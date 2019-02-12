@@ -797,16 +797,16 @@
         },
         {
             "name": "helsingborg-stad/active-directory-api-wp-integration",
-            "version": "2.2.11",
+            "version": "2.2.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/active-directory-api-wp-integration.git",
-                "reference": "b38a8d8b90d702169c6705fd77f187d5dcef527f"
+                "reference": "b7c4443874666af86cd0472d32227888ca296c0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/b38a8d8b90d702169c6705fd77f187d5dcef527f",
-                "reference": "b38a8d8b90d702169c6705fd77f187d5dcef527f",
+                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/b7c4443874666af86cd0472d32227888ca296c0e",
+                "reference": "b7c4443874666af86cd0472d32227888ca296c0e",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -821,7 +821,7 @@
                 }
             ],
             "description": "Simple plugin for verification of existing WordPress users with api.",
-            "time": "2019-01-15T08:56:52+00:00"
+            "time": "2019-02-12T08:59:43+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-multisite-enabler",
