@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "735d949c09e6a3f67a7c671f63a811c7",
+    "content-hash": "ee2edfe9f57658a9cae91558d98abe7b",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -848,6 +848,41 @@
             "description": "Plugin to enable Algolia plugin to mix-content from multiple WordPress sites in one index.",
             "homepage": "https://github.com/helsingborg-stad/algolia-multisite-enabler",
             "time": "2018-04-27T09:43:27+00:00"
+        },
+        {
+            "name": "helsingborg-stad/algoliasearch-wordpress",
+            "version": "2.11.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/algoliasearch-wordpress.git",
+                "reference": "9d53378668199a138d6ae433ad5b906e6d10139a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/algoliasearch-wordpress/zipball/9d53378668199a138d6ae433ad5b906e6d10139a",
+                "reference": "9d53378668199a138d6ae433ad5b906e6d10139a",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "*",
+                "wimg/php-compatibility": "*",
+                "wp-coding-standards/wpcs": "*"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-name": "algolia"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(MIT or GPL-2.0)"
+            ],
+            "description": "Forked version of algolia Search plugin for Wordpress. Fixes some issues, for more information see feature branches in git-repository.",
+            "homepage": "https://community.algolia.com/wordpress/",
+            "time": "2019-03-04T13:34:45+00:00"
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
