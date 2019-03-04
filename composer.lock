@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aristath/kirki",
-            "version": "v3.0.36",
+            "version": "v3.0.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aristath/kirki.git",
-                "reference": "511be5ee96776d17843186b50c28b4fd33092330"
+                "reference": "feb8863ea9ceb9f4f30f178d70c0b8858599a95c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aristath/kirki/zipball/511be5ee96776d17843186b50c28b4fd33092330",
-                "reference": "511be5ee96776d17843186b50c28b4fd33092330",
+                "url": "https://api.github.com/repos/aristath/kirki/zipball/feb8863ea9ceb9f4f30f178d70c0b8858599a95c",
+                "reference": "feb8863ea9ceb9f4f30f178d70c0b8858599a95c",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
                 "customizer",
                 "wordpress"
             ],
-            "time": "2019-02-17T12:43:12+00:00"
+            "time": "2019-02-28T23:16:42+00:00"
         },
         {
             "name": "composer/installers",
@@ -462,16 +462,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.87",
+            "version": "v0.88",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "26e0bf604e0b6e253f5217ef7e7fe39d976a69f7"
+                "reference": "1ad0a77dc28f658cf65b7146ee5342bd12cfff3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/26e0bf604e0b6e253f5217ef7e7fe39d976a69f7",
-                "reference": "26e0bf604e0b6e253f5217ef7e7fe39d976a69f7",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/1ad0a77dc28f658cf65b7146ee5342bd12cfff3f",
+                "reference": "1ad0a77dc28f658cf65b7146ee5342bd12cfff3f",
                 "shasum": ""
             },
             "require": {
@@ -495,7 +495,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-02-25T00:22:55+00:00"
+            "time": "2019-03-04T00:22:51+00:00"
         },
         {
             "name": "google/auth",
@@ -851,16 +851,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.6.13",
+            "version": "0.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "957b31a7943895c2bcd6ba816861421e5349c062"
+                "reference": "2ffc9b1a4cdc7c01649de5fd796bda1bed5aabb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/957b31a7943895c2bcd6ba816861421e5349c062",
-                "reference": "957b31a7943895c2bcd6ba816861421e5349c062",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/2ffc9b1a4cdc7c01649de5fd796bda1bed5aabb7",
+                "reference": "2ffc9b1a4cdc7c01649de5fd796bda1bed5aabb7",
                 "shasum": ""
             },
             "require": {
@@ -879,7 +879,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2019-02-13T13:34:19+00:00"
+            "time": "2019-03-04T12:15:41+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1210,16 +1210,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "2.11.7",
+            "version": "2.11.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "ebb3af77ee41a4f53b8bcdd8b88b6af78c8c343e"
+                "reference": "72ec01f0d1b9f453848a1e57b5b39d2f44d23ca1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/ebb3af77ee41a4f53b8bcdd8b88b6af78c8c343e",
-                "reference": "ebb3af77ee41a4f53b8bcdd8b88b6af78c8c343e",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/72ec01f0d1b9f453848a1e57b5b39d2f44d23ca1",
+                "reference": "72ec01f0d1b9f453848a1e57b5b39d2f44d23ca1",
                 "shasum": ""
             },
             "require": {
@@ -1251,7 +1251,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2019-02-22T12:09:26+00:00"
+            "time": "2019-02-28T14:50:17+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-agreements-archive",
@@ -2890,16 +2890,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v3.4.22",
+            "version": "v3.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "667a26c4dd6bc75c67f06bc9bcd015bdecc7cbb8"
+                "reference": "8d8a9e877b3fcdc50ddecf8dcea146059753f782"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/667a26c4dd6bc75c67f06bc9bcd015bdecc7cbb8",
-                "reference": "667a26c4dd6bc75c67f06bc9bcd015bdecc7cbb8",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/8d8a9e877b3fcdc50ddecf8dcea146059753f782",
+                "reference": "8d8a9e877b3fcdc50ddecf8dcea146059753f782",
                 "shasum": ""
             },
             "require": {
@@ -2942,20 +2942,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-25T10:19:25+00:00"
+            "time": "2019-02-24T15:45:11+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v3.4.22",
+            "version": "v3.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "7c0c627220308928e958a87c293108e5891cde1d"
+                "reference": "fcdde4aa38f48190ce70d782c166f23930084f9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/7c0c627220308928e958a87c293108e5891cde1d",
-                "reference": "7c0c627220308928e958a87c293108e5891cde1d",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/fcdde4aa38f48190ce70d782c166f23930084f9b",
+                "reference": "fcdde4aa38f48190ce70d782c166f23930084f9b",
                 "shasum": ""
             },
             "require": {
@@ -2991,7 +2991,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-16T13:43:35+00:00"
+            "time": "2019-02-22T14:44:53+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -3054,16 +3054,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.4.22",
+            "version": "v3.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "81cfcd6935cb7505640153576c1f9155b2a179c1"
+                "reference": "3e2966209567ffed8825905b53fc8548446130aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/81cfcd6935cb7505640153576c1f9155b2a179c1",
-                "reference": "81cfcd6935cb7505640153576c1f9155b2a179c1",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/3e2966209567ffed8825905b53fc8548446130aa",
+                "reference": "3e2966209567ffed8825905b53fc8548446130aa",
                 "shasum": ""
             },
             "require": {
@@ -3118,7 +3118,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-25T10:00:44+00:00"
+            "time": "2019-02-23T15:06:07+00:00"
         },
         {
             "name": "true/punycode",
