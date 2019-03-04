@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e4b742de96124c4501a7f9b6ab16640",
+    "content-hash": "735d949c09e6a3f67a7c671f63a811c7",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -3265,6 +3265,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/mce-table-buttons/"
+        },
+        {
+            "name": "wpackagist-plugin/redirection",
+            "version": "4.0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/4.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.4.0.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
             "name": "wpackagist-plugin/redis-cache",
