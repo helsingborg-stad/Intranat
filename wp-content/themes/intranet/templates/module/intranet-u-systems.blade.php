@@ -11,7 +11,7 @@
 
     @if (!$hideTitle && !empty($post_title))
     <h4 class="box-title">
-        <?php _e('My systems', 'municipio-intranet'); ?>
+        {{ $post_title }}
 
         @if (is_user_logged_in())
         <button type="button" onclick="location.hash='modal-select-systems'" class="btn btn-plain btn-sm pricon pricon-edit pricon-space-right" data-user-systems-edit><?php _e('Select systems', 'municipio-intranet'); ?></button>
