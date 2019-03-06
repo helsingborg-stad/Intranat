@@ -11,7 +11,7 @@
 
     @if (!$hideTitle && !empty($post_title))
     <h4 class="box-title">
-        <?php _e('My links', 'municipio-intranet'); ?>
+        {{ $post_title }}
 
         @if (is_user_logged_in())
         <button type="button" class="btn btn-plain btn-sm pricon-space-right pricon pricon-edit" data-user-link-edit><?php _e('Edit', 'municipio-intranet'); ?></button>
