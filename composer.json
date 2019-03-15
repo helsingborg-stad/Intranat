@@ -64,7 +64,7 @@
         "wpackagist-plugin/user-switching" : ">=1.0.0",
         "wpackagist-plugin/wordpress-importer": "0.6.3",
         "wpackagist-plugin/mce-table-buttons": "^3.0.0",
-        "johnpbloch/wordpress": "^5.0",
+        "johnpbloch/wordpress": "^4.9",
         "wpackagist-plugin/kint-php-debugger": "^1.1",
         "kint-php/kint": "^2.2",
         "helsingborg-stad/algolia-multisite-enabler": ">=1.1.0",
