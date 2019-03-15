@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee2edfe9f57658a9cae91558d98abe7b",
+    "content-hash": "ac8c446413d3084f06022c9434a44b4c",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -462,16 +462,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.88",
+            "version": "v0.89",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "1ad0a77dc28f658cf65b7146ee5342bd12cfff3f"
+                "reference": "8a285822d48df1650c4c298653aa4961049a1ee8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/1ad0a77dc28f658cf65b7146ee5342bd12cfff3f",
-                "reference": "1ad0a77dc28f658cf65b7146ee5342bd12cfff3f",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/8a285822d48df1650c4c298653aa4961049a1ee8",
+                "reference": "8a285822d48df1650c4c298653aa4961049a1ee8",
                 "shasum": ""
             },
             "require": {
@@ -495,7 +495,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-03-04T00:22:51+00:00"
+            "time": "2019-03-10T00:23:16+00:00"
         },
         {
             "name": "google/auth",
@@ -790,16 +790,16 @@
         },
         {
             "name": "helsingborg-stad/active-directory-api-wp-integration",
-            "version": "2.2.13",
+            "version": "2.2.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/active-directory-api-wp-integration.git",
-                "reference": "b7c4443874666af86cd0472d32227888ca296c0e"
+                "reference": "a9f7eb8cbac026eadce269d45ad67cb01caa31da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/b7c4443874666af86cd0472d32227888ca296c0e",
-                "reference": "b7c4443874666af86cd0472d32227888ca296c0e",
+                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/a9f7eb8cbac026eadce269d45ad67cb01caa31da",
+                "reference": "a9f7eb8cbac026eadce269d45ad67cb01caa31da",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -814,7 +814,7 @@
                 }
             ],
             "description": "Simple plugin for verification of existing WordPress users with api.",
-            "time": "2019-02-12T08:59:43+00:00"
+            "time": "2019-03-14T09:39:42+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-multisite-enabler",
@@ -886,16 +886,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.8.0",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "f2d2b201d38215ee498deccd45f339fee4ef57bf"
+                "reference": "a67738c40f627914adbd85af2141150e43201ca6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/f2d2b201d38215ee498deccd45f339fee4ef57bf",
-                "reference": "f2d2b201d38215ee498deccd45f339fee4ef57bf",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/a67738c40f627914adbd85af2141150e43201ca6",
+                "reference": "a67738c40f627914adbd85af2141150e43201ca6",
                 "shasum": ""
             },
             "require": {
@@ -914,7 +914,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2019-03-05T13:15:01+00:00"
+            "time": "2019-03-08T15:32:37+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1245,16 +1245,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "2.11.8",
+            "version": "2.11.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "72ec01f0d1b9f453848a1e57b5b39d2f44d23ca1"
+                "reference": "91a8d7e7c5566ec4c5a908f21956f864894b6bcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/72ec01f0d1b9f453848a1e57b5b39d2f44d23ca1",
-                "reference": "72ec01f0d1b9f453848a1e57b5b39d2f44d23ca1",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/91a8d7e7c5566ec4c5a908f21956f864894b6bcd",
+                "reference": "91a8d7e7c5566ec4c5a908f21956f864894b6bcd",
                 "shasum": ""
             },
             "require": {
@@ -1286,7 +1286,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2019-02-28T14:50:17+00:00"
+            "time": "2019-03-14T15:56:01+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-agreements-archive",
@@ -2135,20 +2135,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.9.9",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "9cd9b6d8364860a36fd02b088e2fea270f7f531d"
+                "reference": "b5673ea8f30a518eaf311c90f1d074c44b54e15e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/9cd9b6d8364860a36fd02b088e2fea270f7f531d",
-                "reference": "9cd9b6d8364860a36fd02b088e2fea270f7f531d",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/b5673ea8f30a518eaf311c90f1d074c44b54e15e",
+                "reference": "b5673ea8f30a518eaf311c90f1d074c44b54e15e",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "4.9.9",
+                "johnpbloch/wordpress-core": "5.1.1",
                 "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.3.2"
             },
@@ -2170,27 +2170,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-12-13T03:42:59+00:00"
+            "time": "2019-03-13T00:27:35+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.9.9",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "3f6081c514707ad25153b9acb90f022cd122d759"
+                "reference": "dba22982e7cb433b68f1b12a0bd4e5851f967010"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/3f6081c514707ad25153b9acb90f022cd122d759",
-                "reference": "3f6081c514707ad25153b9acb90f022cd122d759",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/dba22982e7cb433b68f1b12a0bd4e5851f967010",
+                "reference": "dba22982e7cb433b68f1b12a0bd4e5851f967010",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "4.9.9"
+                "wordpress/core-implementation": "5.1.1"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -2210,7 +2210,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-12-13T03:42:54+00:00"
+            "time": "2019-03-13T00:27:30+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -2498,16 +2498,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.14",
+            "version": "2.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "8ebfcadbf30524aeb75b2c446bc2519d5b321478"
+                "reference": "11cf67cf78dc4acb18dc9149a57be4aee5036ce0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/8ebfcadbf30524aeb75b2c446bc2519d5b321478",
-                "reference": "8ebfcadbf30524aeb75b2c446bc2519d5b321478",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/11cf67cf78dc4acb18dc9149a57be4aee5036ce0",
+                "reference": "11cf67cf78dc4acb18dc9149a57be4aee5036ce0",
                 "shasum": ""
             },
             "require": {
@@ -2586,7 +2586,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2019-01-27T19:37:29+00:00"
+            "time": "2019-03-10T16:53:45+00:00"
         },
         {
             "name": "psr/cache",
@@ -3263,15 +3263,15 @@
         },
         {
             "name": "wpackagist-plugin/kint-php-debugger",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/kint-php-debugger/",
-                "reference": "tags/1.2.1"
+                "reference": "tags/1.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/kint-php-debugger.1.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/kint-php-debugger.1.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
