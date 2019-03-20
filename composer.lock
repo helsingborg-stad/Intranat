@@ -1375,16 +1375,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.7.5",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "3d2b9475fee189cf503802451361795260aa6b76"
+                "reference": "39df093a6635d339f027249beb88278943ecba65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/3d2b9475fee189cf503802451361795260aa6b76",
-                "reference": "3d2b9475fee189cf503802451361795260aa6b76",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/39df093a6635d339f027249beb88278943ecba65",
+                "reference": "39df093a6635d339f027249beb88278943ecba65",
                 "shasum": ""
             },
             "require": {
@@ -1410,7 +1410,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2019-03-06T13:48:37+00:00"
+            "time": "2019-03-20T14:42:18+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-googleapps",
