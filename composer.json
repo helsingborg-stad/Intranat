@@ -12,16 +12,16 @@
             "email": "webbredaktionen@helsingborg.se"
         }
     ],
-    "minimum-stability" : "dev",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
         {
-            "type":"composer",
-            "url":"https://packagist.org"
+            "type": "composer",
+            "url": "https://packagist.org"
         },
         {
-            "type":"composer",
-            "url":"https://wpackagist.org"
+            "type": "composer",
+            "url": "https://wpackagist.org"
         }
     ],
     "require": {
@@ -61,16 +61,16 @@
         "wpackagist-plugin/elasticpress": "2.3.2",
         "wpackagist-plugin/stream": "^3.0.4",
         "wpackagist-plugin/wp-nested-pages": "2.0.4",
-        "wpackagist-plugin/user-switching" : ">=1.0.0",
+        "wpackagist-plugin/user-switching": ">=1.0.0",
         "wpackagist-plugin/wordpress-importer": "0.6.3",
         "wpackagist-plugin/mce-table-buttons": "^3.0.0",
-        "johnpbloch/wordpress": "^4.9",
+        "johnpbloch/wordpress": ">=5.0.0",
         "wpackagist-plugin/kint-php-debugger": "^1.1",
         "kint-php/kint": "^2.2",
         "helsingborg-stad/algolia-multisite-enabler": ">=1.1.0",
         "wpackagist-plugin/classic-editor": "^0.4.0",
         "helsingborg-stad/media-usage": "^1.0",
-        "helsingborg-stad/skyfish-integration": ">=0.6.0",
+        "helsingborg-stad/skyfish-integration": ">=0.8.5",
         "helsingborg-stad/modularity-sections": "^1.3",
         "helsingborg-stad/modularity-agreements-archive": "^1.0",
         "wpackagist-plugin/redirection": "^4.0",
@@ -80,8 +80,12 @@
         "path": "/",
         "wordpress-install-dir": "wp",
         "installer-paths": {
-            "wp-content/plugins/{$name}": ["type:wordpress-plugin"],
-            "wp-content/themes/{$name}": ["type:wordpress-theme"]
+            "wp-content/plugins/{$name}": [
+                "type:wordpress-plugin"
+            ],
+            "wp-content/themes/{$name}": [
+                "type:wordpress-theme"
+            ]
         }
     }
 }

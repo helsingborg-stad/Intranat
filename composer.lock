@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee2edfe9f57658a9cae91558d98abe7b",
+    "content-hash": "c25fe2c62bef382e402113ab4c4f94e4",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1702,16 +1702,16 @@
         },
         {
             "name": "helsingborg-stad/skyfish-integration",
-            "version": "0.8.4",
+            "version": "0.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-skyfish-integration.git",
-                "reference": "ff37db73692223729aa3091a29b7ccdbf9fe51ef"
+                "reference": "270b8cf6792ef4bcc06dda49a1bec831b4aebba6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/ff37db73692223729aa3091a29b7ccdbf9fe51ef",
-                "reference": "ff37db73692223729aa3091a29b7ccdbf9fe51ef",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/270b8cf6792ef4bcc06dda49a1bec831b4aebba6",
+                "reference": "270b8cf6792ef4bcc06dda49a1bec831b4aebba6",
                 "shasum": ""
             },
             "require": {
@@ -1729,7 +1729,7 @@
                 }
             ],
             "description": "Skyfish integration for Wordpress",
-            "time": "2018-11-06T09:40:47+00:00"
+            "time": "2019-03-20T13:53:29+00:00"
         },
         {
             "name": "helsingborg-stad/todo",
@@ -2135,20 +2135,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.9.10",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "fa10404bdcf045704f7ff519f483af6acd4cf5ef"
+                "reference": "b5673ea8f30a518eaf311c90f1d074c44b54e15e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/fa10404bdcf045704f7ff519f483af6acd4cf5ef",
-                "reference": "fa10404bdcf045704f7ff519f483af6acd4cf5ef",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/b5673ea8f30a518eaf311c90f1d074c44b54e15e",
+                "reference": "b5673ea8f30a518eaf311c90f1d074c44b54e15e",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "4.9.10",
+                "johnpbloch/wordpress-core": "5.1.1",
                 "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.3.2"
             },
@@ -2170,27 +2170,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-03-13T01:13:10+00:00"
+            "time": "2019-03-13T00:27:35+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.9.10",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "06dad62aa1ab1ef215034fb07d6aec4a68072313"
+                "reference": "dba22982e7cb433b68f1b12a0bd4e5851f967010"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/06dad62aa1ab1ef215034fb07d6aec4a68072313",
-                "reference": "06dad62aa1ab1ef215034fb07d6aec4a68072313",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/dba22982e7cb433b68f1b12a0bd4e5851f967010",
+                "reference": "dba22982e7cb433b68f1b12a0bd4e5851f967010",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "4.9.10"
+                "wordpress/core-implementation": "5.1.1"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -2210,7 +2210,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-03-13T01:13:06+00:00"
+            "time": "2019-03-13T00:27:30+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
