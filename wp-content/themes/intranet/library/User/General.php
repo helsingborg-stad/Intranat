@@ -270,7 +270,6 @@ class General
 
             // Eavning greetings
             'eavning' => array(
-                __('It\'s getting late, %s', 'municipio-intranet'),
                 __('Good eavning %s', 'municipio-intranet'),
             ),
 
