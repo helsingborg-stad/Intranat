@@ -1765,16 +1765,16 @@
         },
         {
             "name": "helsingborg-stad/wp-listings",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/wp-listings.git",
-                "reference": "ce3f6064eacd208c42b77aa8d9185bc6a308e906"
+                "reference": "6c033cf6c3e4684bc4f54b7136a26fbb0bee9c17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/wp-listings/zipball/ce3f6064eacd208c42b77aa8d9185bc6a308e906",
-                "reference": "ce3f6064eacd208c42b77aa8d9185bc6a308e906",
+                "url": "https://api.github.com/repos/helsingborg-stad/wp-listings/zipball/6c033cf6c3e4684bc4f54b7136a26fbb0bee9c17",
+                "reference": "6c033cf6c3e4684bc4f54b7136a26fbb0bee9c17",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1788,7 +1788,7 @@
                     "email": "kristoffer.svanmark@lexiconitkonsult.se"
                 }
             ],
-            "time": "2017-09-05T13:13:21+00:00"
+            "time": "2019-04-25T15:13:22+00:00"
         },
         {
             "name": "helsingborg-stad/wp-page-for-post-type",
