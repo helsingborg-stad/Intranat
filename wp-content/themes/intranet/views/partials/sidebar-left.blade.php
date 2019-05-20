@@ -10,6 +10,10 @@
     {!! $navigation['sidebarMenu'] !!}
     @endif
 
+    @if (get_field('nav_sub_enable', 'option'))
+    {!! $userNavigation['sidebarMenu'] !!}
+    @endif
+
     @if (is_main_site() && is_front_page() && $forced = \Intranet\User\Subscription::getForcedSubscriptions(false, false))
     <ul class="gutter gutter-bottom">
     @foreach ($forced as $site)

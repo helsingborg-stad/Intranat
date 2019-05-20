@@ -10,6 +10,9 @@ class BaseController extends \Municipio\Controller\BaseController
         $this->updateProfileReminder();
 
         parent::__construct();
+
+
+        $this->getNavigationMenus(4, 'userNavigation');
     }
 
     /**
