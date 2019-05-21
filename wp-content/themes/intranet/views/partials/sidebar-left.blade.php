@@ -6,11 +6,13 @@
         </div>
     @endif
 
+
+
     @if (get_field('nav_sub_enable', 'option'))
     {!! $navigation['sidebarMenu'] !!}
     @endif
 
-    @if (get_field('nav_sub_enable', 'option'))
+    @if (get_field('nav_sub_enable', 'option') && is_main_site())
     {!! $userNavigation['sidebarMenu'] !!}
     @endif
 
