@@ -8,17 +8,19 @@
 
     {{--- Dynamic cross site navigation ---}}
 
-    @if (get_field('nav_sub_enable', 'option') && isset($portalNavigation))
-    {!! $portalNavigation['sidebarMenu'] !!}
-    @endif
+    <div class="sidebar-menu-wrapper">
+        @if (get_field('nav_sub_enable', 'option') && isset($portalNavigation))
+        {!! $portalNavigation['sidebarMenu'] !!}
+        @endif
 
-    @if (get_field('nav_sub_enable', 'option') && isset($navigation))
-    {!! $navigation['sidebarMenu'] !!}
-    @endif
+        @if (get_field('nav_sub_enable', 'option') && isset($navigation))
+        {!! $navigation['sidebarMenu'] !!}
+        @endif
 
-    @if (get_field('nav_sub_enable', 'option') && isset($userNavigation))
-    {!! $userNavigation['sidebarMenu'] !!}
-    @endif
+        @if (get_field('nav_sub_enable', 'option') && isset($userNavigation))
+        {!! $userNavigation['sidebarMenu'] !!}
+        @endif
+    </div>
 
     @if (is_main_site() && is_front_page() && $forced = \Intranet\User\Subscription::getForcedSubscriptions(false, false))
     <ul class="gutter gutter-bottom">

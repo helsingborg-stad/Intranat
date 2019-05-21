@@ -1,0 +1,26 @@
+.sidebar-menu-wrapper {
+
+    nav {
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08); 
+
+        ul, ul li,
+        ul.sub-menu {
+            border-color: #e5e5e5; 
+        }
+
+        ul li [data-load-submenu]  {
+            outline-color: #e5e5e5; 
+        }
+        
+    }
+
+    .is-front-page {
+        a {
+            font-weight: bold; 
+            padding: 10.66667px 16px;
+            margin: 0;
+            font-size: 19px; 
+            line-height: 24px; 
+        }
+    }
+}
