@@ -2,7 +2,7 @@
 
 namespace Intranet\Controller;
 
-class Page extends \Municipio\Controller\BaseController
+class Page extends \Intranet\Controller\BaseController
 {
     public function init()
     {

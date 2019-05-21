@@ -2,7 +2,7 @@
 
 namespace Municipio\Controller;
 
-class Taxonomy extends \Municipio\Controller\BaseController
+class Taxonomy extends \Intranet\Controller\BaseController
 {
     public function init()
     {

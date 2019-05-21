@@ -6,13 +6,17 @@
         </div>
     @endif
 
+    {{--- Dynamic cross site navigation ---}}
 
+    @if (get_field('nav_sub_enable', 'option') && isset($portalNavigation))
+    {!! $portalNavigation['sidebarMenu'] !!}
+    @endif
 
-    @if (get_field('nav_sub_enable', 'option'))
+    @if (get_field('nav_sub_enable', 'option') && isset($navigation))
     {!! $navigation['sidebarMenu'] !!}
     @endif
 
-    @if (get_field('nav_sub_enable', 'option') && is_main_site())
+    @if (get_field('nav_sub_enable', 'option') && isset($userNavigation))
     {!! $userNavigation['sidebarMenu'] !!}
     @endif
 

@@ -11,8 +11,57 @@ class BaseController extends \Municipio\Controller\BaseController
 
         parent::__construct();
 
+        //Get users local menu or portal menu
+        if(is_main_site()) {
+            if($homeSiteId = $this->getHomeSite(get_current_user_id())) {
+                $this->getNavigationMenus(
+                    $homeSiteId, 
+                    'userNavigation'
+                );
+            }
+        } else {
+            $this->getNavigationMenus(
+                get_main_site_id(), 
+                'portalNavigation'
+            );
+        }
+    }
 
-        $this->getNavigationMenus(4, 'userNavigation');
+
+    /**
+     * Autosubscribe to the users main intranet on registration
+     * @param  integer $userId User id
+     * @return void
+     */
+    public function getHomeSite($userId)
+    {
+        if (!is_numeric($userId)) {
+            $userId = username_exists($userId);
+        }
+
+        if (is_numeric($userId)) {
+            $adTag = get_user_meta($userId, 'ad_displayname', true);
+            $adTag = explode('-', $adTag);
+
+            if (is_array($adTag) && !empty($adTag)) {
+                $adTag = strtolower(trim(end($adTag)));
+
+                $sites = \Intranet\Helper\Multisite::getSitesList();
+
+                foreach ($sites as $key => $site) {
+                    
+                    if(!$site->is_administration_unit) {
+                        continue; 
+                    }
+                    
+                    if ($site->autosubscribe_tags == $adTag) {
+                        return (int) $site->blog_id;
+                    }
+
+                }
+            }
+        }
+        return null; 
     }
 
     /**
