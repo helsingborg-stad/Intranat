@@ -9,16 +9,16 @@
     {{--- Dynamic cross site navigation ---}}
 
     <div class="sidebar-menu-wrapper">
-        @if (get_field('nav_sub_enable', 'option') && isset($portalNavigation))
-        {!! $portalNavigation['sidebarMenu'] !!}
+        @if (get_field('nav_sub_enable', 'option') && isset($userNavigation))
+        {!! $userNavigation['sidebarMenu'] !!}
         @endif
 
         @if (get_field('nav_sub_enable', 'option') && isset($navigation))
         {!! $navigation['sidebarMenu'] !!}
         @endif
 
-        @if (get_field('nav_sub_enable', 'option') && isset($userNavigation))
-        {!! $userNavigation['sidebarMenu'] !!}
+        @if (get_field('nav_sub_enable', 'option') && isset($portalNavigation))
+        {!! $portalNavigation['sidebarMenu'] !!}
         @endif
     </div>
 
