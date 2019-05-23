@@ -27,7 +27,7 @@
     "require": {
         "composer/installers": "~1.0",
         "giggsey/libphonenumber-for-php": "7.6.0",
-        "helsingborg-stad/active-directory-api-wp-integration": ">=2.1.17",
+        "helsingborg-stad/active-directory-api-wp-integration": "^2.2",
         "helsingborg-stad/Modularity": ">=2.8.3",
         "helsingborg-stad/Municipio": ">=1.21.0",
         "helsingborg-stad/lix-calculator": ">=2.0.1",

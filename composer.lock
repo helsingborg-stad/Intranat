@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf69eb3dfc6e27f4773c754803cd1e16",
+    "content-hash": "e5eb377c20e0db816ca7c67838ef5b92",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1249,16 +1249,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "2.11.11",
+            "version": "2.11.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "db4fcde30ba5db4fac9c8b3c3475c8229b50271d"
+                "reference": "8bd49ef0767f6ee9620d82bebc0ab66144ac02fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/db4fcde30ba5db4fac9c8b3c3475c8229b50271d",
-                "reference": "db4fcde30ba5db4fac9c8b3c3475c8229b50271d",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/8bd49ef0767f6ee9620d82bebc0ab66144ac02fe",
+                "reference": "8bd49ef0767f6ee9620d82bebc0ab66144ac02fe",
                 "shasum": ""
             },
             "require": {
@@ -1290,7 +1290,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2019-03-27T15:45:16+00:00"
+            "time": "2019-05-23T08:27:27+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-agreements-archive",
