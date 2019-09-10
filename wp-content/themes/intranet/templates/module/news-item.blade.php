@@ -11,7 +11,8 @@
         <div class="box-content">
             <div class="sub-heading clearfix">
                 <span>{!! municipio_intranet_format_site_name(\Intranet\Helper\Multisite::getSite($item->blog_id), 'long') !!}</span>
-                <time class="pricon pricon-clock pricon-space-right" datetime="{{ mysql2date('Y-m-d H:i:s', strtotime($item->post_date)) }}">{{ mysql2date(get_option('date_format'), $item->post_date) }}</time>
+
+                <time class="pricon pricon-clock pricon-space-right" datetime="{{ mysql2date('Y-m-d H:i:s', strtotime($item->post_date)) }}">@if ($item->is_sticky) {{_e('Published', 'municipio-intranet')}}: @endif; {{ mysql2date(get_option('date_format'), $item->post_date) }}</time>
 
                 <?php switch_to_blog($item->blog_id); ?>
                     @if (comments_open($item->ID) && is_user_logged_in())
