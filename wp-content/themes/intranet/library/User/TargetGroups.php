@@ -156,6 +156,8 @@ class TargetGroups
 
         // Add user's groups if logged in
         if (is_user_logged_in()) {
+            $groups[] = 'loggedin';
+
             $groups = array_merge(
                 $groups,
                 (array) get_user_meta($userId, 'user_target_groups', true)
@@ -164,6 +166,18 @@ class TargetGroups
             foreach ((array) get_user_meta($userId, 'user_administration_unit', true) as $administrationUnit) {
                 $groups[] = 'unit-' . $administrationUnit;
             }
+
+            $groups = array_filter($groups, function($item) {
+                if (empty($item)) {
+                    return false;
+                }
+
+                if ($item == "unit-") {
+                    return false;
+                }
+
+                return true;
+            });
         } else {
             $groups[] = 'loggedout';
         }
@@ -453,9 +467,9 @@ class TargetGroups
         $groups = self::getAvailableGroups();
         echo "<script>var mce_target_content_groups = [";
 
-            foreach ($groups as $group) {
-                echo "{id: '{$group->id}', tag: '{$group->tag}'},";
-            }
+        foreach ($groups as $group) {
+            echo "{id: '{$group->id}', tag: '{$group->tag}'},";
+        }
 
         echo "]</script>";
     }
