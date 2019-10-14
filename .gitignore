@@ -37,3 +37,5 @@ wp-content/mu-plugins/attachmentDownloader.php
 # Operating system files
 .DS_Store
 /.idea
+/post-queries.log
+/post.log

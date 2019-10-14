@@ -9,7 +9,6 @@ class Incidents
     public function __construct()
     {
         add_action('init', array($this, 'registerCustomPostType'));
-        add_filter('posts_results', array($this, 'getIncidentsArchive'), 10, 2);
 
         add_action('Municipio/blog/post_info', function ($post) {
             if ($post->post_type != 'incidents' || (!get_field('start_date') && !get_field('end_date'))) {
@@ -78,24 +77,6 @@ class Incidents
         );
 
         register_post_type(self::$postTypeSlug, $args);
-    }
-
-    public function getIncidentsArchive($posts, $query)
-    {
-        if (!isset($query->query['post_type']) || $query->query['post_type'] !== self::$postTypeSlug) {
-            return $posts;
-        }
-
-        if (is_single()) {
-            foreach ($posts as $post) {
-                $post->blog_id = get_current_blog_id();
-                $post->incident_level = get_field('level', $post->ID);
-            }
-
-            return $posts;
-        }
-
-        return self::getIncidents();
     }
 
     /**

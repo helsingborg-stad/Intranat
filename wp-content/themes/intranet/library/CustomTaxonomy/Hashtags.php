@@ -54,6 +54,7 @@ class Hashtags
             'show_tagcloud'         => false,
             'show_ui'               => true,
             'query_var'             => true,
+            'show_in_rest'          => true,
             'rewrite'               => array('with_front' => false, 'slug' => self::$taxonomySlug),
         );
 

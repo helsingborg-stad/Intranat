@@ -30,7 +30,6 @@ class News extends \Modularity\Module
         $data['news'] = \Intranet\CustomPostType\News::getNews($limit, $sites);
         $data['helpTooltip'] = false;
         $data['module'] = $this->data;
-
         $data['sites'] = $sites;
         if (is_array($data['sites'])) {
             $data['sites'] = implode(',', $sites);
