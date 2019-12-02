@@ -382,6 +382,11 @@ class News
     {
         global $wpdb;
 
+        // Remove inactive/deleted sites from the list
+        $sites = array_filter($sites, function ($site) {
+            return isset(get_site($site)->deleted) && !get_site($site)->deleted;
+        });
+
         if (is_null($offset)) {
             $offset = 0;
         }
