@@ -382,6 +382,11 @@ class News
     {
         global $wpdb;
 
+        // Remove inactive/deleted sites from the list
+        $sites = array_filter($sites, function ($site) {
+            return isset(get_site($site)->deleted) && !get_site($site)->deleted;
+        });
+
         if (is_null($offset)) {
             $offset = 0;
         }
@@ -436,11 +441,11 @@ class News
                     '{$site}' AS blog_id,
                     posts.ID AS post_id,
                     posts.post_date,
-                    CASE WHEN postmeta1.meta_value THEN postmeta1.meta_value ELSE 0 END AS is_sticky,
-                    CASE WHEN postmeta2.meta_value THEN postmeta2.meta_value ELSE 0 END AS page_views,
-                    postmeta3.meta_value AS user_views,
-                    CASE WHEN postmeta4.meta_value THEN postmeta4.meta_value ELSE 0 END AS exclude_post,
-                    postmeta5.meta_value AS target_groups
+                    CASE WHEN postmeta1.meta_value COLLATE utf8mb4_swedish_ci THEN postmeta1.meta_value ELSE 0 END AS is_sticky,
+                    CASE WHEN postmeta2.meta_value COLLATE utf8mb4_swedish_ci THEN postmeta2.meta_value ELSE 0 END AS page_views,
+                    postmeta3.meta_value COLLATE utf8mb4_swedish_ci AS user_views,
+                    CASE WHEN postmeta4.meta_value COLLATE utf8mb4_swedish_ci THEN postmeta4.meta_value ELSE 0 END AS exclude_post,
+                    postmeta5.meta_value COLLATE utf8mb4_swedish_ci AS target_groups
                 FROM $postsTable posts
                     LEFT JOIN $postMetaTable postmeta1 ON posts.ID = postmeta1.post_id AND postmeta1.meta_key = 'is_sticky'
                     LEFT JOIN $postMetaTable postmeta2 ON posts.ID = postmeta2.post_id AND postmeta2.meta_key = '_page_views'
