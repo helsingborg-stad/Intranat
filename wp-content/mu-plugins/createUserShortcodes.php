@@ -57,7 +57,7 @@ class CreateSummeraSupportShortcode
         'email' => $this->getUserEmail()
       ); 
 
-      return '<iframe src="' . $url . http_build_query($urlParts) . '" frameborder="0" style="width: 100%; height: 800px;"></iframe>';
+      return '<iframe src="' . $baseUrl . http_build_query($urlParts) . '" frameborder="0" style="width: 100%; height: 800px;"></iframe>';
     }
 }
 
