@@ -1,34 +1,32 @@
 <?php
 
 /*
-Plugin Name: User Shortcodes
-Description: Creates shortcodes [intranet_user_email], [intranet_user_firstname] and [intranet_user_lastname]
+Plugin Name: Summera support
+Description: Creates shortcodes [summera_support]
 Version:     1.0
 Author:      Sebastian Thulin
 */
 
-namespace CreateUserShortcodes;
+namespace CreateSummeraSupportShortcode;
 
-class CreateUserShortcodes
+class CreateSummeraSupportShortcode
 {
     public function __construct()
     {
-      add_shortcode('intranet_user_email',array($this, 'registerUserEmail'));
-      add_shortcode('intranet_user_firstname',array($this, 'registerUserFirstName'));
-      add_shortcode('intranet_user_lastname',array($this, 'registerUserLastName'));
+      add_shortcode('summera_support',array($this, 'renderIframeCode'));
     }
 
-    public function registerUserEmail()
+    public function getUserEmail()
     {
       return $this->getCurrentUserData('user_email');
     }
 
-    public function registerUserFirstName()
+    public function getUserFirstName()
     {
       return $this->getCurrentUserData('user_firstname');
     }
 
-    public function registerUserLastName()
+    public function getUserLastName()
     {
       return $this->getCurrentUserData('user_lastname');
     }
@@ -48,6 +46,19 @@ class CreateUserShortcodes
 
       return ""; 
     }
+
+    public function renderIframeCode() {
+
+      $baseUrl = '//helsingborg.summera.support/forms/custom_form.aspx?'; 
+
+      $urlParts = array(
+        'key' => 'newticket_ext_it_zgroxxmgbkqlylpuipemkloq',
+        'name' => $this->getUserFirstName() . ' ' . $this->getUserLastName(),
+        'email' => $this->getUserEmail()
+      ); 
+
+      return '<iframe src="' . $url . http_build_query($urlParts) . '" frameborder="0" style="width: 100%; height: 800px;"></iframe>';
+    }
 }
 
-new \CreateUserShortcodes\CreateUserShortcodes();
+new \CreateSummeraSupportShortcode\CreateSummeraSupportShortcode();
