@@ -29,7 +29,7 @@
         "giggsey/libphonenumber-for-php": "7.6.0",
         "helsingborg-stad/active-directory-api-wp-integration": ">=2.1.17",
         "helsingborg-stad/Modularity": ">=2.8.3",
-        "helsingborg-stad/Municipio": ">=1.28.0",
+        "helsingborg-stad/Municipio": ">=1.29.2",
         "helsingborg-stad/lix-calculator": ">=2.0.1",
         "helsingborg-stad/custom-short-links": ">=1.1.0",
         "helsingborg-stad/Customer-feedback": ">=2.2.19",
