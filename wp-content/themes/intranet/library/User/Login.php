@@ -24,6 +24,12 @@ class Login
         } else {
             $referer = "/";
         }
+
+        // Prevent /kf/kf/
+        if (is_multisite()) {
+            return network_home_url($referer);
+        }
+
         return home_url($referer);
     }
 
