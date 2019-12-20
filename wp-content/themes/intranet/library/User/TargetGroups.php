@@ -117,6 +117,10 @@ class TargetGroups
             return;
         }
 
+        if(!$query->is_main_query()) {
+            return; 
+        }
+
         $groups = self::getGroups();
 
         $metaQuery = $query->get('meta_query');
