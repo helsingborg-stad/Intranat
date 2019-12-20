@@ -12,7 +12,7 @@ class IntranetDefaultSettings
         add_action('wpmu_new_blog', array($this, 'searchWpSettings'));
 
         // Site list
-        add_action('init', array($this, 'sitesListPageUrlRewrite'));
+        add_action('wpmu_new_blog', array($this, 'sitesListPageUrlRewrite'));
         add_filter('template_include', array($this, 'sitesListPageTemplate'), 10);
     }
 
@@ -174,7 +174,7 @@ class IntranetDefaultSettings
      * Adds site list rewrite rules
      * @return void
      */
-    public function sitesListPageUrlRewrite()
+    public function sitesListPageUrlRewrite($blogId)
     {
         add_rewrite_rule('^sites', 'index.php?site_list=all', 'top');
         add_rewrite_rule('^sites/?([a-zA-Z0-9_-]+)?', 'index.php?site_list=$matches[1]', 'top');
