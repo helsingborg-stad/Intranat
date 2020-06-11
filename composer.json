@@ -2,9 +2,6 @@
     "name": "helsingborg-stad/intranat",
     "license": "GNU",
     "config": {
-        "platform": {
-            "php": "7.0.31"
-        }
     },
     "authors": [
         {
@@ -74,7 +71,10 @@
         "helsingborg-stad/modularity-sections": "^1.3",
         "helsingborg-stad/modularity-agreements-archive": "^1.0",
         "wpackagist-plugin/redirection": "^4.0",
-        "helsingborg-stad/algoliasearch-wordpress": "^2.11"
+        "helsingborg-stad/algoliasearch-wordpress": "^2.11",
+        "helsingborg-stad/algolia-index": "^1.7",
+        "helsingborg-stad/algolia-index-modularity-addon": "^1.0",
+        "helsingborg-stad/algolia-index-js-searchpage-addon": "^1.0"
     },
     "extra": {
         "path": "/",
