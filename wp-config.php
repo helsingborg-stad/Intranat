@@ -28,6 +28,15 @@ require_once 'config/upload.php';
 require_once 'config/cron.php';
 
 /**
+ * Search settings
+ *
+ * Searchengine configuration. 
+ */
+if (file_exists(__DIR__ . '/config/search.php')) {
+    require_once 'config/search.php';
+}
+
+/**
  * Cache settings
  *
  * To enable cache add a file called cache.php with appropriate settings .
