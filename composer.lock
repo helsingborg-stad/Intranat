@@ -923,16 +923,16 @@
         },
         {
             "name": "helsingborg-stad/algolia-index",
-            "version": "1.7.3",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/algolia-index.git",
-                "reference": "5dae5abc3d4be7eccefb5868c0acdf0911ca9917"
+                "reference": "31bef42fd02f3d871b988fe1099f063e761ad555"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index/zipball/5dae5abc3d4be7eccefb5868c0acdf0911ca9917",
-                "reference": "5dae5abc3d4be7eccefb5868c0acdf0911ca9917",
+                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index/zipball/31bef42fd02f3d871b988fe1099f063e761ad555",
+                "reference": "31bef42fd02f3d871b988fe1099f063e761ad555",
                 "shasum": ""
             },
             "require": {
@@ -961,20 +961,20 @@
                 }
             ],
             "description": "Index wordpress site content to algolia.",
-            "time": "2020-06-08T14:24:26+00:00"
+            "time": "2020-06-23T11:17:42+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-index-js-searchpage-addon",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon.git",
-                "reference": "a293fbf58ada658a9956a8723ce8b1f5807af1fd"
+                "reference": "83e8a8a48a3d69ba32143f5aaf5cfca39cad7991"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index-js-searchpage-addon/zipball/a293fbf58ada658a9956a8723ce8b1f5807af1fd",
-                "reference": "a293fbf58ada658a9956a8723ce8b1f5807af1fd",
+                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index-js-searchpage-addon/zipball/83e8a8a48a3d69ba32143f5aaf5cfca39cad7991",
+                "reference": "83e8a8a48a3d69ba32143f5aaf5cfca39cad7991",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -989,7 +989,7 @@
                 }
             ],
             "description": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon",
-            "time": "2020-05-12T08:18:23+00:00"
+            "time": "2020-06-23T12:57:34+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-index-modularity-addon",
