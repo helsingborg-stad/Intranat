@@ -33,6 +33,11 @@ class Enqueue
      */
     public function script()
     {
+
+        if(self::isSearchPage()) {
+            wp_enqueue_script('wp-util');
+        }
+
         wp_register_script('intranet', get_stylesheet_directory_uri(). '/assets/dist/' . \Municipio\Helper\CacheBust::name('js/app.js', true, true));
 
         wp_localize_script('intranet', 'municipioIntranet', array(
@@ -76,5 +81,18 @@ class Enqueue
     {
         wp_enqueue_style('intranet-admin', get_stylesheet_directory_uri(). '/assets/dist/' . \Municipio\Helper\CacheBust::name('css/admin.css', true, true));
         wp_enqueue_script('intranet-admin', get_stylesheet_directory_uri(). '/assets/dist/' . \Municipio\Helper\CacheBust::name('js/admin.js', true, true));
+    }
+
+    /**
+     * Check if search page is active page
+     *
+     * @return boolean
+     */
+    private static function isSearchPage()
+    {
+        if (trim(strtok($_SERVER["REQUEST_URI"], '?'), "/") == "" && is_search()) {
+            return true;
+        }
+        return false;
     }
 }
