@@ -15,3 +15,6 @@
  * @var bool
  */
 define('ALGOLIA_INIT_PRIORITY', 5);
+
+//Algilia index js mod
+define('ALGOLIA_INDEX_MOUNT_POINT', 'loop_start');
