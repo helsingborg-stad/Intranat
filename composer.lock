@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "2.6.1",
+            "version": "2.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "dd7eb942ff15c45179043b4cce51e53b4cf10112"
+                "reference": "6721dd2bff8c5a9de6152d550c896d147e013e40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/dd7eb942ff15c45179043b4cce51e53b4cf10112",
-                "reference": "dd7eb942ff15c45179043b4cce51e53b4cf10112",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/6721dd2bff8c5a9de6152d550c896d147e013e40",
+                "reference": "6721dd2bff8c5a9de6152d550c896d147e013e40",
                 "shasum": ""
             },
             "require": {
@@ -74,7 +74,7 @@
                 "php",
                 "search"
             ],
-            "time": "2020-04-16T08:45:30+00:00"
+            "time": "2020-06-23T15:16:17+00:00"
         },
         {
             "name": "aristath/kirki",
@@ -965,16 +965,16 @@
         },
         {
             "name": "helsingborg-stad/algolia-index-js-searchpage-addon",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon.git",
-                "reference": "83e8a8a48a3d69ba32143f5aaf5cfca39cad7991"
+                "reference": "3fa59e78a3692869504f74cc98d4d3822069f42b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index-js-searchpage-addon/zipball/83e8a8a48a3d69ba32143f5aaf5cfca39cad7991",
-                "reference": "83e8a8a48a3d69ba32143f5aaf5cfca39cad7991",
+                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index-js-searchpage-addon/zipball/3fa59e78a3692869504f74cc98d4d3822069f42b",
+                "reference": "3fa59e78a3692869504f74cc98d4d3822069f42b",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -989,7 +989,7 @@
                 }
             ],
             "description": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon",
-            "time": "2020-06-23T12:57:34+00:00"
+            "time": "2020-06-24T07:16:27+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-index-modularity-addon",
@@ -1021,16 +1021,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.15.2",
+            "version": "0.15.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "3483b901b773603d95e47da4922eecbf546322b3"
+                "reference": "d52accf0e231ad19960d4580284482854362c7c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/3483b901b773603d95e47da4922eecbf546322b3",
-                "reference": "3483b901b773603d95e47da4922eecbf546322b3",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/d52accf0e231ad19960d4580284482854362c7c1",
+                "reference": "d52accf0e231ad19960d4580284482854362c7c1",
                 "shasum": ""
             },
             "require": {
@@ -1050,7 +1050,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2020-03-31T08:28:27+00:00"
+            "time": "2020-06-23T13:57:39+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
