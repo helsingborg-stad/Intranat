@@ -7,10 +7,12 @@ class Algolia
 
     public function __construct()
     {
+
+        //Define constant for filter apperance
+        define('ALGOLIA_INDEX_FACETTING_APPERANCE_MENU', true); 
+
         //Algilia index js mod
-        add_filter('AlgoliaIndexJSSearchPage/ActionMountPoint', function() {
-            return 'loop_start';
-        }); 
+        define('ALGOLIA_INDEX_MOUNT_POINT', 'loop_start');
 
         //Algolia vendor fix (discontiniued plugin)
         add_filter('algolia_should_index_searchable_post', array($this, 'indexPrivatePosts'), 10, 2); 
@@ -24,7 +26,7 @@ class Algolia
             return; 
         }
 
-        echo '<style>.search .main-content > .creamy, .search .search-level {display: none; }</style>'; 
+        //echo '<style>.search .main-content > .creamy, .search .search-level {display: none; }</style>'; 
     }
 
     public function indexPrivatePosts($should_index, $post)
