@@ -14,9 +14,11 @@
 
             <ul class="js-user-search-results search-user-matches gutter gutter-vertical hidden"></ul>
 
-            <a href="{{ home_url() }}?s={{ get_search_query() }}&amp;level=users" class="read-more js-user-show-all-results hidden">
-                <?php _e('Show all matching persons', 'municipio-intranet'); ?>
-            </a>
+            <!-- 
+                <a href="{{ home_url() }}?s={{ get_search_query() }}&amp;level=users" class="read-more js-user-show-all-results hidden">
+                    <?php _e('Show all matching persons', 'municipio-intranet'); ?>
+                </a>
+            -->
         </div>
     </div>
 </div>

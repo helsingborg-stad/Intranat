@@ -33,7 +33,7 @@ class General
         if(is_array($users) && !empty($users)) {
             wp_send_json(
                 array(
-                    'items' => array_slice($users, 0, 10),
+                    'items' => array_slice($users, 0, 30),
                     'nbrofitems' => count($users)
                 )
             , 200);
