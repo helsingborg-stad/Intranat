@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4459740f710abbc83d4344e7489d32e2",
+    "content-hash": "4e2ecc44d0f7100ed054f0d2ad1c57d1",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1322,6 +1322,51 @@
             ],
             "description": "Plugin to gather and manage ideas",
             "time": "2019-10-08T14:00:11+00:00"
+        },
+        {
+            "name": "helsingborg-stad/job-listings",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/job-listings.git",
+                "reference": "b965c242345e55736e1b7202acc09f40147dcb76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/b965c242345e55736e1b7202acc09f40147dcb76",
+                "reference": "b965c242345e55736e1b7202acc09f40147dcb76",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "helsingborg-stad/acf-export-manager": ">=1.0.0",
+                "philo/laravel-blade": "^3.1"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kristoffer Svanmark",
+                    "email": "kristoffer.svanmark@lexiconitkonsult.se"
+                },
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                },
+                {
+                    "name": "Nikolas Ramstedt",
+                    "email": "rikolas.ramstedt@helsingborg.se"
+                },
+                {
+                    "name": "Johan Silvergrund",
+                    "email": "johan.silvergrund@hiq.se"
+                }
+            ],
+            "description": "Improt available jobs",
+            "time": "2020-08-24T14:20:33+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
