@@ -30,6 +30,10 @@ class Algolia
             return; 
         }
 
+        if(!self::isSearchPage()) {
+            return;
+        }
+
         echo '<style>.search .main-content > .creamy, .search .search-level {display: none; } .search .main-content {background: #f5f5f5;} .search .search-main {opacity: .6; cursor: not-allowed;}</style>'; 
     }
 
@@ -39,5 +43,25 @@ class Algolia
             $should_index = true;
         }
         return $should_index;
+    }
+
+    /**
+     * Check if search page is active page
+     *
+     * @return boolean
+     */
+    private static function isSearchPage() {
+
+        if (is_multisite() && (defined('SUBDOMAIN_INSTALL') && SUBDOMAIN_INSTALL === false)) {
+            if (trim(strtok($_SERVER["REQUEST_URI"], '?'), "/") == trim(get_blog_details()->path, "/") && is_search()) {
+                return true;
+            }
+        }
+
+        if (trim(strtok($_SERVER["REQUEST_URI"], '?'), "/") == "" && is_search()) {
+            return true;
+        }
+        
+        return false;
     }
 }
