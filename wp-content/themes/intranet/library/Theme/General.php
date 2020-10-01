@@ -48,6 +48,11 @@ class General
             ));
         });
 
+        //Removes slider area, this is not avabile in theme views
+        add_action('widgets_init', function () {
+            unregister_sidebar('slider-area');
+        }, 15);
+
         //Load readspeaker settings from main
         add_filter('ReadSpeakerHelper\multisite_load', '__return_true');
 
