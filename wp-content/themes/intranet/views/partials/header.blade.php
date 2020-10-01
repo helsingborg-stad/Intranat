@@ -18,5 +18,7 @@
     @include('partials.header.' . $headerLayout['template'])
 </header>
 
+@include('partials.hero')
+
 @include('partials.user.modal-login')
 @include('partials.user.modal-password')

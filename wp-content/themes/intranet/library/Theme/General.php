@@ -4,7 +4,6 @@ namespace Intranet\Theme;
 
 class General
 {
-
     public static $siteOptions;
 
     public function __construct()
