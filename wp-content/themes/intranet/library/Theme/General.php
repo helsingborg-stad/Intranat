@@ -4,7 +4,6 @@ namespace Intranet\Theme;
 
 class General
 {
-
     public static $siteOptions;
 
     public function __construct()
@@ -48,11 +47,6 @@ class General
                 'table-of-contents'
             ));
         });
-
-        //Removes slider area, this is not avabile in theme views
-        add_action('widgets_init', function () {
-            unregister_sidebar('slider-area');
-        }, 15);
 
         //Load readspeaker settings from main
         add_filter('ReadSpeakerHelper\multisite_load', '__return_true');
