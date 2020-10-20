@@ -6,6 +6,7 @@ class SsoAvailability
 {
     public function __construct()
     {
+        return;
         add_action('init', array($this, 'initSsoAvailability'), 9);
     }
 
@@ -44,7 +45,7 @@ class SsoAvailability
             $url .= '?' . $querystring;
         }
 
-        if(defined('SSO_SERVER_IMAGE') && !empty(SSO_SERVER_IMAGE)) {
+        if (defined('SSO_SERVER_IMAGE') && !empty(SSO_SERVER_IMAGE)) {
             $ssoServerImage = SSO_SERVER_IMAGE;
         } else {
             $ssoServerImage = "https://fs01.hbgadm.hbgstad.se/adfs/portal/illustration/illustration.png?id=183128A3C941EDE3D9199FA37D6AA90E0A7DFE101B37D10B4FEDA0CF35E11AFD";
@@ -52,7 +53,7 @@ class SsoAvailability
 
         echo "
         <script type=\"text/javascript\">
-            var imageUrl = '".$ssoServerImage."';
+            var imageUrl = '" . $ssoServerImage . "';
             var image = document.createElement('img');
 
             image.addEventListener('load', function () {

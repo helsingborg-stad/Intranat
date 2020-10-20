@@ -2,17 +2,16 @@
 
 namespace Intranet\User;
 
-//require_once(ABSPATH . 'wp-admin/includes/screen.php');
-
 class SsoRedirect
 {
     private $prohibitedUrls;
     public $settings;
 
+    /**
+     * Constructor. Different scenarios require the SSO plugin to be disabled.
+     */
     public function __construct()
     {
-        add_action('template_redirect', array($this, 'afterLoginRedirect'));
-
         //Set vars
         $this->prohibitedUrls = array('plugins');
         $pageParam = isset($_GET['page']) ? $_GET['page'] : null;
@@ -32,28 +31,14 @@ class SsoRedirect
         }
     }
 
-    /**
-     * If cookie "sso_after_login_redirect" exists and isnt empty, redirect to the url in the value
-     * This is (hopefully) the url of the link (or other entry point) that the user was on before the SSO auth
-     * @return void
-     */
-    public function afterLoginRedirect()
-    {
-        if (isset($_COOKIE['sso_after_login_redirect']) && !empty($_COOKIE['sso_after_login_redirect'])) {
-            $redirect = $_SERVER['HTTPS'] === 'on' ? 'https:' : 'http:';
-            $redirect .= $_COOKIE['sso_after_login_redirect'];
-            setcookie('sso_after_login_redirect', false, -1, '/', COOKIE_DOMAIN);
-            unset($_COOKIE['sso_after_login_redirect']);
-
-            wp_redirect($redirect);
-            exit;
-        }
-    }
-
     public function init()
     {
-        if (method_exists('\SsoAvailability\SsoAvailability',
-                'isSsoAvailable') && !\SsoAvailability\SsoAvailability::isSsoAvailable()) {
+        if (
+            method_exists(
+                '\SsoAvailability\SsoAvailability',
+                'isSsoAvailable'
+            ) && !\SsoAvailability\SsoAvailability::isSsoAvailable()
+        ) {
             return;
         }
 
@@ -96,15 +81,11 @@ class SsoRedirect
 
     public function doAuthentication()
     {
-        if (class_exists('\SAML_Client')) {
-            if (!isset($_COOKIE['sso_after_login_redirect']) || empty($_COOKIE['sso_after_login_redirect'])) {
-                setcookie('sso_after_login_redirect', municipio_intranet_current_url(), time() + 300, '/',
-                    COOKIE_DOMAIN);
-            }
-
+        if (class_exists('\SAMLSSO\Client')) {
             try {
-                $client = new \SAML_Client();
-                $client->authenticate();
+                $currentUrl = municipio_intranet_current_url();
+                $client = new \SAMLSSO\Client();
+                $client->authenticate($currentUrl);
             } catch (Exception $e) {
                 write_log('Error: SSO could not be performed due to an error in SSO plugin (' . $e . ')');
             }
@@ -126,7 +107,7 @@ class SsoRedirect
 
     public function disableSsoPlugin($plugins)
     {
-        $key = array_search('saml-20-single-sign-on/samlauth.php', maybe_unserialize($plugins));
+        $key = array_search('saml-sso/saml-sso.php', maybe_unserialize($plugins));
         if (false !== $key) {
             unset($plugins[$key]);
         }
