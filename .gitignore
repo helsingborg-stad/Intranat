@@ -41,5 +41,5 @@ wp-content/mu-plugins/attachmentDownloader.php
 /post-queries.log
 /post.log
 
-// wp  logging
+# wp logging
 /wp-content/debug.log
