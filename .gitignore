@@ -40,3 +40,6 @@ wp-content/mu-plugins/attachmentDownloader.php
 /.idea
 /post-queries.log
 /post.log
+
+// wp  logging
+/wp-content/debug.log

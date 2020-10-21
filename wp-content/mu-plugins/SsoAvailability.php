@@ -6,7 +6,6 @@ class SsoAvailability
 {
     public function __construct()
     {
-        return;
         add_action('init', array($this, 'initSsoAvailability'), 9);
     }
 
