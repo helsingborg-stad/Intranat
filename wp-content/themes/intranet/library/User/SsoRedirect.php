@@ -42,6 +42,17 @@ class SsoRedirect
             return;
         }
 
+        if (
+            method_exists(
+                '\SAMLSSO\Endpoints',
+                'isSAMLSSOEndpoint'
+            ) && \SAMLSSO\Endpoints::isSAMLSSOEndpoint()
+        ) {
+            return;
+        }
+
+
+
         if (!$this->isAuthenticated() && $this->isInNetwork() && $this->isExplorer() && !$this->isManuallyLoggedOut()) {
             $this->doAuthentication();
         } elseif (!$this->isInNetwork() || !$this->isExplorer()) {
@@ -89,7 +100,6 @@ class SsoRedirect
             } catch (Exception $e) {
                 write_log('Error: SSO could not be performed due to an error in SSO plugin (' . $e . ')');
             }
-
         } elseif ((defined('WP_DEBUG') && WP_DEBUG === true) && function_exists('write_log')) {
             write_log('Error: SAML client plugin is not active.');
         }

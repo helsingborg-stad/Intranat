@@ -11,11 +11,15 @@ class SsoAvailability
 
     public function initSsoAvailability()
     {
-        // Bail if admin page, Ajax or Rest API request
-        if (is_admin() || wp_doing_ajax() || $this->isRestUrl() || wp_doing_cron() || (defined('WP_CLI') && WP_CLI) || $this->isSAMLSSOEndpoint()) {
-            return;
+        $samlssoEndpoint = false;
+        if (class_exists('\SAMLSSO\Endpoints')) {
+            $samlssoEndpoint = \SAMLSSO\Endpoints::isSAMLSSOEndpoint();
         }
 
+        // Bail if admin page, Ajax or Rest API request or saml-sso endpoint.
+        if (is_admin() || wp_doing_ajax() || $this->isRestUrl() || wp_doing_cron() || (defined('WP_CLI') && WP_CLI) || $samlssoEndpoint) {
+            return;
+        }
         if (is_local_ip()) {
             if (!isset($_COOKIE['sso_available'])) {
                 $this->check();
@@ -79,6 +83,7 @@ class SsoAvailability
             }
         </script>
         ";
+        die();
     }
 
     public static function isSsoAvailable()
@@ -104,28 +109,6 @@ class SsoAvailability
             $isRest = (strpos($requestPath, $restPath) === 0);
         }
         return $isRest;
-    }
-
-
-    /**
-     * Check if saml-sso plugin is activated and find their endpoints.
-     *
-     * @return bool
-     */
-    public function isSAMLSSOEndpoint()
-    {
-        $isSAMLSSOEndpoint = false;
-        if (class_exists('\SAMLSSO\Endpoints')) {
-            $endpoints = new \SAMLSSO\Endpoints();
-            foreach ($endpoints->endpoints as $endpoint) {
-                $fullEndpoint = '/' . $endpoints->baseEndpoint . '/' . $endpoint;
-                if (substr($_SERVER['REQUEST_URI'], 0, strlen($fullEndpoint)) === $fullEndpoint) {
-                    $isSAMLSSOEndpoint = true;
-                    break;
-                }
-            }
-        }
-        return $isSAMLSSOEndpoint;
     }
 }
 
