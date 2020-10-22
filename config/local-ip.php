@@ -11,9 +11,6 @@ define('LOCAL_IP_SERIES', array(
     '192.168.0.0/16'
 ));
 
-/* Define what resource that sso should use to check for local network */
-define('SSO_SERVER_IMAGE', 'https://arcgisportal.hbgadm.hbgstad.se/portal/home/10.6/js/jsapi/dojo/resources/blank.gif');
-
 /**
  * Check if a given ip is in a network
  * @param  string $ip    IP to check in IPV4 format eg. 127.0.0.1
