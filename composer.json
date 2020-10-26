@@ -39,6 +39,7 @@
         "helsingborg-stad/search-notices": ">=1.1.2",
         "helsingborg-stad/acf-ux-collapse": ">=1.0.4",
         "helsingborg-stad/better-post-ui": ">=1.2.10",
+        "helsingborg-stad/saml-sso": "^1.0.0",
         "helsingborg-stad/force-ssl": ">=1.0.19",
         "helsingborg-stad/wp-listings": ">=1.1.0",
         "helsingborg-stad/acf-export-manager": ">=1.0.11",
