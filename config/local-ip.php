@@ -4,6 +4,7 @@
  * Define ip-series that should be considered as local ip addresses (within the municipial network
  * Format: IP/CIDR netmask eg. 127.0.0.0/24
  */
+
 define('LOCAL_IP_SERIES', array(
     '10.0.0.0/8',
     '172.16.0.0/12',
@@ -20,7 +21,7 @@ if (!function_exists('is_local_ip')) {
     {
 
         //WPCLI's should not run this
-        if(defined('WP_CLI') && WP_CLI) {
+        if (defined('WP_CLI') && WP_CLI) {
             return false;
         }
 
@@ -29,7 +30,7 @@ if (!function_exists('is_local_ip')) {
         }
 
         //Behind some sort of proxy, look for a remote host (not set internally in networks)
-        if($ip == "127.0.0.1" && !isset($_SERVER['REMOTE_HOST'])) {
+        if ($ip == "127.0.0.1" && !isset($_SERVER['REMOTE_HOST'])) {
             return true;
         }
 
@@ -57,6 +58,3 @@ if (!function_exists('is_local_ip')) {
         return false;
     }
 }
-
-/* Define what resource that sso should use to check for local network */
-define('SSO_SERVER_IMAGE', 'https://arcgisportal.hbgadm.hbgstad.se/portal/home/10.6/js/jsapi/dojo/resources/blank.gif');

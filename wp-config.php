@@ -73,6 +73,14 @@ if (file_exists(__DIR__ . '/config/local-ip.php')) {
 }
 
 /**
+ * Local ip
+ */
+if (file_exists(__DIR__ . '/config/saml-sso.php')) {
+    require_once 'config/saml-sso.php';
+}
+
+
+/**
  * WordPress Database Table prefix.
  *
  * You can have multiple installations in one database if you give each
