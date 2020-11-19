@@ -74,7 +74,7 @@
         "helsingborg-stad/algolia-index": "^1.7",
         "helsingborg-stad/algolia-index-modularity-addon": "^1.0",
         "helsingborg-stad/algolia-index-js-searchpage-addon": "^1.0",
-        "helsingborg-stad/job-listings": "^2.5"
+        "helsingborg-stad/job-listings": "^2.5.1"
     },
     "extra": {
         "path": "/",

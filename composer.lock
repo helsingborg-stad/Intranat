@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a811a30d33c24ea6db73ca16650c83cf",
+    "content-hash": "288cb15d95d1f28b44f27fdbce976514",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1340,16 +1340,16 @@
         },
         {
             "name": "helsingborg-stad/job-listings",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "b965c242345e55736e1b7202acc09f40147dcb76"
+                "reference": "00214b53e6359fe5e7fd0ef352fc93494586c3a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/b965c242345e55736e1b7202acc09f40147dcb76",
-                "reference": "b965c242345e55736e1b7202acc09f40147dcb76",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/00214b53e6359fe5e7fd0ef352fc93494586c3a5",
+                "reference": "00214b53e6359fe5e7fd0ef352fc93494586c3a5",
                 "shasum": ""
             },
             "require": {
@@ -1381,7 +1381,7 @@
                 }
             ],
             "description": "Improt available jobs",
-            "time": "2020-08-24T14:20:33+00:00"
+            "time": "2020-11-16T14:36:57+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1926,6 +1926,37 @@
             ],
             "description": "Skyfish integration for Wordpress",
             "time": "2020-09-02T14:45:45+00:00"
+        },
+        {
+            "name": "helsingborg-stad/sso-saml",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/saml-sso.git",
+                "reference": "cdf3d6f4682db9791a073e6d662c5195de51ce60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/saml-sso/zipball/cdf3d6f4682db9791a073e6d662c5195de51ce60",
+                "reference": "cdf3d6f4682db9791a073e6d662c5195de51ce60",
+                "shasum": ""
+            },
+            "require": {
+                "onelogin/php-saml": "^3.4"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joel Bernerman",
+                    "email": "joel.bernerman@helsingborg.se"
+                }
+            ],
+            "description": "SAML SSO solution for Wordpress",
+            "time": "2020-10-29T07:59:54+00:00"
         },
         {
             "name": "helsingborg-stad/todo",
@@ -2690,6 +2721,56 @@
             "time": "2020-08-24T12:35:58+00:00"
         },
         {
+            "name": "onelogin/php-saml",
+            "version": "3.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onelogin/php-saml.git",
+                "reference": "5fbf3486704ac9835b68184023ab54862c95f213"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onelogin/php-saml/zipball/5fbf3486704ac9835b68184023ab54862c95f213",
+                "reference": "5fbf3486704ac9835b68184023ab54862c95f213",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "robrichards/xmlseclibs": ">=3.0.4"
+            },
+            "require-dev": {
+                "pdepend/pdepend": "^2.5.0",
+                "php-coveralls/php-coveralls": "^1.0.2 || ^2.0",
+                "phploc/phploc": "^2.1 || ^3.0 || ^4.0",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5 || ^7.1",
+                "sebastian/phpcpd": "^2.0 || ^3.0 || ^4.0",
+                "squizlabs/php_codesniffer": "^3.1.1"
+            },
+            "suggest": {
+                "ext-curl": "Install curl lib to be able to use the IdPMetadataParser for parsing remote XMLs",
+                "ext-gettext": "Install gettext and php5-gettext libs to handle translations",
+                "ext-openssl": "Install openssl lib in order to handle with x509 certs (require to support sign and encryption)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OneLogin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "OneLogin PHP SAML Toolkit",
+            "homepage": "https://developers.onelogin.com/saml/php",
+            "keywords": [
+                "SAML2",
+                "onelogin",
+                "saml"
+            ],
+            "time": "2019-11-25T17:30:07+00:00"
+        },
+        {
             "name": "philo/laravel-blade",
             "version": "v3.1",
             "source": {
@@ -3190,6 +3271,44 @@
             ],
             "description": "PHP package for converting file extensions to MIME types and vice versa.",
             "time": "2019-03-08T08:49:03+00:00"
+        },
+        {
+            "name": "robrichards/xmlseclibs",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robrichards/xmlseclibs.git",
+                "reference": "f8f19e58f26cdb42c54b214ff8a820760292f8df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robrichards/xmlseclibs/zipball/f8f19e58f26cdb42c54b214ff8a820760292f8df",
+                "reference": "f8f19e58f26cdb42c54b214ff8a820760292f8df",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "php": ">= 5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RobRichards\\XMLSecLibs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "A PHP library for XML Security",
+            "homepage": "https://github.com/robrichards/xmlseclibs",
+            "keywords": [
+                "security",
+                "signature",
+                "xml",
+                "xmldsig"
+            ],
+            "time": "2020-09-05T13:00:25+00:00"
         },
         {
             "name": "shortpixel/shortpixel-php",
