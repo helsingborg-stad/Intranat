@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c133b31f14a4dd788396e2eefbb5167c",
+    "content-hash": "231ca0d801e427ea77cb3f3b3069f855",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1342,16 +1342,16 @@
         },
         {
             "name": "helsingborg-stad/job-listings",
-            "version": "2.5.6",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "cee5b7cf76bf7c9de6bb8189893424b8aaed05db"
+                "reference": "0661095a41395cb0d2d0b8a638221b7ddaebcc68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/cee5b7cf76bf7c9de6bb8189893424b8aaed05db",
-                "reference": "cee5b7cf76bf7c9de6bb8189893424b8aaed05db",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/0661095a41395cb0d2d0b8a638221b7ddaebcc68",
+                "reference": "0661095a41395cb0d2d0b8a638221b7ddaebcc68",
                 "shasum": ""
             },
             "require": {
@@ -1383,7 +1383,7 @@
                 }
             ],
             "description": "Improt available jobs",
-            "time": "2020-11-24T10:53:15+00:00"
+            "time": "2020-12-10T10:12:57+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
