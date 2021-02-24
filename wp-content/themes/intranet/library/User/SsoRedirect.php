@@ -19,7 +19,8 @@ class SsoRedirect
                     'isAuthenticated' => $this->isAuthenticated(),
                     'isInNetwork' => $this->isInNetwork(), 
                     'isExplorer' => $this->isExplorer(), 
-                    'isManuallyLoggedOut' => $this->isManuallyLoggedOut()
+                    'isManuallyLoggedOut' => $this->isManuallyLoggedOut(),
+                    'server' => $_SERVER
                 ]); 
             echo '</pre>'; 
             die; 
