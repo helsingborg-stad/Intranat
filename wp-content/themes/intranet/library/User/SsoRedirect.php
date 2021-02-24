@@ -96,7 +96,7 @@ class SsoRedirect
 
     public function isExplorer()
     {
-        if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7') || strpos($_SERVER['HTTP_USER_AGENT'], 'edg/')) {
+        if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7') || strpos($_SERVER['HTTP_USER_AGENT'], 'Edg/')) {
             return true;
         }
         return false;
