@@ -15,7 +15,7 @@ class SsoRedirect
         //Check status
         if(isset($_GET['ssoTest'])) {
             echo '<pre>'; 
-                print_r([
+                var_dump([
                     'isAuthenticated' => $this->isAuthenticated(),
                     'isInNetwork' => $this->isInNetwork(), 
                     'isExplorer' => $this->isExplorer(), 
