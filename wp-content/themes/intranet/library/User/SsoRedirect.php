@@ -12,6 +12,19 @@ class SsoRedirect
      */
     public function __construct()
     {
+        //Check status
+        if(isset($_GET['ssoTest'])) {
+            echo '<pre>'; 
+                print_r([
+                    'isAuthenticated' => $this->isAuthenticated(),
+                    'isInNetwork' => $this->isInNetwork(), 
+                    'isExplorer' => $this->isExplorer(), 
+                    'isManuallyLoggedOut' => $this->isManuallyLoggedOut()
+                ]); 
+            echo '</pre>'; 
+            die; 
+        }
+
         //Set vars
         $this->prohibitedUrls = array('plugins');
         $pageParam = isset($_GET['page']) ? $_GET['page'] : null;
@@ -50,8 +63,6 @@ class SsoRedirect
         ) {
             return;
         }
-
-
 
         if (!$this->isAuthenticated() && $this->isInNetwork() && $this->isExplorer() && !$this->isManuallyLoggedOut()) {
             $this->doAuthentication();
